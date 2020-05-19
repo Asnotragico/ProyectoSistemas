@@ -23,8 +23,8 @@ bld/
 
 # Roslyn cache directories
 *.ide/
-*.ide
-*.suo
+*.ide-shm
+*.suo-wal
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
