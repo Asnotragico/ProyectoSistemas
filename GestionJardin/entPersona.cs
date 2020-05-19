@@ -71,11 +71,11 @@ namespace GestionJardin
             set { p_perEmail = value; }
         }
 
-        public String p_perTipo;
-        private String PER_TIPO
+        public String p_perTpeId;
+        private String PER_TPE_ID
         {
-            get { return p_perTipo; }
-            set { p_perTipo = value; }
+            get { return p_perTpeId; }
+            set { p_perTpeId = value; }
         }
 
         public String p_perLegajo;

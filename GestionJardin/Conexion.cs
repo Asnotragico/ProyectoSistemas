@@ -14,8 +14,7 @@ namespace GestionJardin
 
         public Conexion()
         {
-            cadenaDeConexion = //"Server=LAPTOP-AS4VOUTB\\SQLEXPRESS;DataBase= GESTION_JARDIN; integrated security = true";
-                                "Data Source=LAPTOP-AS4VOUTB\\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
+            cadenaDeConexion = "Data Source=LAPTOP-AS4VOUTB\\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
         }
 
         protected SqlConnection generarConexion() // metodo para conectar desde la clase de metodos de las entidades.

@@ -19,31 +19,24 @@ namespace GestionJardin
 
             try
             {
-                SqlConnection con = generarConexion();
+      /*1*/    SqlConnection con = generarConexion();
 
-                con.Open();                         // abro conexion
+      /*2*/     con.Open();                         // abro conexion
 
-                SqlCommand com = new SqlCommand();  //inicializo el comando
-                com.Connection = con;               //asigno conexion al comando
-                com.CommandText = "select * " +
+      /*3*/     SqlCommand com = new SqlCommand();  //inicializo el comando
+      /*4*/     com.Connection = con;               //asigno conexion al comando
+      /*5*/     com.CommandText = "select * " +
                                     "from t_usuarios u " +
                                     "where u.usu_usuario = @usuario " +
-                                    //"and u.udu_clave = @clave " +
                                     ";";               //asigno la búsqueda sql al comando
 
-                com.Parameters.Add(new SqlParameter("@usuario", usuario.p_usuUsuario));
+      /*6*/     com.Parameters.Add(new SqlParameter("@usuario", usuario.p_usuUsuario));
 
-
-
-                SqlDataAdapter da = new SqlDataAdapter(com);
-
-                DataSet ds = new DataSet();
-
-                da.Fill(ds);
-
-                dt = ds.Tables[0];
-
-                con.Close();
+      /*7*/     SqlDataAdapter da = new SqlDataAdapter(com);
+      /*8*/     DataSet ds = new DataSet();
+      /*9*/     da.Fill(ds);
+     /*10*/     dt = ds.Tables[0];
+     /*11*/     con.Close();
 
             }
             catch (Exception ex)

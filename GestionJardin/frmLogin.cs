@@ -60,5 +60,14 @@ namespace GestionJardin
             } 
 
         }
+
+        private void txtContrasena_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //enter key is down
+                btnIngresar_Click(sender, e);
+            }
+        }
     }
 }

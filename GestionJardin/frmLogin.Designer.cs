@@ -193,6 +193,7 @@
             this.txtContrasena.TabIndex = 2;
             this.txtContrasena.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtContrasena.Enter += new System.EventHandler(this.txtContrasena_Enter);
+            this.txtContrasena.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasena_KeyDown);
             this.txtContrasena.Leave += new System.EventHandler(this.txtContrasena_Leave);
             // 
             // txtUsuario
