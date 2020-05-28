@@ -60,8 +60,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="entConcepto.cs" />
     <Compile Include="entRol.cs" />
+    <Compile Include="entSala.cs" />
     <Compile Include="entUsuario.cs" />
+    <Compile Include="frmGestionCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionCuotas.Designer.cs">
+      <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,9 +83,13 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="metCuota.cs" />
     <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGestionCuotas.resx">
+      <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
