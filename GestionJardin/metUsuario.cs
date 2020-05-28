@@ -19,24 +19,24 @@ namespace GestionJardin
 
             try
             {
-      /*1*/    SqlConnection con = generarConexion();
+               SqlConnection con = generarConexion();
 
-      /*2*/     con.Open();                         // abro conexion
+                con.Open();                         // abro conexion
 
-      /*3*/     SqlCommand com = new SqlCommand();  //inicializo el comando
-      /*4*/     com.Connection = con;               //asigno conexion al comando
-      /*5*/     com.CommandText = "select * " +
+                SqlCommand com = new SqlCommand();  //inicializo el comando
+                com.Connection = con;               //asigno conexion al comando
+                com.CommandText = "select * " +
                                     "from t_usuarios u " +
                                     "where u.usu_usuario = @usuario " +
                                     ";";               //asigno la búsqueda sql al comando
 
-      /*6*/     com.Parameters.Add(new SqlParameter("@usuario", usuario.p_usuUsuario));
+                com.Parameters.Add(new SqlParameter("@usuario", usuario.USU_USUARIO));
 
-      /*7*/     SqlDataAdapter da = new SqlDataAdapter(com);
-      /*8*/     DataSet ds = new DataSet();
-      /*9*/     da.Fill(ds);
-     /*10*/     dt = ds.Tables[0];
-     /*11*/     con.Close();
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
 
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace GestionJardin
             bool valido = new bool();
 
             entUsuario usr = new entUsuario();
-            usr.p_usuUsuario = usuario;
+            usr.USU_USUARIO= usuario;
 
             DataTable t_usuario = buscarUsuario(usr);
 

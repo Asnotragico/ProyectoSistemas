@@ -14,3 +14,4 @@ C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardi
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\Bunifu_UI_v1.52.dll
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
