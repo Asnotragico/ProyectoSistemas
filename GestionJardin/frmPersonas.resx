@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="restaurar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restaurar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="recibo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\recibo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="equipo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\equipo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bolsa-de-dinero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bolsa-de-dinero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="expandir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\expandir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="equipo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\equipo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grupo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grupo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cerrar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cerrar4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="restaurar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restaurar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Group 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Group 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="equipo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\equipo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Group 31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Group 31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

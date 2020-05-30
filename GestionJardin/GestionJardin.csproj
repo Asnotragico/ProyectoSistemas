@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\source\repos\fluentDesign\fluentDesign\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.12.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -64,6 +67,18 @@
     <Compile Include="entRol.cs" />
     <Compile Include="entSala.cs" />
     <Compile Include="entUsuario.cs" />
+    <Compile Include="frmCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobros.Designer.cs">
+      <DependentUpon>frmCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConceptos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConceptos.Designer.cs">
+      <DependentUpon>frmConceptos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionCuotas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +92,12 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="entPersona.cs" />
+    <Compile Include="frmPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonas.Designer.cs">
+      <DependentUpon>frmPersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +108,18 @@
     <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmGestionCuotas.resx">
-      <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    <EmbeddedResource Include="frmCobros.resx">
+      <DependentUpon>frmCobros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConceptos.resx">
+      <DependentUpon>frmConceptos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionCuotas.resx" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonas.resx">
+      <DependentUpon>frmPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -104,7 +132,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +151,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LEEME.txt" />
+    <None Include="Resources\Group 31.png" />
+    <None Include="Resources\grupo1.png" />
+    <None Include="Resources\bolsa-de-dinero.png" />
+    <None Include="Resources\recibo.png" />
+    <None Include="Resources\lista.png" />
+    <None Include="Resources\equipo4.png" />
+    <None Include="Resources\equipo1.png" />
+    <None Include="Resources\equipo.png" />
+    <None Include="Resources\Group 3.png" />
+    <None Include="Resources\restaurar1.png" />
+    <None Include="Resources\restaurar.png" />
+    <None Include="Resources\expandir.png" />
+    <None Include="Resources\minimizar.png" />
+    <None Include="Resources\cerrar4.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
