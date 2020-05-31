@@ -60,9 +60,11 @@ namespace GestionJardin
 
         private void cbSalas_SelectedValueChanged(object sender, EventArgs e)
         {
-            // Console.WriteLine(cbSalas.SelectedValue);  // prueba
+            //Console.WriteLine(cbSalas.SelectedValue);  // prueba
 
             listConceptos.Show();
+
+
 
         }
     }

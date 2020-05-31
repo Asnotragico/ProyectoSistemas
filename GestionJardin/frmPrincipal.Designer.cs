@@ -30,22 +30,22 @@
         {
             this.htmlToolTip1 = new MetroFramework.Drawing.Html.HtmlToolTip();
             this.panel_Menu = new System.Windows.Forms.Panel();
-            this.panel_Logo = new System.Windows.Forms.Panel();
-            this.panel_Titulo = new System.Windows.Forms.Panel();
-            this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.panel_Shadow = new System.Windows.Forms.Panel();
-            this.panel_Contenedor = new System.Windows.Forms.Panel();
-            this.iconChildFormCurrent = new FontAwesome.Sharp.IconPictureBox();
             this.icBtnCobros = new FontAwesome.Sharp.IconButton();
             this.icBtnCuotas = new FontAwesome.Sharp.IconButton();
             this.icBtn_Conceptos = new FontAwesome.Sharp.IconButton();
             this.icBtn_Personas = new FontAwesome.Sharp.IconButton();
+            this.panel_Logo = new System.Windows.Forms.Panel();
             this.btn_Home = new System.Windows.Forms.PictureBox();
+            this.panel_Titulo = new System.Windows.Forms.Panel();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.iconChildFormCurrent = new FontAwesome.Sharp.IconPictureBox();
+            this.panel_Shadow = new System.Windows.Forms.Panel();
+            this.panel_Contenedor = new System.Windows.Forms.Panel();
             this.panel_Menu.SuspendLayout();
             this.panel_Logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).BeginInit();
             this.panel_Titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconChildFormCurrent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).BeginInit();
             this.SuspendLayout();
             // 
             // htmlToolTip1
@@ -65,69 +65,6 @@
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(214, 450);
             this.panel_Menu.TabIndex = 3;
-            // 
-            // panel_Logo
-            // 
-            this.panel_Logo.Controls.Add(this.btn_Home);
-            this.panel_Logo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_Logo.Name = "panel_Logo";
-            this.panel_Logo.Size = new System.Drawing.Size(214, 134);
-            this.panel_Logo.TabIndex = 0;
-            // 
-            // panel_Titulo
-            // 
-            this.panel_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panel_Titulo.Controls.Add(this.lbl_Titulo);
-            this.panel_Titulo.Controls.Add(this.iconChildFormCurrent);
-            this.panel_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Titulo.Location = new System.Drawing.Point(214, 0);
-            this.panel_Titulo.Name = "panel_Titulo";
-            this.panel_Titulo.Size = new System.Drawing.Size(586, 121);
-            this.panel_Titulo.TabIndex = 4;
-            this.panel_Titulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Titulo_MouseDown);
-            // 
-            // lbl_Titulo
-            // 
-            this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Titulo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbl_Titulo.Location = new System.Drawing.Point(103, 45);
-            this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(88, 29);
-            this.lbl_Titulo.TabIndex = 1;
-            this.lbl_Titulo.Text = "HOME";
-            // 
-            // panel_Shadow
-            // 
-            this.panel_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panel_Shadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Shadow.Location = new System.Drawing.Point(214, 121);
-            this.panel_Shadow.Name = "panel_Shadow";
-            this.panel_Shadow.Size = new System.Drawing.Size(586, 9);
-            this.panel_Shadow.TabIndex = 5;
-            // 
-            // panel_Contenedor
-            // 
-            this.panel_Contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel_Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Contenedor.Location = new System.Drawing.Point(214, 130);
-            this.panel_Contenedor.Name = "panel_Contenedor";
-            this.panel_Contenedor.Size = new System.Drawing.Size(586, 320);
-            this.panel_Contenedor.TabIndex = 6;
-            // 
-            // iconChildFormCurrent
-            // 
-            this.iconChildFormCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.iconChildFormCurrent.ForeColor = System.Drawing.Color.Purple;
-            this.iconChildFormCurrent.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconChildFormCurrent.IconColor = System.Drawing.Color.Purple;
-            this.iconChildFormCurrent.IconSize = 74;
-            this.iconChildFormCurrent.Location = new System.Drawing.Point(17, 26);
-            this.iconChildFormCurrent.Name = "iconChildFormCurrent";
-            this.iconChildFormCurrent.Size = new System.Drawing.Size(80, 74);
-            this.iconChildFormCurrent.TabIndex = 0;
-            this.iconChildFormCurrent.TabStop = false;
             // 
             // icBtnCobros
             // 
@@ -217,6 +154,15 @@
             this.icBtn_Personas.UseVisualStyleBackColor = true;
             this.icBtn_Personas.Click += new System.EventHandler(this.icBtn_Personas_Click);
             // 
+            // panel_Logo
+            // 
+            this.panel_Logo.Controls.Add(this.btn_Home);
+            this.panel_Logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Logo.Location = new System.Drawing.Point(0, 0);
+            this.panel_Logo.Name = "panel_Logo";
+            this.panel_Logo.Size = new System.Drawing.Size(214, 134);
+            this.panel_Logo.TabIndex = 0;
+            // 
             // btn_Home
             // 
             this.btn_Home.Image = global::GestionJardin.Properties.Resources.Group_3;
@@ -227,6 +173,60 @@
             this.btn_Home.TabIndex = 1;
             this.btn_Home.TabStop = false;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            // 
+            // panel_Titulo
+            // 
+            this.panel_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel_Titulo.Controls.Add(this.lbl_Titulo);
+            this.panel_Titulo.Controls.Add(this.iconChildFormCurrent);
+            this.panel_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Titulo.Location = new System.Drawing.Point(214, 0);
+            this.panel_Titulo.Name = "panel_Titulo";
+            this.panel_Titulo.Size = new System.Drawing.Size(586, 121);
+            this.panel_Titulo.TabIndex = 4;
+            this.panel_Titulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Titulo_MouseDown);
+            // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbl_Titulo.Location = new System.Drawing.Point(103, 45);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(88, 29);
+            this.lbl_Titulo.TabIndex = 1;
+            this.lbl_Titulo.Text = "HOME";
+            // 
+            // iconChildFormCurrent
+            // 
+            this.iconChildFormCurrent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconChildFormCurrent.ForeColor = System.Drawing.Color.Purple;
+            this.iconChildFormCurrent.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconChildFormCurrent.IconColor = System.Drawing.Color.Purple;
+            this.iconChildFormCurrent.IconSize = 74;
+            this.iconChildFormCurrent.Location = new System.Drawing.Point(17, 26);
+            this.iconChildFormCurrent.Name = "iconChildFormCurrent";
+            this.iconChildFormCurrent.Size = new System.Drawing.Size(80, 74);
+            this.iconChildFormCurrent.TabIndex = 0;
+            this.iconChildFormCurrent.TabStop = false;
+            // 
+            // panel_Shadow
+            // 
+            this.panel_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panel_Shadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Shadow.Location = new System.Drawing.Point(214, 121);
+            this.panel_Shadow.Name = "panel_Shadow";
+            this.panel_Shadow.Size = new System.Drawing.Size(586, 9);
+            this.panel_Shadow.TabIndex = 5;
+            // 
+            // panel_Contenedor
+            // 
+            this.panel_Contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel_Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Contenedor.Location = new System.Drawing.Point(214, 130);
+            this.panel_Contenedor.Name = "panel_Contenedor";
+            this.panel_Contenedor.Size = new System.Drawing.Size(586, 320);
+            this.panel_Contenedor.TabIndex = 6;
             // 
             // frmPrincipal
             // 
@@ -241,13 +241,14 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "PATITO COLETÓN";
             this.panel_Menu.ResumeLayout(false);
             this.panel_Logo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).EndInit();
             this.panel_Titulo.ResumeLayout(false);
             this.panel_Titulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconChildFormCurrent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).EndInit();
             this.ResumeLayout(false);
 
         }

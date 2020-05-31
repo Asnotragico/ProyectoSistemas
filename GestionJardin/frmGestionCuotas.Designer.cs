@@ -264,7 +264,7 @@
             // 
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            //this.metroTextBox3.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(415, 1);
             this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox3.CustomButton.Name = "";

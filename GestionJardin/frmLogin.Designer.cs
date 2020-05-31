@@ -45,7 +45,7 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.BackColor = System.Drawing.Color.White;
+            this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.metroPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroPanel1.BackgroundImage")));
             this.metroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.metroPanel1.Controls.Add(this.bunifuCustomLabel2);
@@ -67,7 +67,7 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(64)))));
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(52, 303);
             this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
@@ -103,6 +103,7 @@
             this.metroPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(557, 464);
+            this.metroPanel2.Style = MetroFramework.MetroColorStyle.Black;
             this.metroPanel2.TabIndex = 1;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -111,7 +112,7 @@
             // lblAccesoDenegado
             // 
             this.lblAccesoDenegado.AutoSize = true;
-            this.lblAccesoDenegado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(237)))));
+            this.lblAccesoDenegado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.lblAccesoDenegado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccesoDenegado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.lblAccesoDenegado.Location = new System.Drawing.Point(93, 314);
@@ -125,8 +126,8 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(164)))), ((int)(((byte)(116)))));
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(201)))), ((int)(((byte)(142)))));
+            this.btnIngresar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIngresar.BorderRadius = 5;
             this.btnIngresar.ButtonText = "Ingresar";
@@ -148,8 +149,8 @@
             this.btnIngresar.Location = new System.Drawing.Point(118, 352);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(201)))), ((int)(((byte)(142)))));
-            this.btnIngresar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(181)))), ((int)(((byte)(128)))));
+            this.btnIngresar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnIngresar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(165)))));
             this.btnIngresar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnIngresar.selected = false;
             this.btnIngresar.Size = new System.Drawing.Size(321, 54);
@@ -163,9 +164,9 @@
             // lblAcceso
             // 
             this.lblAcceso.AutoSize = true;
-            this.lblAcceso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(237)))));
+            this.lblAcceso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.lblAcceso.Font = new System.Drawing.Font("Verdana", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblAcceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(64)))));
             this.lblAcceso.Location = new System.Drawing.Point(37, 42);
             this.lblAcceso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAcceso.Name = "lblAcceso";
@@ -175,16 +176,16 @@
             // 
             // txtContrasena
             // 
-            this.txtContrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(237)))));
+            this.txtContrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.txtContrasena.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtContrasena.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.txtContrasena.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(24)))), ((int)(((byte)(124)))));
+            this.txtContrasena.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(24)))), ((int)(((byte)(124)))));
             this.txtContrasena.HintText = "Contraseña";
             this.txtContrasena.isPassword = false;
-            this.txtContrasena.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.txtContrasena.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.txtContrasena.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.txtContrasena.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(64)))));
+            this.txtContrasena.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtContrasena.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(64)))));
             this.txtContrasena.LineThickness = 4;
             this.txtContrasena.Location = new System.Drawing.Point(45, 228);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -198,16 +199,16 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(237)))));
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsuario.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.txtUsuario.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(24)))), ((int)(((byte)(124)))));
+            this.txtUsuario.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(24)))), ((int)(((byte)(124)))));
             this.txtUsuario.HintText = "Usuario";
             this.txtUsuario.isPassword = false;
-            this.txtUsuario.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.txtUsuario.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.txtUsuario.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(64)))));
+            this.txtUsuario.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(64)))));
             this.txtUsuario.LineThickness = 3;
             this.txtUsuario.Location = new System.Drawing.Point(45, 130);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -232,7 +233,7 @@
             this.Padding = new System.Windows.Forms.Padding(20, 37, 20, 20);
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
-            this.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Form1";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
