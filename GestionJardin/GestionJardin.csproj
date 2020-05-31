@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LEEME.txt" />
+    <None Include="Resources\El Patito Coletón.png" />
     <None Include="Resources\Group 31.png" />
     <None Include="Resources\grupo1.png" />
     <None Include="Resources\bolsa-de-dinero.png" />

@@ -148,7 +148,7 @@ namespace GestionJardin
             leftBorderBtn.Visible = false;
             iconChildFormCurrent.IconChar = IconChar.Home;
             iconChildFormCurrent.IconColor = Color.MediumPurple;
-            lbl_Titulo.Text = "HOME";
+            lbl_Titulo.Text = "INICIO";
         }
 
 
@@ -165,6 +165,38 @@ namespace GestionJardin
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void HoraFecha_Tick(object sender, EventArgs e)
+        {
+            lbl_Hora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbl_Fecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)  //si el estado de la ventana es normal se maximiza de lo contrario se restaura al tamaño del form
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -83,6 +83,16 @@ namespace GestionJardin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap El_Patito_Coletón {
+            get {
+                object obj = ResourceManager.GetObject("El Patito Coletón", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap equipo {
             get {
                 object obj = ResourceManager.GetObject("equipo", resourceCulture);

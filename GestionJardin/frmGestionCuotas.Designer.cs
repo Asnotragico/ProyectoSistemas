@@ -280,7 +280,7 @@
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.PromptText = "Matriculado";
+            //this.metroTextBox3.PromptText = "Matriculado";
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
             this.metroTextBox3.SelectionLength = 0;
