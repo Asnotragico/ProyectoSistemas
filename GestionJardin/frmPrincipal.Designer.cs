@@ -37,6 +37,9 @@
             this.panel_Logo = new System.Windows.Forms.Panel();
             this.btn_Home = new System.Windows.Forms.PictureBox();
             this.panel_Titulo = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new FontAwesome.Sharp.IconPictureBox();
+            this.btnMaximizar = new FontAwesome.Sharp.IconPictureBox();
+            this.btn_Cerrar = new FontAwesome.Sharp.IconPictureBox();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.iconChildFormCurrent = new FontAwesome.Sharp.IconPictureBox();
             this.panel_Shadow = new System.Windows.Forms.Panel();
@@ -45,19 +48,16 @@
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.lbl_Hora = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.btnMinimizar = new FontAwesome.Sharp.IconPictureBox();
-            this.btnMaximizar = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_Cerrar = new FontAwesome.Sharp.IconPictureBox();
             this.panel_Menu.SuspendLayout();
             this.panel_Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).BeginInit();
             this.panel_Titulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconChildFormCurrent)).BeginInit();
-            this.panel_Contenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Cerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconChildFormCurrent)).BeginInit();
+            this.panel_Contenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -71,7 +71,7 @@
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(214, 749);
+            this.panel_Menu.Size = new System.Drawing.Size(214, 1055);
             this.panel_Menu.TabIndex = 3;
             // 
             // icBtnCobros
@@ -193,9 +193,54 @@
             this.panel_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Titulo.Location = new System.Drawing.Point(214, 0);
             this.panel_Titulo.Name = "panel_Titulo";
-            this.panel_Titulo.Size = new System.Drawing.Size(881, 121);
+            this.panel_Titulo.Size = new System.Drawing.Size(1026, 121);
             this.panel_Titulo.TabIndex = 4;
             this.panel_Titulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Titulo_MouseDown);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.btnMinimizar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimizar.IconSize = 23;
+            this.btnMinimizar.Location = new System.Drawing.Point(945, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(23, 27);
+            this.btnMinimizar.TabIndex = 7;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.btnMaximizar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMaximizar.IconSize = 23;
+            this.btnMaximizar.Location = new System.Drawing.Point(974, 3);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(23, 27);
+            this.btnMaximizar.TabIndex = 6;
+            this.btnMaximizar.TabStop = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.btn_Cerrar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Cerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btn_Cerrar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btn_Cerrar.IconSize = 23;
+            this.btn_Cerrar.Location = new System.Drawing.Point(1003, 3);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(23, 27);
+            this.btn_Cerrar.TabIndex = 5;
+            this.btn_Cerrar.TabStop = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
             // lbl_Titulo
             // 
@@ -227,7 +272,7 @@
             this.panel_Shadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Shadow.Location = new System.Drawing.Point(214, 121);
             this.panel_Shadow.Name = "panel_Shadow";
-            this.panel_Shadow.Size = new System.Drawing.Size(881, 9);
+            this.panel_Shadow.Size = new System.Drawing.Size(1026, 9);
             this.panel_Shadow.TabIndex = 5;
             // 
             // panel_Contenedor
@@ -239,14 +284,14 @@
             this.panel_Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Contenedor.Location = new System.Drawing.Point(214, 130);
             this.panel_Contenedor.Name = "panel_Contenedor";
-            this.panel_Contenedor.Size = new System.Drawing.Size(881, 619);
+            this.panel_Contenedor.Size = new System.Drawing.Size(1026, 925);
             this.panel_Contenedor.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::GestionJardin.Properties.Resources.El_Patito_Coletón;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(173, 261);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(663, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -259,7 +304,7 @@
             this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.Font = new System.Drawing.Font("Verdana", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Fecha.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbl_Fecha.Location = new System.Drawing.Point(258, 466);
+            this.lbl_Fecha.Location = new System.Drawing.Point(331, 619);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(178, 60);
             this.lbl_Fecha.TabIndex = 4;
@@ -271,7 +316,7 @@
             this.lbl_Hora.AutoSize = true;
             this.lbl_Hora.Font = new System.Drawing.Font("Verdana", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Hora.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.lbl_Hora.Location = new System.Drawing.Point(168, 312);
+            this.lbl_Hora.Location = new System.Drawing.Point(241, 465);
             this.lbl_Hora.Name = "lbl_Hora";
             this.lbl_Hora.Size = new System.Drawing.Size(352, 121);
             this.lbl_Hora.TabIndex = 3;
@@ -282,57 +327,12 @@
             this.HoraFecha.Enabled = true;
             this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.btnMinimizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizar.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMinimizar.IconSize = 23;
-            this.btnMinimizar.Location = new System.Drawing.Point(800, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(23, 27);
-            this.btnMinimizar.TabIndex = 7;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.btnMaximizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximizar.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMaximizar.IconSize = 23;
-            this.btnMaximizar.Location = new System.Drawing.Point(829, 3);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(23, 27);
-            this.btnMaximizar.TabIndex = 6;
-            this.btnMaximizar.TabStop = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btn_Cerrar
-            // 
-            this.btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.btn_Cerrar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_Cerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btn_Cerrar.IconColor = System.Drawing.Color.Gainsboro;
-            this.btn_Cerrar.IconSize = 23;
-            this.btn_Cerrar.Location = new System.Drawing.Point(858, 3);
-            this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(23, 27);
-            this.btn_Cerrar.TabIndex = 5;
-            this.btn_Cerrar.TabStop = false;
-            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1095, 749);
+            this.ClientSize = new System.Drawing.Size(1240, 1055);
             this.Controls.Add(this.panel_Contenedor);
             this.Controls.Add(this.panel_Shadow);
             this.Controls.Add(this.panel_Titulo);
@@ -347,13 +347,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Home)).EndInit();
             this.panel_Titulo.ResumeLayout(false);
             this.panel_Titulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconChildFormCurrent)).EndInit();
             this.panel_Contenedor.ResumeLayout(false);
             this.panel_Contenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Cerrar)).EndInit();
             this.ResumeLayout(false);
 
         }

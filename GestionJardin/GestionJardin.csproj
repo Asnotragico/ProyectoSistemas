@@ -64,8 +64,12 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="entConcepto.cs" />
+    <Compile Include="entDomicilio.cs" />
+    <Compile Include="entGrupoFlia.cs" />
+    <Compile Include="entGrupoSala.cs" />
     <Compile Include="entRol.cs" />
     <Compile Include="entSala.cs" />
+    <Compile Include="entTipoPersona.cs" />
     <Compile Include="entUsuario.cs" />
     <Compile Include="frmCobros.cs">
       <SubType>Form</SubType>
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConceptos.resx">
       <DependentUpon>frmConceptos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionCuotas.resx">
+      <DependentUpon>frmGestionCuotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

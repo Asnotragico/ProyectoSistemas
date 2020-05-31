@@ -39,7 +39,6 @@
             "MATERIALES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "PASEO"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionCuotas));
             this.btnMasivo = new MetroFramework.Controls.MetroTile();
             this.btnParticular = new MetroFramework.Controls.MetroTile();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -264,7 +263,7 @@
             // 
             // 
             // 
-            //this.metroTextBox3.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.metroTextBox3.CustomButton.Image = null;
             this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(415, 1);
             this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTextBox3.CustomButton.Name = "";
@@ -280,7 +279,7 @@
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
-            //this.metroTextBox3.PromptText = "Matriculado";
+            this.metroTextBox3.PromptText = "Matriculado";
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
             this.metroTextBox3.SelectionLength = 0;
@@ -335,8 +334,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGestionCuotas";
             this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
-          //  this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Gestión de Cuotas";
+            this.Text = "GESTIÓN CUOTAS";
             this.Load += new System.EventHandler(this.frmGestionCuotas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.panelGeneracion.ResumeLayout(false);
