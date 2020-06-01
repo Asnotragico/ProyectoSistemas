@@ -26,7 +26,7 @@ namespace GestionJardin.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-AS4VOUTB\\SQLEXPRESS;Initial Catalog=GESTION_JARDIN;Integrated " +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4EDP5RJ\\SQLEXPRESS;Initial Catalog=GESTION_JARDIN;Integrated " +
             "Security=True")]
         public string conexion {
             get {

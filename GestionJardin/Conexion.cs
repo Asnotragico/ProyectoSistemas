@@ -15,6 +15,8 @@ namespace GestionJardin
         public Conexion()
         {
             cadenaDeConexion = "Data Source=DESKTOP-4EDP5RJ\\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
+            //Cadena Romi: "Data Source=DESKTOP-4EDP5RJ\\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
+
         }
 
         protected SqlConnection generarConexion() // metodo para conectar desde la clase de metodos de las entidades.

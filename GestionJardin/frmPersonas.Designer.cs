@@ -32,20 +32,23 @@
             this.icBtn_AgregarPer = new FontAwesome.Sharp.IconPictureBox();
             this.icBtn_EliminarPer = new FontAwesome.Sharp.IconPictureBox();
             this.icBtn_EditarPer = new FontAwesome.Sharp.IconPictureBox();
-            this.panel_FooterPer = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.grpBox_DatosPer = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel_PerContenedor = new System.Windows.Forms.Panel();
+            this.panel_PerBuscar = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.icBtn_BuscarPer = new FontAwesome.Sharp.IconPictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Ibtn_PerCancelar = new FontAwesome.Sharp.IconButton();
+            this.Ibtn_PerGuardar = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.grp_DomPer = new System.Windows.Forms.GroupBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -65,34 +68,34 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Ibtn_GuardarPer = new FontAwesome.Sharp.IconButton();
-            this.Ibtn_CancelarPer = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.icBtn_BuscarPer = new FontAwesome.Sharp.IconPictureBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.panel_Conteiner = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.grpBox_DatosPer = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel_FooterPer = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_Per_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).BeginInit();
-            this.panel_FooterPer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.grpBox_DatosPer.SuspendLayout();
-            this.grp_DomPer.SuspendLayout();
+            this.panel_PerContenedor.SuspendLayout();
+            this.panel_PerBuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_BuscarPer)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_BuscarPer)).BeginInit();
-            this.panel_Conteiner.SuspendLayout();
+            this.grp_DomPer.SuspendLayout();
+            this.grpBox_DatosPer.SuspendLayout();
+            this.panel_FooterPer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Per_Menu
@@ -102,7 +105,7 @@
             this.panel_Per_Menu.Controls.Add(this.icBtn_AgregarPer);
             this.panel_Per_Menu.Controls.Add(this.icBtn_EliminarPer);
             this.panel_Per_Menu.Controls.Add(this.icBtn_EditarPer);
-            this.panel_Per_Menu.Location = new System.Drawing.Point(988, 187);
+            this.panel_Per_Menu.Location = new System.Drawing.Point(1003, 191);
             this.panel_Per_Menu.Name = "panel_Per_Menu";
             this.panel_Per_Menu.Size = new System.Drawing.Size(120, 291);
             this.panel_Per_Menu.TabIndex = 0;
@@ -124,7 +127,7 @@
             // 
             this.icBtn_EliminarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.icBtn_EliminarPer.ForeColor = System.Drawing.Color.OrangeRed;
-            this.icBtn_EliminarPer.IconChar = FontAwesome.Sharp.IconChar.UserSlash;
+            this.icBtn_EliminarPer.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
             this.icBtn_EliminarPer.IconColor = System.Drawing.Color.OrangeRed;
             this.icBtn_EliminarPer.IconSize = 75;
             this.icBtn_EliminarPer.Location = new System.Drawing.Point(18, 194);
@@ -137,7 +140,7 @@
             // 
             this.icBtn_EditarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.icBtn_EditarPer.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.icBtn_EditarPer.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.icBtn_EditarPer.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.icBtn_EditarPer.IconColor = System.Drawing.Color.RoyalBlue;
             this.icBtn_EditarPer.IconSize = 75;
             this.icBtn_EditarPer.Location = new System.Drawing.Point(18, 100);
@@ -146,164 +149,213 @@
             this.icBtn_EditarPer.TabIndex = 1;
             this.icBtn_EditarPer.TabStop = false;
             // 
-            // panel_FooterPer
+            // panel_PerContenedor
             // 
-            this.panel_FooterPer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_FooterPer.Controls.Add(this.dataGridView1);
-            this.panel_FooterPer.Location = new System.Drawing.Point(11, 698);
-            this.panel_FooterPer.Name = "panel_FooterPer";
-            this.panel_FooterPer.Size = new System.Drawing.Size(1126, 100);
-            this.panel_FooterPer.TabIndex = 1;
+            this.panel_PerContenedor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_PerContenedor.Controls.Add(this.panel_PerBuscar);
+            this.panel_PerContenedor.Controls.Add(this.comboBox1);
+            this.panel_PerContenedor.Controls.Add(this.label1);
+            this.panel_PerContenedor.Controls.Add(this.Ibtn_PerCancelar);
+            this.panel_PerContenedor.Controls.Add(this.Ibtn_PerGuardar);
+            this.panel_PerContenedor.Controls.Add(this.panel1);
+            this.panel_PerContenedor.Controls.Add(this.grp_DomPer);
+            this.panel_PerContenedor.Controls.Add(this.grpBox_DatosPer);
+            this.panel_PerContenedor.Location = new System.Drawing.Point(17, 15);
+            this.panel_PerContenedor.Name = "panel_PerContenedor";
+            this.panel_PerContenedor.Size = new System.Drawing.Size(971, 671);
+            this.panel_PerContenedor.TabIndex = 2;
             // 
-            // dataGridView1
+            // panel_PerBuscar
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1093, 70);
-            this.dataGridView1.TabIndex = 0;
+            this.panel_PerBuscar.Controls.Add(this.label19);
+            this.panel_PerBuscar.Controls.Add(this.textBox1);
+            this.panel_PerBuscar.Controls.Add(this.icBtn_BuscarPer);
+            this.panel_PerBuscar.Location = new System.Drawing.Point(73, 396);
+            this.panel_PerBuscar.Name = "panel_PerBuscar";
+            this.panel_PerBuscar.Size = new System.Drawing.Size(837, 48);
+            this.panel_PerBuscar.TabIndex = 24;
             // 
-            // vScrollBar1
+            // label19
             // 
-            this.vScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(1140, 15);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(21, 803);
-            this.vScrollBar1.TabIndex = 3;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label19.Location = new System.Drawing.Point(161, 19);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(145, 17);
+            this.label19.TabIndex = 21;
+            this.label19.Text = "BUSCAR ALUMNO:";
             // 
-            // grpBox_DatosPer
+            // textBox1
             // 
-            this.grpBox_DatosPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.grpBox_DatosPer.Controls.Add(this.dateTimePicker1);
-            this.grpBox_DatosPer.Controls.Add(this.comboBox2);
-            this.grpBox_DatosPer.Controls.Add(this.label6);
-            this.grpBox_DatosPer.Controls.Add(this.label5);
-            this.grpBox_DatosPer.Controls.Add(this.textBox4);
-            this.grpBox_DatosPer.Controls.Add(this.label4);
-            this.grpBox_DatosPer.Controls.Add(this.textBox3);
-            this.grpBox_DatosPer.Controls.Add(this.label3);
-            this.grpBox_DatosPer.Controls.Add(this.textBox2);
-            this.grpBox_DatosPer.Controls.Add(this.label2);
-            this.grpBox_DatosPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBox_DatosPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.grpBox_DatosPer.Location = new System.Drawing.Point(52, 22);
-            this.grpBox_DatosPer.Name = "grpBox_DatosPer";
-            this.grpBox_DatosPer.Size = new System.Drawing.Size(405, 309);
-            this.grpBox_DatosPer.TabIndex = 4;
-            this.grpBox_DatosPer.TabStop = false;
-            this.grpBox_DatosPer.Text = "Datos Personales";
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(312, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(315, 22);
+            this.textBox1.TabIndex = 19;
             // 
-            // dateTimePicker1
+            // icBtn_BuscarPer
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 191);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(152, 22);
-            this.dateTimePicker1.TabIndex = 14;
+            this.icBtn_BuscarPer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icBtn_BuscarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.icBtn_BuscarPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.icBtn_BuscarPer.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.icBtn_BuscarPer.IconColor = System.Drawing.Color.DarkSlateBlue;
+            this.icBtn_BuscarPer.IconSize = 24;
+            this.icBtn_BuscarPer.Location = new System.Drawing.Point(642, 16);
+            this.icBtn_BuscarPer.Name = "icBtn_BuscarPer";
+            this.icBtn_BuscarPer.Size = new System.Drawing.Size(32, 24);
+            this.icBtn_BuscarPer.TabIndex = 20;
+            this.icBtn_BuscarPer.TabStop = false;
             // 
-            // comboBox2
+            // comboBox1
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(476, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label1.Location = new System.Drawing.Point(307, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 17);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "SELECCIONE TIPO:";
+            // 
+            // Ibtn_PerCancelar
+            // 
+            this.Ibtn_PerCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.Ibtn_PerCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Ibtn_PerCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Ibtn_PerCancelar.IconColor = System.Drawing.Color.Black;
+            this.Ibtn_PerCancelar.IconSize = 16;
+            this.Ibtn_PerCancelar.Location = new System.Drawing.Point(519, 581);
+            this.Ibtn_PerCancelar.Name = "Ibtn_PerCancelar";
+            this.Ibtn_PerCancelar.Rotation = 0D;
+            this.Ibtn_PerCancelar.Size = new System.Drawing.Size(162, 61);
+            this.Ibtn_PerCancelar.TabIndex = 18;
+            this.Ibtn_PerCancelar.Text = "CANCELAR";
+            this.Ibtn_PerCancelar.UseVisualStyleBackColor = false;
+            // 
+            // Ibtn_PerGuardar
+            // 
+            this.Ibtn_PerGuardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.Ibtn_PerGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Ibtn_PerGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.Ibtn_PerGuardar.IconColor = System.Drawing.Color.Black;
+            this.Ibtn_PerGuardar.IconSize = 64;
+            this.Ibtn_PerGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Ibtn_PerGuardar.Location = new System.Drawing.Point(289, 581);
+            this.Ibtn_PerGuardar.Name = "Ibtn_PerGuardar";
+            this.Ibtn_PerGuardar.Rotation = 0D;
+            this.Ibtn_PerGuardar.Size = new System.Drawing.Size(168, 61);
+            this.Ibtn_PerGuardar.TabIndex = 17;
+            this.Ibtn_PerGuardar.Text = "GUARDAR";
+            this.Ibtn_PerGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Ibtn_PerGuardar.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(39, 465);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(908, 100);
+            this.panel1.TabIndex = 16;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.groupBox1.Controls.Add(this.comboBox4);
+            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.groupBox1.Location = new System.Drawing.Point(21, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(859, 71);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos Alumno/Docente";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
             "FEMENINO",
             "MASCULINO"});
-            this.comboBox2.Location = new System.Drawing.Point(194, 242);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(152, 24);
-            this.comboBox2.TabIndex = 5;
+            this.comboBox4.Location = new System.Drawing.Point(682, 31);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(152, 24);
+            this.comboBox4.TabIndex = 16;
             // 
-            // label6
+            // comboBox3
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label6.Location = new System.Drawing.Point(101, 245);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "GENERO:";
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "FEMENINO",
+            "MASCULINO"});
+            this.comboBox3.Location = new System.Drawing.Point(411, 31);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(152, 24);
+            this.comboBox3.TabIndex = 15;
             // 
-            // label5
+            // label18
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(18, 195);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 17);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "FECHA NACIMIENTO:";
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label18.Location = new System.Drawing.Point(624, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 17);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "SALA:";
             // 
-            // textBox4
+            // label17
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(194, 142);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 22);
-            this.textBox4.TabIndex = 10;
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label17.Location = new System.Drawing.Point(337, 34);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 17);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "TURNO:";
             // 
-            // label4
+            // textBox14
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label4.Location = new System.Drawing.Point(68, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "DOCUMENTO:";
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.Location = new System.Drawing.Point(129, 31);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(152, 22);
+            this.textBox14.TabIndex = 8;
             // 
-            // textBox3
+            // label16
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(194, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 22);
-            this.textBox3.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label3.Location = new System.Drawing.Point(82, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "APELLIDOS:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(194, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 22);
-            this.textBox2.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label2.Location = new System.Drawing.Point(91, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "NOMBRES:";
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label16.Location = new System.Drawing.Point(41, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(74, 17);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "LEGAJO:";
             // 
             // grp_DomPer
             // 
@@ -328,7 +380,7 @@
             this.grp_DomPer.Controls.Add(this.label11);
             this.grp_DomPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_DomPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.grp_DomPer.Location = new System.Drawing.Point(519, 22);
+            this.grp_DomPer.Location = new System.Drawing.Point(519, 58);
             this.grp_DomPer.Name = "grp_DomPer";
             this.grp_DomPer.Size = new System.Drawing.Size(428, 309);
             this.grp_DomPer.TabIndex = 15;
@@ -518,236 +570,199 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "CALLE:";
             // 
-            // panel1
+            // grpBox_DatosPer
             // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(39, 415);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 100);
-            this.panel1.TabIndex = 16;
+            this.grpBox_DatosPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grpBox_DatosPer.Controls.Add(this.dateTimePicker1);
+            this.grpBox_DatosPer.Controls.Add(this.comboBox2);
+            this.grpBox_DatosPer.Controls.Add(this.label6);
+            this.grpBox_DatosPer.Controls.Add(this.label5);
+            this.grpBox_DatosPer.Controls.Add(this.textBox4);
+            this.grpBox_DatosPer.Controls.Add(this.label4);
+            this.grpBox_DatosPer.Controls.Add(this.textBox3);
+            this.grpBox_DatosPer.Controls.Add(this.label3);
+            this.grpBox_DatosPer.Controls.Add(this.textBox2);
+            this.grpBox_DatosPer.Controls.Add(this.label2);
+            this.grpBox_DatosPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBox_DatosPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grpBox_DatosPer.Location = new System.Drawing.Point(52, 58);
+            this.grpBox_DatosPer.Name = "grpBox_DatosPer";
+            this.grpBox_DatosPer.Size = new System.Drawing.Size(405, 309);
+            this.grpBox_DatosPer.TabIndex = 4;
+            this.grpBox_DatosPer.TabStop = false;
+            this.grpBox_DatosPer.Text = "Datos Personales";
             // 
-            // groupBox1
+            // dateTimePicker1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.groupBox1.Location = new System.Drawing.Point(21, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(859, 71);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Alumno/Docente";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(194, 191);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(152, 22);
+            this.dateTimePicker1.TabIndex = 14;
             // 
-            // comboBox4
+            // comboBox2
             // 
-            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
             "FEMENINO",
             "MASCULINO"});
-            this.comboBox4.Location = new System.Drawing.Point(682, 31);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(152, 24);
-            this.comboBox4.TabIndex = 16;
+            this.comboBox2.Location = new System.Drawing.Point(194, 242);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(152, 24);
+            this.comboBox2.TabIndex = 5;
             // 
-            // comboBox3
+            // label6
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "FEMENINO",
-            "MASCULINO"});
-            this.comboBox3.Location = new System.Drawing.Point(411, 31);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(152, 24);
-            this.comboBox3.TabIndex = 15;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label6.Location = new System.Drawing.Point(101, 245);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "GENERO:";
             // 
-            // label18
+            // label5
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label18.Location = new System.Drawing.Point(624, 34);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 17);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "SALA:";
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label5.Location = new System.Drawing.Point(18, 195);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(162, 17);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "FECHA NACIMIENTO:";
             // 
-            // label17
+            // textBox4
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label17.Location = new System.Drawing.Point(337, 34);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 17);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "TURNO:";
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(194, 142);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(152, 22);
+            this.textBox4.TabIndex = 10;
             // 
-            // textBox14
+            // label4
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(129, 31);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 22);
-            this.textBox14.TabIndex = 8;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label4.Location = new System.Drawing.Point(68, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "DOCUMENTO:";
             // 
-            // label16
+            // textBox3
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label16.Location = new System.Drawing.Point(41, 34);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 17);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "LEGAJO:";
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(194, 101);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(152, 22);
+            this.textBox3.TabIndex = 8;
             // 
-            // Ibtn_GuardarPer
+            // label3
             // 
-            this.Ibtn_GuardarPer.BackColor = System.Drawing.Color.LimeGreen;
-            this.Ibtn_GuardarPer.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_GuardarPer.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.Ibtn_GuardarPer.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_GuardarPer.IconSize = 64;
-            this.Ibtn_GuardarPer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ibtn_GuardarPer.Location = new System.Drawing.Point(289, 533);
-            this.Ibtn_GuardarPer.Name = "Ibtn_GuardarPer";
-            this.Ibtn_GuardarPer.Rotation = 0D;
-            this.Ibtn_GuardarPer.Size = new System.Drawing.Size(168, 61);
-            this.Ibtn_GuardarPer.TabIndex = 17;
-            this.Ibtn_GuardarPer.Text = "GUARDAR";
-            this.Ibtn_GuardarPer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Ibtn_GuardarPer.UseVisualStyleBackColor = false;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label3.Location = new System.Drawing.Point(82, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "APELLIDOS:";
             // 
-            // Ibtn_CancelarPer
+            // textBox2
             // 
-            this.Ibtn_CancelarPer.BackColor = System.Drawing.Color.DarkGray;
-            this.Ibtn_CancelarPer.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_CancelarPer.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Ibtn_CancelarPer.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_CancelarPer.IconSize = 16;
-            this.Ibtn_CancelarPer.Location = new System.Drawing.Point(519, 533);
-            this.Ibtn_CancelarPer.Name = "Ibtn_CancelarPer";
-            this.Ibtn_CancelarPer.Rotation = 0D;
-            this.Ibtn_CancelarPer.Size = new System.Drawing.Size(162, 61);
-            this.Ibtn_CancelarPer.TabIndex = 18;
-            this.Ibtn_CancelarPer.Text = "CANCELAR";
-            this.Ibtn_CancelarPer.UseVisualStyleBackColor = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(194, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(152, 22);
+            this.textBox2.TabIndex = 6;
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(404, 370);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 22);
-            this.textBox1.TabIndex = 19;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label2.Location = new System.Drawing.Point(91, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "NOMBRES:";
             // 
-            // icBtn_BuscarPer
+            // panel_FooterPer
             // 
-            this.icBtn_BuscarPer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icBtn_BuscarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.icBtn_BuscarPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.icBtn_BuscarPer.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.icBtn_BuscarPer.IconColor = System.Drawing.Color.DarkSlateBlue;
-            this.icBtn_BuscarPer.IconSize = 24;
-            this.icBtn_BuscarPer.Location = new System.Drawing.Point(742, 370);
-            this.icBtn_BuscarPer.Name = "icBtn_BuscarPer";
-            this.icBtn_BuscarPer.Size = new System.Drawing.Size(32, 24);
-            this.icBtn_BuscarPer.TabIndex = 20;
-            this.icBtn_BuscarPer.TabStop = false;
+            this.panel_FooterPer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_FooterPer.Controls.Add(this.dataGridView1);
+            this.panel_FooterPer.Location = new System.Drawing.Point(17, 703);
+            this.panel_FooterPer.Name = "panel_FooterPer";
+            this.panel_FooterPer.Size = new System.Drawing.Size(1126, 100);
+            this.panel_FooterPer.TabIndex = 1;
             // 
-            // label19
+            // dataGridView1
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label19.Location = new System.Drawing.Point(253, 370);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(145, 17);
-            this.label19.TabIndex = 21;
-            this.label19.Text = "BUSCAR ALUMNO:";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1093, 70);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // panel_Conteiner
+            // panel2
             // 
-            this.panel_Conteiner.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_Conteiner.Controls.Add(this.label19);
-            this.panel_Conteiner.Controls.Add(this.icBtn_BuscarPer);
-            this.panel_Conteiner.Controls.Add(this.textBox1);
-            this.panel_Conteiner.Controls.Add(this.Ibtn_CancelarPer);
-            this.panel_Conteiner.Controls.Add(this.Ibtn_GuardarPer);
-            this.panel_Conteiner.Controls.Add(this.panel1);
-            this.panel_Conteiner.Controls.Add(this.grp_DomPer);
-            this.panel_Conteiner.Controls.Add(this.grpBox_DatosPer);
-            this.panel_Conteiner.Location = new System.Drawing.Point(11, 74);
-            this.panel_Conteiner.Name = "panel_Conteiner";
-            this.panel_Conteiner.Size = new System.Drawing.Size(971, 609);
-            this.panel_Conteiner.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(515, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(346, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "SELECCIONE TIPO:";
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.panel_FooterPer);
+            this.panel2.Controls.Add(this.panel_PerContenedor);
+            this.panel2.Controls.Add(this.panel_Per_Menu);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1212, 814);
+            this.panel2.TabIndex = 3;
             // 
             // frmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1183, 827);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.panel_Conteiner);
-            this.Controls.Add(this.panel_FooterPer);
-            this.Controls.Add(this.panel_Per_Menu);
+            this.ClientSize = new System.Drawing.Size(1042, 763);
+            this.Controls.Add(this.panel2);
             this.Name = "frmPersonas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "GESTIÓN PERSONAS";
             this.panel_Per_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).EndInit();
-            this.panel_FooterPer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.grpBox_DatosPer.ResumeLayout(false);
-            this.grpBox_DatosPer.PerformLayout();
-            this.grp_DomPer.ResumeLayout(false);
-            this.grp_DomPer.PerformLayout();
+            this.panel_PerContenedor.ResumeLayout(false);
+            this.panel_PerContenedor.PerformLayout();
+            this.panel_PerBuscar.ResumeLayout(false);
+            this.panel_PerBuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_BuscarPer)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_BuscarPer)).EndInit();
-            this.panel_Conteiner.ResumeLayout(false);
-            this.panel_Conteiner.PerformLayout();
+            this.grp_DomPer.ResumeLayout(false);
+            this.grp_DomPer.PerformLayout();
+            this.grpBox_DatosPer.ResumeLayout(false);
+            this.grpBox_DatosPer.PerformLayout();
+            this.panel_FooterPer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -755,22 +770,25 @@
 
         private System.Windows.Forms.Panel panel_Per_Menu;
         private FontAwesome.Sharp.IconPictureBox icBtn_AgregarPer;
-        private FontAwesome.Sharp.IconPictureBox icBtn_EditarPer;
         private FontAwesome.Sharp.IconPictureBox icBtn_EliminarPer;
-        private System.Windows.Forms.Panel panel_FooterPer;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.GroupBox grpBox_DatosPer;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconPictureBox icBtn_EditarPer;
+        private System.Windows.Forms.Panel panel_PerContenedor;
+        private System.Windows.Forms.Panel panel_PerBuscar;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconPictureBox icBtn_BuscarPer;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton Ibtn_PerCancelar;
+        private FontAwesome.Sharp.IconButton Ibtn_PerGuardar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox grp_DomPer;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label15;
@@ -790,21 +808,19 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label16;
-        private FontAwesome.Sharp.IconButton Ibtn_GuardarPer;
-        private FontAwesome.Sharp.IconButton Ibtn_CancelarPer;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconPictureBox icBtn_BuscarPer;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel_Conteiner;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grpBox_DatosPer;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel_FooterPer;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

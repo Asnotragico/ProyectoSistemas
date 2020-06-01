@@ -334,6 +334,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGestionCuotas";
             this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "GESTIÓN CUOTAS";
             this.Load += new System.EventHandler(this.frmGestionCuotas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();

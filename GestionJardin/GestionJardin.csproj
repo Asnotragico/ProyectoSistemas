@@ -108,6 +108,7 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />
     <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />

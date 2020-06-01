@@ -46,6 +46,7 @@ C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramew
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmConceptos.resources
+C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPersonas.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
@@ -56,4 +57,3 @@ C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJard
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.exe
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.pdb
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
-C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
