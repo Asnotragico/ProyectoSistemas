@@ -47,7 +47,7 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
 
-            string consulta = "SELECT CON_CONCEPTO as 'CONCEPTO', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CON_PERIODO 'PERIODO', CON_SEMESTRE 'SEMESTRE', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'ALTA' FROM T_CONCEPTOS; ";
+            string consulta = "SELECT CON_CONCEPTO as 'CONCEPTO', CON_PERIODO 'PERIODO', CON_SEMESTRE 'SEMESTRE', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'ALTA' FROM T_CONCEPTOS; ";
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
             dt = new DataTable();
@@ -65,7 +65,7 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
 
-            string consulta = "SELECT CON_CONCEPTO as 'CONCEPTO', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CON_PERIODO 'PERIODO', CON_SEMESTRE 'SEMESTRE', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'ALTA', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN' FROM T_CONCEPTOS;";
+            string consulta = "SELECT CON_CONCEPTO as 'CONCEPTO', CON_PERIODO 'PERIODO',  CON_SEMESTRE 'SEMESTRE', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'ALTA', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN' FROM T_CONCEPTOS;";
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
             dt = new DataTable();
