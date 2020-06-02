@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_Per_Menu = new System.Windows.Forms.Panel();
             this.icBtn_VisualizarConc = new FontAwesome.Sharp.IconPictureBox();
             this.icBtn_AgregarConc = new FontAwesome.Sharp.IconPictureBox();
@@ -42,18 +44,18 @@
             this.icBtn_BuscarPer = new FontAwesome.Sharp.IconPictureBox();
             this.dgv_ConVisualizar = new System.Windows.Forms.DataGridView();
             this.panel_ConIngresar = new System.Windows.Forms.Panel();
+            this.cbo_Con_Semestre = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txt_ConPeriodo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Ibtn_ConGuardar = new FontAwesome.Sharp.IconButton();
-            this.Ibtn_ConCancelar = new FontAwesome.Sharp.IconButton();
-            this.dtp_ConFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_MontoConp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_ConNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbo_Con_Semestre = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dtp_ConFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.Ibtn_ConGuardar = new FontAwesome.Sharp.IconButton();
+            this.Ibtn_ConCancelar = new FontAwesome.Sharp.IconButton();
             this.panel_Per_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_VisualizarConc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarConc)).BeginInit();
@@ -84,11 +86,11 @@
             // icBtn_VisualizarConc
             // 
             this.icBtn_VisualizarConc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.icBtn_VisualizarConc.ForeColor = System.Drawing.Color.Black;
+            this.icBtn_VisualizarConc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.icBtn_VisualizarConc.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.icBtn_VisualizarConc.IconColor = System.Drawing.Color.Black;
+            this.icBtn_VisualizarConc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.icBtn_VisualizarConc.IconSize = 71;
-            this.icBtn_VisualizarConc.Location = new System.Drawing.Point(21, 283);
+            this.icBtn_VisualizarConc.Location = new System.Drawing.Point(23, 285);
             this.icBtn_VisualizarConc.Name = "icBtn_VisualizarConc";
             this.icBtn_VisualizarConc.Size = new System.Drawing.Size(76, 71);
             this.icBtn_VisualizarConc.TabIndex = 3;
@@ -115,10 +117,10 @@
             this.icBtn_EliminarConc.ForeColor = System.Drawing.Color.OrangeRed;
             this.icBtn_EliminarConc.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.icBtn_EliminarConc.IconColor = System.Drawing.Color.OrangeRed;
-            this.icBtn_EliminarConc.IconSize = 71;
+            this.icBtn_EliminarConc.IconSize = 70;
             this.icBtn_EliminarConc.Location = new System.Drawing.Point(21, 197);
             this.icBtn_EliminarConc.Name = "icBtn_EliminarConc";
-            this.icBtn_EliminarConc.Size = new System.Drawing.Size(76, 71);
+            this.icBtn_EliminarConc.Size = new System.Drawing.Size(76, 70);
             this.icBtn_EliminarConc.TabIndex = 2;
             this.icBtn_EliminarConc.TabStop = false;
             // 
@@ -169,6 +171,7 @@
             // 
             // panel_ConVisualizar
             // 
+            this.panel_ConVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.panel_ConVisualizar.Controls.Add(this.label19);
             this.panel_ConVisualizar.Controls.Add(this.textBox1);
             this.panel_ConVisualizar.Controls.Add(this.icBtn_BuscarPer);
@@ -176,7 +179,7 @@
             this.panel_ConVisualizar.ForeColor = System.Drawing.Color.Black;
             this.panel_ConVisualizar.Location = new System.Drawing.Point(13, 20);
             this.panel_ConVisualizar.Name = "panel_ConVisualizar";
-            this.panel_ConVisualizar.Size = new System.Drawing.Size(716, 365);
+            this.panel_ConVisualizar.Size = new System.Drawing.Size(721, 374);
             this.panel_ConVisualizar.TabIndex = 23;
             // 
             // label19
@@ -184,8 +187,8 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(70, 72);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.label19.Location = new System.Drawing.Point(72, 77);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(165, 17);
             this.label19.TabIndex = 24;
@@ -194,7 +197,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(250, 69);
+            this.textBox1.Location = new System.Drawing.Point(252, 74);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(315, 22);
             this.textBox1.TabIndex = 22;
@@ -203,11 +206,11 @@
             // 
             this.icBtn_BuscarPer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.icBtn_BuscarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.icBtn_BuscarPer.ForeColor = System.Drawing.Color.Black;
+            this.icBtn_BuscarPer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.icBtn_BuscarPer.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.icBtn_BuscarPer.IconColor = System.Drawing.Color.Black;
+            this.icBtn_BuscarPer.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.icBtn_BuscarPer.IconSize = 24;
-            this.icBtn_BuscarPer.Location = new System.Drawing.Point(580, 69);
+            this.icBtn_BuscarPer.Location = new System.Drawing.Point(582, 74);
             this.icBtn_BuscarPer.Name = "icBtn_BuscarPer";
             this.icBtn_BuscarPer.Size = new System.Drawing.Size(32, 24);
             this.icBtn_BuscarPer.TabIndex = 23;
@@ -220,9 +223,26 @@
             this.dgv_ConVisualizar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_ConVisualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.dgv_ConVisualizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ConVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ConVisualizar.GridColor = System.Drawing.Color.Black;
-            this.dgv_ConVisualizar.Location = new System.Drawing.Point(15, 146);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_ConVisualizar.EnableHeadersVisualStyles = false;
+            this.dgv_ConVisualizar.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgv_ConVisualizar.Location = new System.Drawing.Point(17, 151);
             this.dgv_ConVisualizar.Name = "dgv_ConVisualizar";
             this.dgv_ConVisualizar.ReadOnly = true;
             this.dgv_ConVisualizar.RowTemplate.Height = 24;
@@ -232,13 +252,13 @@
             // panel_ConIngresar
             // 
             this.panel_ConIngresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_ConIngresar.Controls.Add(this.Ibtn_ConCancelar);
+            this.panel_ConIngresar.Controls.Add(this.Ibtn_ConGuardar);
+            this.panel_ConIngresar.Controls.Add(this.dtp_ConFechaAlta);
             this.panel_ConIngresar.Controls.Add(this.cbo_Con_Semestre);
             this.panel_ConIngresar.Controls.Add(this.label5);
             this.panel_ConIngresar.Controls.Add(this.txt_ConPeriodo);
             this.panel_ConIngresar.Controls.Add(this.label4);
-            this.panel_ConIngresar.Controls.Add(this.Ibtn_ConGuardar);
-            this.panel_ConIngresar.Controls.Add(this.Ibtn_ConCancelar);
-            this.panel_ConIngresar.Controls.Add(this.dtp_ConFechaAlta);
             this.panel_ConIngresar.Controls.Add(this.label3);
             this.panel_ConIngresar.Controls.Add(this.txt_MontoConp);
             this.panel_ConIngresar.Controls.Add(this.label2);
@@ -248,6 +268,29 @@
             this.panel_ConIngresar.Name = "panel_ConIngresar";
             this.panel_ConIngresar.Size = new System.Drawing.Size(410, 334);
             this.panel_ConIngresar.TabIndex = 23;
+            // 
+            // cbo_Con_Semestre
+            // 
+            this.cbo_Con_Semestre.FormattingEnabled = true;
+            this.cbo_Con_Semestre.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.cbo_Con_Semestre.Location = new System.Drawing.Point(175, 149);
+            this.cbo_Con_Semestre.Name = "cbo_Con_Semestre";
+            this.cbo_Con_Semestre.Size = new System.Drawing.Size(156, 24);
+            this.cbo_Con_Semestre.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(65, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 18);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "SEMESTRE:";
             // 
             // txt_ConPeriodo
             // 
@@ -266,47 +309,6 @@
             this.label4.Size = new System.Drawing.Size(48, 18);
             this.label4.TabIndex = 21;
             this.label4.Text = "AÑO:";
-            // 
-            // Ibtn_ConGuardar
-            // 
-            this.Ibtn_ConGuardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.Ibtn_ConGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_ConGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.Ibtn_ConGuardar.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_ConGuardar.IconSize = 40;
-            this.Ibtn_ConGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ibtn_ConGuardar.Location = new System.Drawing.Point(50, 247);
-            this.Ibtn_ConGuardar.Name = "Ibtn_ConGuardar";
-            this.Ibtn_ConGuardar.Rotation = 0D;
-            this.Ibtn_ConGuardar.Size = new System.Drawing.Size(133, 53);
-            this.Ibtn_ConGuardar.TabIndex = 19;
-            this.Ibtn_ConGuardar.Text = "GUARDAR";
-            this.Ibtn_ConGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Ibtn_ConGuardar.UseVisualStyleBackColor = false;
-            this.Ibtn_ConGuardar.Click += new System.EventHandler(this.Ibtn_ConGuardar_Click_1);
-            // 
-            // Ibtn_ConCancelar
-            // 
-            this.Ibtn_ConCancelar.BackColor = System.Drawing.Color.DarkGray;
-            this.Ibtn_ConCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_ConCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Ibtn_ConCancelar.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_ConCancelar.IconSize = 16;
-            this.Ibtn_ConCancelar.Location = new System.Drawing.Point(227, 247);
-            this.Ibtn_ConCancelar.Name = "Ibtn_ConCancelar";
-            this.Ibtn_ConCancelar.Rotation = 0D;
-            this.Ibtn_ConCancelar.Size = new System.Drawing.Size(133, 53);
-            this.Ibtn_ConCancelar.TabIndex = 20;
-            this.Ibtn_ConCancelar.Text = "CANCELAR";
-            this.Ibtn_ConCancelar.UseVisualStyleBackColor = false;
-            // 
-            // dtp_ConFechaAlta
-            // 
-            this.dtp_ConFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ConFechaAlta.Location = new System.Drawing.Point(175, 194);
-            this.dtp_ConFechaAlta.Name = "dtp_ConFechaAlta";
-            this.dtp_ConFechaAlta.Size = new System.Drawing.Size(156, 22);
-            this.dtp_ConFechaAlta.TabIndex = 5;
             // 
             // label3
             // 
@@ -355,28 +357,45 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "NOMBRE:";
             // 
-            // cbo_Con_Semestre
+            // dtp_ConFechaAlta
             // 
-            this.cbo_Con_Semestre.FormattingEnabled = true;
-            this.cbo_Con_Semestre.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
-            this.cbo_Con_Semestre.Location = new System.Drawing.Point(175, 149);
-            this.cbo_Con_Semestre.Name = "cbo_Con_Semestre";
-            this.cbo_Con_Semestre.Size = new System.Drawing.Size(156, 24);
-            this.cbo_Con_Semestre.TabIndex = 28;
+            this.dtp_ConFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ConFechaAlta.Location = new System.Drawing.Point(175, 191);
+            this.dtp_ConFechaAlta.Name = "dtp_ConFechaAlta";
+            this.dtp_ConFechaAlta.Size = new System.Drawing.Size(156, 22);
+            this.dtp_ConFechaAlta.TabIndex = 29;
             // 
-            // label5
+            // Ibtn_ConGuardar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(65, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 18);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "SEMESTRE:";
+            this.Ibtn_ConGuardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.Ibtn_ConGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Ibtn_ConGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.Ibtn_ConGuardar.IconColor = System.Drawing.Color.Black;
+            this.Ibtn_ConGuardar.IconSize = 40;
+            this.Ibtn_ConGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Ibtn_ConGuardar.Location = new System.Drawing.Point(48, 247);
+            this.Ibtn_ConGuardar.Name = "Ibtn_ConGuardar";
+            this.Ibtn_ConGuardar.Rotation = 0D;
+            this.Ibtn_ConGuardar.Size = new System.Drawing.Size(133, 53);
+            this.Ibtn_ConGuardar.TabIndex = 30;
+            this.Ibtn_ConGuardar.Text = "GUARDAR";
+            this.Ibtn_ConGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Ibtn_ConGuardar.UseVisualStyleBackColor = false;
+            // 
+            // Ibtn_ConCancelar
+            // 
+            this.Ibtn_ConCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.Ibtn_ConCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Ibtn_ConCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Ibtn_ConCancelar.IconColor = System.Drawing.Color.Black;
+            this.Ibtn_ConCancelar.IconSize = 16;
+            this.Ibtn_ConCancelar.Location = new System.Drawing.Point(213, 247);
+            this.Ibtn_ConCancelar.Name = "Ibtn_ConCancelar";
+            this.Ibtn_ConCancelar.Rotation = 0D;
+            this.Ibtn_ConCancelar.Size = new System.Drawing.Size(133, 53);
+            this.Ibtn_ConCancelar.TabIndex = 31;
+            this.Ibtn_ConCancelar.Text = "CANCELAR";
+            this.Ibtn_ConCancelar.UseVisualStyleBackColor = false;
             // 
             // frmConceptos
             // 
@@ -420,9 +439,6 @@
         private System.Windows.Forms.Panel panel_ConVisualizar;
         private System.Windows.Forms.DataGridView dgv_ConVisualizar;
         private System.Windows.Forms.Panel panel_ConIngresar;
-        private FontAwesome.Sharp.IconButton Ibtn_ConGuardar;
-        private FontAwesome.Sharp.IconButton Ibtn_ConCancelar;
-        private System.Windows.Forms.DateTimePicker dtp_ConFechaAlta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_MontoConp;
         private System.Windows.Forms.Label label2;
@@ -436,5 +452,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbo_Con_Semestre;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtp_ConFechaAlta;
+        private FontAwesome.Sharp.IconButton Ibtn_ConCancelar;
+        private FontAwesome.Sharp.IconButton Ibtn_ConGuardar;
     }
 }

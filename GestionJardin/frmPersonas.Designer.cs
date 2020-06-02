@@ -33,69 +33,85 @@
             this.icBtn_EliminarPer = new FontAwesome.Sharp.IconPictureBox();
             this.icBtn_EditarPer = new FontAwesome.Sharp.IconPictureBox();
             this.panel_PerContenedor = new System.Windows.Forms.Panel();
-            this.panel_PerBuscar = new System.Windows.Forms.Panel();
+            this.panel_PerBuscarAlu = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.icBtn_BuscarPer = new FontAwesome.Sharp.IconPictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_PerBuscar = new System.Windows.Forms.TextBox();
+            this.icBtn_PerBuscar = new FontAwesome.Sharp.IconPictureBox();
+            this.cbo_TipoPersonas = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Ibtn_PerCancelar = new FontAwesome.Sharp.IconButton();
-            this.Ibtn_PerGuardar = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.icbtn_PerCancelar = new FontAwesome.Sharp.IconButton();
+            this.icbtn_PerGuardar = new FontAwesome.Sharp.IconButton();
+            this.grb_PerAlumno = new System.Windows.Forms.GroupBox();
+            this.cbo_SalNombreA = new System.Windows.Forms.ComboBox();
+            this.cbo_SalTurnoA = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txt_PerLegajo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.grp_DomPer = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txt_DomEmail = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txt_DomTelSecundario = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txt_DomTelPrincipal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txt_DomPais = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_DomProvincia = new System.Windows.Forms.TextBox();
+            this.txt_DomCP = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_DomBarrio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_DomNum = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_DomCalle = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.grpBox_DatosPer = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dtp_PerFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.cbo_PerGenero = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_PerDni = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_PerApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_PerNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_FooterPer = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_PerAlumno = new System.Windows.Forms.Panel();
+            this.panel_PerDocente = new System.Windows.Forms.Panel();
+            this.grb_PerDocente = new System.Windows.Forms.GroupBox();
+            this.cbo_SalNombreD = new System.Windows.Forms.ComboBox();
+            this.cbo_SalTurnoD = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel_PerAluTut = new System.Windows.Forms.Panel();
+            this.grb_PerAluTut = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_PerLegTut = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel_Per_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).BeginInit();
             this.panel_PerContenedor.SuspendLayout();
-            this.panel_PerBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_BuscarPer)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.panel_PerBuscarAlu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).BeginInit();
+            this.grb_PerAlumno.SuspendLayout();
             this.grp_DomPer.SuspendLayout();
             this.grpBox_DatosPer.SuspendLayout();
             this.panel_FooterPer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel_PerAlumno.SuspendLayout();
+            this.panel_PerDocente.SuspendLayout();
+            this.grb_PerDocente.SuspendLayout();
+            this.panel_PerAluTut.SuspendLayout();
+            this.grb_PerAluTut.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Per_Menu
@@ -116,7 +132,7 @@
             this.icBtn_AgregarPer.ForeColor = System.Drawing.Color.SeaGreen;
             this.icBtn_AgregarPer.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.icBtn_AgregarPer.IconColor = System.Drawing.Color.SeaGreen;
-            this.icBtn_AgregarPer.IconSize = 69;
+            this.icBtn_AgregarPer.IconSize = 75;
             this.icBtn_AgregarPer.Location = new System.Drawing.Point(18, 12);
             this.icBtn_AgregarPer.Name = "icBtn_AgregarPer";
             this.icBtn_AgregarPer.Size = new System.Drawing.Size(86, 69);
@@ -152,12 +168,14 @@
             // panel_PerContenedor
             // 
             this.panel_PerContenedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_PerContenedor.Controls.Add(this.panel_PerBuscar);
-            this.panel_PerContenedor.Controls.Add(this.comboBox1);
+            this.panel_PerContenedor.Controls.Add(this.panel_PerDocente);
+            this.panel_PerContenedor.Controls.Add(this.panel_PerAluTut);
+            this.panel_PerContenedor.Controls.Add(this.panel_PerAlumno);
+            this.panel_PerContenedor.Controls.Add(this.panel_PerBuscarAlu);
+            this.panel_PerContenedor.Controls.Add(this.cbo_TipoPersonas);
             this.panel_PerContenedor.Controls.Add(this.label1);
-            this.panel_PerContenedor.Controls.Add(this.Ibtn_PerCancelar);
-            this.panel_PerContenedor.Controls.Add(this.Ibtn_PerGuardar);
-            this.panel_PerContenedor.Controls.Add(this.panel1);
+            this.panel_PerContenedor.Controls.Add(this.icbtn_PerCancelar);
+            this.panel_PerContenedor.Controls.Add(this.icbtn_PerGuardar);
             this.panel_PerContenedor.Controls.Add(this.grp_DomPer);
             this.panel_PerContenedor.Controls.Add(this.grpBox_DatosPer);
             this.panel_PerContenedor.Location = new System.Drawing.Point(17, 15);
@@ -165,15 +183,15 @@
             this.panel_PerContenedor.Size = new System.Drawing.Size(971, 671);
             this.panel_PerContenedor.TabIndex = 2;
             // 
-            // panel_PerBuscar
+            // panel_PerBuscarAlu
             // 
-            this.panel_PerBuscar.Controls.Add(this.label19);
-            this.panel_PerBuscar.Controls.Add(this.textBox1);
-            this.panel_PerBuscar.Controls.Add(this.icBtn_BuscarPer);
-            this.panel_PerBuscar.Location = new System.Drawing.Point(73, 396);
-            this.panel_PerBuscar.Name = "panel_PerBuscar";
-            this.panel_PerBuscar.Size = new System.Drawing.Size(837, 48);
-            this.panel_PerBuscar.TabIndex = 24;
+            this.panel_PerBuscarAlu.Controls.Add(this.label19);
+            this.panel_PerBuscarAlu.Controls.Add(this.txt_PerBuscar);
+            this.panel_PerBuscarAlu.Controls.Add(this.icBtn_PerBuscar);
+            this.panel_PerBuscarAlu.Location = new System.Drawing.Point(73, 396);
+            this.panel_PerBuscarAlu.Name = "panel_PerBuscarAlu";
+            this.panel_PerBuscarAlu.Size = new System.Drawing.Size(837, 48);
+            this.panel_PerBuscarAlu.TabIndex = 24;
             // 
             // label19
             // 
@@ -186,36 +204,37 @@
             this.label19.TabIndex = 21;
             this.label19.Text = "BUSCAR ALUMNO:";
             // 
-            // textBox1
+            // txt_PerBuscar
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(312, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 22);
-            this.textBox1.TabIndex = 19;
+            this.txt_PerBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_PerBuscar.Location = new System.Drawing.Point(312, 16);
+            this.txt_PerBuscar.Name = "txt_PerBuscar";
+            this.txt_PerBuscar.Size = new System.Drawing.Size(315, 22);
+            this.txt_PerBuscar.TabIndex = 19;
             // 
-            // icBtn_BuscarPer
+            // icBtn_PerBuscar
             // 
-            this.icBtn_BuscarPer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icBtn_BuscarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.icBtn_BuscarPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.icBtn_BuscarPer.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.icBtn_BuscarPer.IconColor = System.Drawing.Color.DarkSlateBlue;
-            this.icBtn_BuscarPer.IconSize = 24;
-            this.icBtn_BuscarPer.Location = new System.Drawing.Point(642, 16);
-            this.icBtn_BuscarPer.Name = "icBtn_BuscarPer";
-            this.icBtn_BuscarPer.Size = new System.Drawing.Size(32, 24);
-            this.icBtn_BuscarPer.TabIndex = 20;
-            this.icBtn_BuscarPer.TabStop = false;
+            this.icBtn_PerBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icBtn_PerBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.icBtn_PerBuscar.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.icBtn_PerBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.icBtn_PerBuscar.IconColor = System.Drawing.Color.DarkSlateBlue;
+            this.icBtn_PerBuscar.IconSize = 24;
+            this.icBtn_PerBuscar.Location = new System.Drawing.Point(642, 16);
+            this.icBtn_PerBuscar.Name = "icBtn_PerBuscar";
+            this.icBtn_PerBuscar.Size = new System.Drawing.Size(32, 24);
+            this.icBtn_PerBuscar.TabIndex = 20;
+            this.icBtn_PerBuscar.TabStop = false;
             // 
-            // comboBox1
+            // cbo_TipoPersonas
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(476, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 23;
+            this.cbo_TipoPersonas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_TipoPersonas.FormattingEnabled = true;
+            this.cbo_TipoPersonas.Location = new System.Drawing.Point(476, 16);
+            this.cbo_TipoPersonas.Name = "cbo_TipoPersonas";
+            this.cbo_TipoPersonas.Size = new System.Drawing.Size(160, 24);
+            this.cbo_TipoPersonas.TabIndex = 23;
+            this.cbo_TipoPersonas.SelectedIndexChanged += new System.EventHandler(this.cbo_TipoPersonas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -229,89 +248,75 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "SELECCIONE TIPO:";
             // 
-            // Ibtn_PerCancelar
+            // icbtn_PerCancelar
             // 
-            this.Ibtn_PerCancelar.BackColor = System.Drawing.Color.DarkGray;
-            this.Ibtn_PerCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_PerCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Ibtn_PerCancelar.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_PerCancelar.IconSize = 16;
-            this.Ibtn_PerCancelar.Location = new System.Drawing.Point(519, 581);
-            this.Ibtn_PerCancelar.Name = "Ibtn_PerCancelar";
-            this.Ibtn_PerCancelar.Rotation = 0D;
-            this.Ibtn_PerCancelar.Size = new System.Drawing.Size(162, 61);
-            this.Ibtn_PerCancelar.TabIndex = 18;
-            this.Ibtn_PerCancelar.Text = "CANCELAR";
-            this.Ibtn_PerCancelar.UseVisualStyleBackColor = false;
+            this.icbtn_PerCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.icbtn_PerCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.icbtn_PerCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.icbtn_PerCancelar.IconColor = System.Drawing.Color.Black;
+            this.icbtn_PerCancelar.IconSize = 16;
+            this.icbtn_PerCancelar.Location = new System.Drawing.Point(519, 581);
+            this.icbtn_PerCancelar.Name = "icbtn_PerCancelar";
+            this.icbtn_PerCancelar.Rotation = 0D;
+            this.icbtn_PerCancelar.Size = new System.Drawing.Size(162, 61);
+            this.icbtn_PerCancelar.TabIndex = 18;
+            this.icbtn_PerCancelar.Text = "CANCELAR";
+            this.icbtn_PerCancelar.UseVisualStyleBackColor = false;
             // 
-            // Ibtn_PerGuardar
+            // icbtn_PerGuardar
             // 
-            this.Ibtn_PerGuardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.Ibtn_PerGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_PerGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.Ibtn_PerGuardar.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_PerGuardar.IconSize = 64;
-            this.Ibtn_PerGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ibtn_PerGuardar.Location = new System.Drawing.Point(289, 581);
-            this.Ibtn_PerGuardar.Name = "Ibtn_PerGuardar";
-            this.Ibtn_PerGuardar.Rotation = 0D;
-            this.Ibtn_PerGuardar.Size = new System.Drawing.Size(168, 61);
-            this.Ibtn_PerGuardar.TabIndex = 17;
-            this.Ibtn_PerGuardar.Text = "GUARDAR";
-            this.Ibtn_PerGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Ibtn_PerGuardar.UseVisualStyleBackColor = false;
+            this.icbtn_PerGuardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.icbtn_PerGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.icbtn_PerGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.icbtn_PerGuardar.IconColor = System.Drawing.Color.Black;
+            this.icbtn_PerGuardar.IconSize = 64;
+            this.icbtn_PerGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icbtn_PerGuardar.Location = new System.Drawing.Point(289, 581);
+            this.icbtn_PerGuardar.Name = "icbtn_PerGuardar";
+            this.icbtn_PerGuardar.Rotation = 0D;
+            this.icbtn_PerGuardar.Size = new System.Drawing.Size(168, 61);
+            this.icbtn_PerGuardar.TabIndex = 17;
+            this.icbtn_PerGuardar.Text = "GUARDAR";
+            this.icbtn_PerGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icbtn_PerGuardar.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // grb_PerAlumno
             // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(39, 465);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 100);
-            this.panel1.TabIndex = 16;
+            this.grb_PerAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grb_PerAlumno.Controls.Add(this.cbo_SalNombreA);
+            this.grb_PerAlumno.Controls.Add(this.cbo_SalTurnoA);
+            this.grb_PerAlumno.Controls.Add(this.label18);
+            this.grb_PerAlumno.Controls.Add(this.label17);
+            this.grb_PerAlumno.Controls.Add(this.txt_PerLegajo);
+            this.grb_PerAlumno.Controls.Add(this.label16);
+            this.grb_PerAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_PerAlumno.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grb_PerAlumno.Location = new System.Drawing.Point(6, 9);
+            this.grb_PerAlumno.Name = "grb_PerAlumno";
+            this.grb_PerAlumno.Size = new System.Drawing.Size(859, 71);
+            this.grb_PerAlumno.TabIndex = 16;
+            this.grb_PerAlumno.TabStop = false;
+            this.grb_PerAlumno.Text = "Datos Alumno";
             // 
-            // groupBox1
+            // cbo_SalNombreA
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.groupBox1.Location = new System.Drawing.Point(21, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(859, 71);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Alumno/Docente";
+            this.cbo_SalNombreA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalNombreA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalNombreA.FormattingEnabled = true;
+            this.cbo_SalNombreA.Location = new System.Drawing.Point(682, 31);
+            this.cbo_SalNombreA.Name = "cbo_SalNombreA";
+            this.cbo_SalNombreA.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalNombreA.TabIndex = 16;
             // 
-            // comboBox4
+            // cbo_SalTurnoA
             // 
-            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "FEMENINO",
-            "MASCULINO"});
-            this.comboBox4.Location = new System.Drawing.Point(682, 31);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(152, 24);
-            this.comboBox4.TabIndex = 16;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "FEMENINO",
-            "MASCULINO"});
-            this.comboBox3.Location = new System.Drawing.Point(411, 31);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(152, 24);
-            this.comboBox3.TabIndex = 15;
+            this.cbo_SalTurnoA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalTurnoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalTurnoA.FormattingEnabled = true;
+            this.cbo_SalTurnoA.Location = new System.Drawing.Point(411, 31);
+            this.cbo_SalTurnoA.Name = "cbo_SalTurnoA";
+            this.cbo_SalTurnoA.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalTurnoA.TabIndex = 15;
             // 
             // label18
             // 
@@ -337,13 +342,13 @@
             this.label17.TabIndex = 9;
             this.label17.Text = "TURNO:";
             // 
-            // textBox14
+            // txt_PerLegajo
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(129, 31);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 22);
-            this.textBox14.TabIndex = 8;
+            this.txt_PerLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerLegajo.Location = new System.Drawing.Point(129, 31);
+            this.txt_PerLegajo.Name = "txt_PerLegajo";
+            this.txt_PerLegajo.Size = new System.Drawing.Size(152, 22);
+            this.txt_PerLegajo.TabIndex = 8;
             // 
             // label16
             // 
@@ -360,23 +365,23 @@
             // grp_DomPer
             // 
             this.grp_DomPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.grp_DomPer.Controls.Add(this.textBox13);
+            this.grp_DomPer.Controls.Add(this.txt_DomEmail);
             this.grp_DomPer.Controls.Add(this.label15);
-            this.grp_DomPer.Controls.Add(this.textBox12);
+            this.grp_DomPer.Controls.Add(this.txt_DomTelSecundario);
             this.grp_DomPer.Controls.Add(this.label14);
-            this.grp_DomPer.Controls.Add(this.textBox11);
+            this.grp_DomPer.Controls.Add(this.txt_DomTelPrincipal);
             this.grp_DomPer.Controls.Add(this.label13);
-            this.grp_DomPer.Controls.Add(this.textBox10);
+            this.grp_DomPer.Controls.Add(this.txt_DomPais);
             this.grp_DomPer.Controls.Add(this.label12);
-            this.grp_DomPer.Controls.Add(this.textBox9);
-            this.grp_DomPer.Controls.Add(this.textBox8);
+            this.grp_DomPer.Controls.Add(this.txt_DomProvincia);
+            this.grp_DomPer.Controls.Add(this.txt_DomCP);
             this.grp_DomPer.Controls.Add(this.label7);
             this.grp_DomPer.Controls.Add(this.label8);
-            this.grp_DomPer.Controls.Add(this.textBox5);
+            this.grp_DomPer.Controls.Add(this.txt_DomBarrio);
             this.grp_DomPer.Controls.Add(this.label9);
-            this.grp_DomPer.Controls.Add(this.textBox6);
+            this.grp_DomPer.Controls.Add(this.txt_DomNum);
             this.grp_DomPer.Controls.Add(this.label10);
-            this.grp_DomPer.Controls.Add(this.textBox7);
+            this.grp_DomPer.Controls.Add(this.txt_DomCalle);
             this.grp_DomPer.Controls.Add(this.label11);
             this.grp_DomPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_DomPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
@@ -387,13 +392,13 @@
             this.grp_DomPer.TabStop = false;
             this.grp_DomPer.Text = "Datos de Contacto";
             // 
-            // textBox13
+            // txt_DomEmail
             // 
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(90, 263);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(301, 22);
-            this.textBox13.TabIndex = 24;
+            this.txt_DomEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomEmail.Location = new System.Drawing.Point(90, 263);
+            this.txt_DomEmail.Name = "txt_DomEmail";
+            this.txt_DomEmail.Size = new System.Drawing.Size(301, 22);
+            this.txt_DomEmail.TabIndex = 24;
             // 
             // label15
             // 
@@ -408,13 +413,13 @@
             this.label15.Text = "E-MAIL:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox12
+            // txt_DomTelSecundario
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(120, 226);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(271, 22);
-            this.textBox12.TabIndex = 22;
+            this.txt_DomTelSecundario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomTelSecundario.Location = new System.Drawing.Point(120, 226);
+            this.txt_DomTelSecundario.Name = "txt_DomTelSecundario";
+            this.txt_DomTelSecundario.Size = new System.Drawing.Size(271, 22);
+            this.txt_DomTelSecundario.TabIndex = 22;
             // 
             // label14
             // 
@@ -429,13 +434,13 @@
             this.label14.Text = "TELEFONO:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox11
+            // txt_DomTelPrincipal
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(205, 190);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(186, 22);
-            this.textBox11.TabIndex = 20;
+            this.txt_DomTelPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomTelPrincipal.Location = new System.Drawing.Point(205, 190);
+            this.txt_DomTelPrincipal.Name = "txt_DomTelPrincipal";
+            this.txt_DomTelPrincipal.Size = new System.Drawing.Size(186, 22);
+            this.txt_DomTelPrincipal.TabIndex = 20;
             // 
             // label13
             // 
@@ -450,13 +455,13 @@
             this.label13.Text = "TELEFONO PRINCIPAL:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox10
+            // txt_DomPais
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(121, 156);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(270, 22);
-            this.textBox10.TabIndex = 18;
+            this.txt_DomPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomPais.Location = new System.Drawing.Point(121, 156);
+            this.txt_DomPais.Name = "txt_DomPais";
+            this.txt_DomPais.Size = new System.Drawing.Size(270, 22);
+            this.txt_DomPais.TabIndex = 18;
             // 
             // label12
             // 
@@ -470,21 +475,21 @@
             this.label12.TabIndex = 17;
             this.label12.Text = "PAIS:";
             // 
-            // textBox9
+            // txt_DomProvincia
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(121, 121);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(270, 22);
-            this.textBox9.TabIndex = 16;
+            this.txt_DomProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomProvincia.Location = new System.Drawing.Point(121, 121);
+            this.txt_DomProvincia.Name = "txt_DomProvincia";
+            this.txt_DomProvincia.Size = new System.Drawing.Size(270, 22);
+            this.txt_DomProvincia.TabIndex = 16;
             // 
-            // textBox8
+            // txt_DomCP
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(308, 80);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(83, 22);
-            this.textBox8.TabIndex = 15;
+            this.txt_DomCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomCP.Location = new System.Drawing.Point(308, 80);
+            this.txt_DomCP.Name = "txt_DomCP";
+            this.txt_DomCP.Size = new System.Drawing.Size(83, 22);
+            this.txt_DomCP.TabIndex = 15;
             // 
             // label7
             // 
@@ -510,13 +515,13 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "CP:";
             // 
-            // textBox5
+            // txt_DomBarrio
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(98, 79);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 22);
-            this.textBox5.TabIndex = 10;
+            this.txt_DomBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomBarrio.Location = new System.Drawing.Point(98, 79);
+            this.txt_DomBarrio.Name = "txt_DomBarrio";
+            this.txt_DomBarrio.Size = new System.Drawing.Size(152, 22);
+            this.txt_DomBarrio.TabIndex = 10;
             // 
             // label9
             // 
@@ -530,13 +535,13 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "BARRIO:";
             // 
-            // textBox6
+            // txt_DomNum
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(308, 41);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(83, 22);
-            this.textBox6.TabIndex = 8;
+            this.txt_DomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomNum.Location = new System.Drawing.Point(308, 41);
+            this.txt_DomNum.Name = "txt_DomNum";
+            this.txt_DomNum.Size = new System.Drawing.Size(83, 22);
+            this.txt_DomNum.TabIndex = 8;
             // 
             // label10
             // 
@@ -550,13 +555,13 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "N°:";
             // 
-            // textBox7
+            // txt_DomCalle
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(98, 41);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(152, 22);
-            this.textBox7.TabIndex = 6;
+            this.txt_DomCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DomCalle.Location = new System.Drawing.Point(98, 41);
+            this.txt_DomCalle.Name = "txt_DomCalle";
+            this.txt_DomCalle.Size = new System.Drawing.Size(152, 22);
+            this.txt_DomCalle.TabIndex = 6;
             // 
             // label11
             // 
@@ -573,15 +578,15 @@
             // grpBox_DatosPer
             // 
             this.grpBox_DatosPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.grpBox_DatosPer.Controls.Add(this.dateTimePicker1);
-            this.grpBox_DatosPer.Controls.Add(this.comboBox2);
+            this.grpBox_DatosPer.Controls.Add(this.dtp_PerFechaNac);
+            this.grpBox_DatosPer.Controls.Add(this.cbo_PerGenero);
             this.grpBox_DatosPer.Controls.Add(this.label6);
             this.grpBox_DatosPer.Controls.Add(this.label5);
-            this.grpBox_DatosPer.Controls.Add(this.textBox4);
+            this.grpBox_DatosPer.Controls.Add(this.txt_PerDni);
             this.grpBox_DatosPer.Controls.Add(this.label4);
-            this.grpBox_DatosPer.Controls.Add(this.textBox3);
+            this.grpBox_DatosPer.Controls.Add(this.txt_PerApellido);
             this.grpBox_DatosPer.Controls.Add(this.label3);
-            this.grpBox_DatosPer.Controls.Add(this.textBox2);
+            this.grpBox_DatosPer.Controls.Add(this.txt_PerNombre);
             this.grpBox_DatosPer.Controls.Add(this.label2);
             this.grpBox_DatosPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBox_DatosPer.ForeColor = System.Drawing.Color.DarkSlateBlue;
@@ -592,27 +597,27 @@
             this.grpBox_DatosPer.TabStop = false;
             this.grpBox_DatosPer.Text = "Datos Personales";
             // 
-            // dateTimePicker1
+            // dtp_PerFechaNac
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 191);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(152, 22);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtp_PerFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_PerFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_PerFechaNac.Location = new System.Drawing.Point(194, 191);
+            this.dtp_PerFechaNac.Name = "dtp_PerFechaNac";
+            this.dtp_PerFechaNac.Size = new System.Drawing.Size(152, 22);
+            this.dtp_PerFechaNac.TabIndex = 14;
             // 
-            // comboBox2
+            // cbo_PerGenero
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbo_PerGenero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_PerGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_PerGenero.FormattingEnabled = true;
+            this.cbo_PerGenero.Items.AddRange(new object[] {
             "FEMENINO",
             "MASCULINO"});
-            this.comboBox2.Location = new System.Drawing.Point(194, 242);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(152, 24);
-            this.comboBox2.TabIndex = 5;
+            this.cbo_PerGenero.Location = new System.Drawing.Point(194, 242);
+            this.cbo_PerGenero.Name = "cbo_PerGenero";
+            this.cbo_PerGenero.Size = new System.Drawing.Size(152, 24);
+            this.cbo_PerGenero.TabIndex = 5;
             // 
             // label6
             // 
@@ -638,13 +643,13 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "FECHA NACIMIENTO:";
             // 
-            // textBox4
+            // txt_PerDni
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(194, 142);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 22);
-            this.textBox4.TabIndex = 10;
+            this.txt_PerDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerDni.Location = new System.Drawing.Point(194, 142);
+            this.txt_PerDni.Name = "txt_PerDni";
+            this.txt_PerDni.Size = new System.Drawing.Size(152, 22);
+            this.txt_PerDni.TabIndex = 10;
             // 
             // label4
             // 
@@ -658,13 +663,13 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "DOCUMENTO:";
             // 
-            // textBox3
+            // txt_PerApellido
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(194, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 22);
-            this.textBox3.TabIndex = 8;
+            this.txt_PerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerApellido.Location = new System.Drawing.Point(194, 101);
+            this.txt_PerApellido.Name = "txt_PerApellido";
+            this.txt_PerApellido.Size = new System.Drawing.Size(152, 22);
+            this.txt_PerApellido.TabIndex = 8;
             // 
             // label3
             // 
@@ -678,13 +683,13 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "APELLIDOS:";
             // 
-            // textBox2
+            // txt_PerNombre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(194, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 22);
-            this.textBox2.TabIndex = 6;
+            this.txt_PerNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerNombre.Location = new System.Drawing.Point(194, 59);
+            this.txt_PerNombre.Name = "txt_PerNombre";
+            this.txt_PerNombre.Size = new System.Drawing.Size(152, 22);
+            this.txt_PerNombre.TabIndex = 6;
             // 
             // label2
             // 
@@ -732,13 +737,153 @@
             this.panel2.Size = new System.Drawing.Size(1212, 814);
             this.panel2.TabIndex = 3;
             // 
+            // panel_PerAlumno
+            // 
+            this.panel_PerAlumno.Controls.Add(this.grb_PerAlumno);
+            this.panel_PerAlumno.Location = new System.Drawing.Point(52, 399);
+            this.panel_PerAlumno.Name = "panel_PerAlumno";
+            this.panel_PerAlumno.Size = new System.Drawing.Size(902, 94);
+            this.panel_PerAlumno.TabIndex = 0;
+            // 
+            // panel_PerDocente
+            // 
+            this.panel_PerDocente.Controls.Add(this.grb_PerDocente);
+            this.panel_PerDocente.Location = new System.Drawing.Point(52, 399);
+            this.panel_PerDocente.Name = "panel_PerDocente";
+            this.panel_PerDocente.Size = new System.Drawing.Size(899, 94);
+            this.panel_PerDocente.TabIndex = 17;
+            // 
+            // grb_PerDocente
+            // 
+            this.grb_PerDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grb_PerDocente.Controls.Add(this.cbo_SalNombreD);
+            this.grb_PerDocente.Controls.Add(this.cbo_SalTurnoD);
+            this.grb_PerDocente.Controls.Add(this.label20);
+            this.grb_PerDocente.Controls.Add(this.label21);
+            this.grb_PerDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_PerDocente.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grb_PerDocente.Location = new System.Drawing.Point(19, 6);
+            this.grb_PerDocente.Name = "grb_PerDocente";
+            this.grb_PerDocente.Size = new System.Drawing.Size(859, 85);
+            this.grb_PerDocente.TabIndex = 17;
+            this.grb_PerDocente.TabStop = false;
+            this.grb_PerDocente.Text = "Datos Docente";
+            // 
+            // cbo_SalNombreD
+            // 
+            this.cbo_SalNombreD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalNombreD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalNombreD.FormattingEnabled = true;
+            this.cbo_SalNombreD.Location = new System.Drawing.Point(534, 33);
+            this.cbo_SalNombreD.Name = "cbo_SalNombreD";
+            this.cbo_SalNombreD.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalNombreD.TabIndex = 16;
+            // 
+            // cbo_SalTurnoD
+            // 
+            this.cbo_SalTurnoD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalTurnoD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalTurnoD.FormattingEnabled = true;
+            this.cbo_SalTurnoD.Location = new System.Drawing.Point(228, 34);
+            this.cbo_SalTurnoD.Name = "cbo_SalTurnoD";
+            this.cbo_SalTurnoD.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalTurnoD.TabIndex = 15;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label20.Location = new System.Drawing.Point(476, 36);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 17);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "SALA:";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label21.Location = new System.Drawing.Point(154, 36);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(68, 17);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "TURNO:";
+            // 
+            // panel_PerAluTut
+            // 
+            this.panel_PerAluTut.Controls.Add(this.grb_PerAluTut);
+            this.panel_PerAluTut.Location = new System.Drawing.Point(48, 459);
+            this.panel_PerAluTut.Name = "panel_PerAluTut";
+            this.panel_PerAluTut.Size = new System.Drawing.Size(899, 94);
+            this.panel_PerAluTut.TabIndex = 18;
+            // 
+            // grb_PerAluTut
+            // 
+            this.grb_PerAluTut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grb_PerAluTut.Controls.Add(this.textBox1);
+            this.grb_PerAluTut.Controls.Add(this.txt_PerLegTut);
+            this.grb_PerAluTut.Controls.Add(this.label22);
+            this.grb_PerAluTut.Controls.Add(this.label23);
+            this.grb_PerAluTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_PerAluTut.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grb_PerAluTut.Location = new System.Drawing.Point(16, 9);
+            this.grb_PerAluTut.Name = "grb_PerAluTut";
+            this.grb_PerAluTut.Size = new System.Drawing.Size(859, 85);
+            this.grb_PerAluTut.TabIndex = 17;
+            this.grb_PerAluTut.TabStop = false;
+            this.grb_PerAluTut.Text = "ALUMNO";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label22.Location = new System.Drawing.Point(476, 36);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 17);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "NOMBRE: ";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label23.Location = new System.Drawing.Point(74, 37);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(74, 17);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "LEGAJO:";
+            // 
+            // txt_PerLegTut
+            // 
+            this.txt_PerLegTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerLegTut.Location = new System.Drawing.Point(154, 33);
+            this.txt_PerLegTut.Name = "txt_PerLegTut";
+            this.txt_PerLegTut.Size = new System.Drawing.Size(229, 22);
+            this.txt_PerLegTut.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(563, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 22);
+            this.textBox1.TabIndex = 18;
+            // 
             // frmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1042, 763);
+            this.ClientSize = new System.Drawing.Size(1169, 763);
             this.Controls.Add(this.panel2);
             this.Name = "frmPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
@@ -749,12 +894,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).EndInit();
             this.panel_PerContenedor.ResumeLayout(false);
             this.panel_PerContenedor.PerformLayout();
-            this.panel_PerBuscar.ResumeLayout(false);
-            this.panel_PerBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_BuscarPer)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel_PerBuscarAlu.ResumeLayout(false);
+            this.panel_PerBuscarAlu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).EndInit();
+            this.grb_PerAlumno.ResumeLayout(false);
+            this.grb_PerAlumno.PerformLayout();
             this.grp_DomPer.ResumeLayout(false);
             this.grp_DomPer.PerformLayout();
             this.grpBox_DatosPer.ResumeLayout(false);
@@ -762,6 +906,13 @@
             this.panel_FooterPer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel_PerAlumno.ResumeLayout(false);
+            this.panel_PerDocente.ResumeLayout(false);
+            this.grb_PerDocente.ResumeLayout(false);
+            this.grb_PerDocente.PerformLayout();
+            this.panel_PerAluTut.ResumeLayout(false);
+            this.grb_PerAluTut.ResumeLayout(false);
+            this.grb_PerAluTut.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -773,54 +924,66 @@
         private FontAwesome.Sharp.IconPictureBox icBtn_EliminarPer;
         private FontAwesome.Sharp.IconPictureBox icBtn_EditarPer;
         private System.Windows.Forms.Panel panel_PerContenedor;
-        private System.Windows.Forms.Panel panel_PerBuscar;
+        private System.Windows.Forms.Panel panel_PerBuscarAlu;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconPictureBox icBtn_BuscarPer;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_PerBuscar;
+        private FontAwesome.Sharp.IconPictureBox icBtn_PerBuscar;
+        private System.Windows.Forms.ComboBox cbo_TipoPersonas;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton Ibtn_PerCancelar;
-        private FontAwesome.Sharp.IconButton Ibtn_PerGuardar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private FontAwesome.Sharp.IconButton icbtn_PerCancelar;
+        private FontAwesome.Sharp.IconButton icbtn_PerGuardar;
+        private System.Windows.Forms.GroupBox grb_PerAlumno;
+        private System.Windows.Forms.ComboBox cbo_SalNombreA;
+        private System.Windows.Forms.ComboBox cbo_SalTurnoA;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txt_PerLegajo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox grp_DomPer;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txt_DomEmail;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txt_DomTelSecundario;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txt_DomTelPrincipal;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txt_DomPais;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txt_DomProvincia;
+        private System.Windows.Forms.TextBox txt_DomCP;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_DomBarrio;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_DomNum;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_DomCalle;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox grpBox_DatosPer;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dtp_PerFechaNac;
+        private System.Windows.Forms.ComboBox cbo_PerGenero;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_PerDni;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_PerApellido;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_PerNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_FooterPer;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_PerAlumno;
+        private System.Windows.Forms.Panel panel_PerDocente;
+        private System.Windows.Forms.GroupBox grb_PerDocente;
+        private System.Windows.Forms.ComboBox cbo_SalNombreD;
+        private System.Windows.Forms.ComboBox cbo_SalTurnoD;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel_PerAluTut;
+        private System.Windows.Forms.GroupBox grb_PerAluTut;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_PerLegTut;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
     }
 }

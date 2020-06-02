@@ -65,7 +65,8 @@ namespace GestionJardin
             }
             else
             {
-                MessageBox.Show("Ingrese una FECHA valida por favor. " + Convert.ToString(objConceptos.CON_FECHA_ACT));
+                v_controlInsertar = 1;
+                MessageBox.Show("Error; " + v_controlInsertar .ToString()+ ". Ingrese una FECHA valida por favor. " + Convert.ToString(objConceptos.CON_FECHA_ACT.ToShortDateString()));
             }
 
             //Se controla que ingrese un semestre dentro de los comprendidos
@@ -75,7 +76,8 @@ namespace GestionJardin
             }
             else
             {
-                MessageBox.Show("Ingrese un SEMESTRE valido por favor. " + Convert.ToString(objConceptos.CON_SEMESTRE));
+                v_controlInsertar = 2;
+                MessageBox.Show("Error; " + v_controlInsertar.ToString() + ".Ingrese un SEMESTRE valido por favor. ");
             }
 
             //Se controla que el ingrese un año actual
@@ -85,7 +87,8 @@ namespace GestionJardin
             }
             else
             {
-                MessageBox.Show("Ingrese un AÑO valido por favor. " + Convert.ToString(objConceptos.CON_SEMESTRE));
+                v_controlInsertar = 3;
+                MessageBox.Show("Error; " + v_controlInsertar.ToString() + ".Ingrese un AÑO valido por favor. " + Convert.ToString(objConceptos.CON_PERIODO));
             }
 
             //Si todo lo anterior esta ok, se realiza el ingreso de la persona
