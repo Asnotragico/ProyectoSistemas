@@ -33,6 +33,26 @@
             this.icBtn_EliminarPer = new FontAwesome.Sharp.IconPictureBox();
             this.icBtn_EditarPer = new FontAwesome.Sharp.IconPictureBox();
             this.panel_PerContenedor = new System.Windows.Forms.Panel();
+            this.panel_PerDocente = new System.Windows.Forms.Panel();
+            this.grb_PerDocente = new System.Windows.Forms.GroupBox();
+            this.cbo_SalNombreD = new System.Windows.Forms.ComboBox();
+            this.cbo_SalTurnoD = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel_PerAluTut = new System.Windows.Forms.Panel();
+            this.grb_PerAluTut = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_PerLegTut = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel_PerAlumno = new System.Windows.Forms.Panel();
+            this.grb_PerAlumno = new System.Windows.Forms.GroupBox();
+            this.cbo_SalNombreA = new System.Windows.Forms.ComboBox();
+            this.cbo_SalTurnoA = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txt_PerLegajo = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel_PerBuscarAlu = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_PerBuscar = new System.Windows.Forms.TextBox();
@@ -41,13 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.icbtn_PerCancelar = new FontAwesome.Sharp.IconButton();
             this.icbtn_PerGuardar = new FontAwesome.Sharp.IconButton();
-            this.grb_PerAlumno = new System.Windows.Forms.GroupBox();
-            this.cbo_SalNombreA = new System.Windows.Forms.ComboBox();
-            this.cbo_SalTurnoA = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txt_PerLegajo = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.grp_DomPer = new System.Windows.Forms.GroupBox();
             this.txt_DomEmail = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,37 +94,24 @@
             this.panel_FooterPer = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel_PerAlumno = new System.Windows.Forms.Panel();
-            this.panel_PerDocente = new System.Windows.Forms.Panel();
-            this.grb_PerDocente = new System.Windows.Forms.GroupBox();
-            this.cbo_SalNombreD = new System.Windows.Forms.ComboBox();
-            this.cbo_SalTurnoD = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.panel_PerAluTut = new System.Windows.Forms.Panel();
-            this.grb_PerAluTut = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txt_PerLegTut = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel_Per_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).BeginInit();
             this.panel_PerContenedor.SuspendLayout();
+            this.panel_PerDocente.SuspendLayout();
+            this.grb_PerDocente.SuspendLayout();
+            this.panel_PerAluTut.SuspendLayout();
+            this.grb_PerAluTut.SuspendLayout();
+            this.panel_PerAlumno.SuspendLayout();
+            this.grb_PerAlumno.SuspendLayout();
             this.panel_PerBuscarAlu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).BeginInit();
-            this.grb_PerAlumno.SuspendLayout();
             this.grp_DomPer.SuspendLayout();
             this.grpBox_DatosPer.SuspendLayout();
             this.panel_FooterPer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel_PerAlumno.SuspendLayout();
-            this.panel_PerDocente.SuspendLayout();
-            this.grb_PerDocente.SuspendLayout();
-            this.panel_PerAluTut.SuspendLayout();
-            this.grb_PerAluTut.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Per_Menu
@@ -132,7 +132,7 @@
             this.icBtn_AgregarPer.ForeColor = System.Drawing.Color.SeaGreen;
             this.icBtn_AgregarPer.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.icBtn_AgregarPer.IconColor = System.Drawing.Color.SeaGreen;
-            this.icBtn_AgregarPer.IconSize = 75;
+            this.icBtn_AgregarPer.IconSize = 69;
             this.icBtn_AgregarPer.Location = new System.Drawing.Point(18, 12);
             this.icBtn_AgregarPer.Name = "icBtn_AgregarPer";
             this.icBtn_AgregarPer.Size = new System.Drawing.Size(86, 69);
@@ -183,12 +183,246 @@
             this.panel_PerContenedor.Size = new System.Drawing.Size(971, 671);
             this.panel_PerContenedor.TabIndex = 2;
             // 
+            // panel_PerDocente
+            // 
+            this.panel_PerDocente.Controls.Add(this.grb_PerDocente);
+            this.panel_PerDocente.Location = new System.Drawing.Point(65, 399);
+            this.panel_PerDocente.Name = "panel_PerDocente";
+            this.panel_PerDocente.Size = new System.Drawing.Size(906, 99);
+            this.panel_PerDocente.TabIndex = 17;
+            // 
+            // grb_PerDocente
+            // 
+            this.grb_PerDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grb_PerDocente.Controls.Add(this.cbo_SalNombreD);
+            this.grb_PerDocente.Controls.Add(this.cbo_SalTurnoD);
+            this.grb_PerDocente.Controls.Add(this.label20);
+            this.grb_PerDocente.Controls.Add(this.label21);
+            this.grb_PerDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_PerDocente.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grb_PerDocente.Location = new System.Drawing.Point(14, 9);
+            this.grb_PerDocente.Name = "grb_PerDocente";
+            this.grb_PerDocente.Size = new System.Drawing.Size(857, 73);
+            this.grb_PerDocente.TabIndex = 17;
+            this.grb_PerDocente.TabStop = false;
+            this.grb_PerDocente.Text = "Datos Docente";
+            // 
+            // cbo_SalNombreD
+            // 
+            this.cbo_SalNombreD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalNombreD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_SalNombreD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalNombreD.FormattingEnabled = true;
+            this.cbo_SalNombreD.Location = new System.Drawing.Point(533, 27);
+            this.cbo_SalNombreD.Name = "cbo_SalNombreD";
+            this.cbo_SalNombreD.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalNombreD.TabIndex = 16;
+            // 
+            // cbo_SalTurnoD
+            // 
+            this.cbo_SalTurnoD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalTurnoD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_SalTurnoD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalTurnoD.FormattingEnabled = true;
+            this.cbo_SalTurnoD.Items.AddRange(new object[] {
+            "MAÑANA",
+            "TARDE"});
+            this.cbo_SalTurnoD.Location = new System.Drawing.Point(227, 28);
+            this.cbo_SalTurnoD.Name = "cbo_SalTurnoD";
+            this.cbo_SalTurnoD.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalTurnoD.TabIndex = 15;
+            this.cbo_SalTurnoD.SelectedIndexChanged += new System.EventHandler(this.cbo_SalTurnoD_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label20.Location = new System.Drawing.Point(475, 30);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 17);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "SALA:";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label21.Location = new System.Drawing.Point(153, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(68, 17);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "TURNO:";
+            // 
+            // panel_PerAluTut
+            // 
+            this.panel_PerAluTut.Controls.Add(this.grb_PerAluTut);
+            this.panel_PerAluTut.Location = new System.Drawing.Point(47, 466);
+            this.panel_PerAluTut.Name = "panel_PerAluTut";
+            this.panel_PerAluTut.Size = new System.Drawing.Size(904, 94);
+            this.panel_PerAluTut.TabIndex = 18;
+            // 
+            // grb_PerAluTut
+            // 
+            this.grb_PerAluTut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grb_PerAluTut.Controls.Add(this.textBox1);
+            this.grb_PerAluTut.Controls.Add(this.txt_PerLegTut);
+            this.grb_PerAluTut.Controls.Add(this.label22);
+            this.grb_PerAluTut.Controls.Add(this.label23);
+            this.grb_PerAluTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_PerAluTut.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grb_PerAluTut.Location = new System.Drawing.Point(28, 6);
+            this.grb_PerAluTut.Name = "grb_PerAluTut";
+            this.grb_PerAluTut.Size = new System.Drawing.Size(859, 85);
+            this.grb_PerAluTut.TabIndex = 17;
+            this.grb_PerAluTut.TabStop = false;
+            this.grb_PerAluTut.Text = "ALUMNO";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(563, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 22);
+            this.textBox1.TabIndex = 18;
+            // 
+            // txt_PerLegTut
+            // 
+            this.txt_PerLegTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerLegTut.Location = new System.Drawing.Point(154, 33);
+            this.txt_PerLegTut.Name = "txt_PerLegTut";
+            this.txt_PerLegTut.Size = new System.Drawing.Size(229, 22);
+            this.txt_PerLegTut.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label22.Location = new System.Drawing.Point(476, 36);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 17);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "NOMBRE: ";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label23.Location = new System.Drawing.Point(74, 37);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(74, 17);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "LEGAJO:";
+            // 
+            // panel_PerAlumno
+            // 
+            this.panel_PerAlumno.Controls.Add(this.grb_PerAlumno);
+            this.panel_PerAlumno.Location = new System.Drawing.Point(50, 411);
+            this.panel_PerAlumno.Name = "panel_PerAlumno";
+            this.panel_PerAlumno.Size = new System.Drawing.Size(902, 94);
+            this.panel_PerAlumno.TabIndex = 0;
+            // 
+            // grb_PerAlumno
+            // 
+            this.grb_PerAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.grb_PerAlumno.Controls.Add(this.cbo_SalNombreA);
+            this.grb_PerAlumno.Controls.Add(this.cbo_SalTurnoA);
+            this.grb_PerAlumno.Controls.Add(this.label18);
+            this.grb_PerAlumno.Controls.Add(this.label17);
+            this.grb_PerAlumno.Controls.Add(this.txt_PerLegajo);
+            this.grb_PerAlumno.Controls.Add(this.label16);
+            this.grb_PerAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_PerAlumno.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.grb_PerAlumno.Location = new System.Drawing.Point(21, 14);
+            this.grb_PerAlumno.Name = "grb_PerAlumno";
+            this.grb_PerAlumno.Size = new System.Drawing.Size(859, 71);
+            this.grb_PerAlumno.TabIndex = 16;
+            this.grb_PerAlumno.TabStop = false;
+            this.grb_PerAlumno.Text = "Datos Alumno";
+            // 
+            // cbo_SalNombreA
+            // 
+            this.cbo_SalNombreA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalNombreA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_SalNombreA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalNombreA.FormattingEnabled = true;
+            this.cbo_SalNombreA.Location = new System.Drawing.Point(685, 31);
+            this.cbo_SalNombreA.Name = "cbo_SalNombreA";
+            this.cbo_SalNombreA.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalNombreA.TabIndex = 16;
+            // 
+            // cbo_SalTurnoA
+            // 
+            this.cbo_SalTurnoA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_SalTurnoA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_SalTurnoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SalTurnoA.FormattingEnabled = true;
+            this.cbo_SalTurnoA.Items.AddRange(new object[] {
+            "MAÑANA",
+            "TARDE"});
+            this.cbo_SalTurnoA.Location = new System.Drawing.Point(411, 31);
+            this.cbo_SalTurnoA.Name = "cbo_SalTurnoA";
+            this.cbo_SalTurnoA.Size = new System.Drawing.Size(152, 24);
+            this.cbo_SalTurnoA.TabIndex = 15;
+            this.cbo_SalTurnoA.SelectedIndexChanged += new System.EventHandler(this.cbo_SalTurnoA_SelectedIndexChanged);
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label18.Location = new System.Drawing.Point(624, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 17);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "SALA:";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label17.Location = new System.Drawing.Point(337, 34);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 17);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "TURNO:";
+            // 
+            // txt_PerLegajo
+            // 
+            this.txt_PerLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PerLegajo.Location = new System.Drawing.Point(129, 31);
+            this.txt_PerLegajo.Name = "txt_PerLegajo";
+            this.txt_PerLegajo.Size = new System.Drawing.Size(152, 22);
+            this.txt_PerLegajo.TabIndex = 8;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label16.Location = new System.Drawing.Point(41, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(74, 17);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "LEGAJO:";
+            // 
             // panel_PerBuscarAlu
             // 
             this.panel_PerBuscarAlu.Controls.Add(this.label19);
             this.panel_PerBuscarAlu.Controls.Add(this.txt_PerBuscar);
             this.panel_PerBuscarAlu.Controls.Add(this.icBtn_PerBuscar);
-            this.panel_PerBuscarAlu.Location = new System.Drawing.Point(73, 396);
+            this.panel_PerBuscarAlu.Location = new System.Drawing.Point(73, 385);
             this.panel_PerBuscarAlu.Name = "panel_PerBuscarAlu";
             this.panel_PerBuscarAlu.Size = new System.Drawing.Size(837, 48);
             this.panel_PerBuscarAlu.TabIndex = 24;
@@ -229,6 +463,7 @@
             // cbo_TipoPersonas
             // 
             this.cbo_TipoPersonas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_TipoPersonas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TipoPersonas.FormattingEnabled = true;
             this.cbo_TipoPersonas.Location = new System.Drawing.Point(476, 16);
             this.cbo_TipoPersonas.Name = "cbo_TipoPersonas";
@@ -279,88 +514,6 @@
             this.icbtn_PerGuardar.Text = "GUARDAR";
             this.icbtn_PerGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icbtn_PerGuardar.UseVisualStyleBackColor = false;
-            // 
-            // grb_PerAlumno
-            // 
-            this.grb_PerAlumno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.grb_PerAlumno.Controls.Add(this.cbo_SalNombreA);
-            this.grb_PerAlumno.Controls.Add(this.cbo_SalTurnoA);
-            this.grb_PerAlumno.Controls.Add(this.label18);
-            this.grb_PerAlumno.Controls.Add(this.label17);
-            this.grb_PerAlumno.Controls.Add(this.txt_PerLegajo);
-            this.grb_PerAlumno.Controls.Add(this.label16);
-            this.grb_PerAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_PerAlumno.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.grb_PerAlumno.Location = new System.Drawing.Point(6, 9);
-            this.grb_PerAlumno.Name = "grb_PerAlumno";
-            this.grb_PerAlumno.Size = new System.Drawing.Size(859, 71);
-            this.grb_PerAlumno.TabIndex = 16;
-            this.grb_PerAlumno.TabStop = false;
-            this.grb_PerAlumno.Text = "Datos Alumno";
-            // 
-            // cbo_SalNombreA
-            // 
-            this.cbo_SalNombreA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbo_SalNombreA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_SalNombreA.FormattingEnabled = true;
-            this.cbo_SalNombreA.Location = new System.Drawing.Point(682, 31);
-            this.cbo_SalNombreA.Name = "cbo_SalNombreA";
-            this.cbo_SalNombreA.Size = new System.Drawing.Size(152, 24);
-            this.cbo_SalNombreA.TabIndex = 16;
-            // 
-            // cbo_SalTurnoA
-            // 
-            this.cbo_SalTurnoA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbo_SalTurnoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_SalTurnoA.FormattingEnabled = true;
-            this.cbo_SalTurnoA.Location = new System.Drawing.Point(411, 31);
-            this.cbo_SalTurnoA.Name = "cbo_SalTurnoA";
-            this.cbo_SalTurnoA.Size = new System.Drawing.Size(152, 24);
-            this.cbo_SalTurnoA.TabIndex = 15;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label18.Location = new System.Drawing.Point(624, 34);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 17);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "SALA:";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label17.Location = new System.Drawing.Point(337, 34);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 17);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "TURNO:";
-            // 
-            // txt_PerLegajo
-            // 
-            this.txt_PerLegajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PerLegajo.Location = new System.Drawing.Point(129, 31);
-            this.txt_PerLegajo.Name = "txt_PerLegajo";
-            this.txt_PerLegajo.Size = new System.Drawing.Size(152, 22);
-            this.txt_PerLegajo.TabIndex = 8;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label16.Location = new System.Drawing.Point(41, 34);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 17);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "LEGAJO:";
             // 
             // grp_DomPer
             // 
@@ -605,10 +758,12 @@
             this.dtp_PerFechaNac.Name = "dtp_PerFechaNac";
             this.dtp_PerFechaNac.Size = new System.Drawing.Size(152, 22);
             this.dtp_PerFechaNac.TabIndex = 14;
+            this.dtp_PerFechaNac.ValueChanged += new System.EventHandler(this.dtp_PerFechaNac_ValueChanged);
             // 
             // cbo_PerGenero
             // 
             this.cbo_PerGenero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbo_PerGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_PerGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_PerGenero.FormattingEnabled = true;
             this.cbo_PerGenero.Items.AddRange(new object[] {
@@ -737,146 +892,6 @@
             this.panel2.Size = new System.Drawing.Size(1212, 814);
             this.panel2.TabIndex = 3;
             // 
-            // panel_PerAlumno
-            // 
-            this.panel_PerAlumno.Controls.Add(this.grb_PerAlumno);
-            this.panel_PerAlumno.Location = new System.Drawing.Point(52, 399);
-            this.panel_PerAlumno.Name = "panel_PerAlumno";
-            this.panel_PerAlumno.Size = new System.Drawing.Size(902, 94);
-            this.panel_PerAlumno.TabIndex = 0;
-            // 
-            // panel_PerDocente
-            // 
-            this.panel_PerDocente.Controls.Add(this.grb_PerDocente);
-            this.panel_PerDocente.Location = new System.Drawing.Point(52, 399);
-            this.panel_PerDocente.Name = "panel_PerDocente";
-            this.panel_PerDocente.Size = new System.Drawing.Size(899, 94);
-            this.panel_PerDocente.TabIndex = 17;
-            // 
-            // grb_PerDocente
-            // 
-            this.grb_PerDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.grb_PerDocente.Controls.Add(this.cbo_SalNombreD);
-            this.grb_PerDocente.Controls.Add(this.cbo_SalTurnoD);
-            this.grb_PerDocente.Controls.Add(this.label20);
-            this.grb_PerDocente.Controls.Add(this.label21);
-            this.grb_PerDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_PerDocente.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.grb_PerDocente.Location = new System.Drawing.Point(19, 6);
-            this.grb_PerDocente.Name = "grb_PerDocente";
-            this.grb_PerDocente.Size = new System.Drawing.Size(859, 85);
-            this.grb_PerDocente.TabIndex = 17;
-            this.grb_PerDocente.TabStop = false;
-            this.grb_PerDocente.Text = "Datos Docente";
-            // 
-            // cbo_SalNombreD
-            // 
-            this.cbo_SalNombreD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbo_SalNombreD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_SalNombreD.FormattingEnabled = true;
-            this.cbo_SalNombreD.Location = new System.Drawing.Point(534, 33);
-            this.cbo_SalNombreD.Name = "cbo_SalNombreD";
-            this.cbo_SalNombreD.Size = new System.Drawing.Size(152, 24);
-            this.cbo_SalNombreD.TabIndex = 16;
-            // 
-            // cbo_SalTurnoD
-            // 
-            this.cbo_SalTurnoD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbo_SalTurnoD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_SalTurnoD.FormattingEnabled = true;
-            this.cbo_SalTurnoD.Location = new System.Drawing.Point(228, 34);
-            this.cbo_SalTurnoD.Name = "cbo_SalTurnoD";
-            this.cbo_SalTurnoD.Size = new System.Drawing.Size(152, 24);
-            this.cbo_SalTurnoD.TabIndex = 15;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label20.Location = new System.Drawing.Point(476, 36);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(52, 17);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "SALA:";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label21.Location = new System.Drawing.Point(154, 36);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(68, 17);
-            this.label21.TabIndex = 9;
-            this.label21.Text = "TURNO:";
-            // 
-            // panel_PerAluTut
-            // 
-            this.panel_PerAluTut.Controls.Add(this.grb_PerAluTut);
-            this.panel_PerAluTut.Location = new System.Drawing.Point(48, 459);
-            this.panel_PerAluTut.Name = "panel_PerAluTut";
-            this.panel_PerAluTut.Size = new System.Drawing.Size(899, 94);
-            this.panel_PerAluTut.TabIndex = 18;
-            // 
-            // grb_PerAluTut
-            // 
-            this.grb_PerAluTut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.grb_PerAluTut.Controls.Add(this.textBox1);
-            this.grb_PerAluTut.Controls.Add(this.txt_PerLegTut);
-            this.grb_PerAluTut.Controls.Add(this.label22);
-            this.grb_PerAluTut.Controls.Add(this.label23);
-            this.grb_PerAluTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_PerAluTut.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.grb_PerAluTut.Location = new System.Drawing.Point(16, 9);
-            this.grb_PerAluTut.Name = "grb_PerAluTut";
-            this.grb_PerAluTut.Size = new System.Drawing.Size(859, 85);
-            this.grb_PerAluTut.TabIndex = 17;
-            this.grb_PerAluTut.TabStop = false;
-            this.grb_PerAluTut.Text = "ALUMNO";
-            // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label22.Location = new System.Drawing.Point(476, 36);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 17);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "NOMBRE: ";
-            // 
-            // label23
-            // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label23.Location = new System.Drawing.Point(74, 37);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(74, 17);
-            this.label23.TabIndex = 9;
-            this.label23.Text = "LEGAJO:";
-            // 
-            // txt_PerLegTut
-            // 
-            this.txt_PerLegTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PerLegTut.Location = new System.Drawing.Point(154, 33);
-            this.txt_PerLegTut.Name = "txt_PerLegTut";
-            this.txt_PerLegTut.Size = new System.Drawing.Size(229, 22);
-            this.txt_PerLegTut.TabIndex = 17;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(563, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 18;
-            // 
             // frmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -894,11 +909,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).EndInit();
             this.panel_PerContenedor.ResumeLayout(false);
             this.panel_PerContenedor.PerformLayout();
+            this.panel_PerDocente.ResumeLayout(false);
+            this.grb_PerDocente.ResumeLayout(false);
+            this.grb_PerDocente.PerformLayout();
+            this.panel_PerAluTut.ResumeLayout(false);
+            this.grb_PerAluTut.ResumeLayout(false);
+            this.grb_PerAluTut.PerformLayout();
+            this.panel_PerAlumno.ResumeLayout(false);
+            this.grb_PerAlumno.ResumeLayout(false);
+            this.grb_PerAlumno.PerformLayout();
             this.panel_PerBuscarAlu.ResumeLayout(false);
             this.panel_PerBuscarAlu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).EndInit();
-            this.grb_PerAlumno.ResumeLayout(false);
-            this.grb_PerAlumno.PerformLayout();
             this.grp_DomPer.ResumeLayout(false);
             this.grp_DomPer.PerformLayout();
             this.grpBox_DatosPer.ResumeLayout(false);
@@ -906,13 +928,6 @@
             this.panel_FooterPer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel_PerAlumno.ResumeLayout(false);
-            this.panel_PerDocente.ResumeLayout(false);
-            this.grb_PerDocente.ResumeLayout(false);
-            this.grb_PerDocente.PerformLayout();
-            this.panel_PerAluTut.ResumeLayout(false);
-            this.grb_PerAluTut.ResumeLayout(false);
-            this.grb_PerAluTut.PerformLayout();
             this.ResumeLayout(false);
 
         }

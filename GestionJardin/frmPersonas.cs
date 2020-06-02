@@ -16,7 +16,7 @@ namespace GestionJardin
         entPersona objPersona = new entPersona();
         metSalas objMetSalas = new metSalas();
 
-        int EdadAños;
+        int EdadAnos;
         int EdadMeses;
 
         public frmPersonas()
@@ -75,68 +75,14 @@ namespace GestionJardin
                     break;
             }
         }
+               
 
-
-        private void cbx_Turno_Sala_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int indexTurno = cbo_SalTurnoA.SelectedIndex;// 0 Mañana 1 Tarde
-
-            Console.WriteLine(indexTurno); // prueba
-            //LISTA SALAS
-            //metSalas objmetSalas = new metSalas();
-
-            cbo_SalTurnoA.DataSource = objMetSalas.ListarSalas(indexTurno);
-            // cbx_Nombre_Salas.DataSource = objmetSalas.ListarSalas(indexTurno);
-            cbo_SalTurnoA.DisplayMember = "SAL_NOMBRE";
-            cbo_SalTurnoA.ValueMember = "SAL_ID";
-
-            if ((EdadAños == 1) || (EdadAños == 2 && EdadMeses <= 6))
-            {
-                //cbx_Nombre_Salas.ValueMember= "ROSA";
-                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("ROSA");
-                cbo_SalNombreA.Enabled = false;
-            }
-
-            else if ((EdadAños == 2 && EdadMeses > 6))
-            {
-                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
-                cbo_SalNombreA.Enabled = false;
-
-            }
-
-            if (EdadAños == 2 || (EdadAños == 3 && EdadMeses < 6))
-
-            {
-                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
-                cbo_SalNombreA.Enabled = false;
-
-            }
-
-            else if (EdadAños == 3 && (EdadAños == 4 && EdadMeses > 6))
-            {
-                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("VERDE");
-                cbo_SalNombreA.Enabled = false;
-
-            }
-
-            if (EdadAños == 4 || (EdadAños == 5 && EdadMeses < 6))
-            {
-                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("VERDE");
-                cbo_SalNombreA.Enabled = false;
-                // cbo_SalTurnoA
-                cbo_SalTurnoA.SelectedIndex = cbo_SalTurnoA.FindStringExact("Mañana");
-                cbo_SalTurnoA.Enabled = false;
-
-            }
-
-        }
-
-        private void dateTime_Fecha_Nac_ValueChanged(object sender, EventArgs e)
+        private void dtp_PerFechaNac_ValueChanged(object sender, EventArgs e)
         {
             DateTime FechaReferencia = new DateTime(2020, 06, 30);
 
 
-            EdadAños = (Convert.ToInt32(FechaReferencia.Year - dtp_PerFechaNac.Value.Year));
+            EdadAnos = (Convert.ToInt32(FechaReferencia.Year - dtp_PerFechaNac.Value.Year));
 
             EdadMeses = (Convert.ToInt32(FechaReferencia.Month - dtp_PerFechaNac.Value.Month));
 
@@ -146,7 +92,65 @@ namespace GestionJardin
             {
                 EdadMeses = (12 - (Convert.ToInt32(dtp_PerFechaNac.Value.Month)) + Convert.ToInt32((FechaReferencia.Month)));
             }
+        }
 
+        private void cbo_SalTurnoA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexTurno = cbo_SalTurnoA.SelectedIndex;// 0 Mañana 1 Tarde
+
+            Console.WriteLine(indexTurno); // prueba  ¿para que es?
+       
+            cbo_SalNombreA.DataSource = objMetSalas.ListarSalas(indexTurno);
+            cbo_SalNombreA.DisplayMember = "SAL_NOMBRE";
+            cbo_SalNombreA.ValueMember = "SAL_ID";
+
+            if ((EdadAnos == 1) || (EdadAnos == 2 && EdadMeses <= 6))
+            {
+                //cbx_Nombre_Salas.ValueMember= "ROSA";
+                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("ROSA");
+                cbo_SalNombreA.Enabled = false;
+            }
+
+            else if ((EdadAnos == 2 && EdadMeses > 6))
+            {
+                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
+                cbo_SalNombreA.Enabled = false;
+
+            }
+
+            if (EdadAnos == 2 || (EdadAnos == 3 && EdadMeses < 6))
+
+            {
+                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
+                cbo_SalNombreA.Enabled = false;
+
+            }
+
+            else if (EdadAnos == 3 && (EdadAnos == 4 && EdadMeses > 6))
+            {
+                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("VERDE");
+                cbo_SalNombreA.Enabled = false;
+
+            }
+
+            if (EdadAnos == 4 || (EdadAnos == 5 && EdadMeses < 6))
+            {
+                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("VERDE");
+                cbo_SalNombreA.Enabled = false;
+                // cbo_SalTurnoA
+                cbo_SalTurnoA.SelectedIndex = cbo_SalTurnoA.FindStringExact("Mañana");
+                cbo_SalTurnoA.Enabled = false;
+
+            }
+        }
+
+        private void cbo_SalTurnoD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexTurno = cbo_SalTurnoD.SelectedIndex;// 0 Mañana 1 Tarde
+
+            cbo_SalNombreD.DataSource = objMetSalas.ListarSalas(indexTurno);
+            cbo_SalNombreD.DisplayMember = "SAL_NOMBRE";
+            cbo_SalNombreD.ValueMember = "SAL_ID";
         }
     }
 }

@@ -44,6 +44,9 @@
             this.icBtn_BuscarPer = new FontAwesome.Sharp.IconPictureBox();
             this.dgv_ConVisualizar = new System.Windows.Forms.DataGridView();
             this.panel_ConIngresar = new System.Windows.Forms.Panel();
+            this.Ibtn_ConCancelar = new FontAwesome.Sharp.IconButton();
+            this.Ibtn_ConGuardar = new FontAwesome.Sharp.IconButton();
+            this.dtp_ConFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.cbo_Con_Semestre = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_ConPeriodo = new System.Windows.Forms.TextBox();
@@ -53,9 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_ConNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtp_ConFechaAlta = new System.Windows.Forms.DateTimePicker();
-            this.Ibtn_ConGuardar = new FontAwesome.Sharp.IconButton();
-            this.Ibtn_ConCancelar = new FontAwesome.Sharp.IconButton();
             this.panel_Per_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_VisualizarConc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarConc)).BeginInit();
@@ -269,8 +269,49 @@
             this.panel_ConIngresar.Size = new System.Drawing.Size(410, 334);
             this.panel_ConIngresar.TabIndex = 23;
             // 
+            // Ibtn_ConCancelar
+            // 
+            this.Ibtn_ConCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.Ibtn_ConCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Ibtn_ConCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Ibtn_ConCancelar.IconColor = System.Drawing.Color.Black;
+            this.Ibtn_ConCancelar.IconSize = 16;
+            this.Ibtn_ConCancelar.Location = new System.Drawing.Point(220, 247);
+            this.Ibtn_ConCancelar.Name = "Ibtn_ConCancelar";
+            this.Ibtn_ConCancelar.Rotation = 0D;
+            this.Ibtn_ConCancelar.Size = new System.Drawing.Size(133, 53);
+            this.Ibtn_ConCancelar.TabIndex = 31;
+            this.Ibtn_ConCancelar.Text = "CANCELAR";
+            this.Ibtn_ConCancelar.UseVisualStyleBackColor = false;
+            // 
+            // Ibtn_ConGuardar
+            // 
+            this.Ibtn_ConGuardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.Ibtn_ConGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Ibtn_ConGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.Ibtn_ConGuardar.IconColor = System.Drawing.Color.Black;
+            this.Ibtn_ConGuardar.IconSize = 40;
+            this.Ibtn_ConGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Ibtn_ConGuardar.Location = new System.Drawing.Point(68, 247);
+            this.Ibtn_ConGuardar.Name = "Ibtn_ConGuardar";
+            this.Ibtn_ConGuardar.Rotation = 0D;
+            this.Ibtn_ConGuardar.Size = new System.Drawing.Size(133, 53);
+            this.Ibtn_ConGuardar.TabIndex = 30;
+            this.Ibtn_ConGuardar.Text = "GUARDAR";
+            this.Ibtn_ConGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Ibtn_ConGuardar.UseVisualStyleBackColor = false;
+            // 
+            // dtp_ConFechaAlta
+            // 
+            this.dtp_ConFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ConFechaAlta.Location = new System.Drawing.Point(175, 191);
+            this.dtp_ConFechaAlta.Name = "dtp_ConFechaAlta";
+            this.dtp_ConFechaAlta.Size = new System.Drawing.Size(156, 22);
+            this.dtp_ConFechaAlta.TabIndex = 29;
+            // 
             // cbo_Con_Semestre
             // 
+            this.cbo_Con_Semestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Con_Semestre.FormattingEnabled = true;
             this.cbo_Con_Semestre.Items.AddRange(new object[] {
             "0",
@@ -356,46 +397,6 @@
             this.label1.Size = new System.Drawing.Size(86, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "NOMBRE:";
-            // 
-            // dtp_ConFechaAlta
-            // 
-            this.dtp_ConFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ConFechaAlta.Location = new System.Drawing.Point(175, 191);
-            this.dtp_ConFechaAlta.Name = "dtp_ConFechaAlta";
-            this.dtp_ConFechaAlta.Size = new System.Drawing.Size(156, 22);
-            this.dtp_ConFechaAlta.TabIndex = 29;
-            // 
-            // Ibtn_ConGuardar
-            // 
-            this.Ibtn_ConGuardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.Ibtn_ConGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_ConGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.Ibtn_ConGuardar.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_ConGuardar.IconSize = 40;
-            this.Ibtn_ConGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ibtn_ConGuardar.Location = new System.Drawing.Point(48, 247);
-            this.Ibtn_ConGuardar.Name = "Ibtn_ConGuardar";
-            this.Ibtn_ConGuardar.Rotation = 0D;
-            this.Ibtn_ConGuardar.Size = new System.Drawing.Size(133, 53);
-            this.Ibtn_ConGuardar.TabIndex = 30;
-            this.Ibtn_ConGuardar.Text = "GUARDAR";
-            this.Ibtn_ConGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Ibtn_ConGuardar.UseVisualStyleBackColor = false;
-            // 
-            // Ibtn_ConCancelar
-            // 
-            this.Ibtn_ConCancelar.BackColor = System.Drawing.Color.DarkGray;
-            this.Ibtn_ConCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Ibtn_ConCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Ibtn_ConCancelar.IconColor = System.Drawing.Color.Black;
-            this.Ibtn_ConCancelar.IconSize = 16;
-            this.Ibtn_ConCancelar.Location = new System.Drawing.Point(213, 247);
-            this.Ibtn_ConCancelar.Name = "Ibtn_ConCancelar";
-            this.Ibtn_ConCancelar.Rotation = 0D;
-            this.Ibtn_ConCancelar.Size = new System.Drawing.Size(133, 53);
-            this.Ibtn_ConCancelar.TabIndex = 31;
-            this.Ibtn_ConCancelar.Text = "CANCELAR";
-            this.Ibtn_ConCancelar.UseVisualStyleBackColor = false;
             // 
             // frmConceptos
             // 

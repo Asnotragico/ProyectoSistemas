@@ -27,8 +27,10 @@ namespace GestionJardin
             DataTable Tabla = new DataTable();
             con.Open();
 
-            string consulta = "SELECT * FROM T_SALA S WHERE S.SAL_TURNO = @turnoSala";
-            cmd = new SqlCommand(consulta,con);
+             string consulta = "SELECT * FROM T_SALA S WHERE S.SAL_TURNO = @turnoSala";
+             cmd = new SqlCommand(consulta,con);
+
+           // cmd.CommandText = "SELECT * FROM T_SALA S WHERE S.SAL_TURNO = @turnoSala";
 
             if (turno == 0)
             {
