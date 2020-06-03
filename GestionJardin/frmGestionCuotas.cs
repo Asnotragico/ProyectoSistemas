@@ -20,7 +20,16 @@ namespace GestionJardin
 
         private void frmGestionCuotas_Load(object sender, EventArgs e)
         {
-            
+
+            //cargar autocompletar textBox Matriculados
+            AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
+            metPersonas metPersonas = new metPersonas();
+            alumnos = metPersonas.traerPersonasAutocompetar("2");
+
+            txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtMatriculados.AutoCompleteCustomSource = alumnos;
+
 
             //cargar combo Salas
             metCuota metCobro = new metCuota();

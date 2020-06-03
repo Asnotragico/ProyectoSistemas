@@ -51,25 +51,58 @@ namespace GestionJardin
             objConceptos.CON_CONCEPTO = txt_ConNombre.Text.ToUpper();
             objConceptos.CON_VALOR_ACTUAL = Convert.ToDouble(txt_MontoConp.Text);
             objConceptos.CON_FECHA_ACT = dtp_ConFechaAlta.Value;
+            objConceptos.CON_PERIODO = Convert.ToInt32(txt_ConPeriodo.Text);
+            objConceptos.CON_SEMESTRE = Convert.ToInt32(cbo_Con_Semestre.SelectedItem);
 
-
+            int v_controlInsertar = 0;
             DateTime v_fechaFinI = DateTime.MaxValue;
             DateTime v_FechaActual = DateTime.Today;
-            double v_ValorVacio = 0;
 
-
+            //Se controla que ingrese una fecha valida
             if (objConceptos.CON_FECHA_ACT >= v_FechaActual)
             {
-                MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, v_ValorVacio, objConceptos.CON_FECHA_ACT, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S"));
-
-                dgv_ConVisAbm.DataSource = objMet_Conceptos.Visualizar();
-                dgv_ConVisAbm.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
+                v_controlInsertar = 0;
             }
             else
             {
-                MessageBox.Show("Ingrese una fecha valida por favor. " + Convert.ToString(objConceptos.CON_FECHA_ACT));
+                v_controlInsertar = 1;
+                MessageBox.Show("Error; " + v_controlInsertar .ToString()+ ". Ingrese una FECHA valida por favor. " + Convert.ToString(objConceptos.CON_FECHA_ACT.ToShortDateString()));
             }
+
+            //Se controla que ingrese un semestre dentro de los comprendidos
+            if (objConceptos.CON_SEMESTRE == 0 || objConceptos.CON_SEMESTRE == 1 || objConceptos.CON_SEMESTRE == 2)
+            {
+                v_controlInsertar = 0;
+            }
+            else
+            {
+                v_controlInsertar = 2;
+                MessageBox.Show("Error; " + v_controlInsertar.ToString() + ".Ingrese un SEMESTRE valido por favor. ");
+            }
+
+            //Se controla que el ingrese un año actual
+            if (objConceptos.CON_PERIODO >= 2020 && objConceptos.CON_PERIODO <= 9998)
+            {
+                v_controlInsertar = 0;
+            }
+            else
+            {
+                v_controlInsertar = 3;
+                MessageBox.Show("Error; " + v_controlInsertar.ToString() + ".Ingrese un AÑO valido por favor. " + Convert.ToString(objConceptos.CON_PERIODO));
+            }
+
+            //Si todo lo anterior esta ok, se realiza el ingreso de la persona
+            if (v_controlInsertar == 0)
+            {
+                MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_ACT, v_fechaFinI, v_FechaActual, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
+
+                dgv_ConVisAbm.DataSource = objMet_Conceptos.VisualizarIngreso();
+                dgv_ConVisAbm.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            }
+
         }
+
+       
     }
 }

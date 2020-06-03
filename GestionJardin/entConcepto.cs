@@ -22,13 +22,6 @@ namespace GestionJardin
             set { p_valoractual = value; }
         }
 
-        private double p_valoranterior;
-        public double CON_VALOR_ANTERIOR
-        {
-            get { return p_valoranterior; }
-            set { p_valoranterior = value; }
-        }
-
         private DateTime p_fechainicio;
         public DateTime CON_FECHA_INI
         {
@@ -53,6 +46,20 @@ namespace GestionJardin
         {
             get { return p_activo; }
             set { p_activo = value; }
+        }
+
+        private Int32 p_periodo;
+        public Int32 CON_PERIODO
+        {
+            get { return p_periodo; }
+            set { p_periodo = value; }
+        }
+
+        private Int32 p_semestre;
+        public Int32 CON_SEMESTRE
+        {
+            get { return p_semestre; }
+            set { p_semestre = value; }
         }
 
         public entConcepto()

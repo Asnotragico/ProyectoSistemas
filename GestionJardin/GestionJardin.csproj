@@ -110,6 +110,9 @@
     </Compile>
     <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />
+    <Compile Include="metPersonas.cs" />
+    <Compile Include="metSalas.cs" />
+    <Compile Include="metTipoPersona.cs" />
     <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

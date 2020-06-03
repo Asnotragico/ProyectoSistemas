@@ -277,6 +277,7 @@
             // 
             // panel_Contenedor
             // 
+            this.panel_Contenedor.AutoSize = true;
             this.panel_Contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel_Contenedor.Controls.Add(this.pictureBox1);
             this.panel_Contenedor.Controls.Add(this.lbl_Fecha);
@@ -355,6 +356,7 @@
             this.panel_Contenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -371,7 +373,6 @@
         private FontAwesome.Sharp.IconPictureBox iconChildFormCurrent;
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.Panel panel_Shadow;
-        private System.Windows.Forms.Panel panel_Contenedor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_Fecha;
         private System.Windows.Forms.Label lbl_Hora;
@@ -379,5 +380,6 @@
         private FontAwesome.Sharp.IconPictureBox btnMinimizar;
         private FontAwesome.Sharp.IconPictureBox btnMaximizar;
         private FontAwesome.Sharp.IconPictureBox btn_Cerrar;
+        private System.Windows.Forms.Panel panel_Contenedor;
     }
 }

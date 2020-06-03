@@ -18,25 +18,6 @@ C:\Users\Laura\Desktop\proyecto_GestionJardin\ProyectoSistemas-master2\GestionJa
 C:\Users\Laura\Desktop\proyecto_GestionJardin\ProyectoSistemas-master2\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
 C:\Users\Laura\Desktop\proyecto_GestionJardin\ProyectoSistemas-master2\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
 C:\Users\Laura\Desktop\proyecto_GestionJardin\ProyectoSistemas-master2\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.exe.config
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.exe
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.pdb
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\Bunifu_UI_v1.52.dll
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Design.dll
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.dll
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmConceptos.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPersonas.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.exe
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.pdb
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.exe.config
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.exe
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.pdb
@@ -46,7 +27,6 @@ C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramew
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmConceptos.resources
-C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPersonas.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
@@ -57,3 +37,25 @@ C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJard
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.exe
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.pdb
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.exe.config
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.exe
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.pdb
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Design.dll
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.dll
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmConceptos.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPersonas.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.exe
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.pdb
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
