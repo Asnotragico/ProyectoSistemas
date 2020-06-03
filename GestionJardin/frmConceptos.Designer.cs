@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_Per_Menu = new System.Windows.Forms.Panel();
             this.icBtn_VisualizarConc = new FontAwesome.Sharp.IconPictureBox();
             this.icBtn_AgregarConc = new FontAwesome.Sharp.IconPictureBox();
@@ -78,7 +78,7 @@
             this.panel_Per_Menu.Controls.Add(this.icBtn_AgregarConc);
             this.panel_Per_Menu.Controls.Add(this.icBtn_EliminarConc);
             this.panel_Per_Menu.Controls.Add(this.icBtn_EditarConc);
-            this.panel_Per_Menu.Location = new System.Drawing.Point(846, 64);
+            this.panel_Per_Menu.Location = new System.Drawing.Point(941, 103);
             this.panel_Per_Menu.Name = "panel_Per_Menu";
             this.panel_Per_Menu.Size = new System.Drawing.Size(120, 374);
             this.panel_Per_Menu.TabIndex = 1;
@@ -141,9 +141,9 @@
             // 
             this.panel_ConAbm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_ConAbm.Controls.Add(this.dgv_ConVisAbm);
-            this.panel_ConAbm.Location = new System.Drawing.Point(48, 474);
+            this.panel_ConAbm.Location = new System.Drawing.Point(12, 531);
             this.panel_ConAbm.Name = "panel_ConAbm";
-            this.panel_ConAbm.Size = new System.Drawing.Size(918, 123);
+            this.panel_ConAbm.Size = new System.Drawing.Size(989, 143);
             this.panel_ConAbm.TabIndex = 3;
             // 
             // dgv_ConVisAbm
@@ -155,7 +155,7 @@
             this.dgv_ConVisAbm.Name = "dgv_ConVisAbm";
             this.dgv_ConVisAbm.ReadOnly = true;
             this.dgv_ConVisAbm.RowTemplate.Height = 24;
-            this.dgv_ConVisAbm.Size = new System.Drawing.Size(858, 90);
+            this.dgv_ConVisAbm.Size = new System.Drawing.Size(858, 104);
             this.dgv_ConVisAbm.TabIndex = 1;
             // 
             // panel3
@@ -164,9 +164,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.panel3.Controls.Add(this.panel_ConVisualizar);
             this.panel3.Controls.Add(this.panel_ConIngresar);
-            this.panel3.Location = new System.Drawing.Point(72, 44);
+            this.panel3.Location = new System.Drawing.Point(37, 65);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(747, 412);
+            this.panel3.Size = new System.Drawing.Size(876, 460);
             this.panel3.TabIndex = 4;
             // 
             // panel_ConVisualizar
@@ -177,29 +177,30 @@
             this.panel_ConVisualizar.Controls.Add(this.icBtn_BuscarPer);
             this.panel_ConVisualizar.Controls.Add(this.dgv_ConVisualizar);
             this.panel_ConVisualizar.ForeColor = System.Drawing.Color.Black;
-            this.panel_ConVisualizar.Location = new System.Drawing.Point(13, 20);
+            this.panel_ConVisualizar.Location = new System.Drawing.Point(12, 27);
             this.panel_ConVisualizar.Name = "panel_ConVisualizar";
-            this.panel_ConVisualizar.Size = new System.Drawing.Size(721, 374);
+            this.panel_ConVisualizar.Size = new System.Drawing.Size(847, 418);
             this.panel_ConVisualizar.TabIndex = 23;
             // 
             // label19
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.label19.Location = new System.Drawing.Point(72, 77);
+            this.label19.Location = new System.Drawing.Point(76, 99);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(165, 17);
+            this.label19.Size = new System.Drawing.Size(199, 20);
             this.label19.TabIndex = 24;
             this.label19.Text = "BUSCAR CONCEPTO:";
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(252, 74);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(359, 96);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 22);
+            this.textBox1.Size = new System.Drawing.Size(315, 27);
             this.textBox1.TabIndex = 22;
             // 
             // icBtn_BuscarPer
@@ -210,7 +211,7 @@
             this.icBtn_BuscarPer.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.icBtn_BuscarPer.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.icBtn_BuscarPer.IconSize = 24;
-            this.icBtn_BuscarPer.Location = new System.Drawing.Point(582, 74);
+            this.icBtn_BuscarPer.Location = new System.Drawing.Point(691, 99);
             this.icBtn_BuscarPer.Name = "icBtn_BuscarPer";
             this.icBtn_BuscarPer.Size = new System.Drawing.Size(32, 24);
             this.icBtn_BuscarPer.TabIndex = 23;
@@ -223,26 +224,26 @@
             this.dgv_ConVisualizar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_ConVisualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.dgv_ConVisualizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ConVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_ConVisualizar.EnableHeadersVisualStyles = false;
             this.dgv_ConVisualizar.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgv_ConVisualizar.Location = new System.Drawing.Point(17, 151);
+            this.dgv_ConVisualizar.Location = new System.Drawing.Point(80, 198);
             this.dgv_ConVisualizar.Name = "dgv_ConVisualizar";
             this.dgv_ConVisualizar.ReadOnly = true;
             this.dgv_ConVisualizar.RowTemplate.Height = 24;
@@ -264,9 +265,9 @@
             this.panel_ConIngresar.Controls.Add(this.label2);
             this.panel_ConIngresar.Controls.Add(this.txt_ConNombre);
             this.panel_ConIngresar.Controls.Add(this.label1);
-            this.panel_ConIngresar.Location = new System.Drawing.Point(168, 23);
+            this.panel_ConIngresar.Location = new System.Drawing.Point(182, 27);
             this.panel_ConIngresar.Name = "panel_ConIngresar";
-            this.panel_ConIngresar.Size = new System.Drawing.Size(410, 334);
+            this.panel_ConIngresar.Size = new System.Drawing.Size(504, 385);
             this.panel_ConIngresar.TabIndex = 23;
             // 
             // Ibtn_ConCancelar
@@ -276,7 +277,7 @@
             this.Ibtn_ConCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.Ibtn_ConCancelar.IconColor = System.Drawing.Color.Black;
             this.Ibtn_ConCancelar.IconSize = 16;
-            this.Ibtn_ConCancelar.Location = new System.Drawing.Point(220, 247);
+            this.Ibtn_ConCancelar.Location = new System.Drawing.Point(286, 314);
             this.Ibtn_ConCancelar.Name = "Ibtn_ConCancelar";
             this.Ibtn_ConCancelar.Rotation = 0D;
             this.Ibtn_ConCancelar.Size = new System.Drawing.Size(133, 53);
@@ -292,10 +293,10 @@
             this.Ibtn_ConGuardar.IconColor = System.Drawing.Color.Black;
             this.Ibtn_ConGuardar.IconSize = 40;
             this.Ibtn_ConGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ibtn_ConGuardar.Location = new System.Drawing.Point(68, 247);
+            this.Ibtn_ConGuardar.Location = new System.Drawing.Point(61, 314);
             this.Ibtn_ConGuardar.Name = "Ibtn_ConGuardar";
             this.Ibtn_ConGuardar.Rotation = 0D;
-            this.Ibtn_ConGuardar.Size = new System.Drawing.Size(133, 53);
+            this.Ibtn_ConGuardar.Size = new System.Drawing.Size(173, 53);
             this.Ibtn_ConGuardar.TabIndex = 30;
             this.Ibtn_ConGuardar.Text = "GUARDAR";
             this.Ibtn_ConGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -304,7 +305,7 @@
             // dtp_ConFechaAlta
             // 
             this.dtp_ConFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ConFechaAlta.Location = new System.Drawing.Point(175, 191);
+            this.dtp_ConFechaAlta.Location = new System.Drawing.Point(252, 237);
             this.dtp_ConFechaAlta.Name = "dtp_ConFechaAlta";
             this.dtp_ConFechaAlta.Size = new System.Drawing.Size(156, 22);
             this.dtp_ConFechaAlta.TabIndex = 29;
@@ -317,7 +318,7 @@
             "0",
             "1",
             "2"});
-            this.cbo_Con_Semestre.Location = new System.Drawing.Point(175, 149);
+            this.cbo_Con_Semestre.Location = new System.Drawing.Point(252, 187);
             this.cbo_Con_Semestre.Name = "cbo_Con_Semestre";
             this.cbo_Con_Semestre.Size = new System.Drawing.Size(156, 24);
             this.cbo_Con_Semestre.TabIndex = 28;
@@ -327,7 +328,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(65, 150);
+            this.label5.Location = new System.Drawing.Point(72, 188);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 18);
             this.label5.TabIndex = 27;
@@ -335,7 +336,7 @@
             // 
             // txt_ConPeriodo
             // 
-            this.txt_ConPeriodo.Location = new System.Drawing.Point(175, 104);
+            this.txt_ConPeriodo.Location = new System.Drawing.Point(252, 135);
             this.txt_ConPeriodo.Name = "txt_ConPeriodo";
             this.txt_ConPeriodo.Size = new System.Drawing.Size(157, 22);
             this.txt_ConPeriodo.TabIndex = 22;
@@ -345,7 +346,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(121, 105);
+            this.label4.Location = new System.Drawing.Point(136, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 18);
             this.label4.TabIndex = 21;
@@ -356,7 +357,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(57, 194);
+            this.label3.Location = new System.Drawing.Point(72, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 4;
@@ -364,7 +365,7 @@
             // 
             // txt_MontoConp
             // 
-            this.txt_MontoConp.Location = new System.Drawing.Point(175, 65);
+            this.txt_MontoConp.Location = new System.Drawing.Point(251, 83);
             this.txt_MontoConp.Name = "txt_MontoConp";
             this.txt_MontoConp.Size = new System.Drawing.Size(157, 22);
             this.txt_MontoConp.TabIndex = 3;
@@ -374,7 +375,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(94, 66);
+            this.label2.Location = new System.Drawing.Point(109, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 2;
@@ -382,7 +383,7 @@
             // 
             // txt_ConNombre
             // 
-            this.txt_ConNombre.Location = new System.Drawing.Point(175, 29);
+            this.txt_ConNombre.Location = new System.Drawing.Point(251, 26);
             this.txt_ConNombre.Name = "txt_ConNombre";
             this.txt_ConNombre.Size = new System.Drawing.Size(157, 22);
             this.txt_ConNombre.TabIndex = 1;
@@ -392,7 +393,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(83, 30);
+            this.label1.Location = new System.Drawing.Point(109, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 18);
             this.label1.TabIndex = 0;
@@ -403,7 +404,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1041, 609);
+            this.ClientSize = new System.Drawing.Size(1114, 686);
             this.Controls.Add(this.panel_ConAbm);
             this.Controls.Add(this.panel_Per_Menu);
             this.Controls.Add(this.panel3);

@@ -152,5 +152,7 @@ namespace GestionJardin
             cbo_SalNombreD.DisplayMember = "SAL_NOMBRE";
             cbo_SalNombreD.ValueMember = "SAL_ID";
         }
+
+        
     }
 }
