@@ -87,11 +87,12 @@
             // 
             this.icBtn_VisualizarConc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.icBtn_VisualizarConc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.icBtn_VisualizarConc.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.icBtn_VisualizarConc.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.icBtn_VisualizarConc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.icBtn_VisualizarConc.IconSize = 71;
             this.icBtn_VisualizarConc.Location = new System.Drawing.Point(23, 285);
             this.icBtn_VisualizarConc.Name = "icBtn_VisualizarConc";
+            this.icBtn_VisualizarConc.Padding = new System.Windows.Forms.Padding(5);
             this.icBtn_VisualizarConc.Size = new System.Drawing.Size(76, 71);
             this.icBtn_VisualizarConc.TabIndex = 3;
             this.icBtn_VisualizarConc.TabStop = false;
@@ -106,6 +107,7 @@
             this.icBtn_AgregarConc.IconSize = 71;
             this.icBtn_AgregarConc.Location = new System.Drawing.Point(21, 23);
             this.icBtn_AgregarConc.Name = "icBtn_AgregarConc";
+            this.icBtn_AgregarConc.Padding = new System.Windows.Forms.Padding(5);
             this.icBtn_AgregarConc.Size = new System.Drawing.Size(78, 71);
             this.icBtn_AgregarConc.TabIndex = 0;
             this.icBtn_AgregarConc.TabStop = false;
@@ -115,12 +117,13 @@
             // 
             this.icBtn_EliminarConc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.icBtn_EliminarConc.ForeColor = System.Drawing.Color.OrangeRed;
-            this.icBtn_EliminarConc.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.icBtn_EliminarConc.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.icBtn_EliminarConc.IconColor = System.Drawing.Color.OrangeRed;
-            this.icBtn_EliminarConc.IconSize = 70;
-            this.icBtn_EliminarConc.Location = new System.Drawing.Point(21, 197);
+            this.icBtn_EliminarConc.IconSize = 73;
+            this.icBtn_EliminarConc.Location = new System.Drawing.Point(21, 194);
             this.icBtn_EliminarConc.Name = "icBtn_EliminarConc";
-            this.icBtn_EliminarConc.Size = new System.Drawing.Size(76, 70);
+            this.icBtn_EliminarConc.Padding = new System.Windows.Forms.Padding(5);
+            this.icBtn_EliminarConc.Size = new System.Drawing.Size(78, 73);
             this.icBtn_EliminarConc.TabIndex = 2;
             this.icBtn_EliminarConc.TabStop = false;
             // 
@@ -133,6 +136,7 @@
             this.icBtn_EditarConc.IconSize = 71;
             this.icBtn_EditarConc.Location = new System.Drawing.Point(21, 109);
             this.icBtn_EditarConc.Name = "icBtn_EditarConc";
+            this.icBtn_EditarConc.Padding = new System.Windows.Forms.Padding(5);
             this.icBtn_EditarConc.Size = new System.Drawing.Size(76, 71);
             this.icBtn_EditarConc.TabIndex = 1;
             this.icBtn_EditarConc.TabStop = false;
