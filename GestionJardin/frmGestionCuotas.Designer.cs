@@ -49,7 +49,7 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.listConceptos = new System.Windows.Forms.ListView();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.txt_Matriculado = new MetroFramework.Controls.MetroTextBox();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.lblAyuda = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
@@ -258,46 +258,47 @@
             this.listConceptos.UseCompatibleStateImageBehavior = false;
             this.listConceptos.View = System.Windows.Forms.View.Tile;
             // 
-            // metroTextBox3
+            // txt_Matriculado
             // 
             // 
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(415, 1);
-            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(35, 35);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(19, 37);
-            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.PromptText = "Matriculado";
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.ShowButton = true;
-            this.metroTextBox3.ShowClearButton = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(451, 37);
-            this.metroTextBox3.TabIndex = 10;
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMark = "Matriculado";
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Matriculado.CustomButton.Image = null;
+            this.txt_Matriculado.CustomButton.Location = new System.Drawing.Point(415, 1);
+            this.txt_Matriculado.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Matriculado.CustomButton.Name = "";
+            this.txt_Matriculado.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txt_Matriculado.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
+            this.txt_Matriculado.CustomButton.TabIndex = 1;
+            this.txt_Matriculado.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_Matriculado.CustomButton.UseSelectable = true;
+            this.txt_Matriculado.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txt_Matriculado.Lines = new string[0];
+            this.txt_Matriculado.Location = new System.Drawing.Point(19, 37);
+            this.txt_Matriculado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Matriculado.MaxLength = 32767;
+            this.txt_Matriculado.Name = "txt_Matriculado";
+            this.txt_Matriculado.PasswordChar = '\0';
+            this.txt_Matriculado.PromptText = "Matriculado";
+            this.txt_Matriculado.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_Matriculado.SelectedText = "";
+            this.txt_Matriculado.SelectionLength = 0;
+            this.txt_Matriculado.SelectionStart = 0;
+            this.txt_Matriculado.ShortcutsEnabled = true;
+            this.txt_Matriculado.ShowButton = true;
+            this.txt_Matriculado.ShowClearButton = true;
+            this.txt_Matriculado.Size = new System.Drawing.Size(451, 37);
+            this.txt_Matriculado.TabIndex = 10;
+            this.txt_Matriculado.UseSelectable = true;
+            this.txt_Matriculado.WaterMark = "Matriculado";
+            this.txt_Matriculado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_Matriculado.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Matriculado.Click += new System.EventHandler(this.metroTextBox3_Click);
             // 
             // panelBusqueda
             // 
             this.panelBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panelBusqueda.Controls.Add(this.metroTextBox3);
+            this.panelBusqueda.Controls.Add(this.txt_Matriculado);
             this.panelBusqueda.HorizontalScrollbarBarColor = true;
             this.panelBusqueda.HorizontalScrollbarHighlightOnWheel = false;
             this.panelBusqueda.HorizontalScrollbarSize = 10;
@@ -354,7 +355,7 @@
         private MetroFramework.Controls.MetroComboBox cbSalas;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroPanel panelGeneracion;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox txt_Matriculado;
         private System.Windows.Forms.ListView listConceptos;
         private MetroFramework.Controls.MetroPanel panelBusqueda;
         private MetroFramework.Controls.MetroLabel lblAyuda;
