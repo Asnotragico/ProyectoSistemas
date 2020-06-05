@@ -37,7 +37,7 @@ namespace GestionJardin
 
         private void cbo_TipoPersonas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //VER COMO HACER PARA QUE SE BLOQUEE LA EDICION EN CBO
+            
 
             int v_TipoPersona = cbo_TipoPersonas.SelectedIndex;
 
@@ -152,5 +152,7 @@ namespace GestionJardin
             cbo_SalNombreD.DisplayMember = "SAL_NOMBRE";
             cbo_SalNombreD.ValueMember = "SAL_ID";
         }
+
+        
     }
 }
