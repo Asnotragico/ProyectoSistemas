@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LEEME.txt" />
+    <None Include="Resources\iconfinder_search_172546.png" />
     <None Include="Resources\El Patito Coletón.png" />
     <None Include="Resources\Group 31.png" />
     <None Include="Resources\grupo1.png" />

@@ -8,6 +8,14 @@ namespace GestionJardin
 {
     public class entConcepto
     {
+
+        private Int32 p_ConId;
+        public Int32 CON_ID
+        {
+            get { return p_ConId; }
+            set { p_ConId = value; }
+        }
+
         private string p_concepto;
         public string CON_CONCEPTO
         {
