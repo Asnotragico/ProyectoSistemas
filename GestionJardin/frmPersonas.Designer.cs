@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel_Per_Menu = new System.Windows.Forms.Panel();
-            this.icBtn_AgregarPer = new FontAwesome.Sharp.IconPictureBox();
-            this.icBtn_EliminarPer = new FontAwesome.Sharp.IconPictureBox();
-            this.icBtn_EditarPer = new FontAwesome.Sharp.IconPictureBox();
             this.panel_PerContenedor = new System.Windows.Forms.Panel();
             this.panel_PerDocente = new System.Windows.Forms.Panel();
             this.grb_PerDocente = new System.Windows.Forms.GroupBox();
@@ -56,11 +53,8 @@
             this.panel_PerBuscarAlu = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_PerBuscar = new System.Windows.Forms.TextBox();
-            this.icBtn_PerBuscar = new FontAwesome.Sharp.IconPictureBox();
             this.cbo_TipoPersonas = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.icbtn_PerCancelar = new FontAwesome.Sharp.IconButton();
-            this.icbtn_PerGuardar = new FontAwesome.Sharp.IconButton();
             this.grp_DomPer = new System.Windows.Forms.GroupBox();
             this.txt_DomEmail = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -94,10 +88,14 @@
             this.panel_FooterPer = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.icbtn_PerCancelar = new FontAwesome.Sharp.IconButton();
+            this.icBtn_PerBuscar = new FontAwesome.Sharp.IconPictureBox();
+            this.icbtn_PerGuardar = new FontAwesome.Sharp.IconButton();
+            this.icBtn_AgregarPer = new FontAwesome.Sharp.IconPictureBox();
+            this.icBtn_EliminarPer = new FontAwesome.Sharp.IconPictureBox();
+            this.icBtn_EditarPer = new FontAwesome.Sharp.IconPictureBox();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel_Per_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).BeginInit();
             this.panel_PerContenedor.SuspendLayout();
             this.panel_PerDocente.SuspendLayout();
             this.grb_PerDocente.SuspendLayout();
@@ -106,12 +104,15 @@
             this.panel_PerAlumno.SuspendLayout();
             this.grb_PerAlumno.SuspendLayout();
             this.panel_PerBuscarAlu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).BeginInit();
             this.grp_DomPer.SuspendLayout();
             this.grpBox_DatosPer.SuspendLayout();
             this.panel_FooterPer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Per_Menu
@@ -126,53 +127,13 @@
             this.panel_Per_Menu.Size = new System.Drawing.Size(147, 328);
             this.panel_Per_Menu.TabIndex = 0;
             // 
-            // icBtn_AgregarPer
-            // 
-            this.icBtn_AgregarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.icBtn_AgregarPer.ForeColor = System.Drawing.Color.SeaGreen;
-            this.icBtn_AgregarPer.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.icBtn_AgregarPer.IconColor = System.Drawing.Color.SeaGreen;
-            this.icBtn_AgregarPer.IconSize = 105;
-            this.icBtn_AgregarPer.Location = new System.Drawing.Point(27, 17);
-            this.icBtn_AgregarPer.Name = "icBtn_AgregarPer";
-            this.icBtn_AgregarPer.Size = new System.Drawing.Size(98, 81);
-            this.icBtn_AgregarPer.TabIndex = 0;
-            this.icBtn_AgregarPer.TabStop = false;
-            // 
-            // icBtn_EliminarPer
-            // 
-            this.icBtn_EliminarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.icBtn_EliminarPer.ForeColor = System.Drawing.Color.OrangeRed;
-            this.icBtn_EliminarPer.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
-            this.icBtn_EliminarPer.IconColor = System.Drawing.Color.OrangeRed;
-            this.icBtn_EliminarPer.IconSize = 105;
-            this.icBtn_EliminarPer.Location = new System.Drawing.Point(28, 223);
-            this.icBtn_EliminarPer.Name = "icBtn_EliminarPer";
-            this.icBtn_EliminarPer.Size = new System.Drawing.Size(97, 90);
-            this.icBtn_EliminarPer.TabIndex = 2;
-            this.icBtn_EliminarPer.TabStop = false;
-            // 
-            // icBtn_EditarPer
-            // 
-            this.icBtn_EditarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.icBtn_EditarPer.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.icBtn_EditarPer.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.icBtn_EditarPer.IconColor = System.Drawing.Color.RoyalBlue;
-            this.icBtn_EditarPer.IconSize = 105;
-            this.icBtn_EditarPer.Location = new System.Drawing.Point(27, 118);
-            this.icBtn_EditarPer.Name = "icBtn_EditarPer";
-            this.icBtn_EditarPer.Size = new System.Drawing.Size(98, 83);
-            this.icBtn_EditarPer.TabIndex = 1;
-            this.icBtn_EditarPer.TabStop = false;
-            // 
             // panel_PerContenedor
             // 
             this.panel_PerContenedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_PerContenedor.Controls.Add(this.panel_PerDocente);
             this.panel_PerContenedor.Controls.Add(this.panel_PerAluTut);
-            this.panel_PerContenedor.Controls.Add(this.panel_PerAlumno);
-            this.panel_PerContenedor.Controls.Add(this.icbtn_PerCancelar);
             this.panel_PerContenedor.Controls.Add(this.panel_PerBuscarAlu);
+            this.panel_PerContenedor.Controls.Add(this.panel_PerDocente);
+            this.panel_PerContenedor.Controls.Add(this.icbtn_PerCancelar);
             this.panel_PerContenedor.Controls.Add(this.cbo_TipoPersonas);
             this.panel_PerContenedor.Controls.Add(this.label1);
             this.panel_PerContenedor.Controls.Add(this.icbtn_PerGuardar);
@@ -186,7 +147,7 @@
             // panel_PerDocente
             // 
             this.panel_PerDocente.Controls.Add(this.grb_PerDocente);
-            this.panel_PerDocente.Location = new System.Drawing.Point(102, 555);
+            this.panel_PerDocente.Location = new System.Drawing.Point(9, 555);
             this.panel_PerDocente.Name = "panel_PerDocente";
             this.panel_PerDocente.Size = new System.Drawing.Size(918, 129);
             this.panel_PerDocente.TabIndex = 17;
@@ -260,7 +221,7 @@
             // panel_PerAluTut
             // 
             this.panel_PerAluTut.Controls.Add(this.grb_PerAluTut);
-            this.panel_PerAluTut.Location = new System.Drawing.Point(99, 624);
+            this.panel_PerAluTut.Location = new System.Drawing.Point(9, 685);
             this.panel_PerAluTut.Name = "panel_PerAluTut";
             this.panel_PerAluTut.Size = new System.Drawing.Size(931, 132);
             this.panel_PerAluTut.TabIndex = 18;
@@ -324,7 +285,7 @@
             // panel_PerAlumno
             // 
             this.panel_PerAlumno.Controls.Add(this.grb_PerAlumno);
-            this.panel_PerAlumno.Location = new System.Drawing.Point(73, 555);
+            this.panel_PerAlumno.Location = new System.Drawing.Point(37, 11);
             this.panel_PerAlumno.Name = "panel_PerAlumno";
             this.panel_PerAlumno.Size = new System.Drawing.Size(1003, 115);
             this.panel_PerAlumno.TabIndex = 0;
@@ -422,7 +383,7 @@
             this.panel_PerBuscarAlu.Controls.Add(this.label19);
             this.panel_PerBuscarAlu.Controls.Add(this.txt_PerBuscar);
             this.panel_PerBuscarAlu.Controls.Add(this.icBtn_PerBuscar);
-            this.panel_PerBuscarAlu.Location = new System.Drawing.Point(141, 543);
+            this.panel_PerBuscarAlu.Location = new System.Drawing.Point(9, 501);
             this.panel_PerBuscarAlu.Name = "panel_PerBuscarAlu";
             this.panel_PerBuscarAlu.Size = new System.Drawing.Size(837, 48);
             this.panel_PerBuscarAlu.TabIndex = 24;
@@ -447,19 +408,6 @@
             this.txt_PerBuscar.Size = new System.Drawing.Size(315, 27);
             this.txt_PerBuscar.TabIndex = 19;
             // 
-            // icBtn_PerBuscar
-            // 
-            this.icBtn_PerBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icBtn_PerBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.icBtn_PerBuscar.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.icBtn_PerBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.icBtn_PerBuscar.IconColor = System.Drawing.Color.DarkSlateBlue;
-            this.icBtn_PerBuscar.Location = new System.Drawing.Point(682, 13);
-            this.icBtn_PerBuscar.Name = "icBtn_PerBuscar";
-            this.icBtn_PerBuscar.Size = new System.Drawing.Size(32, 24);
-            this.icBtn_PerBuscar.TabIndex = 20;
-            this.icBtn_PerBuscar.TabStop = false;
-            // 
             // cbo_TipoPersonas
             // 
             this.cbo_TipoPersonas.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -483,40 +431,6 @@
             this.label1.Size = new System.Drawing.Size(180, 20);
             this.label1.TabIndex = 22;
             this.label1.Text = "SELECCIONE TIPO:";
-            // 
-            // icbtn_PerCancelar
-            // 
-            this.icbtn_PerCancelar.BackColor = System.Drawing.Color.DarkGray;
-            this.icbtn_PerCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.icbtn_PerCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.icbtn_PerCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.icbtn_PerCancelar.IconColor = System.Drawing.Color.Black;
-            this.icbtn_PerCancelar.IconSize = 16;
-            this.icbtn_PerCancelar.Location = new System.Drawing.Point(606, 783);
-            this.icbtn_PerCancelar.Name = "icbtn_PerCancelar";
-            this.icbtn_PerCancelar.Rotation = 0D;
-            this.icbtn_PerCancelar.Size = new System.Drawing.Size(206, 72);
-            this.icbtn_PerCancelar.TabIndex = 18;
-            this.icbtn_PerCancelar.Text = "CANCELAR";
-            this.icbtn_PerCancelar.UseVisualStyleBackColor = false;
-            // 
-            // icbtn_PerGuardar
-            // 
-            this.icbtn_PerGuardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.icbtn_PerGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.icbtn_PerGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.icbtn_PerGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.icbtn_PerGuardar.IconColor = System.Drawing.Color.Black;
-            this.icbtn_PerGuardar.IconSize = 64;
-            this.icbtn_PerGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icbtn_PerGuardar.Location = new System.Drawing.Point(340, 783);
-            this.icbtn_PerGuardar.Name = "icbtn_PerGuardar";
-            this.icbtn_PerGuardar.Rotation = 0D;
-            this.icbtn_PerGuardar.Size = new System.Drawing.Size(221, 72);
-            this.icbtn_PerGuardar.TabIndex = 17;
-            this.icbtn_PerGuardar.Text = "GUARDAR";
-            this.icbtn_PerGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.icbtn_PerGuardar.UseVisualStyleBackColor = false;
             // 
             // grp_DomPer
             // 
@@ -864,6 +778,7 @@
             // panel_FooterPer
             // 
             this.panel_FooterPer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_FooterPer.Controls.Add(this.panel_PerAlumno);
             this.panel_FooterPer.Controls.Add(this.dataGridView1);
             this.panel_FooterPer.Location = new System.Drawing.Point(41, 887);
             this.panel_FooterPer.Name = "panel_FooterPer";
@@ -886,8 +801,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.iconButton1);
             this.panel2.Controls.Add(this.panel_FooterPer);
             this.panel2.Controls.Add(this.panel_PerContenedor);
             this.panel2.Controls.Add(this.panel_Per_Menu);
@@ -896,10 +811,115 @@
             this.panel2.Size = new System.Drawing.Size(1356, 1031);
             this.panel2.TabIndex = 3;
             // 
+            // icbtn_PerCancelar
+            // 
+            this.icbtn_PerCancelar.BackColor = System.Drawing.Color.DarkGray;
+            this.icbtn_PerCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.icbtn_PerCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icbtn_PerCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.icbtn_PerCancelar.IconColor = System.Drawing.Color.Black;
+            this.icbtn_PerCancelar.IconSize = 16;
+            this.icbtn_PerCancelar.Location = new System.Drawing.Point(606, 783);
+            this.icbtn_PerCancelar.Name = "icbtn_PerCancelar";
+            this.icbtn_PerCancelar.Rotation = 0D;
+            this.icbtn_PerCancelar.Size = new System.Drawing.Size(206, 72);
+            this.icbtn_PerCancelar.TabIndex = 18;
+            this.icbtn_PerCancelar.Text = "CANCELAR";
+            this.icbtn_PerCancelar.UseVisualStyleBackColor = false;
+            // 
+            // icBtn_PerBuscar
+            // 
+            this.icBtn_PerBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icBtn_PerBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.icBtn_PerBuscar.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.icBtn_PerBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.icBtn_PerBuscar.IconColor = System.Drawing.Color.DarkSlateBlue;
+            this.icBtn_PerBuscar.IconSize = 24;
+            this.icBtn_PerBuscar.Location = new System.Drawing.Point(682, 13);
+            this.icBtn_PerBuscar.Name = "icBtn_PerBuscar";
+            this.icBtn_PerBuscar.Size = new System.Drawing.Size(32, 24);
+            this.icBtn_PerBuscar.TabIndex = 20;
+            this.icBtn_PerBuscar.TabStop = false;
+            // 
+            // icbtn_PerGuardar
+            // 
+            this.icbtn_PerGuardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.icbtn_PerGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.icbtn_PerGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icbtn_PerGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.icbtn_PerGuardar.IconColor = System.Drawing.Color.Black;
+            this.icbtn_PerGuardar.IconSize = 64;
+            this.icbtn_PerGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icbtn_PerGuardar.Location = new System.Drawing.Point(340, 783);
+            this.icbtn_PerGuardar.Name = "icbtn_PerGuardar";
+            this.icbtn_PerGuardar.Rotation = 0D;
+            this.icbtn_PerGuardar.Size = new System.Drawing.Size(221, 72);
+            this.icbtn_PerGuardar.TabIndex = 17;
+            this.icbtn_PerGuardar.Text = "GUARDAR";
+            this.icbtn_PerGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icbtn_PerGuardar.UseVisualStyleBackColor = false;
+            // 
+            // icBtn_AgregarPer
+            // 
+            this.icBtn_AgregarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.icBtn_AgregarPer.ForeColor = System.Drawing.Color.SeaGreen;
+            this.icBtn_AgregarPer.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.icBtn_AgregarPer.IconColor = System.Drawing.Color.SeaGreen;
+            this.icBtn_AgregarPer.IconSize = 81;
+            this.icBtn_AgregarPer.Location = new System.Drawing.Point(27, 17);
+            this.icBtn_AgregarPer.Name = "icBtn_AgregarPer";
+            this.icBtn_AgregarPer.Size = new System.Drawing.Size(98, 81);
+            this.icBtn_AgregarPer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.icBtn_AgregarPer.TabIndex = 0;
+            this.icBtn_AgregarPer.TabStop = false;
+            // 
+            // icBtn_EliminarPer
+            // 
+            this.icBtn_EliminarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.icBtn_EliminarPer.ForeColor = System.Drawing.Color.OrangeRed;
+            this.icBtn_EliminarPer.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
+            this.icBtn_EliminarPer.IconColor = System.Drawing.Color.OrangeRed;
+            this.icBtn_EliminarPer.IconSize = 90;
+            this.icBtn_EliminarPer.Location = new System.Drawing.Point(28, 223);
+            this.icBtn_EliminarPer.Name = "icBtn_EliminarPer";
+            this.icBtn_EliminarPer.Size = new System.Drawing.Size(97, 90);
+            this.icBtn_EliminarPer.TabIndex = 2;
+            this.icBtn_EliminarPer.TabStop = false;
+            // 
+            // icBtn_EditarPer
+            // 
+            this.icBtn_EditarPer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.icBtn_EditarPer.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.icBtn_EditarPer.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.icBtn_EditarPer.IconColor = System.Drawing.Color.RoyalBlue;
+            this.icBtn_EditarPer.IconSize = 83;
+            this.icBtn_EditarPer.Location = new System.Drawing.Point(27, 118);
+            this.icBtn_EditarPer.Name = "icBtn_EditarPer";
+            this.icBtn_EditarPer.Size = new System.Drawing.Size(98, 83);
+            this.icBtn_EditarPer.TabIndex = 1;
+            this.icBtn_EditarPer.TabStop = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Stackpath;
+            this.iconButton1.IconColor = System.Drawing.Color.Maroon;
+            this.iconButton1.IconSize = 70;
+            this.iconButton1.Location = new System.Drawing.Point(1221, 707);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(98, 183);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButton1.UseCompatibleTextRendering = true;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
             // frmPersonas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1394, 1055);
@@ -908,9 +928,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "GESTIÓN PERSONAS";
             this.panel_Per_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).EndInit();
             this.panel_PerContenedor.ResumeLayout(false);
             this.panel_PerContenedor.PerformLayout();
             this.panel_PerDocente.ResumeLayout(false);
@@ -924,7 +941,6 @@
             this.grb_PerAlumno.PerformLayout();
             this.panel_PerBuscarAlu.ResumeLayout(false);
             this.panel_PerBuscarAlu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).EndInit();
             this.grp_DomPer.ResumeLayout(false);
             this.grp_DomPer.PerformLayout();
             this.grpBox_DatosPer.ResumeLayout(false);
@@ -932,6 +948,10 @@
             this.panel_FooterPer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_PerBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_AgregarPer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EliminarPer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icBtn_EditarPer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1004,5 +1024,6 @@
         private System.Windows.Forms.TextBox txt_PerLegTut;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

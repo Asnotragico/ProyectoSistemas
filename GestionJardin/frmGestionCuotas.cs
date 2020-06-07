@@ -12,9 +12,6 @@ namespace GestionJardin
 {
     public partial class frmGestionCuotas : Form
     {
-
-        metPersonas metPersonas = new metPersonas();
-
         //metro colors https://www.w3schools.com/colors/colors_metro.asp
         public frmGestionCuotas()
         {
@@ -34,11 +31,22 @@ namespace GestionJardin
             cbSalas.DisplayMember = "SAL_NOMBRE";
             cbSalas.SelectedItem = null;
 
+
             // oculta los paneles
 
             panelBusqueda.Hide();
             panelGeneracion.Hide();
             listConceptos.Hide();
+
+            //Autocompletar
+
+            AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
+            metPersonas metPersonas = new metPersonas();
+            alumnos = metPersonas.traerPersonasAutocompetar("2");
+
+            txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtMatriculados.AutoCompleteCustomSource = alumnos;
 
         }
 
@@ -71,15 +79,6 @@ namespace GestionJardin
 
         }
 
-        private void metroTextBox3_Click(object sender, EventArgs e)
-        {
-            AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
-            
-            alumnos = metPersonas.traerPersonasAutocompetar("2");
-
-            txt_Matriculado.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txt_Matriculado.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txt_Matriculado.AutoCompleteCustomSource = alumnos;
-        }
+        
     }
 }

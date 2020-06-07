@@ -39,6 +39,7 @@
             "MATERIALES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "PASEO"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionCuotas));
             this.btnMasivo = new MetroFramework.Controls.MetroTile();
             this.btnParticular = new MetroFramework.Controls.MetroTile();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -49,7 +50,7 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.listConceptos = new System.Windows.Forms.ListView();
-            this.txt_Matriculado = new MetroFramework.Controls.MetroTextBox();
+            this.txtMatriculados = new MetroFramework.Controls.MetroTextBox();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.lblAyuda = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
@@ -258,47 +259,48 @@
             this.listConceptos.UseCompatibleStateImageBehavior = false;
             this.listConceptos.View = System.Windows.Forms.View.Tile;
             // 
-            // txt_Matriculado
+            // txtMatriculados
             // 
             // 
             // 
             // 
-            this.txt_Matriculado.CustomButton.Image = null;
-            this.txt_Matriculado.CustomButton.Location = new System.Drawing.Point(415, 1);
-            this.txt_Matriculado.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_Matriculado.CustomButton.Name = "";
-            this.txt_Matriculado.CustomButton.Size = new System.Drawing.Size(35, 35);
-            this.txt_Matriculado.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
-            this.txt_Matriculado.CustomButton.TabIndex = 1;
-            this.txt_Matriculado.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txt_Matriculado.CustomButton.UseSelectable = true;
-            this.txt_Matriculado.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txt_Matriculado.Lines = new string[0];
-            this.txt_Matriculado.Location = new System.Drawing.Point(19, 37);
-            this.txt_Matriculado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_Matriculado.MaxLength = 32767;
-            this.txt_Matriculado.Name = "txt_Matriculado";
-            this.txt_Matriculado.PasswordChar = '\0';
-            this.txt_Matriculado.PromptText = "Matriculado";
-            this.txt_Matriculado.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_Matriculado.SelectedText = "";
-            this.txt_Matriculado.SelectionLength = 0;
-            this.txt_Matriculado.SelectionStart = 0;
-            this.txt_Matriculado.ShortcutsEnabled = true;
-            this.txt_Matriculado.ShowButton = true;
-            this.txt_Matriculado.ShowClearButton = true;
-            this.txt_Matriculado.Size = new System.Drawing.Size(451, 37);
-            this.txt_Matriculado.TabIndex = 10;
-            this.txt_Matriculado.UseSelectable = true;
-            this.txt_Matriculado.WaterMark = "Matriculado";
-            this.txt_Matriculado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txt_Matriculado.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Matriculado.Click += new System.EventHandler(this.metroTextBox3_Click);
+            this.txtMatriculados.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtMatriculados.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.txtMatriculados.CustomButton.Location = new System.Drawing.Point(415, 1);
+            this.txtMatriculados.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMatriculados.CustomButton.Name = "";
+            this.txtMatriculados.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txtMatriculados.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
+            this.txtMatriculados.CustomButton.TabIndex = 1;
+            this.txtMatriculados.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtMatriculados.CustomButton.UseSelectable = true;
+            this.txtMatriculados.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtMatriculados.Lines = new string[0];
+            this.txtMatriculados.Location = new System.Drawing.Point(19, 37);
+            this.txtMatriculados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMatriculados.MaxLength = 32767;
+            this.txtMatriculados.Name = "txtMatriculados";
+            this.txtMatriculados.PasswordChar = '\0';
+            this.txtMatriculados.PromptText = "Matriculado";
+            this.txtMatriculados.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtMatriculados.SelectedText = "";
+            this.txtMatriculados.SelectionLength = 0;
+            this.txtMatriculados.SelectionStart = 0;
+            this.txtMatriculados.ShortcutsEnabled = true;
+            this.txtMatriculados.ShowButton = true;
+            this.txtMatriculados.ShowClearButton = true;
+            this.txtMatriculados.Size = new System.Drawing.Size(451, 37);
+            this.txtMatriculados.TabIndex = 10;
+            this.txtMatriculados.UseSelectable = true;
+            this.txtMatriculados.UseStyleColors = true;
+            this.txtMatriculados.WaterMark = "Matriculado";
+            this.txtMatriculados.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtMatriculados.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panelBusqueda
             // 
             this.panelBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panelBusqueda.Controls.Add(this.txt_Matriculado);
+            this.panelBusqueda.Controls.Add(this.txtMatriculados);
             this.panelBusqueda.HorizontalScrollbarBarColor = true;
             this.panelBusqueda.HorizontalScrollbarHighlightOnWheel = false;
             this.panelBusqueda.HorizontalScrollbarSize = 10;
@@ -355,7 +357,7 @@
         private MetroFramework.Controls.MetroComboBox cbSalas;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroPanel panelGeneracion;
-        private MetroFramework.Controls.MetroTextBox txt_Matriculado;
+        private MetroFramework.Controls.MetroTextBox txtMatriculados;
         private System.Windows.Forms.ListView listConceptos;
         private MetroFramework.Controls.MetroPanel panelBusqueda;
         private MetroFramework.Controls.MetroLabel lblAyuda;
