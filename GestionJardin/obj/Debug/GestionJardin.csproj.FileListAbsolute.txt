@@ -56,6 +56,4 @@ C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJard
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.exe
 C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.pdb
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPersonas2.resources
+C:\Users\Laura\Source\Repos\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
