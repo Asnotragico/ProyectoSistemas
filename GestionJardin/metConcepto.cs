@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MetroFramework.Controls;
 using System.Windows.Forms;
+using System.Drawing;
+using FontAwesome.Sharp;
 
 namespace GestionJardin
 {
@@ -19,6 +21,9 @@ namespace GestionJardin
         DataTable dt;
         SqlDataReader dr;
 
+        //************************************************************
+        //METODO QUE INSERTA LOS DATOS EN LA T_CONCEPTOS
+        //************************************************************
         public string InsertarConcepto(string p_CON_CONCEPTO, double p_CON_VALOR_ACTUAL, DateTime p_CON_FECHA_INI, DateTime p_CON_FECHA_FIN, DateTime p_CON_FECHA_ACT, string p_CON_ACTIVO, int p_CON_PERIODO, int p_CON_SEMESTRE)
         {
 
@@ -43,8 +48,10 @@ namespace GestionJardin
             }
             return result;
         }
-        
 
+        //************************************************************
+        //METODO QUE ACTUALIZA LOS DATOS EN LA T_CONCEPTOS
+        //************************************************************
         public string ActualizarConcepto(int P_CON_ID, string p_CON_CONCEPTO, Double p_CON_VALOR_ACTUAL, int p_CON_PERIODO, int p_CON_SEMESTRE, DateTime p_CON_FECHA_INI, DateTime p_CON_FECHA_ACT)
         {
             con = generarConexion();
@@ -69,6 +76,9 @@ namespace GestionJardin
 
         }
 
+        //************************************************************
+        //METODO QUE ACTUALIZA EL ESTADO A INACTIVO EN LA T_CONCEPTOS
+        //************************************************************
         public string EliminarConcepto(int P_CON_ID, DateTime p_FECHA_FIN)
         {
             con = generarConexion();
@@ -94,11 +104,10 @@ namespace GestionJardin
 
 
         }
-
-
-
-
-
+                     
+        /*
+         PARA VISUALIZAR DETOS EN LA GRILLA DE MANERA GENERAL 
+             */
         public DataTable Visualizar()
         {
             con = generarConexion();
@@ -117,32 +126,111 @@ namespace GestionJardin
 
         }
 
-
-        public void InicializarCon(MetroComboBox p_nombreCon, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon, MetroComboBox p_SemestreCon)
+        /*
+        PARA INICIALIZAR LOS DATOS EN EL ABM INGRESAR
+            */
+        public void InicializarCon(Panel p_panelConBuscar, Panel p_panel_ConEditar, Panel p_panel_ConEliminar, Panel p_panel_Con_Ingresar, Panel p_panel_ConAbm, 
+                                   MetroComboBox p_nombreCon, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon, 
+                                   MetroComboBox p_SemestreCon, MetroTextBox p_conOtros)
         {
-
 
             try
             {
-
+                con = generarConexion();
                 con.Open();
+                //Paneles que se ocultan
+                p_panelConBuscar.Visible = false;
+                p_panel_ConEditar.Visible = false;
+                p_panel_ConEliminar.Visible = false;
 
+                //Paneles que se muestran
+                p_panel_Con_Ingresar.Show();
+
+                //Para identificarlo con el color del boton sobre el que se presiono. 
+                p_panel_ConAbm.BackColor = Color.SeaGreen;
+                
+                //Se borran todos los controles
                 p_fechaCon.Text = DateTime.Now.ToShortDateString();
                 p_nombreCon.Focus();
                 p_nombreCon.SelectedIndex = -1;
                 p_montoCon.Clear();
                 p_anioCon.Clear();
                 p_SemestreCon.SelectedIndex = -1;
+                p_conOtros.Clear();
+
+                p_nombreCon.Size = new Size(280, 27);
+                p_conOtros.Visible = false;
+                
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+            }
+                        
+        }
+        
+        public void InicializarEditar(Panel p_panelConBuscar, Panel p_panel_Con_Ingresar,Panel p_panel_ConEliminar, Panel p_panel_ConAbm, MetroTextBox p_nombreCon, 
+                                      IconButton p_icBtn_BuscarEdit, IconButton p_icBtn_GuardarConE, IconButton p_icBtn_CancelarConE, Panel p_panel_ConEditar, 
+                                      Label p_lbl_EditConAnio, Label p_lbl_EditConMonto, Label p_lbl_EditConSemestre, Label p_lbl_EditConFechaMod,
+                                      MetroTextBox p_conID, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon, MetroTextBox p_SemestreCon)
+        {
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+
+                //Paneles que oculta
+                p_panelConBuscar.Visible = false;
+                p_panel_Con_Ingresar.Visible = false;
+                p_panel_ConEliminar.Visible = false;
+
+                //El color del panel contenedor se debe poner del mismo colo cuando este se aprieta
+                p_panel_ConAbm.BackColor = Color.CornflowerBlue;
+
+                //Panel que muestra con las primeras opciones
+                p_panel_ConEditar.Show();
+                p_nombreCon.Visible = true;
+                p_icBtn_BuscarEdit.Visible = true;
+
+                //siempre esta en false
+                p_conID.Visible = false;
+
+                //Contenido que siempre se oculta
+                p_lbl_EditConAnio.Visible = false;
+                p_anioCon.Visible = false;
+                p_lbl_EditConMonto.Visible = false;
+                p_montoCon.Visible = false;
+                p_lbl_EditConSemestre.Visible = false;
+                p_SemestreCon.Visible = false;
+                p_lbl_EditConFechaMod.Visible = false;
+                p_fechaCon.Visible = false;
+                p_icBtn_GuardarConE.Visible = false;
+                p_icBtn_CancelarConE.Visible = false;
+
+                               
+                //Se borran todos los controles
+                p_fechaCon.Text = DateTime.Now.ToShortDateString();
+                p_nombreCon.Focus();
+                p_nombreCon.Clear();
+                p_montoCon.Clear();
+                p_anioCon.Clear();
+                p_SemestreCon.Clear();
+                p_conID.Clear();
+                      
+             
             }
             catch (Exception ex)
             {
                 con.Close();
             }
 
-
-
         }
 
+        /*
+        PARA BUSCAR LOS CONCEPTOS POR NOMBRE
+            */
         public void autocompletarBuscar(MetroTextBox p_buscarCon)
         {
             con = generarConexion();
@@ -167,8 +255,9 @@ namespace GestionJardin
 
         }
 
-
-
+        /*
+      PARA VISUALIZAR EN LA GRILLA LOS CONCEPTOS DE LA BUSQUEDA QUE SE HIZO CON autocompletarBuscar
+          */
         public DataTable VisualizarData(string data)
         {
             con = generarConexion();
@@ -187,7 +276,9 @@ namespace GestionJardin
 
         }
 
-
+        /*
+            PARA BUSCAR LOS CONCEPTOS POR FECHA
+         */
         public DataTable Buscar(string data, DateTime p_fechaDesde, DateTime p_fechaHasta)
         {
             con = generarConexion();

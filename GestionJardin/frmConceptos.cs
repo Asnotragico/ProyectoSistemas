@@ -30,6 +30,7 @@ namespace GestionJardin
         {
 
             panelConData.Show();
+            //dgv_ConVisualizar.Visible = true;
             panelConBuscar.Show();
             panel_ConMenu2.Show();
             panel_Con_Ingresar.Visible = false;
@@ -38,7 +39,7 @@ namespace GestionJardin
 
             objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
 
-            panel_ConAbm.BackColor = Color.FromArgb(216, 216, 216);
+            panel_ConAbm.BackColor = Color.FromArgb(45, 66, 91);
 
             dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
             dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
@@ -46,21 +47,30 @@ namespace GestionJardin
         }
 
         //*********************************************************
-        //BOTON AGREGAR SIGNO +, SE APRIETA Y CARGA FORM DE INSERTAR 
+        //BOTON AGREGAR SIGNO +, SE APRIETA Y CARGA FORM DE INSERTAR a traves del metodo InicializarCon
         //*********************************************************
 
         private void icBtn_AgregarConc_Click_1(object sender, EventArgs e)
         {
-            panelConBuscar.Visible = false;
-            panel_ConEditar.Visible = false;
-            panel_ConEliminar.Visible = false;
-            panel_Con_Ingresar.Show();
-            panel_ConAbm.BackColor = Color.SeaGreen;
-            panel_Con_Ingresar.BringToFront();
 
+           objMet_Conceptos.InicializarCon(panelConBuscar, panel_ConEditar, panel_ConEliminar, panel_Con_Ingresar, panel_ConAbm, cbo_IngresarCon, txt_Con_MontoI,
+                                            txt_ConAnioI, dt_FechaAlta, cbo_ConSemestreI, txt_OtrosCon);
 
-            objMet_Conceptos.InicializarCon(cbo_IngresarCon, txt_Con_MontoI, txt_ConAnioI, dt_FechaAlta, cbo_ConSemestreI);
         }
+
+        // PERMITE INGRESAR OTRO CONCEPTO QUE NO SE ENCUENTRE COMPRENDIDO ENTRE LOS CONSTANTES DEL JARDIN
+
+        private void cbo_IngresarCon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int v_otros = cbo_IngresarCon.SelectedIndex;
+
+            if (v_otros == 8)
+            {
+                txt_OtrosCon.Visible = true;
+                cbo_IngresarCon.Size = new Size(126, 30);
+            }
+        }
+
 
         //*********************************************************
         // BOTON GUARDAR DEL INSERTAR-- LLAMA AL METODO InsertarConcepto
@@ -113,31 +123,64 @@ namespace GestionJardin
             //Si todo lo anterior esta ok, se realiza el ingreso de la persona
             if (v_controlInsertar == 0)
             {
-                MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
 
-                dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
-                dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                objMet_Conceptos.InicializarCon(cbo_IngresarCon, txt_Con_MontoI, txt_ConAnioI, dt_FechaAlta, cbo_ConSemestreI);
+                if (objConceptos.CON_CONCEPTO != "OTROS")
+                {
+
+                    MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
+
+                    dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
+                    dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+                    objMet_Conceptos.InicializarCon(panelConBuscar, panel_ConEditar, panel_ConEliminar, panel_Con_Ingresar, panel_ConAbm, cbo_IngresarCon, txt_Con_MontoI, txt_ConAnioI, dt_FechaAlta, cbo_ConSemestreI, txt_OtrosCon);
+                    
+
+                }
+                else if (objConceptos.CON_CONCEPTO == "OTROS")
+                {
+                    objConceptos.CON_CONCEPTO = txt_OtrosCon.Text.ToUpper();
+
+                    MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
+
+                    dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
+                    dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+                    objMet_Conceptos.InicializarCon(panelConBuscar, panel_ConEditar, panel_ConEliminar, panel_Con_Ingresar, panel_ConAbm, cbo_IngresarCon, txt_Con_MontoI, txt_ConAnioI, dt_FechaAlta, cbo_ConSemestreI, txt_OtrosCon);
+                   
+
+                }
 
             }
         }
 
         //*********************************************************
+        //BOTON CANCELAR EN FORM INGRESAR inicializa todos los controles. 
+        //*********************************************************
+
+        private void Ibtn_ConCancelar_Click(object sender, EventArgs e)
+        {
+            objMet_Conceptos.InicializarCon(panelConBuscar, panel_ConEditar, panel_ConEliminar, panel_Con_Ingresar, panel_ConAbm, cbo_IngresarCon, 
+                                            txt_Con_MontoI, txt_ConAnioI, dt_FechaAlta, cbo_ConSemestreI, txt_OtrosCon);
+            
+        }
+
+        
+        //*********************************************************
         //BOTON AGREGAR SIGNO LUPA, SE APRIETA Y CARGA FORM DE BUSCAR 
         //*********************************************************
         private void icBtn_VisualizarConc_Click_1(object sender, EventArgs e)
         {
-
+            panelConData.Show();
+           
             panel_Con_Ingresar.Visible = false;
             panel_ConEditar.Visible = false;
             panel_ConEliminar.Visible = false;
             panelConBuscar.Show();
-            panel_ConMenu2.Show();
-            objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
-
             panel_ConAbm.BackColor = Color.FromArgb(45, 66, 91);
 
 
+            objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
+                       
             dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
             dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
@@ -159,12 +202,20 @@ namespace GestionJardin
             }
         }
 
+        private void icBtn_ConCancelar_Click(object sender, EventArgs e)
+        {
+            txt_ConBuscar.Clear();
+            dt_DesdeBuscarCon.Text = DateTime.Now.ToShortDateString();
+            dt_BuscarHastaCon.Text = DateTime.Now.ToShortDateString();
+
+        }
 
         //*********************************************************
-        //BOTON AGREGAR SIGNO LAPIZ, SE APRIETA Y CARGA FORM DE EDITAR 
+        //BOTON EDITAR SIGNO LAPIZ, SE APRIETA Y CARGA FORM DE EDITAR 
         //*********************************************************
         private void icBtn_EditarConc_Click(object sender, EventArgs e)
         {
+
             panelConBuscar.Visible = false;
             panel_Con_Ingresar.Visible = false;
             panel_ConEliminar.Visible = false;
@@ -187,6 +238,7 @@ namespace GestionJardin
             lbl_EditConFechaMod.Visible = false;
             dt_EditarFechaAc.Visible = false;
 
+            //    objMet_Conceptos.InicializarEditar(panelConBuscar, panel_Con_Ingresar, panel_ConEliminar, panel_ConAbm, txt_BuscarConE, icBtn_BuscarEdit, icBtn_GuardarConE, icBtn_CancelarConE, panel_ConEditar, lbl_EditConAnio, lbl_EditConMonto, lbl_EditConSemestre, lbl_EditConFechaMod, txt_EditCon_ID, txt_EditarMonto, txt_EditarAnio, dt_EditarFechaAc, txt_EditarSemestre);
 
             objMet_Conceptos.autocompletarBuscar(txt_BuscarConE);
         }
@@ -248,11 +300,11 @@ namespace GestionJardin
                 dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             }
-            
+
         }
 
         //*********************************************************
-        //BOTON AGREGAR SIGNO CESTO, SE APRIETA Y CARGA FORM DE ELIMINAR 
+        //BOTON ELIMINAR SIGNO CESTO, SE APRIETA Y CARGA FORM DE ELIMINAR 
         //*********************************************************
         private void icBtn_EliminarConc_Click(object sender, EventArgs e)
         {
@@ -289,7 +341,7 @@ namespace GestionJardin
 
         //*********************************************************
         // BOTON BUSCAR FORM ELIMINAR-- LLAMA AL METODO VisualizarData pasando el nombre del concepto
-        
+
         private void icBtn_BuscarEliminar_Click(object sender, EventArgs e)
         {
             objConceptos.CON_CONCEPTO = txt_BuscarConEli.Text.ToUpper();
@@ -335,7 +387,7 @@ namespace GestionJardin
             objConceptos.CON_FECHA_INI = dt_FechaAltaCon.Value;
             int v_control = 0;
 
-            if(objConceptos.CON_FECHA_FIN >= objConceptos.CON_FECHA_INI)
+            if (objConceptos.CON_FECHA_FIN >= objConceptos.CON_FECHA_INI)
             {
 
                 v_control = 0;
@@ -366,7 +418,7 @@ namespace GestionJardin
 
             }
 
-            
+
         }
 
         //CARGA DE DATOS EN LOS TEXTBOX PARA EL EDITAR Y EL ELIMINAR
@@ -374,7 +426,7 @@ namespace GestionJardin
         private void dgv_ConVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (panel_ConEditar.Visible == true)
+            if (panel_ConEditar.Visible == true )
             {
 
                 txt_EditarMonto.Text = dgv_ConVisualizar.CurrentRow.Cells[4].Value.ToString();
@@ -395,6 +447,19 @@ namespace GestionJardin
 
 
             }
+
+        }
+
+
+
+        private void icBtn_CancelarConE_Click(object sender, EventArgs e)
+        {
+
+            objMet_Conceptos.InicializarEditar(panelConBuscar, panel_Con_Ingresar, panel_ConEliminar, panel_ConAbm, txt_BuscarConE, icBtn_BuscarEdit, 
+                                               icBtn_GuardarConE, icBtn_CancelarConE, panel_ConEditar, lbl_EditConAnio, lbl_EditConMonto, lbl_EditConSemestre, 
+                                               lbl_EditConFechaMod, txt_EditCon_ID, txt_EditarMonto, txt_EditarAnio, dt_EditarFechaAc, txt_EditarSemestre);
+
+            objMet_Conceptos.autocompletarBuscar(txt_BuscarConE);
 
         }
 

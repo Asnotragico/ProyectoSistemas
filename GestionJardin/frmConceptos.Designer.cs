@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelConData = new System.Windows.Forms.Panel();
             this.dgv_ConVisualizar = new MetroFramework.Controls.MetroGrid();
@@ -49,6 +49,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel_Con_Ingresar = new System.Windows.Forms.Panel();
+            this.txt_OtrosCon = new MetroFramework.Controls.MetroTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -135,23 +136,23 @@
             this.dgv_ConVisualizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ConVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgv_ConVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ConVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_ConVisualizar.EnableHeadersVisualStyles = false;
             this.dgv_ConVisualizar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgv_ConVisualizar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -159,14 +160,14 @@
             this.dgv_ConVisualizar.Name = "dgv_ConVisualizar";
             this.dgv_ConVisualizar.ReadOnly = true;
             this.dgv_ConVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ConVisualizar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_ConVisualizar.RowTemplate.Height = 24;
             this.dgv_ConVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -322,7 +323,7 @@
             this.txt_ConBuscar.MaxLength = 32767;
             this.txt_ConBuscar.Name = "txt_ConBuscar";
             this.txt_ConBuscar.PasswordChar = '\0';
-            this.txt_ConBuscar.PromptText = "BUSCAR CONCEPTO";
+            this.txt_ConBuscar.PromptText = "CONCEPTO";
             this.txt_ConBuscar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_ConBuscar.SelectedText = "";
             this.txt_ConBuscar.SelectionLength = 0;
@@ -335,7 +336,7 @@
             this.txt_ConBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_ConBuscar.UseSelectable = true;
             this.txt_ConBuscar.UseStyleColors = true;
-            this.txt_ConBuscar.WaterMark = "BUSCAR CONCEPTO";
+            this.txt_ConBuscar.WaterMark = "CONCEPTO";
             this.txt_ConBuscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_ConBuscar.WaterMarkFont = new System.Drawing.Font("Verdana Pro", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -353,6 +354,7 @@
             this.icBtn_ConCancelar.TabIndex = 43;
             this.icBtn_ConCancelar.Text = "CANCELAR";
             this.icBtn_ConCancelar.UseVisualStyleBackColor = false;
+            this.icBtn_ConCancelar.Click += new System.EventHandler(this.icBtn_ConCancelar_Click);
             // 
             // icBtn_ConBuscar
             // 
@@ -399,6 +401,7 @@
             // 
             this.panel_Con_Ingresar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_Con_Ingresar.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_Con_Ingresar.Controls.Add(this.txt_OtrosCon);
             this.panel_Con_Ingresar.Controls.Add(this.label5);
             this.panel_Con_Ingresar.Controls.Add(this.label4);
             this.panel_Con_Ingresar.Controls.Add(this.label1);
@@ -414,6 +417,42 @@
             this.panel_Con_Ingresar.Name = "panel_Con_Ingresar";
             this.panel_Con_Ingresar.Size = new System.Drawing.Size(425, 462);
             this.panel_Con_Ingresar.TabIndex = 54;
+            // 
+            // txt_OtrosCon
+            // 
+            // 
+            // 
+            // 
+            this.txt_OtrosCon.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_OtrosCon.CustomButton.Image = null;
+            this.txt_OtrosCon.CustomButton.Location = new System.Drawing.Point(134, 2);
+            this.txt_OtrosCon.CustomButton.Name = "";
+            this.txt_OtrosCon.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txt_OtrosCon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_OtrosCon.CustomButton.TabIndex = 1;
+            this.txt_OtrosCon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_OtrosCon.CustomButton.UseSelectable = true;
+            this.txt_OtrosCon.CustomButton.Visible = false;
+            this.txt_OtrosCon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txt_OtrosCon.Lines = new string[0];
+            this.txt_OtrosCon.Location = new System.Drawing.Point(226, 38);
+            this.txt_OtrosCon.MaxLength = 32767;
+            this.txt_OtrosCon.Name = "txt_OtrosCon";
+            this.txt_OtrosCon.PasswordChar = '\0';
+            this.txt_OtrosCon.PromptText = "CONCEPTO";
+            this.txt_OtrosCon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_OtrosCon.SelectedText = "";
+            this.txt_OtrosCon.SelectionLength = 0;
+            this.txt_OtrosCon.SelectionStart = 0;
+            this.txt_OtrosCon.ShortcutsEnabled = true;
+            this.txt_OtrosCon.Size = new System.Drawing.Size(162, 30);
+            this.txt_OtrosCon.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_OtrosCon.TabIndex = 53;
+            this.txt_OtrosCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_OtrosCon.UseSelectable = true;
+            this.txt_OtrosCon.WaterMark = "CONCEPTO";
+            this.txt_OtrosCon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_OtrosCon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // label5
             // 
@@ -450,8 +489,9 @@
             // 
             // cbo_IngresarCon
             // 
+            this.cbo_IngresarCon.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cbo_IngresarCon.FormattingEnabled = true;
-            this.cbo_IngresarCon.ItemHeight = 24;
+            this.cbo_IngresarCon.ItemHeight = 21;
             this.cbo_IngresarCon.Items.AddRange(new object[] {
             "MATRICULA",
             "CUOTA SALA 1",
@@ -460,14 +500,17 @@
             "CUOTA SALA 4",
             "CUOTA SALA 5",
             "MATERIAL DIDACTICO",
-            "INTERES POR MORA"});
-            this.cbo_IngresarCon.Location = new System.Drawing.Point(74, 47);
+            "INTERES POR MORA",
+            "OTROS"});
+            this.cbo_IngresarCon.Location = new System.Drawing.Point(24, 38);
             this.cbo_IngresarCon.Name = "cbo_IngresarCon";
-            this.cbo_IngresarCon.Size = new System.Drawing.Size(302, 30);
+            this.cbo_IngresarCon.PromptText = "SELECCIONE CONCEPTO";
+            this.cbo_IngresarCon.Size = new System.Drawing.Size(339, 27);
             this.cbo_IngresarCon.Style = MetroFramework.MetroColorStyle.Green;
             this.cbo_IngresarCon.TabIndex = 49;
             this.cbo_IngresarCon.UseSelectable = true;
             this.cbo_IngresarCon.UseStyleColors = true;
+            this.cbo_IngresarCon.SelectedIndexChanged += new System.EventHandler(this.cbo_IngresarCon_SelectedIndexChanged);
             // 
             // dt_FechaAlta
             // 
@@ -583,6 +626,7 @@
             this.Ibtn_ConCancelar.TabIndex = 43;
             this.Ibtn_ConCancelar.Text = "CANCELAR";
             this.Ibtn_ConCancelar.UseVisualStyleBackColor = false;
+            this.Ibtn_ConCancelar.Click += new System.EventHandler(this.Ibtn_ConCancelar_Click);
             // 
             // Ibtn_ConGuardar
             // 
@@ -861,7 +905,7 @@
             this.txt_BuscarConE.MaxLength = 32767;
             this.txt_BuscarConE.Name = "txt_BuscarConE";
             this.txt_BuscarConE.PasswordChar = '\0';
-            this.txt_BuscarConE.PromptText = "BUSCAR CONCEPTO";
+            this.txt_BuscarConE.PromptText = "CONCEPTO";
             this.txt_BuscarConE.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_BuscarConE.SelectedText = "";
             this.txt_BuscarConE.SelectionLength = 0;
@@ -873,7 +917,7 @@
             this.txt_BuscarConE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_BuscarConE.UseSelectable = true;
             this.txt_BuscarConE.UseStyleColors = true;
-            this.txt_BuscarConE.WaterMark = "BUSCAR CONCEPTO";
+            this.txt_BuscarConE.WaterMark = "CONCEPTO";
             this.txt_BuscarConE.WaterMarkColor = System.Drawing.Color.DimGray;
             this.txt_BuscarConE.WaterMarkFont = new System.Drawing.Font("Verdana Pro", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -891,6 +935,7 @@
             this.icBtn_CancelarConE.TabIndex = 43;
             this.icBtn_CancelarConE.Text = "CANCELAR";
             this.icBtn_CancelarConE.UseVisualStyleBackColor = false;
+            this.icBtn_CancelarConE.Click += new System.EventHandler(this.icBtn_CancelarConE_Click);
             // 
             // icBtn_GuardarConE
             // 
@@ -927,10 +972,10 @@
             // panel_ConAbm
             // 
             this.panel_ConAbm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_ConAbm.Controls.Add(this.panelConBuscar);
+            this.panel_ConAbm.Controls.Add(this.panel_ConEditar);
             this.panel_ConAbm.Controls.Add(this.panel_ConEliminar);
             this.panel_ConAbm.Controls.Add(this.panel_Con_Ingresar);
-            this.panel_ConAbm.Controls.Add(this.panel_ConEditar);
-            this.panel_ConAbm.Controls.Add(this.panelConBuscar);
             this.panel_ConAbm.Location = new System.Drawing.Point(1143, 269);
             this.panel_ConAbm.Name = "panel_ConAbm";
             this.panel_ConAbm.Size = new System.Drawing.Size(448, 489);
@@ -1241,7 +1286,7 @@
             this.txt_BuscarConEli.MaxLength = 32767;
             this.txt_BuscarConEli.Name = "txt_BuscarConEli";
             this.txt_BuscarConEli.PasswordChar = '\0';
-            this.txt_BuscarConEli.PromptText = "BUSCAR CONCEPTO";
+            this.txt_BuscarConEli.PromptText = "CONCEPTO";
             this.txt_BuscarConEli.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_BuscarConEli.SelectedText = "";
             this.txt_BuscarConEli.SelectionLength = 0;
@@ -1253,7 +1298,7 @@
             this.txt_BuscarConEli.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_BuscarConEli.UseSelectable = true;
             this.txt_BuscarConEli.UseStyleColors = true;
-            this.txt_BuscarConEli.WaterMark = "BUSCAR CONCEPTO";
+            this.txt_BuscarConEli.WaterMark = "CONCEPTO";
             this.txt_BuscarConEli.WaterMarkColor = System.Drawing.Color.DimGray;
             this.txt_BuscarConEli.WaterMarkFont = new System.Drawing.Font("Verdana Pro", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -1389,7 +1434,6 @@
         private System.Windows.Forms.Label lbl_EditConAnio;
         private System.Windows.Forms.Label lbl_EditConMonto;
         private MetroFramework.Controls.MetroTextBox txt_EditCon_ID;
-        private MetroFramework.Controls.MetroComboBox cbo_IngresarCon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -1402,5 +1446,7 @@
         private MetroFramework.Controls.MetroComboBox cbo_EliminarConEstado;
         private FontAwesome.Sharp.IconButton icBtn_BuscarEliminar;
         private MetroFramework.Controls.MetroTextBox txt_EliminarConID;
+        public MetroFramework.Controls.MetroComboBox cbo_IngresarCon;
+        private MetroFramework.Controls.MetroTextBox txt_OtrosCon;
     }
 }
