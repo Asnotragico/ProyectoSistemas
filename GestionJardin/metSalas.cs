@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GestionJardin
 {
@@ -18,7 +19,7 @@ namespace GestionJardin
         //private SqlCommand Comando = new SqlCommand();
         //private SqlDataReader leerFilas;
 
-        public DataTable ListarSalas(int turno)
+        public DataTable ListarSalas(string turno)
 
         {
             con = generarConexion();
@@ -32,7 +33,7 @@ namespace GestionJardin
 
            // cmd.CommandText = "SELECT * FROM T_SALA S WHERE S.SAL_TURNO = @turnoSala";
 
-            if (turno == 0)
+            if (turno == "0")
             {
                 turnoR = "MANANA";
             }
@@ -50,6 +51,39 @@ namespace GestionJardin
             con.Close();
             return Tabla;
 
+        }
+
+        public string insertarGrupoSala(entGrupoSala grupoSala)
+        {
+            string result = "";
+            try { 
+
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "INSERT INTO T_GRUPO_SALA " +
+                                                "(GRS_SAL_ID" +
+                                                ", GRS_PER_ID)" +
+                                        "VALUES " +
+                                                "('" + grupoSala.GRS_SAL_ID + "'" +
+                                                ", '" + grupoSala.GRS_PER_ID + "')";
+
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            return result;
         }
     }
 }

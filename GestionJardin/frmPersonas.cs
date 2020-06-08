@@ -96,7 +96,7 @@ namespace GestionJardin
 
         private void cbo_SalTurnoA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int indexTurno = cbo_SalTurnoA.SelectedIndex;// 0 Mañana 1 Tarde
+            string indexTurno = cbo_SalTurnoA.SelectedIndex.ToString();// 0 Mañana 1 Tarde
 
             Console.WriteLine(indexTurno); // prueba  ¿para que es?
        
@@ -111,25 +111,28 @@ namespace GestionJardin
                 cbo_SalNombreA.Enabled = false;
             }
 
-            else if ((EdadAnos == 2 && EdadMeses > 6))
+            else if ((EdadAnos == 2 && EdadMeses > 6) || (EdadAnos == 3 && EdadMeses <= 6))
             {
                 cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
                 cbo_SalNombreA.Enabled = false;
 
             }
 
-            if (EdadAnos == 2 || (EdadAnos == 3 && EdadMeses < 6))
+            //if (EdadAnos == 2 || (EdadAnos == 3 && EdadMeses <= 6))
 
-            {
-                cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
-                cbo_SalNombreA.Enabled = false;
+            //{
+            //    cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("NARANJA");
+            //    cbo_SalNombreA.Enabled = false;
 
-            }
+            //}
 
             else if (EdadAnos == 3 && (EdadAnos == 4 && EdadMeses > 6))
             {
                 cbo_SalNombreA.SelectedIndex = cbo_SalNombreA.FindStringExact("VERDE");
                 cbo_SalNombreA.Enabled = false;
+
+                cbo_SalTurnoA.SelectedIndex = cbo_SalTurnoA.FindStringExact("Mañana");
+                cbo_SalTurnoA.Enabled = false;
 
             }
 
@@ -146,7 +149,7 @@ namespace GestionJardin
 
         private void cbo_SalTurnoD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int indexTurno = cbo_SalTurnoD.SelectedIndex;// 0 Mañana 1 Tarde
+            string indexTurno = cbo_SalTurnoD.SelectedIndex.ToString();// 0 Mañana 1 Tarde
 
             cbo_SalNombreD.DataSource = objMetSalas.ListarSalas(indexTurno);
             cbo_SalNombreD.DisplayMember = "SAL_NOMBRE";

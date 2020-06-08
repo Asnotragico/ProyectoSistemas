@@ -116,6 +116,8 @@
     </Compile>
     <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />
+    <Compile Include="metDomicilio.cs" />
+    <Compile Include="metParametricas.cs" />
     <Compile Include="metPersonas.cs" />
     <Compile Include="metSalas.cs" />
     <Compile Include="metTipoPersona.cs" />
