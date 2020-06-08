@@ -49,7 +49,7 @@ namespace GestionJardin
                     }
                 }
 
-                result = valor_2;
+                result = valor_2.PadLeft(5, '0');
 
 
             }

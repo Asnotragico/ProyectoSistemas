@@ -37,7 +37,7 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = "SELECT CONCAT(PER_NOMBRE, ' ', PER_APELLIDO, ' (', PER_DOCUMENTO, ') ') FROM T_PERSONAS P " + tipoPersona;
+            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') FROM T_PERSONAS P " + tipoPersona;
             cmd = new SqlCommand(consulta, con);
 
             dr = cmd.ExecuteReader();
@@ -112,9 +112,10 @@ namespace GestionJardin
             return result;
         }
 
-        public string BuscaPersona(string nombre, string apellido, string documento)
+        public entPersona BuscaPersona(string nombre, string apellido, string documento)
         {
-            string result = "";
+            //string result = "";
+            entPersona ent = new entPersona();
 
             try
             {
@@ -122,7 +123,7 @@ namespace GestionJardin
                 con.Open();
 
 
-                string consulta = "SELECT P.PER_ID FROM T_PERSONAS P WHERE P.PER_NOMBRE = '" + nombre + "' AND P.PER_APELLIDO = '" + apellido + "' AND P.PER_DOCUMENTO = '" + documento + "';";
+                string consulta = "SELECT * FROM T_PERSONAS P WHERE P.PER_NOMBRE = '" + nombre + "' AND P.PER_APELLIDO = '" + apellido + "' AND P.PER_DOCUMENTO = '" + documento + "';";
 
                     
                 cmd = new SqlCommand(consulta, con);
@@ -136,14 +137,79 @@ namespace GestionJardin
                 if (dt != null)
                 {                 
                     foreach (DataRow dr in dt.Rows)
-                    {        
-                         result = Convert.ToString(dr["PER_ID"]);
-                        
+                    {
+                        //result = Convert.ToString(dr["PER_ID"]);
+
+
+                        if (dr["PER_ID"] != DBNull.Value)
+                            ent.PER_ID = Convert.ToInt32(dr["PER_ID"]);
+                        if (dr["PER_NOMBRE"] != DBNull.Value)
+                            ent.PER_NOMBRE = Convert.ToString(dr["PER_NOMBRE"]);
+                        if (dr["PER_APELLIDO"] != DBNull.Value)
+                            ent.PER_APELLIDO = Convert.ToString(dr["PER_APELLIDO"]);
+                        if (dr["PER_DOCUMENTO"] != DBNull.Value)
+                            ent.PER_DOCUMENTO = Convert.ToInt32(dr["PER_DOCUMENTO"]);
+                        if (dr["PER_GENERO"] != DBNull.Value)
+                            ent.PER_GENERO = Convert.ToString(dr["PER_GENERO"]);
+                        if (dr["PER_FECHA_NAC"] != DBNull.Value)
+                            ent.PER_FECHA_NAC = Convert.ToDateTime(dr["PER_FECHA_NAC"]);
+                        if (dr["PER_TELEFONO"] != DBNull.Value)
+                            ent.PER_TELEFONO = Convert.ToString(dr["PER_TELEFONO"]);
+                        if (dr["PER_TELEFONO_2"] != DBNull.Value)
+                            ent.PER_TELEFONO_2 = Convert.ToString(dr["PER_TELEFONO_2"]);
+                        if (dr["PER_EMAIL"] != DBNull.Value)
+                            ent.PER_EMAIL = Convert.ToString(dr["PER_EMAIL"]);
+                        if (dr["PER_TPE_ID"] != DBNull.Value)
+                            ent.PER_TPE_ID = Convert.ToString(dr["PER_TPE_ID"]);
+                        if (dr["PER_LEGAJO"] != DBNull.Value)
+                            ent.PER_LEGAJO = Convert.ToString(dr["PER_LEGAJO"]);
+
                     }
                 }
 
-                return result;
 
+
+            }
+            catch
+            {
+                //result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+            return ent;
+
+        }
+
+
+        public string editarPersona(entPersona personaEditar)
+        {
+            string result;
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "UPDATE T_PERSONAS SET " +
+                                                "PER_NOMBRE = " + "'" + personaEditar.PER_NOMBRE + "'" +
+                                                ", PER_APELLIDO = " + "'" + personaEditar.PER_APELLIDO + "'" +
+                                                ", PER_DOCUMENTO = " + "'" + personaEditar.PER_DOCUMENTO + "'" +
+                                                ", PER_GENERO = " + "'" + personaEditar.PER_GENERO + "'" +
+                                                ", PER_FECHA_NAC = " + "'" + personaEditar.PER_FECHA_NAC + "'" +
+                                                ", PER_TELEFONO = " + "'" + personaEditar.PER_TELEFONO + "'" +
+                                                ", PER_TELEFONO_2 = " + "'" + personaEditar.PER_TELEFONO_2 + "'" +
+                                                ", PER_EMAIL = " + "'" + personaEditar.PER_EMAIL + "'" +
+                                                " " +
+                                        "WHERE PER_ID = " + "'" + personaEditar.PER_ID + "'" +
+                                                ";";
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
 
             }
             catch
@@ -151,9 +217,9 @@ namespace GestionJardin
                 result = "ERROR";
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                return result;
             }
 
+            return result;
         }
 
     }
