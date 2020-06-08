@@ -11,13 +11,11 @@ namespace GestionJardin
 {
     public class metPersonas : Conexion
     {
-
         SqlCommand cmd;
         SqlConnection con;
         SqlDataAdapter dta;
         DataTable dt;
         SqlDataReader dr;
-
 
         public AutoCompleteStringCollection traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
         {
@@ -55,6 +53,5 @@ namespace GestionJardin
             return autoComplete;
 
         }
-
     }
 }
