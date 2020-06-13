@@ -314,7 +314,7 @@
             this.txtDocumento.MaxLength = 32767;
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.PasswordChar = '\0';
-            this.txtDocumento.PromptText = "Documento";
+            this.txtDocumento.PromptText = "Documento Ej: 30123456";
             this.txtDocumento.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDocumento.SelectedText = "";
             this.txtDocumento.SelectionLength = 0;
@@ -323,7 +323,7 @@
             this.txtDocumento.Size = new System.Drawing.Size(266, 32);
             this.txtDocumento.TabIndex = 4;
             this.txtDocumento.UseSelectable = true;
-            this.txtDocumento.WaterMark = "Documento";
+            this.txtDocumento.WaterMark = "Documento Ej: 30123456";
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
@@ -511,7 +511,7 @@
             this.txtCelular.MaxLength = 32767;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.PasswordChar = '\0';
-            this.txtCelular.PromptText = "Celular";
+            this.txtCelular.PromptText = "Celular Ej: 3512345678";
             this.txtCelular.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCelular.SelectedText = "";
             this.txtCelular.SelectionLength = 0;
@@ -520,7 +520,7 @@
             this.txtCelular.Size = new System.Drawing.Size(230, 32);
             this.txtCelular.TabIndex = 26;
             this.txtCelular.UseSelectable = true;
-            this.txtCelular.WaterMark = "Celular";
+            this.txtCelular.WaterMark = "Celular Ej: 3512345678";
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCelular.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
@@ -546,7 +546,7 @@
             this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
-            this.txtTelefono.PromptText = "Teléfono";
+            this.txtTelefono.PromptText = "Teléfono  Ej: 3512345678";
             this.txtTelefono.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtTelefono.SelectedText = "";
             this.txtTelefono.SelectionLength = 0;
@@ -555,7 +555,7 @@
             this.txtTelefono.Size = new System.Drawing.Size(230, 32);
             this.txtTelefono.TabIndex = 25;
             this.txtTelefono.UseSelectable = true;
-            this.txtTelefono.WaterMark = "Teléfono";
+            this.txtTelefono.WaterMark = "Teléfono  Ej: 3512345678";
             this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTelefono.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
@@ -1100,7 +1100,7 @@
             this.Controls.Add(this.panelBusqueda);
             this.Name = "frmPersonas2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "frmPersonas2";
+            this.Text = "GESTIÓN PERSONAS";
             this.Load += new System.EventHandler(this.frmPersonas2_Load);
             this.panelBusqueda.ResumeLayout(false);
             this.panelDatos.ResumeLayout(false);

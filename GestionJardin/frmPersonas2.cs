@@ -318,7 +318,17 @@ namespace GestionJardin
                 string email = txtEmail.Text.Trim();
 
                 //cbTurno.SelectedItem; no se agrega en ninguna tabla
-                string id_sala = cbSala.SelectedValue.ToString(); // debe tomar el id de la sala
+               
+                string id_sala;
+                if (cbSala.SelectedItem == null)
+                {
+                    id_sala = "";
+                }
+                else
+                {
+                    id_sala = cbSala.SelectedValue.ToString();
+                }
+
                 metParametricas metParametricas = new metParametricas();
                 string legajo = metParametricas.secuenciadorLegajoAlumnos(); // lo genera solo
                 //--------

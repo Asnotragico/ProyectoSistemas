@@ -42,7 +42,7 @@ namespace GestionJardin
             panel_ConAbm.BackColor = Color.FromArgb(45, 66, 91);
 
             dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
-            dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
         }
 
