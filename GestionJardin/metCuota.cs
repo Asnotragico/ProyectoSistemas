@@ -158,7 +158,7 @@ namespace GestionJardin
                                         ", DET_CANTIDAD" +
                                         ", DET_ACTIVO)" +
                                     "VALUES " +
-                                        "( (SELECT CF.CUO_ID FROM T_CUOTA_FINAL CF WHERE CF.CUO_ANO_CUOTA = " + anoCuota + " AND CF.CUO_PER_LEGAJO = '" + legajo + "' AND CF.CUO_NUMERO = " + periodoCuota + " ) " +
+                                        "( (SELECT CF.CUO_ID FROM T_CUOTA_FINAL CF WHERE CF.CUO_ANO_CUOTA = " + anoCuota + " AND CF.CUO_PER_LEGAJO = '" + legajo + "' AND CF.CUO_NUMERO = " + periodoCuota + " AND CUO_ESTADO = 'ADEUDADA' ) " +
                                         ", '" + idConcepto + "'" +
                                         ", '" + importeConcepto + "'" +
                                         ", 1" +
@@ -223,7 +223,7 @@ namespace GestionJardin
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
 
-                com.CommandText = "SELECT COUNT(*) CUENTA FROM T_CUOTA_FINAL CF WHERE CF.CUO_ANO_CUOTA = " + anoCuota + " AND CF.CUO_PER_LEGAJO = '" + legajo + "' AND CF.CUO_NUMERO = " + periodoCuota + ";";
+                com.CommandText = "SELECT COUNT(*) CUENTA FROM T_CUOTA_FINAL CF WHERE CF.CUO_ANO_CUOTA = " + anoCuota + " AND CF.CUO_PER_LEGAJO = '" + legajo + "' AND CF.CUO_NUMERO = " + periodoCuota + " AND CUO_ESTADO <> 'BAJA' AND CF.CUO_NUMERO <> 99; ";
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(com);
@@ -255,5 +255,118 @@ namespace GestionJardin
 
             return result;
         }
+
+        public string traeLegajo(string nombre, string apellido, string documento)
+        {
+            string legajo = "";
+
+            try
+            {
+                SqlConnection con = generarConexion();
+                con.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+
+                com.CommandText = "select p.PER_LEGAJO LEGAJO " +
+                                    "from T_PERSONAS p " +
+                                    "where p.PER_NOMBRE = '" + nombre + "' " +
+                                    "and p.PER_APELLIDO = '" + apellido + "' " +
+                                    "and p.PER_DOCUMENTO = '" + documento + "' " +
+                                    "; ";
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+
+                        if (dr["LEGAJO"] != DBNull.Value)
+                            legajo = Convert.ToString(dr["LEGAJO"]);
+
+
+                    }
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            return legajo;
+        }
+
+        public DataTable traeCuotasXPersona(string legajo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection con = generarConexion();
+                con.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+
+                com.CommandText = "select cf.CUO_ID ID, cf.CUO_PER_LEGAJO LEGAJO, cf.CUO_NUMERO NUMERO, cf.CUO_ANO_CUOTA EJERCICIO, cf.CUO_ESTADO ESTADO, cf.CUO_IMPORTE IMPORTE " +
+                                    "from T_CUOTA_FINAL cf " +
+                                    "where cf.CUO_PER_LEGAJO = '" + legajo + "' " +
+                                    "and cf.CUO_ESTADO <> 'BAJA' " +
+                                    "order by cf.CUO_NUMERO, cf.CUO_ANO_CUOTA desc; ";
+
+                
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
+
+                
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return dt;
+        
+        }
+
+        public string bajaCuotaFinal(int idCuotaFinal)
+        {
+            string result = "";
+            try
+            {
+                con = generarConexion();
+                con.Open();
+                string consulta = "UPDATE T_CUOTA_FINAL SET CUO_ESTADO = 'BAJA' WHERE CUO_ID = '" + idCuotaFinal + "';";
+
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return result;
+        }
+
     }
 }

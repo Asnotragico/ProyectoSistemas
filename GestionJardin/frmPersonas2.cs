@@ -24,6 +24,9 @@ namespace GestionJardin
         string resultadoValidacion;
         int idPersonaBuscar;
 
+        string salas = ""; //cupo
+        int contadorSala = 10; //cupo
+
         public frmPersonas2()
         {
             InitializeComponent();
@@ -59,6 +62,8 @@ namespace GestionJardin
 
             //Focus en el Label
             this.ActiveControl = null;
+
+            lblSalasCupo.Visible = false;
 
         }
 
@@ -102,7 +107,7 @@ namespace GestionJardin
 
             onOffCampos(false);
 
-
+            lblSalasCupo.Visible = false; //cupo
         }
 
         private void cbTipoPersona_SelectedValueChanged(object sender, EventArgs e)
@@ -281,6 +286,9 @@ namespace GestionJardin
                 }
             }
 
+            salas = "El cupo de la sala " + cbSala.SelectedItem.ToString() + " es de " + Convert.ToString(contadorSala) + " vacantes."; // cupo
+            lblSalasCupo.Text = salas; //cupo
+            lblSalasCupo.Visible = true; // cupo
 
         }
 
@@ -393,6 +401,7 @@ namespace GestionJardin
                         metSalas metSalas = new metSalas();
                         resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
 
+                        contadorSala -= 1; // cupo
                     }
 
                     //al terminar de insertar Borra todos los campos

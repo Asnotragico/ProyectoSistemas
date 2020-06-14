@@ -71,6 +71,7 @@
             this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panlBtnEditar = new MetroFramework.Controls.MetroPanel();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
+            this.lblSalasCupo = new MetroFramework.Controls.MetroLabel();
             this.panelBusqueda.SuspendLayout();
             this.panelDatos.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -997,6 +998,7 @@
             // 
             // panelBotones
             // 
+            this.panelBotones.Controls.Add(this.lblSalasCupo);
             this.panelBotones.Controls.Add(this.btnInsertar);
             this.panelBotones.Controls.Add(this.btnLimpiar);
             this.panelBotones.HorizontalScrollbarBarColor = true;
@@ -1081,6 +1083,15 @@
             this.btnBloqueo.UseVisualStyleBackColor = true;
             this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
+            // lblSalasCupo
+            // 
+            this.lblSalasCupo.AutoSize = true;
+            this.lblSalasCupo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalasCupo.Location = new System.Drawing.Point(27, 0);
+            this.lblSalasCupo.Name = "lblSalasCupo";
+            this.lblSalasCupo.Size = new System.Drawing.Size(0, 0);
+            this.lblSalasCupo.TabIndex = 26;
+            // 
             // frmPersonas2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1111,6 +1122,7 @@
             this.panelLegajo.ResumeLayout(false);
             this.panelAgregar.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
+            this.panelBotones.PerformLayout();
             this.panlBtnEditar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1161,5 +1173,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroCheckBox checkAutorizacion;
         private FontAwesome.Sharp.IconButton btnBloqueo;
+        private MetroFramework.Controls.MetroLabel lblSalasCupo;
     }
 }
