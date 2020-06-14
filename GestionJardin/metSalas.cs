@@ -165,6 +165,63 @@ namespace GestionJardin
 
             return result;
         }
-        
+
+        public DataTable traerPersonasXSala(Int32 idSala)
+
+        {
+
+            //entPersona.entPersonaColeccion colPers = new entPersona.entPersonaColeccion();
+            con = generarConexion();
+
+            DataTable dt = new DataTable();
+            con.Open();
+
+            string consulta = "select P.PER_ID, P.PER_NOMBRE NOMBRE, P.PER_APELLIDO APELLIDO, P.PER_TELEFONO TELEFONO, P.PER_TELEFONO_2 CELULAR, P.PER_EMAIL EMAIL, P.PER_LEGAJO LEGAJO from T_GRUPO_SALA GS, T_PERSONAS P WHERE P.PER_ID = GS.GRS_PER_ID AND GS.GRS_SAL_ID = @salaID AND P.PER_TPE_ID = 2 ;";
+            cmd = new SqlCommand(consulta, con);
+
+            cmd.Parameters.Add(new SqlParameter("@salaID", idSala));
+
+            dr = cmd.ExecuteReader();
+            dt.Load(dr);
+            dr.Close();
+
+            //if (dt != null)
+            //{ 
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        entPersona ent = new entPersona();
+            //        if (dr["PER_ID"] != DBNull.Value)
+            //            ent.PER_ID = Convert.ToInt32(dr["PER_ID"]);
+            //        if (dr["PER_NOMBRE"] != DBNull.Value)
+            //            ent.PER_NOMBRE = Convert.ToString(dr["PER_NOMBRE"]);
+            //        if (dr["PER_APELLIDO"] != DBNull.Value)
+            //            ent.PER_APELLIDO = Convert.ToString(dr["PER_APELLIDO"]);
+            //        if (dr["PER_DOCUMENTO"] != DBNull.Value)
+            //            ent.PER_DOCUMENTO = Convert.ToInt32(dr["PER_DOCUMENTO"]);
+            //        if (dr["PER_GENERO"] != DBNull.Value)
+            //            ent.PER_GENERO = Convert.ToString(dr["PER_GENERO"]);
+            //        if (dr["PER_FECHA_NAC"] != DBNull.Value)
+            //            ent.PER_FECHA_NAC = Convert.ToDateTime(dr["PER_FECHA_NAC"]);
+            //        if (dr["PER_TELEFONO"] != DBNull.Value)
+            //            ent.PER_TELEFONO = Convert.ToString(dr["PER_TELEFONO"]);
+            //        if (dr["PER_TELEFONO_2"] != DBNull.Value)
+            //            ent.PER_TELEFONO_2 = Convert.ToString(dr["PER_TELEFONO_2"]);
+            //        if (dr["PER_EMAIL"] != DBNull.Value)
+            //            ent.PER_EMAIL = Convert.ToString(dr["PER_EMAIL"]);
+            //        if (dr["PER_TPE_ID"] != DBNull.Value)
+            //            ent.PER_TPE_ID = Convert.ToString(dr["PER_TPE_ID"]);
+            //        if (dr["PER_LEGAJO"] != DBNull.Value)
+            //            ent.PER_LEGAJO = Convert.ToString(dr["PER_LEGAJO"]);
+
+
+            //        colPers.Add(ent);
+            //    }
+            //}
+
+            con.Close();
+            return dt; //colPers;
+
+        }
+
     }
 }
