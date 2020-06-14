@@ -25,14 +25,17 @@ namespace GestionJardin
         private void frmGestionCuotas_Load(object sender, EventArgs e)
         {
 
+            
             //cargar combo Salas
             metCuota metCobro = new metCuota();
-            entSala.entSalaColeccion salas = metCobro.buscarSalas(); 
+            entSala.entSalaColeccion salas = metCobro.buscarSalas();
 
             cbSalas.DataSource = new BindingSource(salas, null);
             cbSalas.ValueMember = "SAL_ID";
             cbSalas.DisplayMember = "SAL_NOMBRE";
             cbSalas.SelectedItem = null;
+
+            
 
             // oculta los paneles
 
@@ -52,11 +55,9 @@ namespace GestionJardin
 
 
             dgvMatriculados.Visible = false;
-
         }
 
-
-        private void btnParticular_Click_1(object sender, EventArgs e)
+        private void btnParticular_Click(object sender, EventArgs e)
         {
             //agregar funcion para limpiar controles
 
@@ -65,9 +66,11 @@ namespace GestionJardin
             lblAyuda.Text = "Ingrese el apellido del matriculado.";
         }
 
-
-        private void btnMasivo_Click_1(object sender, EventArgs e)
+        private void btnMasivo_Click(object sender, EventArgs e)
         {
+            //agregar funcion para limpiar controles
+
+
             panelGeneracion.Show();
             panelBusqueda.Hide();
             lblAyuda.Text = "Complete los Datos de la Cuota.";
@@ -94,7 +97,7 @@ namespace GestionJardin
                     metSalas objMetSala = new metSalas();
 
                     //entPersona.entPersonaColeccion colPersona = new entPersona.entPersonaColeccion();
-
+                    
                     colPersona = objMetSala.traerPersonasXSala(idSala);
 
                     dgvMatriculados.DataSource = colPersona;
@@ -146,6 +149,7 @@ namespace GestionJardin
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+
             //FOR inserta una cuota_final por cada persona
             //      FOR por cada cuota_final inserta un detalle por cada concepto seleccionado
             //      UPDATE la cuota con el monto suma de los detalles agregados.
@@ -163,12 +167,11 @@ namespace GestionJardin
 
                 int cuentaValida = objMetCuota.CuentaCuotasValidacion(legajo, periodoCuota, anoCuota);
 
-                if (cuentaValida == 0)
-                {
+                if (cuentaValida == 0) { 
                     string resultado = objMetCuota.insertaCuotaFinal(legajo, periodoCuota, anoCuota, estadoCuota);
 
                     if (resultado == "OK")
-                    {
+                    { 
                         ListView.SelectedListViewItemCollection conceptosSelected = listConceptos.SelectedItems;
                         foreach (ListViewItem item in conceptosSelected)
                         {
@@ -196,13 +199,12 @@ namespace GestionJardin
 
                         }
 
-
+                        
                     }
 
 
-
-                }
-                else
+                    
+                } else
                 {
                     MessageBox.Show("El matriculado " + legajo + " ya tiene cuotas generadas para ese periodo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -211,6 +213,6 @@ namespace GestionJardin
             MessageBox.Show("Se han generado las cuotas exitosamente.", "Cuotas generadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
     }
 }
-

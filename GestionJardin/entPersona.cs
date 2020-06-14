@@ -119,6 +119,8 @@ namespace GestionJardin
 
         }
 
+        public class entPersonaColeccion : List<entPersona>
+        { }
 
     }
 }

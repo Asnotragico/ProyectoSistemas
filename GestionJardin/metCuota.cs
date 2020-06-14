@@ -11,7 +11,6 @@ namespace GestionJardin
 {
     public class metCuota : Conexion
     {
-
         SqlCommand cmd;
         SqlConnection con;
         SqlDataAdapter dta;
@@ -21,7 +20,7 @@ namespace GestionJardin
         public entSala.entSalaColeccion buscarSalas()
         {
             entSala.entSalaColeccion SalaCol = new entSala.entSalaColeccion();
-
+   
             try
             {
 
@@ -44,7 +43,7 @@ namespace GestionJardin
                 con.Close();
 
                 if (dt != null)
-                {
+                { 
                     foreach (DataRow dr in dt.Rows)
                     {
                         entSala ent = new entSala();
@@ -192,7 +191,7 @@ namespace GestionJardin
             {
                 con = generarConexion();
                 con.Open();
-                string consulta = "UPDATE T_CUOTA_FINAL SET CUO_IMPORTE = " + importeConcepto + " WHERE CUO_PER_LEGAJO = '" + legajo + "' AND CUO_ANO_CUOTA = " + anoCuota + " AND CUO_NUMERO = " + periodoCuota + " AND CUO_ESTADO = 'ADEUDADA';";
+                string consulta = "UPDATE T_CUOTA_FINAL SET CUO_IMPORTE = " + importeConcepto + " WHERE CUO_PER_LEGAJO = '" + legajo  + "' AND CUO_ANO_CUOTA = " + anoCuota + " AND CUO_NUMERO = " + periodoCuota + " AND CUO_ESTADO = 'ADEUDADA';";
 
 
                 cmd = new SqlCommand(consulta, con);
@@ -238,7 +237,7 @@ namespace GestionJardin
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-
+ 
                         if (dr["CUENTA"] != DBNull.Value)
                             result = Convert.ToInt32(dr["CUENTA"]);
 
