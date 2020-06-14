@@ -130,6 +130,9 @@
     <EmbeddedResource Include="frmConceptos.resx">
       <DependentUpon>frmConceptos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConceptos2.resx">
+      <DependentUpon>frmConceptos2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCuotas.resx">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
     </EmbeddedResource>

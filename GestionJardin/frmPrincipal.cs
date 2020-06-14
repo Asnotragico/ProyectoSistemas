@@ -121,7 +121,7 @@ namespace GestionJardin
         private void icBtn_Conceptos_Click(object sender, EventArgs e)
         {
             ActivatedButton(sender, RGBColors.color2);
-            OpenChildForm(new GestionJardin.frmConceptos());
+            OpenChildForm(new GestionJardin.frmConceptos2());
         }
 
         private void icBtnCuotas_Click(object sender, EventArgs e)

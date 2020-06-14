@@ -58,7 +58,7 @@ namespace GestionJardin
                 result = "ERROR";
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                
+
             }
             //ADELANTA UN NUMERO EL SECUENCIADOR
             try
@@ -72,7 +72,7 @@ namespace GestionJardin
 
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
-                
+
                 con.Close();
 
             }

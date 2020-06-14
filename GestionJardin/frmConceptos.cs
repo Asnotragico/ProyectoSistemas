@@ -78,7 +78,7 @@ namespace GestionJardin
         private void Ibtn_ConGuardar_Click(object sender, EventArgs e)
         {
             objConceptos.CON_CONCEPTO = cbo_IngresarCon.SelectedItem.ToString();
-            objConceptos.CON_VALOR_ACTUAL = Convert.ToDouble(txt_Con_MontoI.Text);
+            objConceptos.CON_VALOR_ACTUAL = Convert.ToDecimal(txt_Con_MontoI.Text);
             objConceptos.CON_FECHA_INI = dt_FechaAlta.Value;
             objConceptos.CON_PERIODO = Convert.ToInt32(txt_ConAnioI.Text);
             objConceptos.CON_SEMESTRE = Convert.ToInt32(cbo_ConSemestreI.SelectedItem);
@@ -127,7 +127,7 @@ namespace GestionJardin
                 if (objConceptos.CON_CONCEPTO != "OTROS")
                 {
 
-                    MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
+                   // MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
 
                     dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
                     dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -140,7 +140,7 @@ namespace GestionJardin
                 {
                     objConceptos.CON_CONCEPTO = txt_OtrosCon.Text.ToUpper();
 
-                    MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
+                    //MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_FECHA_INI, v_fechaFinI, objConceptos.CON_FECHA_ACT, "S", objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE));
 
                     dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
                     dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -287,7 +287,7 @@ namespace GestionJardin
 
             objConceptos.CON_ID = Convert.ToInt32(txt_EditCon_ID.Text);
             objConceptos.CON_CONCEPTO = txt_BuscarConE.Text;
-            objConceptos.CON_VALOR_ACTUAL = Convert.ToDouble(txt_EditarMonto.Text);
+            objConceptos.CON_VALOR_ACTUAL = Convert.ToDecimal(txt_EditarMonto.Text);
             objConceptos.CON_PERIODO = Convert.ToInt32(txt_EditarAnio.Text);
             objConceptos.CON_SEMESTRE = Convert.ToInt32(txt_EditarSemestre.Text);
             objConceptos.CON_FECHA_INI = dt_EditarFechaAc.Value;
@@ -295,7 +295,7 @@ namespace GestionJardin
 
             if (objConceptos.CON_FECHA_INI >= objConceptos.CON_FECHA_ACT)
             {
-                objMet_Conceptos.ActualizarConcepto(objConceptos.CON_ID, objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE, objConceptos.CON_FECHA_INI, objConceptos.CON_FECHA_ACT);
+          ///      objMet_Conceptos.ActualizarConcepto(objConceptos.CON_ID, objConceptos.CON_CONCEPTO, objConceptos.CON_VALOR_ACTUAL, objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE, objConceptos.CON_FECHA_INI, objConceptos.CON_FECHA_ACT);
                 dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
                 dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 

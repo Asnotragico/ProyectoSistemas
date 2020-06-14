@@ -24,7 +24,7 @@ namespace GestionJardin
         //************************************************************
         //METODO QUE INSERTA LOS DATOS EN LA T_CONCEPTOS
         //************************************************************
-        public string InsertarConcepto(string p_CON_CONCEPTO, double p_CON_VALOR_ACTUAL, DateTime p_CON_FECHA_INI, DateTime p_CON_FECHA_FIN, DateTime p_CON_FECHA_ACT, string p_CON_ACTIVO, int p_CON_PERIODO, int p_CON_SEMESTRE)
+        public string InsertarConcepto(entConcepto concepto)
         {
 
             con = generarConexion();
@@ -35,9 +35,26 @@ namespace GestionJardin
 
                 con.Open();
                 //el SqlCommand se usa para realizar consultas a la base
-                cmd = new SqlCommand("INSERT INTO T_CONCEPTOS (CON_CONCEPTO, CON_VALOR_ACTUAL, CON_FECHA_INI, CON_FECHA_FIN, CON_FECHA_ACT, CON_ACTIVO, CON_PERIODO, CON_SEMESTRE) VALUES ('" + p_CON_CONCEPTO + "', " + p_CON_VALOR_ACTUAL + ", '" + p_CON_FECHA_INI + "','" + p_CON_FECHA_FIN + "', '" + p_CON_FECHA_ACT + "','" + p_CON_ACTIVO + "', " + p_CON_PERIODO + ", " + p_CON_SEMESTRE + ")", con);
+                cmd = new SqlCommand("INSERT INTO T_CONCEPTOS " + 
+                                                            "(CON_CONCEPTO ," +
+                                                            " CON_VALOR_ACTUAL, " +
+                                                            " CON_FECHA_INI, " +
+                                                            " CON_FECHA_FIN, " +
+                                                            " CON_FECHA_ACT, " +
+                                                            " CON_ACTIVO, " +
+                                                            " CON_PERIODO, "+
+                                                            " CON_SEMESTRE) " +
+                                                "VALUES " +
+                                                        "('" + concepto.CON_CONCEPTO + "', "  +
+                                                        " "  + concepto.CON_VALOR_ACTUAL + "," + 
+                                                        "'"  + concepto.CON_FECHA_INI + "', " +
+                                                        "'"  + concepto.CON_FECHA_FIN + "', " +
+                                                        "'"  + concepto.CON_FECHA_ACT + "'," +
+                                                        "'"  + concepto.CON_ACTIVO + "', " +
+                                                        " "  + concepto.CON_PERIODO + ", " +
+                                                        " "  + concepto.CON_SEMESTRE + ")", con);
                 cmd.ExecuteNonQuery();
-                result = "SE INSERTO EL CONCEPTO: " + p_CON_CONCEPTO;
+                result = "SE INSERTO EL CONCEPTO: " + concepto.CON_CONCEPTO;
 
               
             }
