@@ -21,6 +21,7 @@ namespace GestionJardin
         DataTable dt;
         SqlDataReader dr;
 
+
         //************************************************************
         //METODO QUE INSERTA LOS DATOS EN LA T_CONCEPTOS
         //************************************************************
@@ -35,28 +36,28 @@ namespace GestionJardin
 
                 con.Open();
                 //el SqlCommand se usa para realizar consultas a la base
-                cmd = new SqlCommand("INSERT INTO T_CONCEPTOS " + 
+                cmd = new SqlCommand("INSERT INTO T_CONCEPTOS " +
                                                             "(CON_CONCEPTO ," +
                                                             " CON_VALOR_ACTUAL, " +
                                                             " CON_FECHA_INI, " +
                                                             " CON_FECHA_FIN, " +
                                                             " CON_FECHA_ACT, " +
                                                             " CON_ACTIVO, " +
-                                                            " CON_PERIODO, "+
+                                                            " CON_PERIODO, " +
                                                             " CON_SEMESTRE) " +
                                                 "VALUES " +
-                                                        "('" + concepto.CON_CONCEPTO + "', "  +
-                                                        " "  + concepto.CON_VALOR_ACTUAL + "," + 
-                                                        "'"  + concepto.CON_FECHA_INI + "', " +
-                                                        "'"  + concepto.CON_FECHA_FIN + "', " +
-                                                        "'"  + concepto.CON_FECHA_ACT + "'," +
-                                                        "'"  + concepto.CON_ACTIVO + "', " +
-                                                        " "  + concepto.CON_PERIODO + ", " +
-                                                        " "  + concepto.CON_SEMESTRE + ")", con);
+                                                        "('" + concepto.CON_CONCEPTO + "', " +
+                                                        " " + concepto.CON_VALOR_ACTUAL + "," +
+                                                        "'" + concepto.CON_FECHA_INI + "', " +
+                                                        "'" + concepto.CON_FECHA_FIN + "', " +
+                                                        "'" + concepto.CON_FECHA_ACT + "'," +
+                                                        "'" + concepto.CON_ACTIVO + "', " +
+                                                        " " + concepto.CON_PERIODO + ", " +
+                                                        " " + concepto.CON_SEMESTRE + ")", con);
                 cmd.ExecuteNonQuery();
                 result = "SE INSERTO EL CONCEPTO: " + concepto.CON_CONCEPTO;
 
-              
+
             }
             catch (Exception ex)
             {
@@ -66,6 +67,153 @@ namespace GestionJardin
             return result;
         }
 
+
+        //************************************************************
+        //METODO QUE VALIDA QUE LOS DATOS A INGRESAR EN LA T_CONCEPTOS NO ESTEN REPETIDOS
+        //************************************************************
+
+        public int ValidarConcepto(string p_CON_CONCEPTO, int p_CON_PERIODO, int p_CON_SEMESTRE)
+        {
+            con = generarConexion();
+            con.Open();
+
+            int result = 1;
+            try
+            {
+
+                cmd = new SqlCommand("SELECT COUNT(*) CANTIDAD " +
+                                     " FROM T_CONCEPTOS WHERE CON_CONCEPTO = '" + p_CON_CONCEPTO + 
+                                     "' AND CON_PERIODO  = " + p_CON_PERIODO + 
+                                     " AND CON_SEMESTRE = " + p_CON_SEMESTRE + ";", con);
+
+                dt = new DataTable();
+                dta = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                dta.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+
+                        if (dr["CANTIDAD"] != DBNull.Value)
+                            result = Convert.ToInt32(dr["CANTIDAD"]);
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                result = 1;
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+            return result;
+        }
+
+
+        //public AutoCompleteStringCollection trerConceptos(string estado) 
+        //{
+        //    string est;
+                     
+        //    if (estado ==  "ACTIVO")
+        //    {
+        //        est = "WHERE CON_ACTIVO = 'S' ORDER BY 1;";
+        //    }
+        //    else 
+        //    {
+        //        est = "WHERE CON_ACTIVO = 'N' ORDER BY 1;";
+        //    }
+
+
+        //    con = generarConexion();
+
+        //    AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+        //    con.Open();
+
+
+        //    string consulta = "SELECT CONCAT(CON_CONCEPTO, ' '," +
+        //                                   " CON_PERIODO, " +
+        //                               "CASE CON_SEMESTRE " +
+        //                                    "WHEN 0 THEN '' " +
+        //                                    "WHEN 1 THEN ', PRIMER SEMESTRE' " +
+        //                                    "WHEN 2 THEN ', SEGUNDO SEMESTRE' " +
+        //                                "END, ' - ', " +
+        //                               "CASE CON_ACTIVO " +
+        //                                    "WHEN 'S' THEN ' ACTIVO' " +
+        //                                    "WHEN 'N' THEN ' INACTIVO' " +
+        //                                "END) " +
+        //                         "FROM T_CONCEPTOS " + est;
+
+            
+        //    cmd = new SqlCommand(consulta, con);
+
+        //    dr = cmd.ExecuteReader();
+
+
+        //    while (dr.Read())
+        //    {
+        //        autoComplete.Add(dr.GetString(0));
+        //    }
+        //    dr.Close();
+
+        //    con.Close();
+        //    return autoComplete;
+
+        //}
+
+
+
+
+        /*
+        PARA BUSCAR LOS CONCEPTOS POR NOMBRE
+            */
+        public void autocompletarBuscar(MetroTextBox p_buscarCon)
+        {
+            con = generarConexion();
+            con.Open();
+
+                     
+            try
+            {
+
+                string consulta = "SELECT CONCAT(CON_CONCEPTO, ' '," +
+                                           " CON_PERIODO, " +
+                                       "CASE CON_SEMESTRE " +
+                                            "WHEN 0 THEN '' " +
+                                            "WHEN 1 THEN ', PRIMER SEMESTRE' " +
+                                            "WHEN 2 THEN ', SEGUNDO SEMESTRE' " +
+                                        "END, ' - ', " +
+                                       "CASE CON_ACTIVO " +
+                                            "WHEN 'S' THEN ' ACTIVO' " +
+                                            "WHEN 'N' THEN ' INACTIVO' " +
+                                        "END) " +
+                                 "FROM T_CONCEPTOS ";
+
+                cmd = new SqlCommand(consulta, con);
+
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    p_buscarCon.AutoCompleteCustomSource.Add(dr.GetString(0));
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+            }
+
+        }
+
+
         //************************************************************
         //METODO QUE ACTUALIZA LOS DATOS EN LA T_CONCEPTOS
         //************************************************************
@@ -73,14 +221,14 @@ namespace GestionJardin
         {
             con = generarConexion();
             string result;
-                        
-                                 
+
+
             try
             {
                 con.Open();
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_CONCEPTO = '" + p_CON_CONCEPTO + "', CON_VALOR_ACTUAL = " + p_CON_VALOR_ACTUAL + ", CON_PERIODO = " + p_CON_PERIODO + ", CON_SEMESTRE = " + p_CON_SEMESTRE + ", CON_FECHA_INI = '" + p_CON_FECHA_INI + "', CON_FECHA_ACT = '" + p_CON_FECHA_ACT +"' WHERE CON_ID = "+ P_CON_ID+ "; ", con);
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_CONCEPTO = '" + p_CON_CONCEPTO + "', CON_VALOR_ACTUAL = " + p_CON_VALOR_ACTUAL + ", CON_PERIODO = " + p_CON_PERIODO + ", CON_SEMESTRE = " + p_CON_SEMESTRE + ", CON_FECHA_INI = '" + p_CON_FECHA_INI + "', CON_FECHA_ACT = '" + p_CON_FECHA_ACT + "' WHERE CON_ID = " + P_CON_ID + "; ", con);
                 cmd.ExecuteNonQuery();
-                result = "SE ACTUALIZO" + p_CON_CONCEPTO; 
+                result = "SE ACTUALIZO" + p_CON_CONCEPTO;
             }
             catch (Exception ex)
             {
@@ -101,10 +249,10 @@ namespace GestionJardin
             con = generarConexion();
             string result;
 
-            try 
+            try
             {
                 con.Open();
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_FIN = '" + p_FECHA_FIN + "', CON_ACTIVO = 'N' WHERE CON_ID = "+ P_CON_ID + "; ", con);
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_FIN = '" + p_FECHA_FIN + "', CON_ACTIVO = 'N' WHERE CON_ID = " + P_CON_ID + "; ", con);
                 cmd.ExecuteNonQuery();
                 result = "SE DESHABILITO EL CONCEPTO";
 
@@ -121,7 +269,7 @@ namespace GestionJardin
 
 
         }
-                     
+
         /*
          PARA VISUALIZAR DETOS EN LA GRILLA DE MANERA GENERAL 
              */
@@ -130,7 +278,7 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
 
-            
+
             string consulta = "SELECT CON_ID 'ID', CON_CONCEPTO as 'CONCEPTO', CON_PERIODO 'PERIODO',  CON_SEMESTRE 'SEMESTRE', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_INI, 103) as 'ALTA', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN', (CASE CON_ACTIVO WHEN 'S' THEN 'ACTIVO' WHEN 'N' THEN 'INACTIVO' END) ESTADO FROM T_CONCEPTOS;";
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
@@ -146,8 +294,8 @@ namespace GestionJardin
         /*
         PARA INICIALIZAR LOS DATOS EN EL ABM INGRESAR
             */
-        public void InicializarCon(Panel p_panelConBuscar, Panel p_panel_ConEditar, Panel p_panel_ConEliminar, Panel p_panel_Con_Ingresar, Panel p_panel_ConAbm, 
-                                   MetroComboBox p_nombreCon, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon, 
+        public void InicializarCon(Panel p_panelConBuscar, Panel p_panel_ConEditar, Panel p_panel_ConEliminar, Panel p_panel_Con_Ingresar, Panel p_panel_ConAbm,
+                                   MetroComboBox p_nombreCon, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon,
                                    MetroComboBox p_SemestreCon, MetroTextBox p_conOtros)
         {
 
@@ -165,7 +313,7 @@ namespace GestionJardin
 
                 //Para identificarlo con el color del boton sobre el que se presiono. 
                 p_panel_ConAbm.BackColor = Color.SeaGreen;
-                
+
                 //Se borran todos los controles
                 p_fechaCon.Text = DateTime.Now.ToShortDateString();
                 p_nombreCon.Focus();
@@ -177,17 +325,17 @@ namespace GestionJardin
 
                 p_nombreCon.Size = new Size(280, 27);
                 p_conOtros.Visible = false;
-                
+
             }
             catch (Exception ex)
             {
                 con.Close();
             }
-                        
+
         }
-        
-        public void InicializarEditar(Panel p_panelConBuscar, Panel p_panel_Con_Ingresar,Panel p_panel_ConEliminar, Panel p_panel_ConAbm, MetroTextBox p_nombreCon, 
-                                      IconButton p_icBtn_BuscarEdit, IconButton p_icBtn_GuardarConE, IconButton p_icBtn_CancelarConE, Panel p_panel_ConEditar, 
+
+        public void InicializarEditar(Panel p_panelConBuscar, Panel p_panel_Con_Ingresar, Panel p_panel_ConEliminar, Panel p_panel_ConAbm, MetroTextBox p_nombreCon,
+                                      IconButton p_icBtn_BuscarEdit, IconButton p_icBtn_GuardarConE, IconButton p_icBtn_CancelarConE, Panel p_panel_ConEditar,
                                       Label p_lbl_EditConAnio, Label p_lbl_EditConMonto, Label p_lbl_EditConSemestre, Label p_lbl_EditConFechaMod,
                                       MetroTextBox p_conID, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon, MetroTextBox p_SemestreCon)
         {
@@ -226,7 +374,7 @@ namespace GestionJardin
                 p_icBtn_GuardarConE.Visible = false;
                 p_icBtn_CancelarConE.Visible = false;
 
-                               
+
                 //Se borran todos los controles
                 p_fechaCon.Text = DateTime.Now.ToShortDateString();
                 p_nombreCon.Focus();
@@ -235,8 +383,8 @@ namespace GestionJardin
                 p_anioCon.Clear();
                 p_SemestreCon.Clear();
                 p_conID.Clear();
-                      
-             
+
+
             }
             catch (Exception ex)
             {
@@ -245,32 +393,7 @@ namespace GestionJardin
 
         }
 
-        /*
-        PARA BUSCAR LOS CONCEPTOS POR NOMBRE
-            */
-        public void autocompletarBuscar(MetroTextBox p_buscarCon)
-        {
-            con = generarConexion();
-            con.Open();
-
-            try
-            {
-                cmd = new SqlCommand("SELECT CON_CONCEPTO FROM T_CONCEPTOS",con);
-
-                dr = cmd.ExecuteReader();
-                
-                while (dr.Read())
-                {
-                    p_buscarCon.AutoCompleteCustomSource.Add(dr.GetString(0));
-                }
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-                con.Close();
-            }
-
-        }
+        
 
         /*
       PARA VISUALIZAR EN LA GRILLA LOS CONCEPTOS DE LA BUSQUEDA QUE SE HIZO CON autocompletarBuscar

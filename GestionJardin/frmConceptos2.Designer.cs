@@ -30,15 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConceptos2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.lblControlOtros = new System.Windows.Forms.Label();
-            this.txt_Otros = new MetroFramework.Controls.MetroTextBox();
-            this.cbo_Conceptos = new MetroFramework.Controls.MetroComboBox();
             this.txtBuscarConcepto = new MetroFramework.Controls.MetroTextBox();
-            this.cboEstadoB = new MetroFramework.Controls.MetroComboBox();
+            this.cbo_Conceptos = new MetroFramework.Controls.MetroComboBox();
+            this.txt_Otros = new MetroFramework.Controls.MetroTextBox();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.lbl_Titulo = new System.Windows.Forms.Label();
@@ -77,10 +76,9 @@
             // 
             this.panelBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.panelBusqueda.Controls.Add(this.lblControlOtros);
-            this.panelBusqueda.Controls.Add(this.txt_Otros);
             this.panelBusqueda.Controls.Add(this.txtBuscarConcepto);
             this.panelBusqueda.Controls.Add(this.cbo_Conceptos);
-            this.panelBusqueda.Controls.Add(this.cboEstadoB);
+            this.panelBusqueda.Controls.Add(this.txt_Otros);
             this.panelBusqueda.HorizontalScrollbarBarColor = true;
             this.panelBusqueda.HorizontalScrollbarHighlightOnWheel = false;
             this.panelBusqueda.HorizontalScrollbarSize = 10;
@@ -106,6 +104,75 @@
             this.lblControlOtros.Text = "*";
             this.lblControlOtros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtBuscarConcepto
+            // 
+            this.txtBuscarConcepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBuscarConcepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBuscarConcepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.txtBuscarConcepto.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtBuscarConcepto.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.txtBuscarConcepto.CustomButton.Location = new System.Drawing.Point(888, 1);
+            this.txtBuscarConcepto.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBuscarConcepto.CustomButton.Name = "";
+            this.txtBuscarConcepto.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txtBuscarConcepto.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
+            this.txtBuscarConcepto.CustomButton.TabIndex = 1;
+            this.txtBuscarConcepto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtBuscarConcepto.CustomButton.UseSelectable = true;
+            this.txtBuscarConcepto.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtBuscarConcepto.Lines = new string[0];
+            this.txtBuscarConcepto.Location = new System.Drawing.Point(54, 33);
+            this.txtBuscarConcepto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscarConcepto.MaxLength = 32767;
+            this.txtBuscarConcepto.Name = "txtBuscarConcepto";
+            this.txtBuscarConcepto.PasswordChar = '\0';
+            this.txtBuscarConcepto.PromptText = "CONCEPTO, AÑO, SEMESTRE";
+            this.txtBuscarConcepto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBuscarConcepto.SelectedText = "";
+            this.txtBuscarConcepto.SelectionLength = 0;
+            this.txtBuscarConcepto.SelectionStart = 0;
+            this.txtBuscarConcepto.ShortcutsEnabled = true;
+            this.txtBuscarConcepto.ShowButton = true;
+            this.txtBuscarConcepto.ShowClearButton = true;
+            this.txtBuscarConcepto.Size = new System.Drawing.Size(930, 43);
+            this.txtBuscarConcepto.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtBuscarConcepto.TabIndex = 53;
+            this.txtBuscarConcepto.UseSelectable = true;
+            this.txtBuscarConcepto.UseStyleColors = true;
+            this.txtBuscarConcepto.WaterMark = "CONCEPTO, AÑO, SEMESTRE";
+            this.txtBuscarConcepto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtBuscarConcepto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // cbo_Conceptos
+            // 
+            this.cbo_Conceptos.FontSize = MetroFramework.MetroComboBoxSize.Tall;
+            this.cbo_Conceptos.FormattingEnabled = true;
+            this.cbo_Conceptos.ItemHeight = 29;
+            this.cbo_Conceptos.Items.AddRange(new object[] {
+            "MATRICULA",
+            "CUOTA SALA 1",
+            "CUOTA SALA 2",
+            "CUOTA SALA 3",
+            "CUOTA SALA 4",
+            "CUOTA SALA 5",
+            "INTERES POR MORA",
+            "MATERIAL DIDACTICO",
+            "OTROS"});
+            this.cbo_Conceptos.Location = new System.Drawing.Point(54, 33);
+            this.cbo_Conceptos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbo_Conceptos.Name = "cbo_Conceptos";
+            this.cbo_Conceptos.PromptText = "Seleccione CONCEPTO";
+            this.cbo_Conceptos.Size = new System.Drawing.Size(351, 35);
+            this.cbo_Conceptos.Style = MetroFramework.MetroColorStyle.Green;
+            this.cbo_Conceptos.TabIndex = 54;
+            this.cbo_Conceptos.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.cbo_Conceptos.UseSelectable = true;
+            this.cbo_Conceptos.UseStyleColors = true;
+            this.cbo_Conceptos.SelectedIndexChanged += new System.EventHandler(this.cbo_Conceptos_SelectedIndexChanged);
+            // 
             // txt_Otros
             // 
             this.txt_Otros.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -113,7 +180,7 @@
             // 
             // 
             this.txt_Otros.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_Otros.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.txt_Otros.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.txt_Otros.CustomButton.Location = new System.Drawing.Point(449, 1);
             this.txt_Otros.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txt_Otros.CustomButton.Name = "";
@@ -148,91 +215,6 @@
             this.txt_Otros.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Otros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Otros_KeyPress);
             this.txt_Otros.Validated += new System.EventHandler(this.txt_Otros_Validated);
-            // 
-            // cbo_Conceptos
-            // 
-            this.cbo_Conceptos.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.cbo_Conceptos.FormattingEnabled = true;
-            this.cbo_Conceptos.ItemHeight = 29;
-            this.cbo_Conceptos.Items.AddRange(new object[] {
-            "MATRICULA",
-            "CUOTA SALA 1",
-            "CUOTA SALA 2",
-            "CUOTA SALA 3",
-            "CUOTA SALA 4",
-            "CUOTA SALA 5",
-            "INTERES POR MORA",
-            "MATERIAL DIDACTICO",
-            "OTROS"});
-            this.cbo_Conceptos.Location = new System.Drawing.Point(54, 33);
-            this.cbo_Conceptos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbo_Conceptos.Name = "cbo_Conceptos";
-            this.cbo_Conceptos.PromptText = "Seleccione CONCEPTO";
-            this.cbo_Conceptos.Size = new System.Drawing.Size(351, 35);
-            this.cbo_Conceptos.Style = MetroFramework.MetroColorStyle.Green;
-            this.cbo_Conceptos.TabIndex = 54;
-            this.cbo_Conceptos.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.cbo_Conceptos.UseSelectable = true;
-            this.cbo_Conceptos.UseStyleColors = true;
-            this.cbo_Conceptos.SelectedIndexChanged += new System.EventHandler(this.cbo_Conceptos_SelectedIndexChanged);
-            // 
-            // txtBuscarConcepto
-            // 
-            this.txtBuscarConcepto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.txtBuscarConcepto.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtBuscarConcepto.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.txtBuscarConcepto.CustomButton.Location = new System.Drawing.Point(449, 1);
-            this.txtBuscarConcepto.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtBuscarConcepto.CustomButton.Name = "";
-            this.txtBuscarConcepto.CustomButton.Size = new System.Drawing.Size(41, 41);
-            this.txtBuscarConcepto.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
-            this.txtBuscarConcepto.CustomButton.TabIndex = 1;
-            this.txtBuscarConcepto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtBuscarConcepto.CustomButton.UseSelectable = true;
-            this.txtBuscarConcepto.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtBuscarConcepto.Lines = new string[0];
-            this.txtBuscarConcepto.Location = new System.Drawing.Point(493, 33);
-            this.txtBuscarConcepto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBuscarConcepto.MaxLength = 32767;
-            this.txtBuscarConcepto.Name = "txtBuscarConcepto";
-            this.txtBuscarConcepto.PasswordChar = '\0';
-            this.txtBuscarConcepto.PromptText = "CONCEPTO, AÑO, SEMESTRE";
-            this.txtBuscarConcepto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBuscarConcepto.SelectedText = "";
-            this.txtBuscarConcepto.SelectionLength = 0;
-            this.txtBuscarConcepto.SelectionStart = 0;
-            this.txtBuscarConcepto.ShortcutsEnabled = true;
-            this.txtBuscarConcepto.ShowButton = true;
-            this.txtBuscarConcepto.ShowClearButton = true;
-            this.txtBuscarConcepto.Size = new System.Drawing.Size(491, 43);
-            this.txtBuscarConcepto.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtBuscarConcepto.TabIndex = 53;
-            this.txtBuscarConcepto.UseSelectable = true;
-            this.txtBuscarConcepto.UseStyleColors = true;
-            this.txtBuscarConcepto.WaterMark = "CONCEPTO, AÑO, SEMESTRE";
-            this.txtBuscarConcepto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtBuscarConcepto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // cboEstadoB
-            // 
-            this.cboEstadoB.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.cboEstadoB.FormattingEnabled = true;
-            this.cboEstadoB.ItemHeight = 29;
-            this.cboEstadoB.Items.AddRange(new object[] {
-            "ACTIVO",
-            "INACTIVO"});
-            this.cboEstadoB.Location = new System.Drawing.Point(54, 33);
-            this.cboEstadoB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboEstadoB.Name = "cboEstadoB";
-            this.cboEstadoB.PromptText = "Seleccione Estado";
-            this.cboEstadoB.Size = new System.Drawing.Size(351, 35);
-            this.cboEstadoB.TabIndex = 11;
-            this.cboEstadoB.UseSelectable = true;
-            this.cboEstadoB.UseStyleColors = true;
-            this.cboEstadoB.SelectedIndexChanged += new System.EventHandler(this.cboEstadoB_SelectedIndexChanged);
             // 
             // btnAgregar
             // 
@@ -275,7 +257,7 @@
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.Font = new System.Drawing.Font("Verdana Pro Cond", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lbl_Titulo.Location = new System.Drawing.Point(584, 239);
+            this.lbl_Titulo.Location = new System.Drawing.Point(610, 250);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(247, 52);
             this.lbl_Titulo.TabIndex = 27;
@@ -284,7 +266,7 @@
             // panelData
             // 
             this.panelData.Controls.Add(this.dgv_ConVisualizar);
-            this.panelData.Location = new System.Drawing.Point(100, 310);
+            this.panelData.Location = new System.Drawing.Point(98, 353);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(1221, 339);
             this.panelData.TabIndex = 26;
@@ -299,23 +281,23 @@
             this.dgv_ConVisualizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ConVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgv_ConVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ConVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_ConVisualizar.EnableHeadersVisualStyles = false;
             this.dgv_ConVisualizar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgv_ConVisualizar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -323,14 +305,14 @@
             this.dgv_ConVisualizar.Name = "dgv_ConVisualizar";
             this.dgv_ConVisualizar.ReadOnly = true;
             this.dgv_ConVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_ConVisualizar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_ConVisualizar.RowTemplate.Height = 24;
             this.dgv_ConVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -534,6 +516,7 @@
             this.dt_FechaAlta.Size = new System.Drawing.Size(227, 35);
             this.dt_FechaAlta.Style = MetroFramework.MetroColorStyle.Green;
             this.dt_FechaAlta.TabIndex = 57;
+            this.dt_FechaAlta.Theme = MetroFramework.MetroThemeStyle.Light;
             this.dt_FechaAlta.UseStyleColors = true;
             this.dt_FechaAlta.ValueChanged += new System.EventHandler(this.dt_FechaAlta_ValueChanged);
             // 
@@ -542,10 +525,6 @@
             this.cboSemestre.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cboSemestre.FormattingEnabled = true;
             this.cboSemestre.ItemHeight = 29;
-            this.cboSemestre.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
             this.cboSemestre.Location = new System.Drawing.Point(887, 173);
             this.cboSemestre.Name = "cboSemestre";
             this.cboSemestre.PromptText = "SELECCIONE";
@@ -713,7 +692,6 @@
 
         private FontAwesome.Sharp.IconButton btnBuscar;
         private MetroFramework.Controls.MetroPanel panelBusqueda;
-        private MetroFramework.Controls.MetroComboBox cboEstadoB;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private MetroFramework.Controls.MetroTextBox txtBuscarConcepto;
         private System.Windows.Forms.Label lbl_Titulo;

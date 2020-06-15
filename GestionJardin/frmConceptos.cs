@@ -37,7 +37,7 @@ namespace GestionJardin
             panel_ConEditar.Visible = false;
             panel_ConEliminar.Visible = false;
 
-            objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
+       //     objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
 
             panel_ConAbm.BackColor = Color.FromArgb(45, 66, 91);
 
@@ -179,7 +179,7 @@ namespace GestionJardin
             panel_ConAbm.BackColor = Color.FromArgb(45, 66, 91);
 
 
-            objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
+        //    objMet_Conceptos.autocompletarBuscar(txt_ConBuscar);
                        
             dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
             dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -240,7 +240,7 @@ namespace GestionJardin
 
             //    objMet_Conceptos.InicializarEditar(panelConBuscar, panel_Con_Ingresar, panel_ConEliminar, panel_ConAbm, txt_BuscarConE, icBtn_BuscarEdit, icBtn_GuardarConE, icBtn_CancelarConE, panel_ConEditar, lbl_EditConAnio, lbl_EditConMonto, lbl_EditConSemestre, lbl_EditConFechaMod, txt_EditCon_ID, txt_EditarMonto, txt_EditarAnio, dt_EditarFechaAc, txt_EditarSemestre);
 
-            objMet_Conceptos.autocompletarBuscar(txt_BuscarConE);
+     //       objMet_Conceptos.autocompletarBuscar(txt_BuscarConE);
         }
 
 
@@ -335,7 +335,7 @@ namespace GestionJardin
             icBtn_GuardarEliminar.Visible = false;
             icBtn_CancelarEliminar.Visible = false;
 
-            objMet_Conceptos.autocompletarBuscar(txt_BuscarConEli);
+        //    objMet_Conceptos.autocompletarBuscar(txt_BuscarConEli);
 
         }
 
@@ -459,7 +459,7 @@ namespace GestionJardin
                                                icBtn_GuardarConE, icBtn_CancelarConE, panel_ConEditar, lbl_EditConAnio, lbl_EditConMonto, lbl_EditConSemestre, 
                                                lbl_EditConFechaMod, txt_EditCon_ID, txt_EditarMonto, txt_EditarAnio, dt_EditarFechaAc, txt_EditarSemestre);
 
-            objMet_Conceptos.autocompletarBuscar(txt_BuscarConE);
+          //  objMet_Conceptos.autocompletarBuscar(txt_BuscarConE);
 
         }
 

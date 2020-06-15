@@ -75,6 +75,10 @@ namespace GestionJardin
 
         }
 
+        //public class entConceptoColeccion : List<entConcepto>
+        //{ }
+
+
     }
 
 }

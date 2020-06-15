@@ -42,8 +42,14 @@ namespace GestionJardin
         {
             //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
             panelBusqueda.Visible = true;
-            cboEstadoB.Visible = true; //hasta aqui muestra
-            txtBuscarConcepto.Visible = false; //hasta aqui muestra
+         //   cboEstadoB.Visible = true; //hasta aqui muestra
+            txtBuscarConcepto.Visible = true; //hasta aqui muestra
+            lblControlOtros.Visible = true;
+            //string estado = cboEstadoB.SelectedItem.ToString();
+            objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
+
+         //   txtBuscarConcepto.Visible = true;
+
             cbo_Conceptos.Visible = false; //Oculta
             txt_Otros.Visible = false; //oculta
             lblControlOtros.Visible = false;
@@ -71,7 +77,7 @@ namespace GestionJardin
             cbo_Conceptos.Visible = true; //hasta aqui muestra
             txt_Otros.Visible = false; //Oculta
             txtBuscarConcepto.Visible = false;
-            cboEstadoB.Visible = false;
+          //  cboEstadoB.Visible = false;
             lblControlOtros.Visible = false;
 
 
@@ -80,7 +86,7 @@ namespace GestionJardin
 
         private void cbo_Conceptos_SelectedIndexChanged(object sender, EventArgs e)
         {
-                      
+
             int v_otros = cbo_Conceptos.SelectedIndex;
             // lblControlOtros.Visible = false;
 
@@ -89,11 +95,37 @@ namespace GestionJardin
             {
                 txt_Otros.Visible = true;
                 lblControlOtros.Visible = true;
+
+
+                cboSemestre.Items.Remove(0);
+                cboSemestre.Items.Remove(1);
+                cboSemestre.Items.Remove(2);
+                cboSemestre.Items.Add(1);
+                cboSemestre.Items.Add(2);
+            }
+            else if (v_otros == 0)
+            {
+                txt_Otros.Visible = false;
+                lblControlOtros.Visible = false;
+
+
+                cboSemestre.Items.Remove(0);
+                cboSemestre.Items.Remove(1);
+                cboSemestre.Items.Remove(2);
+                cboSemestre.Items.Add(0);
+
             }
             else
             {
                 txt_Otros.Visible = false;
                 lblControlOtros.Visible = false;
+
+
+                cboSemestre.Items.Remove(0);
+                cboSemestre.Items.Remove(1);
+                cboSemestre.Items.Remove(2);
+                cboSemestre.Items.Add(1);
+                cboSemestre.Items.Add(2);
             }
 
             //info global se oculta
@@ -122,7 +154,7 @@ namespace GestionJardin
                 decimal monto = Convert.ToDecimal(txtMonto.Text);
                 DateTime fechaAlta = dt_FechaAlta.Value.Date;
                 int anio = Convert.ToInt32(txtAnio.Text);
-                int semestre = Convert.ToInt32(cboSemestre.SelectedIndex.ToString());
+                int semestre = Convert.ToInt32(cboSemestre.SelectedItem.ToString());
 
                 DateTime fechaFin = DateTime.MaxValue;
                 int anioActual = fechaActual.Year;
@@ -151,20 +183,39 @@ namespace GestionJardin
 
 
 
+
+
                 if (control == 0)
                 {
                     if (objConceptos.CON_CONCEPTO != "OTROS")
                     {
-                        MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
-                        limpiarCampos();
+                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE) == 0)
+                        {
+                            MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
+                            limpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString() + " y semestre: " + objConceptos.CON_SEMESTRE.ToString()
+                                            + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
+                        }
                     }
                     else if (objConceptos.CON_CONCEPTO == "OTROS")
                     {
                         objConceptos.CON_CONCEPTO = txt_Otros.Text;
-                        MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
-                        limpiarCampos();
-                    }
 
+                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE) == 0)
+                        {
+                            MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
+                            limpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString() + " y semestre: " + objConceptos.CON_SEMESTRE.ToString()
+                                            + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
+                        }
+
+                    }
 
                 }
             }
@@ -303,6 +354,7 @@ namespace GestionJardin
                 lblControlSemestre.Visible = false;
                 epError.SetError(cboSemestre, "Seleccione un SEMESTRE. (0 = no corresponde - 1 = PRIMER SEMESTRE - 2 = SEGUNDO SEMESTRE)");
                 cboSemestre.Style = MetroFramework.MetroColorStyle.Red;
+                cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
                 cboSemestre.Focus();
             }
         }
@@ -317,6 +369,7 @@ namespace GestionJardin
             lblControlSemestre.Visible = true;
             lblErrorSemestre.Visible = false;
             cboSemestre.Style = MetroFramework.MetroColorStyle.Green;
+            cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
             epError.Clear();
         }
 
@@ -355,6 +408,7 @@ namespace GestionJardin
                 lblControlSemestre.Visible = false;
                 epError.SetError(cboSemestre, "Seleccione un SEMESTRE. (0 = no corresponde - 1 = PRIMER SEMESTRE - 2 = SEGUNDO SEMESTRE)");
                 cboSemestre.Style = MetroFramework.MetroColorStyle.Red;
+                cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
                 cboSemestre.Focus();
             }
             else
@@ -380,7 +434,8 @@ namespace GestionJardin
             dt_FechaAlta.Value = DateTime.Today;
             cboSemestre.SelectedItem = null;
             cbo_Conceptos.SelectedItem = null;
-            
+            cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
+
         }
 
         private void btnCancelarIngresar_Click(object sender, EventArgs e)
@@ -388,11 +443,7 @@ namespace GestionJardin
             limpiarCampos();
         }
 
-        private void cboEstadoB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtBuscarConcepto.Visible = true;
-            lblControlOtros.Visible = true;
-        }
+               
     }
 }
 
