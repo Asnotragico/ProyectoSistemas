@@ -118,59 +118,7 @@ namespace GestionJardin
         }
 
 
-        //public AutoCompleteStringCollection trerConceptos(string estado) 
-        //{
-        //    string est;
-                     
-        //    if (estado ==  "ACTIVO")
-        //    {
-        //        est = "WHERE CON_ACTIVO = 'S' ORDER BY 1;";
-        //    }
-        //    else 
-        //    {
-        //        est = "WHERE CON_ACTIVO = 'N' ORDER BY 1;";
-        //    }
-
-
-        //    con = generarConexion();
-
-        //    AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-        //    con.Open();
-
-
-        //    string consulta = "SELECT CONCAT(CON_CONCEPTO, ' '," +
-        //                                   " CON_PERIODO, " +
-        //                               "CASE CON_SEMESTRE " +
-        //                                    "WHEN 0 THEN '' " +
-        //                                    "WHEN 1 THEN ', PRIMER SEMESTRE' " +
-        //                                    "WHEN 2 THEN ', SEGUNDO SEMESTRE' " +
-        //                                "END, ' - ', " +
-        //                               "CASE CON_ACTIVO " +
-        //                                    "WHEN 'S' THEN ' ACTIVO' " +
-        //                                    "WHEN 'N' THEN ' INACTIVO' " +
-        //                                "END) " +
-        //                         "FROM T_CONCEPTOS " + est;
-
-            
-        //    cmd = new SqlCommand(consulta, con);
-
-        //    dr = cmd.ExecuteReader();
-
-
-        //    while (dr.Read())
-        //    {
-        //        autoComplete.Add(dr.GetString(0));
-        //    }
-        //    dr.Close();
-
-        //    con.Close();
-        //    return autoComplete;
-
-        //}
-
-
-
-
+        
         /*
         PARA BUSCAR LOS CONCEPTOS POR NOMBRE
             */
