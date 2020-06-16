@@ -21,8 +21,8 @@ namespace GestionJardin
         DateTime fechaFin = DateTime.MaxValue;
         int idConceptoBuscar;
         decimal montoAct;
-        string  estadoIni;
-       
+        string estadoIni;
+
 
         public frmConceptos2()
         {
@@ -46,15 +46,15 @@ namespace GestionJardin
         {
             //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
             panelBusqueda.Visible = true;
-            txtBuscarConcepto.Visible = true; 
+            txtBuscarConcepto.Visible = true;
             lblControlOtros.Visible = true;
-            
+
             objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
-                       
-            cbo_Conceptos.Visible = false; 
-            txt_Otros.Visible = false; 
+
+            cbo_Conceptos.Visible = false;
+            txt_Otros.Visible = false;
             lblControlOtros.Visible = false;
-            
+
             //Panel abm
             panelAcciones.Visible = false;
 
@@ -64,7 +64,7 @@ namespace GestionJardin
             //grilla
             dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
             dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -73,8 +73,8 @@ namespace GestionJardin
             limpiarCampos();
             //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
             panelBusqueda.Visible = true;
-            cbo_Conceptos.Visible = true; 
-            txt_Otros.Visible = false; 
+            cbo_Conceptos.Visible = true;
+            txt_Otros.Visible = false;
             txtBuscarConcepto.Visible = false;
             lblControlOtros.Visible = false;
 
@@ -84,7 +84,7 @@ namespace GestionJardin
         {
 
             int v_otros = cbo_Conceptos.SelectedIndex;
-    
+
             if (v_otros == 8) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
             {
                 txt_Otros.Visible = true;
@@ -121,7 +121,7 @@ namespace GestionJardin
             lblErAnio.Visible = false;
             btnEliminar.Visible = false;
             btnEliminar.Visible = false;
-          
+
 
         }
 
@@ -137,7 +137,7 @@ namespace GestionJardin
                 DateTime fechaAlta = dt_FechaAlta.Value.Date;
                 int anio = Convert.ToInt32(txtAnio.Text);
                 decimal montoAnterior = 0;
-                            
+
                 int anioActual = fechaActual.Year;
 
                 int control = 0;
@@ -164,7 +164,7 @@ namespace GestionJardin
                 objConceptos.CON_VALOR_ANTERIOR = montoAnterior;
                 objConceptos.CON_ACTIVO = "S";
 
-                                             
+
                 if (control == 0)
                 {
                     if (objConceptos.CON_CONCEPTO != "OTROS")
@@ -324,7 +324,7 @@ namespace GestionJardin
                 txtAnio.Style = MetroFramework.MetroColorStyle.Red;
                 txtAnio.Focus();
             }
-        }       
+        }
 
 
 
@@ -354,7 +354,7 @@ namespace GestionJardin
                 epError.SetError(txtAnio, "Introduce un AÑO igual o mayor al actual para el periodo del concepto, SOLO NUMEROS.");
                 txtAnio.Style = MetroFramework.MetroColorStyle.Red;
                 txtAnio.Focus();
-            }          
+            }
             else
             {
                 ok = true;
@@ -392,15 +392,15 @@ namespace GestionJardin
             limpiarCampos();
         }
 
-        
+
 
         private void txtBuscarConcepto_ButtonClick(object sender, EventArgs e)
         {
             panelData.Visible = false;
             panelAcciones.Visible = true;
             cbo_Estado.Visible = true;
-            btnGuardarEd.Visible = true;                    
-  
+            btnGuardarEd.Visible = true;
+
             lblErAnio.Visible = false;
             lblControlFecha.Visible = false;
             lblControlAnio.Visible = false;
@@ -415,7 +415,7 @@ namespace GestionJardin
 
 
             string conceptoB = "";
-            string anioB = "";            
+            string anioB = "";
             string estadoB = "";
             int contador = 0;
 
@@ -438,9 +438,9 @@ namespace GestionJardin
                 else if (contador == 3)
                 {
                     estadoB = palabra.Trim();
-                }                
+                }
 
-            }        
+            }
 
 
             if (estadoB == "ACTIVO")
@@ -461,7 +461,7 @@ namespace GestionJardin
             {
                 idConceptoBuscar = conceptoBuscar.CON_ID; // se usara en el editar
                 montoAct = conceptoBuscar.CON_VALOR_ACTUAL; // se usara en el editar
-                estadoIni = conceptoBuscar.CON_ACTIVO; // se usara en el editar
+                                                            //  estadoIni = conceptoBuscar.CON_ACTIVO; // se usara en el editar
 
                 txtMonto.Text = Convert.ToString(conceptoBuscar.CON_VALOR_ACTUAL);
                 txtMonto.Style = MetroFramework.MetroColorStyle.Blue;
@@ -476,6 +476,7 @@ namespace GestionJardin
                 if (conceptoBuscar.CON_ACTIVO.StartsWith("S"))
                 {
                     cbo_Estado.SelectedIndex = cbo_Estado.FindStringExact("ACTIVO");
+                    estadoIni = "ACTIVO"; // se usara en el editar
                     btnBloqueoEditar.Visible = true;
                     lblEditar.Visible = true;
                     btnEliminar.Visible = true;
@@ -488,6 +489,7 @@ namespace GestionJardin
                 else
                 {
                     cbo_Estado.SelectedIndex = cbo_Estado.FindStringExact("INACTIVO");
+                    estadoIni = "INACTIVO";
                     btnBloqueoEditar.Visible = false;
                     lblEditar.Visible = false;
                     btnBloqueoInactivar.Visible = true;
@@ -507,7 +509,7 @@ namespace GestionJardin
 
         private void onOffCamposInactivar(bool onOff)
         {
-            cbo_Estado.Enabled = onOff;            
+            cbo_Estado.Enabled = onOff;
         }
 
         private void onOffCamposEditar(bool onOff)
@@ -538,7 +540,9 @@ namespace GestionJardin
             if (cbo_Estado.SelectedItem == null)
             {
                 estado = "";
-            } else { 
+            }
+            else
+            {
                 estado = cbo_Estado.SelectedItem.ToString();
             }
 
@@ -562,7 +566,7 @@ namespace GestionJardin
             if (this.btnBloqueoEditar.IconChar == FontAwesome.Sharp.IconChar.Lock)
             {
                 this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
-                onOffCamposEditar(true);                
+                onOffCamposEditar(true);
             }
             else
             {
@@ -584,7 +588,7 @@ namespace GestionJardin
         private void btnGuardarEd_Click(object sender, EventArgs e)
         {
             decimal montoE = Convert.ToDecimal(txtMonto.Text);
-                      
+
             string estadoE;
 
             if (cbo_Estado.SelectedItem == null)
@@ -595,44 +599,36 @@ namespace GestionJardin
             {
                 estadoE = cbo_Estado.SelectedItem.ToString();
             }
-           
 
-            if (estadoE != estadoIni && montoE !=montoAct)
+
+            if (estadoE != estadoIni && montoE != montoAct)
             {
                 objConceptos.CON_ID = idConceptoBuscar;
                 objConceptos.CON_FECHA_ACT = fechaActual;
                 objConceptos.CON_VALOR_ACTUAL = montoE;
                 objConceptos.CON_VALOR_ANTERIOR = montoAct;
                 objConceptos.CON_FECHA_FIN = fechaFin;
-
-                MessageBox.Show("Entre ActualizarMontoEstado -- ID" + objConceptos.CON_ID.ToString() + "- fechamod" + objConceptos.CON_FECHA_ACT +
-                                 " monto actual: " + objConceptos.CON_VALOR_ACTUAL + "monto anterior: " + objConceptos.CON_VALOR_ANTERIOR + " fecha fin:" + objConceptos.CON_FECHA_FIN);
-
-                    MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
-
-
+                
+                MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
+                
             }
-            else if(estadoE != estadoIni && montoE == montoAct)
+            else if (estadoE != estadoIni && montoE == montoAct)
             {
-                if(estadoE == "INACTIVO")
-                { 
-                objConceptos.CON_ID = idConceptoBuscar;
-                objConceptos.CON_FECHA_ACT = fechaActual;
-                objConceptos.CON_FECHA_FIN = fechaActual;
-
-                    MessageBox.Show("Entre ActualizarEstadoN - id: " + objConceptos.CON_ID + "FechaAct: " + objConceptos.CON_FECHA_ACT + "FechaFin: " + objConceptos.CON_FECHA_FIN);
-
+                if (estadoE == "INACTIVO")
+                {
+                    objConceptos.CON_ID = idConceptoBuscar;
+                    objConceptos.CON_FECHA_ACT = fechaActual;
+                    objConceptos.CON_FECHA_FIN = fechaActual;
+                                       
                     MessageBox.Show(objMet_Conceptos.ActualizarEstadoN(objConceptos));
 
                 }
-                else if(estadoE == "ACTIVO")
+                else if (estadoE == "ACTIVO")
                 {
                     objConceptos.CON_ID = idConceptoBuscar;
                     objConceptos.CON_FECHA_ACT = fechaActual;
                     objConceptos.CON_FECHA_FIN = fechaFin;
-
-                    MessageBox.Show("Entre ActualizarEstadoS -id: " + objConceptos.CON_ID + "FechaAct: " + objConceptos.CON_FECHA_ACT + "FechaFin: " + objConceptos.CON_FECHA_FIN);
-
+                    
                     MessageBox.Show(objMet_Conceptos.ActualizarEstadoS(objConceptos));
                 }
             }
@@ -643,7 +639,6 @@ namespace GestionJardin
                 objConceptos.CON_VALOR_ACTUAL = montoE;
                 objConceptos.CON_VALOR_ANTERIOR = montoAct;
 
-                MessageBox.Show("Entre ActualizarMonto id: " + objConceptos.CON_ID + "FechaAct: " + objConceptos.CON_FECHA_ACT + "VA: " + objConceptos.CON_VALOR_ACTUAL+ "Vant: " + objConceptos.CON_VALOR_ANTERIOR);
                 MessageBox.Show(objMet_Conceptos.ActualizarMonto(objConceptos));
             }
             else
