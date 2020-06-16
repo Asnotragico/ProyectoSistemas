@@ -77,12 +77,6 @@
     <Compile Include="frmCobros.Designer.cs">
       <DependentUpon>frmCobros.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConceptos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConceptos.Designer.cs">
-      <DependentUpon>frmConceptos.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmConceptos2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConceptos.resx">
-      <DependentUpon>frmConceptos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConceptos2.resx">
       <DependentUpon>frmConceptos2.cs</DependentUpon>

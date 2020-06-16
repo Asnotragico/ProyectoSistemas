@@ -63,11 +63,11 @@ namespace GestionJardin
             set { p_periodo = value; }
         }
 
-        private Int32 p_semestre;
-        public Int32 CON_SEMESTRE
+        private decimal p_con_valor_anterior;
+        public decimal CON_VALOR_ANTERIOR
         {
-            get { return p_semestre; }
-            set { p_semestre = value; }
+            get { return p_con_valor_anterior; }
+            set { p_con_valor_anterior = value; }
         }
 
         public entConcepto()
@@ -75,8 +75,8 @@ namespace GestionJardin
 
         }
 
-        //public class entConceptoColeccion : List<entConcepto>
-        //{ }
+        public class entConceptoColeccion : List<entConcepto>
+        { }
 
 
     }

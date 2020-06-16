@@ -68,10 +68,10 @@
             this.btnInsertar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLimpiar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelBotones = new MetroFramework.Controls.MetroPanel();
+            this.lblSalasCupo = new MetroFramework.Controls.MetroLabel();
             this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panlBtnEditar = new MetroFramework.Controls.MetroPanel();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
-            this.lblSalasCupo = new MetroFramework.Controls.MetroLabel();
             this.panelBusqueda.SuspendLayout();
             this.panelDatos.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -156,6 +156,7 @@
             this.txtBuscarPersona.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBuscarPersona.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPersona.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtBuscarPersona_ButtonClick);
+
             // 
             // lblAyuda
             // 
@@ -1013,6 +1014,15 @@
             this.panelBotones.VerticalScrollbarHighlightOnWheel = false;
             this.panelBotones.VerticalScrollbarSize = 10;
             // 
+            // lblSalasCupo
+            // 
+            this.lblSalasCupo.AutoSize = true;
+            this.lblSalasCupo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalasCupo.Location = new System.Drawing.Point(27, 0);
+            this.lblSalasCupo.Name = "lblSalasCupo";
+            this.lblSalasCupo.Size = new System.Drawing.Size(0, 0);
+            this.lblSalasCupo.TabIndex = 26;
+            // 
             // btnEditar
             // 
             this.btnEditar.Activecolor = System.Drawing.Color.RoyalBlue;
@@ -1082,15 +1092,6 @@
             this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBloqueo.UseVisualStyleBackColor = true;
             this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
-            // 
-            // lblSalasCupo
-            // 
-            this.lblSalasCupo.AutoSize = true;
-            this.lblSalasCupo.BackColor = System.Drawing.Color.Transparent;
-            this.lblSalasCupo.Location = new System.Drawing.Point(27, 0);
-            this.lblSalasCupo.Name = "lblSalasCupo";
-            this.lblSalasCupo.Size = new System.Drawing.Size(0, 0);
-            this.lblSalasCupo.TabIndex = 26;
             // 
             // frmPersonas2
             // 

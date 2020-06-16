@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConceptos2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.lblControlOtros = new System.Windows.Forms.Label();
             this.txtBuscarConcepto = new MetroFramework.Controls.MetroTextBox();
@@ -44,21 +44,24 @@
             this.panelData = new System.Windows.Forms.Panel();
             this.dgv_ConVisualizar = new MetroFramework.Controls.MetroGrid();
             this.panelAcciones = new System.Windows.Forms.Panel();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarEd = new FontAwesome.Sharp.IconButton();
+            this.lblDeshabilitar = new System.Windows.Forms.Label();
+            this.btnBloqueoInactivar = new FontAwesome.Sharp.IconButton();
+            this.lblControlFechaAlta = new System.Windows.Forms.Label();
+            this.lblErAnio = new System.Windows.Forms.Label();
             this.lblErrorAnio = new System.Windows.Forms.Label();
             this.lblErrorSemestre = new System.Windows.Forms.Label();
-            this.lblControlSemestre = new System.Windows.Forms.Label();
             this.lblControlFecha = new System.Windows.Forms.Label();
             this.lblControlAnio = new System.Windows.Forms.Label();
             this.lblControlMonto = new System.Windows.Forms.Label();
             this.lblErrorFecha = new System.Windows.Forms.Label();
             this.lblEditar = new System.Windows.Forms.Label();
-            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
+            this.btnBloqueoEditar = new FontAwesome.Sharp.IconButton();
             this.cbo_Estado = new MetroFramework.Controls.MetroComboBox();
-            this.lblSemestre = new System.Windows.Forms.Label();
             this.lblAnio = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
             this.dt_FechaAlta = new MetroFramework.Controls.MetroDateTime();
-            this.cboSemestre = new MetroFramework.Controls.MetroComboBox();
             this.txtAnio = new MetroFramework.Controls.MetroTextBox();
             this.txtMonto = new MetroFramework.Controls.MetroTextBox();
             this.btnCancelarIngresar = new FontAwesome.Sharp.IconButton();
@@ -129,7 +132,7 @@
             this.txtBuscarConcepto.MaxLength = 32767;
             this.txtBuscarConcepto.Name = "txtBuscarConcepto";
             this.txtBuscarConcepto.PasswordChar = '\0';
-            this.txtBuscarConcepto.PromptText = "CONCEPTO, AÑO, SEMESTRE";
+            this.txtBuscarConcepto.PromptText = "CONCEPTO-AÑO-ESTADO";
             this.txtBuscarConcepto.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtBuscarConcepto.SelectedText = "";
             this.txtBuscarConcepto.SelectionLength = 0;
@@ -142,9 +145,10 @@
             this.txtBuscarConcepto.TabIndex = 53;
             this.txtBuscarConcepto.UseSelectable = true;
             this.txtBuscarConcepto.UseStyleColors = true;
-            this.txtBuscarConcepto.WaterMark = "CONCEPTO, AÑO, SEMESTRE";
+            this.txtBuscarConcepto.WaterMark = "CONCEPTO-AÑO-ESTADO";
             this.txtBuscarConcepto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBuscarConcepto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarConcepto.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtBuscarConcepto_ButtonClick);
             // 
             // cbo_Conceptos
             // 
@@ -257,7 +261,7 @@
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.Font = new System.Drawing.Font("Verdana Pro Cond", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.lbl_Titulo.Location = new System.Drawing.Point(610, 250);
+            this.lbl_Titulo.Location = new System.Drawing.Point(537, 250);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(247, 52);
             this.lbl_Titulo.TabIndex = 27;
@@ -281,23 +285,23 @@
             this.dgv_ConVisualizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ConVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgv_ConVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_ConVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_ConVisualizar.EnableHeadersVisualStyles = false;
             this.dgv_ConVisualizar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgv_ConVisualizar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -305,14 +309,14 @@
             this.dgv_ConVisualizar.Name = "dgv_ConVisualizar";
             this.dgv_ConVisualizar.ReadOnly = true;
             this.dgv_ConVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_ConVisualizar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_ConVisualizar.RowTemplate.Height = 24;
             this.dgv_ConVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -322,21 +326,24 @@
             // panelAcciones
             // 
             this.panelAcciones.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelAcciones.Controls.Add(this.btnEliminar);
+            this.panelAcciones.Controls.Add(this.btnGuardarEd);
+            this.panelAcciones.Controls.Add(this.lblDeshabilitar);
+            this.panelAcciones.Controls.Add(this.btnBloqueoInactivar);
+            this.panelAcciones.Controls.Add(this.lblControlFechaAlta);
+            this.panelAcciones.Controls.Add(this.lblErAnio);
             this.panelAcciones.Controls.Add(this.lblErrorAnio);
             this.panelAcciones.Controls.Add(this.lblErrorSemestre);
-            this.panelAcciones.Controls.Add(this.lblControlSemestre);
             this.panelAcciones.Controls.Add(this.lblControlFecha);
             this.panelAcciones.Controls.Add(this.lblControlAnio);
             this.panelAcciones.Controls.Add(this.lblControlMonto);
             this.panelAcciones.Controls.Add(this.lblErrorFecha);
             this.panelAcciones.Controls.Add(this.lblEditar);
-            this.panelAcciones.Controls.Add(this.btnBloqueo);
+            this.panelAcciones.Controls.Add(this.btnBloqueoEditar);
             this.panelAcciones.Controls.Add(this.cbo_Estado);
-            this.panelAcciones.Controls.Add(this.lblSemestre);
             this.panelAcciones.Controls.Add(this.lblAnio);
             this.panelAcciones.Controls.Add(this.lblMonto);
             this.panelAcciones.Controls.Add(this.dt_FechaAlta);
-            this.panelAcciones.Controls.Add(this.cboSemestre);
             this.panelAcciones.Controls.Add(this.txtAnio);
             this.panelAcciones.Controls.Add(this.txtMonto);
             this.panelAcciones.Controls.Add(this.btnCancelarIngresar);
@@ -346,6 +353,95 @@
             this.panelAcciones.Name = "panelAcciones";
             this.panelAcciones.Size = new System.Drawing.Size(1202, 425);
             this.panelAcciones.TabIndex = 28;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminar.IconColor = System.Drawing.Color.LightCyan;
+            this.btnEliminar.IconSize = 40;
+            this.btnEliminar.Location = new System.Drawing.Point(851, 307);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Padding = new System.Windows.Forms.Padding(5);
+            this.btnEliminar.Rotation = 0D;
+            this.btnEliminar.Size = new System.Drawing.Size(244, 67);
+            this.btnEliminar.TabIndex = 80;
+            this.btnEliminar.Text = "DESHABILITAR";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGuardarEd
+            // 
+            this.btnGuardarEd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGuardarEd.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGuardarEd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEd.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarEd.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardarEd.IconColor = System.Drawing.Color.LightCyan;
+            this.btnGuardarEd.IconSize = 40;
+            this.btnGuardarEd.Location = new System.Drawing.Point(851, 79);
+            this.btnGuardarEd.Name = "btnGuardarEd";
+            this.btnGuardarEd.Padding = new System.Windows.Forms.Padding(5);
+            this.btnGuardarEd.Rotation = 0D;
+            this.btnGuardarEd.Size = new System.Drawing.Size(190, 67);
+            this.btnGuardarEd.TabIndex = 79;
+            this.btnGuardarEd.Text = "GUARDAR";
+            this.btnGuardarEd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardarEd.UseVisualStyleBackColor = false;
+            this.btnGuardarEd.Click += new System.EventHandler(this.btnGuardarEd_Click);
+            // 
+            // lblDeshabilitar
+            // 
+            this.lblDeshabilitar.AutoSize = true;
+            this.lblDeshabilitar.Font = new System.Drawing.Font("Verdana Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeshabilitar.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblDeshabilitar.Location = new System.Drawing.Point(385, 388);
+            this.lblDeshabilitar.Name = "lblDeshabilitar";
+            this.lblDeshabilitar.Size = new System.Drawing.Size(136, 18);
+            this.lblDeshabilitar.TabIndex = 78;
+            this.lblDeshabilitar.Text = "DESHABILITAR";
+            // 
+            // btnBloqueoInactivar
+            // 
+            this.btnBloqueoInactivar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueoInactivar.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnBloqueoInactivar.IconColor = System.Drawing.Color.OrangeRed;
+            this.btnBloqueoInactivar.IconSize = 32;
+            this.btnBloqueoInactivar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueoInactivar.Location = new System.Drawing.Point(427, 329);
+            this.btnBloqueoInactivar.Name = "btnBloqueoInactivar";
+            this.btnBloqueoInactivar.Rotation = 0D;
+            this.btnBloqueoInactivar.Size = new System.Drawing.Size(48, 49);
+            this.btnBloqueoInactivar.TabIndex = 77;
+            this.btnBloqueoInactivar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueoInactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueoInactivar.UseVisualStyleBackColor = true;
+            this.btnBloqueoInactivar.Click += new System.EventHandler(this.btnBloqueoInactivar_Click);
+            // 
+            // lblControlFechaAlta
+            // 
+            this.lblControlFechaAlta.AutoSize = true;
+            this.lblControlFechaAlta.ForeColor = System.Drawing.Color.Red;
+            this.lblControlFechaAlta.Location = new System.Drawing.Point(228, 292);
+            this.lblControlFechaAlta.Name = "lblControlFechaAlta";
+            this.lblControlFechaAlta.Size = new System.Drawing.Size(46, 17);
+            this.lblControlFechaAlta.TabIndex = 76;
+            this.lblControlFechaAlta.Text = "label1";
+            // 
+            // lblErAnio
+            // 
+            this.lblErAnio.AutoSize = true;
+            this.lblErAnio.ForeColor = System.Drawing.Color.Red;
+            this.lblErAnio.Location = new System.Drawing.Point(228, 215);
+            this.lblErAnio.Name = "lblErAnio";
+            this.lblErAnio.Size = new System.Drawing.Size(46, 17);
+            this.lblErAnio.TabIndex = 75;
+            this.lblErAnio.Text = "label1";
             // 
             // lblErrorAnio
             // 
@@ -369,24 +465,12 @@
             this.lblErrorSemestre.TabIndex = 73;
             this.lblErrorSemestre.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // lblControlSemestre
-            // 
-            this.lblControlSemestre.AutoSize = true;
-            this.lblControlSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblControlSemestre.ForeColor = System.Drawing.Color.Red;
-            this.lblControlSemestre.Location = new System.Drawing.Point(1120, 181);
-            this.lblControlSemestre.Name = "lblControlSemestre";
-            this.lblControlSemestre.Size = new System.Drawing.Size(30, 38);
-            this.lblControlSemestre.TabIndex = 72;
-            this.lblControlSemestre.Text = "*";
-            this.lblControlSemestre.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // lblControlFecha
             // 
             this.lblControlFecha.AutoSize = true;
             this.lblControlFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblControlFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblControlFecha.Location = new System.Drawing.Point(536, 182);
+            this.lblControlFecha.Location = new System.Drawing.Point(551, 249);
             this.lblControlFecha.Name = "lblControlFecha";
             this.lblControlFecha.Size = new System.Drawing.Size(30, 38);
             this.lblControlFecha.TabIndex = 71;
@@ -398,7 +482,7 @@
             this.lblControlAnio.AutoSize = true;
             this.lblControlAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblControlAnio.ForeColor = System.Drawing.Color.Red;
-            this.lblControlAnio.Location = new System.Drawing.Point(1070, 74);
+            this.lblControlAnio.Location = new System.Drawing.Point(501, 157);
             this.lblControlAnio.Name = "lblControlAnio";
             this.lblControlAnio.Size = new System.Drawing.Size(30, 38);
             this.lblControlAnio.TabIndex = 70;
@@ -429,30 +513,31 @@
             // lblEditar
             // 
             this.lblEditar.AutoSize = true;
-            this.lblEditar.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditar.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lblEditar.Location = new System.Drawing.Point(134, 375);
+            this.lblEditar.Font = new System.Drawing.Font("Verdana Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditar.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblEditar.Location = new System.Drawing.Point(604, 79);
             this.lblEditar.Name = "lblEditar";
-            this.lblEditar.Size = new System.Drawing.Size(99, 25);
+            this.lblEditar.Size = new System.Drawing.Size(81, 20);
             this.lblEditar.TabIndex = 67;
             this.lblEditar.Text = "EDITAR";
             // 
-            // btnBloqueo
+            // btnBloqueoEditar
             // 
-            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnBloqueo.IconColor = System.Drawing.Color.Goldenrod;
-            this.btnBloqueo.IconSize = 60;
-            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.Location = new System.Drawing.Point(139, 287);
-            this.btnBloqueo.Name = "btnBloqueo";
-            this.btnBloqueo.Rotation = 0D;
-            this.btnBloqueo.Size = new System.Drawing.Size(87, 85);
-            this.btnBloqueo.TabIndex = 62;
-            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnBloqueo.UseVisualStyleBackColor = true;
+            this.btnBloqueoEditar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueoEditar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnBloqueoEditar.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btnBloqueoEditar.IconSize = 32;
+            this.btnBloqueoEditar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueoEditar.Location = new System.Drawing.Point(548, 66);
+            this.btnBloqueoEditar.Name = "btnBloqueoEditar";
+            this.btnBloqueoEditar.Rotation = 0D;
+            this.btnBloqueoEditar.Size = new System.Drawing.Size(50, 49);
+            this.btnBloqueoEditar.TabIndex = 62;
+            this.btnBloqueoEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueoEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueoEditar.UseVisualStyleBackColor = true;
+            this.btnBloqueoEditar.Click += new System.EventHandler(this.btnBloqueoEditar_Click);
             // 
             // cbo_Estado
             // 
@@ -460,10 +545,9 @@
             this.cbo_Estado.FormattingEnabled = true;
             this.cbo_Estado.ItemHeight = 29;
             this.cbo_Estado.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
-            this.cbo_Estado.Location = new System.Drawing.Point(887, 246);
+            "ACTIVO",
+            "INACTIVO"});
+            this.cbo_Estado.Location = new System.Drawing.Point(173, 329);
             this.cbo_Estado.Name = "cbo_Estado";
             this.cbo_Estado.PromptText = "ESTADO";
             this.cbo_Estado.Size = new System.Drawing.Size(227, 35);
@@ -472,24 +556,14 @@
             this.cbo_Estado.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cbo_Estado.UseSelectable = true;
             this.cbo_Estado.UseStyleColors = true;
-            // 
-            // lblSemestre
-            // 
-            this.lblSemestre.AutoSize = true;
-            this.lblSemestre.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSemestre.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblSemestre.Location = new System.Drawing.Point(643, 181);
-            this.lblSemestre.Name = "lblSemestre";
-            this.lblSemestre.Size = new System.Drawing.Size(139, 25);
-            this.lblSemestre.TabIndex = 62;
-            this.lblSemestre.Text = "SEMESTRE:";
+            this.cbo_Estado.SelectedValueChanged += new System.EventHandler(this.cbo_Estado_SelectedValueChanged);
             // 
             // lblAnio
             // 
             this.lblAnio.AutoSize = true;
             this.lblAnio.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnio.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblAnio.Location = new System.Drawing.Point(712, 74);
+            this.lblAnio.Location = new System.Drawing.Point(168, 152);
             this.lblAnio.Name = "lblAnio";
             this.lblAnio.Size = new System.Drawing.Size(70, 25);
             this.lblAnio.TabIndex = 61;
@@ -510,7 +584,7 @@
             // 
             this.dt_FechaAlta.FontSize = MetroFramework.MetroDateTimeSize.Tall;
             this.dt_FechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_FechaAlta.Location = new System.Drawing.Point(303, 173);
+            this.dt_FechaAlta.Location = new System.Drawing.Point(318, 241);
             this.dt_FechaAlta.MinimumSize = new System.Drawing.Size(0, 35);
             this.dt_FechaAlta.Name = "dt_FechaAlta";
             this.dt_FechaAlta.Size = new System.Drawing.Size(227, 35);
@@ -519,23 +593,6 @@
             this.dt_FechaAlta.Theme = MetroFramework.MetroThemeStyle.Light;
             this.dt_FechaAlta.UseStyleColors = true;
             this.dt_FechaAlta.ValueChanged += new System.EventHandler(this.dt_FechaAlta_ValueChanged);
-            // 
-            // cboSemestre
-            // 
-            this.cboSemestre.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.cboSemestre.FormattingEnabled = true;
-            this.cboSemestre.ItemHeight = 29;
-            this.cboSemestre.Location = new System.Drawing.Point(887, 173);
-            this.cboSemestre.Name = "cboSemestre";
-            this.cboSemestre.PromptText = "SELECCIONE";
-            this.cboSemestre.Size = new System.Drawing.Size(227, 35);
-            this.cboSemestre.Style = MetroFramework.MetroColorStyle.Green;
-            this.cboSemestre.TabIndex = 59;
-            this.cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.cboSemestre.UseSelectable = true;
-            this.cboSemestre.UseStyleColors = true;
-            this.cboSemestre.SelectedValueChanged += new System.EventHandler(this.cboSemestre_SelectedValueChanged);
-            this.cboSemestre.Validated += new System.EventHandler(this.cboSemestre_Validated);
             // 
             // txtAnio
             // 
@@ -554,7 +611,7 @@
             this.txtAnio.CustomButton.Visible = false;
             this.txtAnio.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtAnio.Lines = new string[0];
-            this.txtAnio.Location = new System.Drawing.Point(887, 66);
+            this.txtAnio.Location = new System.Drawing.Point(318, 152);
             this.txtAnio.MaxLength = 32767;
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.PasswordChar = '\0';
@@ -615,15 +672,16 @@
             // 
             // btnCancelarIngresar
             // 
-            this.btnCancelarIngresar.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelarIngresar.BackColor = System.Drawing.Color.LightGray;
             this.btnCancelarIngresar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCancelarIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarIngresar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCancelarIngresar.IconColor = System.Drawing.Color.Black;
             this.btnCancelarIngresar.IconSize = 16;
-            this.btnCancelarIngresar.Location = new System.Drawing.Point(682, 315);
+            this.btnCancelarIngresar.Location = new System.Drawing.Point(851, 192);
             this.btnCancelarIngresar.Name = "btnCancelarIngresar";
             this.btnCancelarIngresar.Rotation = 0D;
-            this.btnCancelarIngresar.Size = new System.Drawing.Size(146, 67);
+            this.btnCancelarIngresar.Size = new System.Drawing.Size(190, 67);
             this.btnCancelarIngresar.TabIndex = 61;
             this.btnCancelarIngresar.Text = "CANCELAR";
             this.btnCancelarIngresar.UseVisualStyleBackColor = false;
@@ -631,16 +689,18 @@
             // 
             // btnGuardarIngresar
             // 
-            this.btnGuardarIngresar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnGuardarIngresar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnGuardarIngresar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGuardarIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarIngresar.ForeColor = System.Drawing.Color.White;
             this.btnGuardarIngresar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardarIngresar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardarIngresar.IconColor = System.Drawing.Color.LightCyan;
             this.btnGuardarIngresar.IconSize = 40;
-            this.btnGuardarIngresar.Location = new System.Drawing.Point(435, 315);
+            this.btnGuardarIngresar.Location = new System.Drawing.Point(851, 79);
             this.btnGuardarIngresar.Name = "btnGuardarIngresar";
             this.btnGuardarIngresar.Padding = new System.Windows.Forms.Padding(5);
             this.btnGuardarIngresar.Rotation = 0D;
-            this.btnGuardarIngresar.Size = new System.Drawing.Size(179, 67);
+            this.btnGuardarIngresar.Size = new System.Drawing.Size(190, 67);
             this.btnGuardarIngresar.TabIndex = 60;
             this.btnGuardarIngresar.Text = "GUARDAR";
             this.btnGuardarIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -652,7 +712,7 @@
             this.lblFechaAlta.AutoSize = true;
             this.lblFechaAlta.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaAlta.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblFechaAlta.Location = new System.Drawing.Point(81, 183);
+            this.lblFechaAlta.Location = new System.Drawing.Point(81, 244);
             this.lblFechaAlta.Name = "lblFechaAlta";
             this.lblFechaAlta.Size = new System.Drawing.Size(157, 25);
             this.lblFechaAlta.TabIndex = 53;
@@ -698,29 +758,32 @@
         private System.Windows.Forms.Panel panelData;
         private MetroFramework.Controls.MetroGrid dgv_ConVisualizar;
         private System.Windows.Forms.Panel panelAcciones;
-        private System.Windows.Forms.Label lblSemestre;
         private System.Windows.Forms.Label lblAnio;
         private System.Windows.Forms.Label lblMonto;
         private MetroFramework.Controls.MetroDateTime dt_FechaAlta;
-        private MetroFramework.Controls.MetroComboBox cboSemestre;
         private MetroFramework.Controls.MetroTextBox txtAnio;
         private MetroFramework.Controls.MetroTextBox txtMonto;
         private FontAwesome.Sharp.IconButton btnCancelarIngresar;
         private FontAwesome.Sharp.IconButton btnGuardarIngresar;
         private System.Windows.Forms.Label lblFechaAlta;
         private MetroFramework.Controls.MetroComboBox cbo_Estado;
-        private FontAwesome.Sharp.IconButton btnBloqueo;
+        private FontAwesome.Sharp.IconButton btnBloqueoEditar;
         private MetroFramework.Controls.MetroTextBox txt_Otros;
         private MetroFramework.Controls.MetroComboBox cbo_Conceptos;
         private System.Windows.Forms.Label lblEditar;
         private System.Windows.Forms.Label lblErrorFecha;
         private System.Windows.Forms.ErrorProvider epError;
         private System.Windows.Forms.Label lblControlMonto;
-        private System.Windows.Forms.Label lblControlSemestre;
         private System.Windows.Forms.Label lblControlFecha;
         private System.Windows.Forms.Label lblControlAnio;
         private System.Windows.Forms.Label lblControlOtros;
         private System.Windows.Forms.Label lblErrorSemestre;
         private System.Windows.Forms.Label lblErrorAnio;
+        private System.Windows.Forms.Label lblDeshabilitar;
+        private FontAwesome.Sharp.IconButton btnBloqueoInactivar;
+        private System.Windows.Forms.Label lblControlFechaAlta;
+        private System.Windows.Forms.Label lblErAnio;
+        private FontAwesome.Sharp.IconButton btnGuardarEd;
+        private FontAwesome.Sharp.IconButton btnEliminar;
     }
 }

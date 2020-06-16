@@ -18,7 +18,11 @@ namespace GestionJardin
         entConcepto objConceptos = new entConcepto();
         DateTime fechaActual = DateTime.Today;
         DateTime fechaAlta;
-        //  int anio;
+        DateTime fechaFin = DateTime.MaxValue;
+        int idConceptoBuscar;
+        decimal montoAct;
+        string  estadoIni;
+       
 
         public frmConceptos2()
         {
@@ -42,19 +46,15 @@ namespace GestionJardin
         {
             //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
             panelBusqueda.Visible = true;
-         //   cboEstadoB.Visible = true; //hasta aqui muestra
-            txtBuscarConcepto.Visible = true; //hasta aqui muestra
+            txtBuscarConcepto.Visible = true; 
             lblControlOtros.Visible = true;
-            //string estado = cboEstadoB.SelectedItem.ToString();
+            
             objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
-
-         //   txtBuscarConcepto.Visible = true;
-
-            cbo_Conceptos.Visible = false; //Oculta
-            txt_Otros.Visible = false; //oculta
+                       
+            cbo_Conceptos.Visible = false; 
+            txt_Otros.Visible = false; 
             lblControlOtros.Visible = false;
-
-
+            
             //Panel abm
             panelAcciones.Visible = false;
 
@@ -64,8 +64,7 @@ namespace GestionJardin
             //grilla
             dgv_ConVisualizar.DataSource = objMet_Conceptos.Visualizar();
             dgv_ConVisualizar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -74,13 +73,10 @@ namespace GestionJardin
             limpiarCampos();
             //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
             panelBusqueda.Visible = true;
-            cbo_Conceptos.Visible = true; //hasta aqui muestra
-            txt_Otros.Visible = false; //Oculta
+            cbo_Conceptos.Visible = true; 
+            txt_Otros.Visible = false; 
             txtBuscarConcepto.Visible = false;
-          //  cboEstadoB.Visible = false;
             lblControlOtros.Visible = false;
-
-
 
         }
 
@@ -88,44 +84,16 @@ namespace GestionJardin
         {
 
             int v_otros = cbo_Conceptos.SelectedIndex;
-            // lblControlOtros.Visible = false;
-
-
+    
             if (v_otros == 8) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
             {
                 txt_Otros.Visible = true;
                 lblControlOtros.Visible = true;
-
-
-                cboSemestre.Items.Remove(0);
-                cboSemestre.Items.Remove(1);
-                cboSemestre.Items.Remove(2);
-                cboSemestre.Items.Add(1);
-                cboSemestre.Items.Add(2);
-            }
-            else if (v_otros == 0)
-            {
-                txt_Otros.Visible = false;
-                lblControlOtros.Visible = false;
-
-
-                cboSemestre.Items.Remove(0);
-                cboSemestre.Items.Remove(1);
-                cboSemestre.Items.Remove(2);
-                cboSemestre.Items.Add(0);
-
             }
             else
             {
                 txt_Otros.Visible = false;
                 lblControlOtros.Visible = false;
-
-
-                cboSemestre.Items.Remove(0);
-                cboSemestre.Items.Remove(1);
-                cboSemestre.Items.Remove(2);
-                cboSemestre.Items.Add(1);
-                cboSemestre.Items.Add(2);
             }
 
             //info global se oculta
@@ -137,10 +105,24 @@ namespace GestionJardin
             panelAcciones.Visible = true;
             btnGuardarIngresar.Visible = true;
             btnCancelarIngresar.Visible = true;
+            btnGuardarEd.Visible = false;
+            //btnCancelarEd.Visible = false;
+
+            lblControlMonto.Visible = true;
+            lblControlAnio.Visible = true;
+            lblControlFecha.Visible = true;
+
+            btnBloqueoEditar.Visible = false;
+            lblEditar.Visible = false;
 
             cbo_Estado.Visible = false;
-            btnBloqueo.Visible = false;
-            lblEditar.Visible = false;
+            btnBloqueoInactivar.Visible = false;
+            lblDeshabilitar.Visible = false;
+            lblErAnio.Visible = false;
+            btnEliminar.Visible = false;
+            btnEliminar.Visible = false;
+          
+
         }
 
         private void btnGuardarIngresar_Click(object sender, EventArgs e)
@@ -154,16 +136,17 @@ namespace GestionJardin
                 decimal monto = Convert.ToDecimal(txtMonto.Text);
                 DateTime fechaAlta = dt_FechaAlta.Value.Date;
                 int anio = Convert.ToInt32(txtAnio.Text);
-                int semestre = Convert.ToInt32(cboSemestre.SelectedItem.ToString());
-
-                DateTime fechaFin = DateTime.MaxValue;
+                decimal montoAnterior = 0;
+                            
                 int anioActual = fechaActual.Year;
 
                 int control = 0;
 
                 if (anio < anioActual)
                 {
-                    lblErrorAnio.Text = "Ingrese un añor mayor o igual al actual";
+
+                    lblErAnio.Visible = true;
+                    lblErAnio.Text = "Ingrese un añor mayor o igual al actual";
                     control = 1;
                 }
                 else
@@ -178,25 +161,22 @@ namespace GestionJardin
                 objConceptos.CON_FECHA_INI = fechaAlta;
                 objConceptos.CON_FECHA_FIN = fechaFin;
                 objConceptos.CON_FECHA_ACT = fechaAlta;
-                objConceptos.CON_SEMESTRE = semestre;
+                objConceptos.CON_VALOR_ANTERIOR = montoAnterior;
                 objConceptos.CON_ACTIVO = "S";
 
-
-
-
-
+                                             
                 if (control == 0)
                 {
                     if (objConceptos.CON_CONCEPTO != "OTROS")
                     {
-                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE) == 0)
+                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO) == 0)
                         {
                             MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
                             limpiarCampos();
                         }
                         else
                         {
-                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString() + " y semestre: " + objConceptos.CON_SEMESTRE.ToString()
+                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString()
                                             + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
                         }
                     }
@@ -204,14 +184,14 @@ namespace GestionJardin
                     {
                         objConceptos.CON_CONCEPTO = txt_Otros.Text;
 
-                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO, objConceptos.CON_SEMESTRE) == 0)
+                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO) == 0)
                         {
                             MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
                             limpiarCampos();
                         }
                         else
                         {
-                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString() + " y semestre: " + objConceptos.CON_SEMESTRE.ToString()
+                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString()
                                             + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
                         }
 
@@ -259,7 +239,8 @@ namespace GestionJardin
         private void txtAnio_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(sender, e);
-            lblErrorAnio.Visible = false;
+            lblErrorAnio.Visible = false; //no lo puedo encontrar por boba
+            lblErAnio.Visible = false;
             lblControlAnio.Visible = true;
             txtAnio.Style = MetroFramework.MetroColorStyle.Green;
             epError.Clear();
@@ -296,11 +277,11 @@ namespace GestionJardin
 
             if (fechaAlta < fechaActual)
             {
-                lblErrorFecha.Text = "Ingrese una fecha mayor o igual a la actual";
+                lblControlFechaAlta.Text = "Ingrese una fecha mayor o igual a la actual";
             }
             else
             {
-                lblErrorFecha.Text = "";
+                lblControlFechaAlta.Text = "";
             }
 
         }
@@ -343,35 +324,7 @@ namespace GestionJardin
                 txtAnio.Style = MetroFramework.MetroColorStyle.Red;
                 txtAnio.Focus();
             }
-        }
-
-        //Se valida que se seleccione al menos un valor para el SEMESTRE 
-
-        private void cboSemestre_Validated(object sender, EventArgs e)
-        {
-            if (cboSemestre.SelectedIndex == -1)
-            {
-                lblControlSemestre.Visible = false;
-                epError.SetError(cboSemestre, "Seleccione un SEMESTRE. (0 = no corresponde - 1 = PRIMER SEMESTRE - 2 = SEGUNDO SEMESTRE)");
-                cboSemestre.Style = MetroFramework.MetroColorStyle.Red;
-                cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
-                cboSemestre.Focus();
-            }
-        }
-
-        // VER CON GASTON O EL PROFE COMO COMPROBAR CON LA FECHA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-        //Si se ingresa un valor para el SEMESTRE se retornan los campos a su formato a inicial
-
-        private void cboSemestre_SelectedValueChanged(object sender, EventArgs e)
-        {
-            lblControlSemestre.Visible = true;
-            lblErrorSemestre.Visible = false;
-            cboSemestre.Style = MetroFramework.MetroColorStyle.Green;
-            cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
-            epError.Clear();
-        }
+        }       
 
 
 
@@ -401,16 +354,7 @@ namespace GestionJardin
                 epError.SetError(txtAnio, "Introduce un AÑO igual o mayor al actual para el periodo del concepto, SOLO NUMEROS.");
                 txtAnio.Style = MetroFramework.MetroColorStyle.Red;
                 txtAnio.Focus();
-            }
-            if (cboSemestre.SelectedIndex == -1)
-            {
-                ok = false;
-                lblControlSemestre.Visible = false;
-                epError.SetError(cboSemestre, "Seleccione un SEMESTRE. (0 = no corresponde - 1 = PRIMER SEMESTRE - 2 = SEGUNDO SEMESTRE)");
-                cboSemestre.Style = MetroFramework.MetroColorStyle.Red;
-                cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
-                cboSemestre.Focus();
-            }
+            }          
             else
             {
                 ok = true;
@@ -432,9 +376,14 @@ namespace GestionJardin
             txtMonto.Style = MetroFramework.MetroColorStyle.Green;
 
             dt_FechaAlta.Value = DateTime.Today;
-            cboSemestre.SelectedItem = null;
             cbo_Conceptos.SelectedItem = null;
-            cboSemestre.Theme = MetroFramework.MetroThemeStyle.Light;
+            cbo_Estado.Visible = false;
+            cbo_Estado.SelectedItem = null;
+            txtBuscarConcepto.Text = "";
+
+            btnBloqueoInactivar.Visible = false;
+            lblDeshabilitar.Visible = false;
+            btnEliminar.Visible = false;
 
         }
 
@@ -443,7 +392,266 @@ namespace GestionJardin
             limpiarCampos();
         }
 
-               
+        
+
+        private void txtBuscarConcepto_ButtonClick(object sender, EventArgs e)
+        {
+            panelData.Visible = false;
+            panelAcciones.Visible = true;
+            cbo_Estado.Visible = true;
+            btnGuardarEd.Visible = true;                    
+  
+            lblErAnio.Visible = false;
+            lblControlFecha.Visible = false;
+            lblControlAnio.Visible = false;
+            lblControlMonto.Visible = false;
+            btnGuardarIngresar.Visible = false;
+            btnEliminar.Visible = false;
+            lblControlFecha.Visible = false;
+            lblControlFechaAlta.Visible = false;
+
+
+            lbl_Titulo.Visible = false;
+
+
+            string conceptoB = "";
+            string anioB = "";            
+            string estadoB = "";
+            int contador = 0;
+
+            string busqueda = txtBuscarConcepto.Text;
+
+            char[] separadores = { '_', '(', ')' };
+            string[] palabras = busqueda.Split(separadores);
+
+            foreach (var palabra in palabras)
+            {
+                contador += 1;
+                if (contador == 1)
+                {
+                    conceptoB = palabra.Trim();
+                }
+                else if (contador == 2)
+                {
+                    anioB = palabra.Trim();
+                }
+                else if (contador == 3)
+                {
+                    estadoB = palabra.Trim();
+                }                
+
+            }        
+
+
+            if (estadoB == "ACTIVO")
+            {
+                estadoB = "S";
+            }
+            else if (estadoB == "INACTIVO")
+            {
+                estadoB = "N";
+            }
+
+
+            entConcepto conceptoBuscar = new entConcepto();
+            conceptoBuscar = objMet_Conceptos.BuscaConcepto(conceptoB, anioB, estadoB);
+
+
+            if (conceptoBuscar.CON_CONCEPTO != null)
+            {
+                idConceptoBuscar = conceptoBuscar.CON_ID; // se usara en el editar
+                montoAct = conceptoBuscar.CON_VALOR_ACTUAL; // se usara en el editar
+                estadoIni = conceptoBuscar.CON_ACTIVO; // se usara en el editar
+
+                txtMonto.Text = Convert.ToString(conceptoBuscar.CON_VALOR_ACTUAL);
+                txtMonto.Style = MetroFramework.MetroColorStyle.Blue;
+                dt_FechaAlta.Value = conceptoBuscar.CON_FECHA_INI;
+                dt_FechaAlta.Style = MetroFramework.MetroColorStyle.Blue;
+                txtAnio.Text = Convert.ToString(conceptoBuscar.CON_PERIODO);
+                txtAnio.Style = MetroFramework.MetroColorStyle.Blue;
+
+                cbo_Estado.SelectedValue = conceptoBuscar.CON_ACTIVO;
+                cbo_Estado.Style = MetroFramework.MetroColorStyle.Blue;
+
+                if (conceptoBuscar.CON_ACTIVO.StartsWith("S"))
+                {
+                    cbo_Estado.SelectedIndex = cbo_Estado.FindStringExact("ACTIVO");
+                    btnBloqueoEditar.Visible = true;
+                    lblEditar.Visible = true;
+                    btnEliminar.Visible = true;
+                    btnBloqueoInactivar.Visible = false;
+                    lblDeshabilitar.Visible = false;
+                    this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                    //lblDeshabilitar.Visible = true;
+                    //lblDeshabilitar.Text = "DESHABILITAR";
+                }
+                else
+                {
+                    cbo_Estado.SelectedIndex = cbo_Estado.FindStringExact("INACTIVO");
+                    btnBloqueoEditar.Visible = false;
+                    lblEditar.Visible = false;
+                    btnBloqueoInactivar.Visible = true;
+                    lblDeshabilitar.Visible = true;
+                    lblDeshabilitar.Text = "HABILITAR";
+
+                }
+
+            }
+
+            txtMonto.Enabled = false;
+            txtAnio.Enabled = false;
+            dt_FechaAlta.Enabled = false;
+            cbo_Estado.Enabled = false;
+        }
+
+
+        private void onOffCamposInactivar(bool onOff)
+        {
+            cbo_Estado.Enabled = onOff;            
+        }
+
+        private void onOffCamposEditar(bool onOff)
+        {
+            txtMonto.Enabled = onOff;
+            cbo_Estado.Enabled = false;
+            btnEliminar.Visible = false;
+        }
+
+        private void btnBloqueoInactivar_Click(object sender, EventArgs e)
+        {
+            if (this.btnBloqueoInactivar.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            {
+                this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+                onOffCamposInactivar(true);
+            }
+            else
+            {
+                this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                onOffCamposInactivar(false);
+            }
+        }
+
+        private void cbo_Estado_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            string estado;
+            if (cbo_Estado.SelectedItem == null)
+            {
+                estado = "";
+            } else { 
+                estado = cbo_Estado.SelectedItem.ToString();
+            }
+
+            if (estado == "ACTIVO")
+            {
+                btnBloqueoEditar.Visible = true;
+                lblEditar.Visible = true;
+                btnEliminar.Visible = false;
+                btnBloqueoInactivar.Visible = false;
+                lblDeshabilitar.Visible = false;
+            }
+            else
+            {
+                btnBloqueoEditar.Visible = false;
+                lblEditar.Visible = false;
+            }
+        }
+
+        private void btnBloqueoEditar_Click(object sender, EventArgs e)
+        {
+            if (this.btnBloqueoEditar.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            {
+                this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+                onOffCamposEditar(true);                
+            }
+            else
+            {
+                this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                onOffCamposEditar(false);
+                btnEliminar.Visible = true;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            btnBloqueoInactivar.Visible = true;
+            lblDeshabilitar.Visible = true;
+            lblDeshabilitar.Text = "DESHABILITAR";
+            btnBloqueoEditar.Visible = false;
+            lblEditar.Visible = false;
+        }
+
+        private void btnGuardarEd_Click(object sender, EventArgs e)
+        {
+            decimal montoE = Convert.ToDecimal(txtMonto.Text);
+                      
+            string estadoE;
+
+            if (cbo_Estado.SelectedItem == null)
+            {
+                estadoE = "";
+            }
+            else
+            {
+                estadoE = cbo_Estado.SelectedItem.ToString();
+            }
+           
+
+            if (estadoE != estadoIni && montoE !=montoAct)
+            {
+                objConceptos.CON_ID = idConceptoBuscar;
+                objConceptos.CON_FECHA_ACT = fechaActual;
+                objConceptos.CON_VALOR_ACTUAL = montoE;
+                objConceptos.CON_VALOR_ANTERIOR = montoAct;
+                objConceptos.CON_FECHA_FIN = fechaFin;
+
+                MessageBox.Show("Entre ActualizarMontoEstado -- ID" + objConceptos.CON_ID.ToString() + "- fechamod" + objConceptos.CON_FECHA_ACT +
+                                 " monto actual: " + objConceptos.CON_VALOR_ACTUAL + "monto anterior: " + objConceptos.CON_VALOR_ANTERIOR + " fecha fin:" + objConceptos.CON_FECHA_FIN);
+
+                    MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
+
+
+            }
+            else if(estadoE != estadoIni && montoE == montoAct)
+            {
+                if(estadoE == "INACTIVO")
+                { 
+                objConceptos.CON_ID = idConceptoBuscar;
+                objConceptos.CON_FECHA_ACT = fechaActual;
+                objConceptos.CON_FECHA_FIN = fechaActual;
+
+                    MessageBox.Show("Entre ActualizarEstadoN - id: " + objConceptos.CON_ID + "FechaAct: " + objConceptos.CON_FECHA_ACT + "FechaFin: " + objConceptos.CON_FECHA_FIN);
+
+                    MessageBox.Show(objMet_Conceptos.ActualizarEstadoN(objConceptos));
+
+                }
+                else if(estadoE == "ACTIVO")
+                {
+                    objConceptos.CON_ID = idConceptoBuscar;
+                    objConceptos.CON_FECHA_ACT = fechaActual;
+                    objConceptos.CON_FECHA_FIN = fechaFin;
+
+                    MessageBox.Show("Entre ActualizarEstadoS -id: " + objConceptos.CON_ID + "FechaAct: " + objConceptos.CON_FECHA_ACT + "FechaFin: " + objConceptos.CON_FECHA_FIN);
+
+                    MessageBox.Show(objMet_Conceptos.ActualizarEstadoS(objConceptos));
+                }
+            }
+            else if (estadoE == estadoIni && montoE != montoAct)
+            {
+                objConceptos.CON_ID = idConceptoBuscar;
+                objConceptos.CON_FECHA_ACT = fechaActual;
+                objConceptos.CON_VALOR_ACTUAL = montoE;
+                objConceptos.CON_VALOR_ANTERIOR = montoAct;
+
+                MessageBox.Show("Entre ActualizarMonto id: " + objConceptos.CON_ID + "FechaAct: " + objConceptos.CON_FECHA_ACT + "VA: " + objConceptos.CON_VALOR_ACTUAL+ "Vant: " + objConceptos.CON_VALOR_ANTERIOR);
+                MessageBox.Show(objMet_Conceptos.ActualizarMonto(objConceptos));
+            }
+            else
+            {
+                MessageBox.Show("NO SE DETECTARON CAMBIOS A REALIZAR");
+            }
+
+        }
     }
 }
 

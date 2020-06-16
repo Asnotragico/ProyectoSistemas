@@ -44,7 +44,7 @@ namespace GestionJardin
                                                             " CON_FECHA_ACT, " +
                                                             " CON_ACTIVO, " +
                                                             " CON_PERIODO, " +
-                                                            " CON_SEMESTRE) " +
+                                                            " CON_VALOR_ANTERIOR) " +
                                                 "VALUES " +
                                                         "('" + concepto.CON_CONCEPTO + "', " +
                                                         " " + concepto.CON_VALOR_ACTUAL + "," +
@@ -53,7 +53,7 @@ namespace GestionJardin
                                                         "'" + concepto.CON_FECHA_ACT + "'," +
                                                         "'" + concepto.CON_ACTIVO + "', " +
                                                         " " + concepto.CON_PERIODO + ", " +
-                                                        " " + concepto.CON_SEMESTRE + ")", con);
+                                                        " " + concepto.CON_VALOR_ANTERIOR + ")", con);
                 cmd.ExecuteNonQuery();
                 result = "SE INSERTO EL CONCEPTO: " + concepto.CON_CONCEPTO;
 
@@ -72,7 +72,7 @@ namespace GestionJardin
         //METODO QUE VALIDA QUE LOS DATOS A INGRESAR EN LA T_CONCEPTOS NO ESTEN REPETIDOS
         //************************************************************
 
-        public int ValidarConcepto(string p_CON_CONCEPTO, int p_CON_PERIODO, int p_CON_SEMESTRE)
+        public int ValidarConcepto(string p_CON_CONCEPTO, int p_CON_PERIODO)
         {
             con = generarConexion();
             con.Open();
@@ -83,8 +83,8 @@ namespace GestionJardin
 
                 cmd = new SqlCommand("SELECT COUNT(*) CANTIDAD " +
                                      " FROM T_CONCEPTOS WHERE CON_CONCEPTO = '" + p_CON_CONCEPTO + 
-                                     "' AND CON_PERIODO  = " + p_CON_PERIODO + 
-                                     " AND CON_SEMESTRE = " + p_CON_SEMESTRE + ";", con);
+                                     "' AND CON_PERIODO  = " + p_CON_PERIODO + ";", con);
+          
 
                 dt = new DataTable();
                 dta = new SqlDataAdapter(cmd);
@@ -127,22 +127,17 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
 
-                     
+
             try
             {
 
-                string consulta = "SELECT CONCAT(CON_CONCEPTO, ' '," +
-                                           " CON_PERIODO, " +
-                                       "CASE CON_SEMESTRE " +
-                                            "WHEN 0 THEN '' " +
-                                            "WHEN 1 THEN ', PRIMER SEMESTRE' " +
-                                            "WHEN 2 THEN ', SEGUNDO SEMESTRE' " +
-                                        "END, ' - ', " +
-                                       "CASE CON_ACTIVO " +
-                                            "WHEN 'S' THEN ' ACTIVO' " +
-                                            "WHEN 'N' THEN ' INACTIVO' " +
-                                        "END) " +
-                                 "FROM T_CONCEPTOS ";
+                string consulta = "SELECT CONCAT(CON_CONCEPTO, '_', " +
+                                                "CON_PERIODO, ' (', " +
+                                                "CASE CON_ACTIVO " +
+                                                     "WHEN 'S' THEN 'ACTIVO' " +
+                                                     "WHEN 'N' THEN 'INACTIVO' " +
+                                                "END, ')') " +
+                                   "FROM T_CONCEPTOS; ";
 
                 cmd = new SqlCommand(consulta, con);
 
@@ -157,66 +152,81 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 con.Close();
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
 
-        //************************************************************
-        //METODO QUE ACTUALIZA LOS DATOS EN LA T_CONCEPTOS
-        //************************************************************
-        public string ActualizarConcepto(int P_CON_ID, string p_CON_CONCEPTO, Double p_CON_VALOR_ACTUAL, int p_CON_PERIODO, int p_CON_SEMESTRE, DateTime p_CON_FECHA_INI, DateTime p_CON_FECHA_ACT)
+        public entConcepto BuscaConcepto(string concepto, string anio, string estado)
         {
-            con = generarConexion();
-            string result;
-
+            //string result = "";
+            entConcepto ent = new entConcepto();
 
             try
             {
+                con = generarConexion();
                 con.Open();
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_CONCEPTO = '" + p_CON_CONCEPTO + "', CON_VALOR_ACTUAL = " + p_CON_VALOR_ACTUAL + ", CON_PERIODO = " + p_CON_PERIODO + ", CON_SEMESTRE = " + p_CON_SEMESTRE + ", CON_FECHA_INI = '" + p_CON_FECHA_INI + "', CON_FECHA_ACT = '" + p_CON_FECHA_ACT + "' WHERE CON_ID = " + P_CON_ID + "; ", con);
-                cmd.ExecuteNonQuery();
-                result = "SE ACTUALIZO" + p_CON_CONCEPTO;
-            }
-            catch (Exception ex)
-            {
-                result = "NO SE ACTUALIZO EL CONCEPTO: " + ex.ToString();
+
+
+                string consulta = "SELECT * " +
+                                    "FROM T_CONCEPTOS " +
+                                   "WHERE CON_CONCEPTO = '"+ concepto + "' " +
+                                     "AND CON_PERIODO = '"+ anio + "' " +                                  
+                                     "AND CON_ACTIVO = '" + estado + "' ";
+              
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                dta.Fill(dt);
+
                 con.Close();
+
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        //result = Convert.ToString(dr["PER_ID"]);
+
+                        if (dr["CON_ID"] != DBNull.Value)
+                            ent.CON_ID = Convert.ToInt32(dr["CON_ID"]);
+                        if (dr["CON_CONCEPTO"] != DBNull.Value)
+                            ent.CON_CONCEPTO = Convert.ToString(dr["CON_CONCEPTO"]);
+                        if (dr["CON_VALOR_ACTUAL"] != DBNull.Value)
+                            ent.CON_VALOR_ACTUAL = Convert.ToDecimal(dr["CON_VALOR_ACTUAL"]);
+                        if (dr["CON_FECHA_INI"] != DBNull.Value)
+                            ent.CON_FECHA_INI = Convert.ToDateTime(dr["CON_FECHA_INI"]);
+                        if (dr["CON_FECHA_FIN"] != DBNull.Value)
+                            ent.CON_FECHA_FIN = Convert.ToDateTime(dr["CON_FECHA_FIN"]);
+                        if (dr["CON_FECHA_ACT"] != DBNull.Value)
+                            ent.CON_FECHA_ACT = Convert.ToDateTime(dr["CON_FECHA_ACT"]);
+                        if (dr["CON_ACTIVO"] != DBNull.Value)
+                            ent.CON_ACTIVO = Convert.ToString(dr["CON_ACTIVO"]);
+                        if (dr["CON_PERIODO"] != DBNull.Value)
+                            ent.CON_PERIODO = Convert.ToInt32(dr["CON_PERIODO"]);
+                        if (dr["CON_VALOR_ANTERIOR"] != DBNull.Value)
+                            ent.CON_VALOR_ANTERIOR = Convert.ToDecimal(dr["CON_VALOR_ANTERIOR"]);
+
+                    }
+                }
+
+
+
+            }
+            catch
+            {
+                //result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
             }
 
-
-            return result;
+            return ent;
 
         }
-
-        //************************************************************
-        //METODO QUE ACTUALIZA EL ESTADO A INACTIVO EN LA T_CONCEPTOS
-        //************************************************************
-        public string EliminarConcepto(int P_CON_ID, DateTime p_FECHA_FIN)
-        {
-            con = generarConexion();
-            string result;
-
-            try
-            {
-                con.Open();
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_FIN = '" + p_FECHA_FIN + "', CON_ACTIVO = 'N' WHERE CON_ID = " + P_CON_ID + "; ", con);
-                cmd.ExecuteNonQuery();
-                result = "SE DESHABILITO EL CONCEPTO";
-
-            }
-            catch (Exception ex)
-            {
-
-                result = "NO SE DESHABILITO EL CONCEPTO: " + ex.ToString();
-                con.Close();
-            }
-
-
-            return result;
-
-
-        }
+        
 
         /*
          PARA VISUALIZAR DETOS EN LA GRILLA DE MANERA GENERAL 
@@ -227,7 +237,18 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = "SELECT CON_ID 'ID', CON_CONCEPTO as 'CONCEPTO', CON_PERIODO 'PERIODO',  CON_SEMESTRE 'SEMESTRE', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_INI, 103) as 'ALTA', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN', (CASE CON_ACTIVO WHEN 'S' THEN 'ACTIVO' WHEN 'N' THEN 'INACTIVO' END) ESTADO FROM T_CONCEPTOS;";
+            string consulta = "SELECT CON_CONCEPTO as 'CONCEPTO', " +
+                                     "CON_PERIODO 'PERIODO',  " +
+                                     "CON_VALOR_ACTUAL as 'VALOR ACTUAL', " +
+                                     "CON_VALOR_ANTERIOR 'VALOR ANTERIOR',  " +
+                                     "CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_INI, 103) as 'ALTA', " +
+                                     "CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', " +
+                                     "CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN', " +
+                                     "(CASE CON_ACTIVO " +
+                                        "WHEN 'S' THEN 'ACTIVO' " +
+                                        "WHEN 'N' THEN 'INACTIVO' " +
+                                      "END) ESTADO " +
+                               "FROM T_CONCEPTOS ORDER BY 8, 2 DESC, 1;";
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
             dt = new DataTable();
@@ -239,151 +260,110 @@ namespace GestionJardin
 
         }
 
-        /*
-        PARA INICIALIZAR LOS DATOS EN EL ABM INGRESAR
-            */
-        public void InicializarCon(Panel p_panelConBuscar, Panel p_panel_ConEditar, Panel p_panel_ConEliminar, Panel p_panel_Con_Ingresar, Panel p_panel_ConAbm,
-                                   MetroComboBox p_nombreCon, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon,
-                                   MetroComboBox p_SemestreCon, MetroTextBox p_conOtros)
+        // Esto solo pasaria cuando se activa un inactivo y ademas cambia el monto
+        public string ActualizarMontoEstado(entConcepto conceptoME)
         {
+
+            con = generarConexion();
+            string result;
 
             try
             {
-                con = generarConexion();
+
                 con.Open();
-                //Paneles que se ocultan
-                p_panelConBuscar.Visible = false;
-                p_panel_ConEditar.Visible = false;
-                p_panel_ConEliminar.Visible = false;
-
-                //Paneles que se muestran
-                p_panel_Con_Ingresar.Show();
-
-                //Para identificarlo con el color del boton sobre el que se presiono. 
-                p_panel_ConAbm.BackColor = Color.SeaGreen;
-
-                //Se borran todos los controles
-                p_fechaCon.Text = DateTime.Now.ToShortDateString();
-                p_nombreCon.Focus();
-                p_nombreCon.SelectedIndex = -1;
-                p_montoCon.Clear();
-                p_anioCon.Clear();
-                p_SemestreCon.SelectedIndex = -1;
-                p_conOtros.Clear();
-
-                p_nombreCon.Size = new Size(280, 27);
-                p_conOtros.Visible = false;
-
-            }
-            catch (Exception ex)
-            {
-                con.Close();
-            }
-
-        }
-
-        public void InicializarEditar(Panel p_panelConBuscar, Panel p_panel_Con_Ingresar, Panel p_panel_ConEliminar, Panel p_panel_ConAbm, MetroTextBox p_nombreCon,
-                                      IconButton p_icBtn_BuscarEdit, IconButton p_icBtn_GuardarConE, IconButton p_icBtn_CancelarConE, Panel p_panel_ConEditar,
-                                      Label p_lbl_EditConAnio, Label p_lbl_EditConMonto, Label p_lbl_EditConSemestre, Label p_lbl_EditConFechaMod,
-                                      MetroTextBox p_conID, MetroTextBox p_montoCon, MetroTextBox p_anioCon, MetroDateTime p_fechaCon, MetroTextBox p_SemestreCon)
-        {
-
-            try
-            {
-                con = generarConexion();
-                con.Open();
-
-
-                //Paneles que oculta
-                p_panelConBuscar.Visible = false;
-                p_panel_Con_Ingresar.Visible = false;
-                p_panel_ConEliminar.Visible = false;
-
-                //El color del panel contenedor se debe poner del mismo colo cuando este se aprieta
-                p_panel_ConAbm.BackColor = Color.CornflowerBlue;
-
-                //Panel que muestra con las primeras opciones
-                p_panel_ConEditar.Show();
-                p_nombreCon.Visible = true;
-                p_icBtn_BuscarEdit.Visible = true;
-
-                //siempre esta en false
-                p_conID.Visible = false;
-
-                //Contenido que siempre se oculta
-                p_lbl_EditConAnio.Visible = false;
-                p_anioCon.Visible = false;
-                p_lbl_EditConMonto.Visible = false;
-                p_montoCon.Visible = false;
-                p_lbl_EditConSemestre.Visible = false;
-                p_SemestreCon.Visible = false;
-                p_lbl_EditConFechaMod.Visible = false;
-                p_fechaCon.Visible = false;
-                p_icBtn_GuardarConE.Visible = false;
-                p_icBtn_CancelarConE.Visible = false;
-
-
-                //Se borran todos los controles
-                p_fechaCon.Text = DateTime.Now.ToShortDateString();
-                p_nombreCon.Focus();
-                p_nombreCon.Clear();
-                p_montoCon.Clear();
-                p_anioCon.Clear();
-                p_SemestreCon.Clear();
-                p_conID.Clear();
+                //el SqlCommand se usa para realizar consultas a la base
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '"+ conceptoME.CON_FECHA_ACT+"', CON_ACTIVO = 'S', CON_VALOR_ACTUAL = "+ conceptoME.CON_VALOR_ACTUAL+", CON_VALOR_ANTERIOR = "+ conceptoME.CON_VALOR_ANTERIOR+", CON_FECHA_FIN = '"+ conceptoME.CON_FECHA_FIN +"' WHERE CON_ID = " + conceptoME.CON_ID+"; ", con);
+                cmd.ExecuteNonQuery();
+                result = "SE ACTUALIZO MONTO Y ESTADO DEL CONCEPTO";
 
 
             }
             catch (Exception ex)
             {
+                result = "NO SE PUDO ACTUALIZAR EL CONCEPTO: " + ex.ToString();
                 con.Close();
             }
-
+            return result;
         }
 
-        
-
-        /*
-      PARA VISUALIZAR EN LA GRILLA LOS CONCEPTOS DE LA BUSQUEDA QUE SE HIZO CON autocompletarBuscar
-          */
-        public DataTable VisualizarData(string data)
+        // Esto solo pasaria cuando se inactiva un concepto activo. El monto no deberia cambiar
+        public string ActualizarEstadoN(entConcepto conceptoEN)
         {
+
             con = generarConexion();
-            con.Open();
+            string result;
+
+            try
+            {
+
+                con.Open();
+                //el SqlCommand se usa para realizar consultas a la base
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoEN.CON_FECHA_ACT + "', CON_ACTIVO = 'N', CON_FECHA_FIN = '"+ conceptoEN.CON_FECHA_FIN+"' WHERE CON_ID = "+ conceptoEN.CON_ID+";", con);
+                cmd.ExecuteNonQuery();
+                result = "SE DESHABILITO EL CONCEPTO";
 
 
-            string consulta = "SELECT CON_ID 'ID',CON_CONCEPTO as 'CONCEPTO', CON_PERIODO 'PERIODO',  CON_SEMESTRE 'SEMESTRE', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_INI, 103) as 'ALTA', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN', (CASE CON_ACTIVO WHEN 'S' THEN 'ACTIVO' WHEN 'N' THEN 'INACTIVO' END) ESTADO FROM T_CONCEPTOS WHERE UPPER(CON_CONCEPTO) = '" + data + "' AND CON_ACTIVO = 'S';";
-            cmd = new SqlCommand(consulta, con);
-            dta = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            dta.Fill(dt);
-
-            con.Close();
-
-            return dt;
-
+            }
+            catch (Exception ex)
+            {
+                result = "NO SE PUDO DESHABILITAR EL CONCEPTO: " + ex.ToString();
+                con.Close();
+            }
+            return result;
         }
 
-        /*
-            PARA BUSCAR LOS CONCEPTOS POR FECHA
-         */
-        public DataTable Buscar(string data, DateTime p_fechaDesde, DateTime p_fechaHasta)
+        // Esto solo pasaria cuando SOLO se activa un concepto inactivo y el monto no cambia
+        public string ActualizarEstadoS(entConcepto conceptoES)
         {
+
             con = generarConexion();
-            con.Open();
+            string result;
 
-            string consulta = "SELECT CON_ID 'ID',CON_CONCEPTO as 'CONCEPTO', CON_PERIODO 'PERIODO',  CON_SEMESTRE 'SEMESTRE', CON_VALOR_ACTUAL as 'VALOR ACTUAL', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_INI, 103) as 'ALTA', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_ACT, 103) as 'MODIFICADO', CONVERT(VARCHAR(10), T_CONCEPTOS.CON_FECHA_FIN, 103) as 'FIN', (CASE CON_ACTIVO WHEN 'S' THEN 'ACTIVO' WHEN 'N' THEN 'INACTIVO' END) ESTADO FROM T_CONCEPTOS WHERE UPPER(CON_CONCEPTO) = '" + data + "' AND CON_FECHA_INI >= '" + p_fechaDesde + "' AND CON_FECHA_INI <= '" + p_fechaHasta + "';";
-            cmd = new SqlCommand(consulta, con);
-            dta = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            dta.Fill(dt);
+            try
+            {
 
-            con.Close();
+                con.Open();
+                //el SqlCommand se usa para realizar consultas a la base
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoES.CON_FECHA_ACT + "', CON_ACTIVO = 'S', CON_FECHA_FIN = '" + conceptoES.CON_FECHA_FIN + "' WHERE CON_ID = " + conceptoES.CON_ID + ";", con);
+                cmd.ExecuteNonQuery();
+                result = "SE HABILITO EL CONCEPTO";
 
-            return dt;
 
+            }
+            catch (Exception ex)
+            {
+                result = "NO SE PUDO HABILITAR EL CONCEPTO: " + ex.ToString();
+                con.Close();
+            }
+            return result;
         }
 
+        //Cuando solo se modifica el monto de un concepto Activo
+        public string ActualizarMonto(entConcepto conceptoM)
+        {
+
+            con = generarConexion();
+            string result;
+
+            try
+            {
+
+                con.Open();
+                //el SqlCommand se usa para realizar consultas a la base
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoM.CON_FECHA_ACT+ "', CON_VALOR_ACTUAL = "+ conceptoM.CON_VALOR_ACTUAL+", CON_VALOR_ANTERIOR = "+ conceptoM.CON_VALOR_ANTERIOR+" WHERE CON_ID = "+ conceptoM.CON_ID+"; ", con);
+                cmd.ExecuteNonQuery();
+
+                result = "SE ACTUALIZO EL MONTO DEL CONCEPTO";
+
+
+            }
+            catch (Exception ex)
+            {
+                result = "NO SE PUDO ACTUALIZAR EL MONTO DEL CONCEPTO: " + ex.ToString();
+                con.Close();
+            }
+            return result;
+        }
 
     }
 }

@@ -37,7 +37,7 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')', '-', CASE PER_ESTADO WHEN 1 THEN 'ACTIVO' WHEN 0 THEN 'INACTIVO' END) FROM T_PERSONAS " + tipoPersona;
+            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')', ',', CASE PER_ESTADO WHEN 1 THEN 'ACTIVO' WHEN 0 THEN 'INACTIVO' END) FROM T_PERSONAS " + tipoPersona;
 
                 //"SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') FROM T_PERSONAS P " + tipoPersona;
             cmd = new SqlCommand(consulta, con);
