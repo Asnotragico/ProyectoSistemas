@@ -385,6 +385,10 @@ namespace GestionJardin
             lblDeshabilitar.Visible = false;
             btnEliminar.Visible = false;
 
+
+            txtMonto.Enabled = true;
+            txtAnio.Enabled = true;
+
         }
 
         private void btnCancelarIngresar_Click(object sender, EventArgs e)
@@ -610,7 +614,9 @@ namespace GestionJardin
                 objConceptos.CON_FECHA_FIN = fechaFin;
                 
                 MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
-                
+                limpiarCampos();
+
+
             }
             else if (estadoE != estadoIni && montoE == montoAct)
             {
@@ -621,6 +627,7 @@ namespace GestionJardin
                     objConceptos.CON_FECHA_FIN = fechaActual;
                                        
                     MessageBox.Show(objMet_Conceptos.ActualizarEstadoN(objConceptos));
+                    limpiarCampos();
 
                 }
                 else if (estadoE == "ACTIVO")
@@ -630,6 +637,7 @@ namespace GestionJardin
                     objConceptos.CON_FECHA_FIN = fechaFin;
                     
                     MessageBox.Show(objMet_Conceptos.ActualizarEstadoS(objConceptos));
+                    limpiarCampos();
                 }
             }
             else if (estadoE == estadoIni && montoE != montoAct)
@@ -640,10 +648,12 @@ namespace GestionJardin
                 objConceptos.CON_VALOR_ANTERIOR = montoAct;
 
                 MessageBox.Show(objMet_Conceptos.ActualizarMonto(objConceptos));
+                limpiarCampos();
             }
             else
             {
                 MessageBox.Show("NO SE DETECTARON CAMBIOS A REALIZAR");
+                limpiarCampos();
             }
 
         }
