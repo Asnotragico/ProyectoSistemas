@@ -156,7 +156,6 @@
             this.txtBuscarPersona.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBuscarPersona.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPersona.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtBuscarPersona_ButtonClick);
-
             // 
             // lblAyuda
             // 
@@ -269,6 +268,7 @@
             this.dtNacimiento.TabIndex = 20;
             this.dtNacimiento.Value = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.ValueChanged += new System.EventHandler(this.dtNacimiento_ValueChanged);
+            this.dtNacimiento.Leave += new System.EventHandler(this.dtNacimiento_Leave);
             // 
             // lblDatosPersonales
             // 
@@ -312,7 +312,7 @@
             this.txtDocumento.CustomButton.Visible = false;
             this.txtDocumento.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtDocumento.Lines = new string[0];
-            this.txtDocumento.Location = new System.Drawing.Point(51, 217);
+            this.txtDocumento.Location = new System.Drawing.Point(49, 87);
             this.txtDocumento.MaxLength = 32767;
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.PasswordChar = '\0';
@@ -329,6 +329,7 @@
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            this.txtDocumento.Leave += new System.EventHandler(this.txtDocumento_Leave);
             // 
             // txtApellidos
             // 
@@ -347,7 +348,7 @@
             this.txtApellidos.CustomButton.Visible = false;
             this.txtApellidos.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtApellidos.Lines = new string[0];
-            this.txtApellidos.Location = new System.Drawing.Point(51, 152);
+            this.txtApellidos.Location = new System.Drawing.Point(51, 217);
             this.txtApellidos.MaxLength = 32767;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.PasswordChar = '\0';
@@ -382,7 +383,7 @@
             this.txtNombre.CustomButton.Visible = false;
             this.txtNombre.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNombre.Lines = new string[0];
-            this.txtNombre.Location = new System.Drawing.Point(51, 87);
+            this.txtNombre.Location = new System.Drawing.Point(51, 152);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -491,6 +492,7 @@
             this.txtEmail.WaterMark = "E-mail";
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtCelular
             // 

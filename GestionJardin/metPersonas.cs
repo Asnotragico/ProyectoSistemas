@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace GestionJardin
 {
@@ -39,7 +40,7 @@ namespace GestionJardin
 
             string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')', ',', CASE PER_ESTADO WHEN 1 THEN 'ACTIVO' WHEN 0 THEN 'INACTIVO' END) FROM T_PERSONAS " + tipoPersona;
 
-                //"SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') FROM T_PERSONAS P " + tipoPersona;
+            //"SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') FROM T_PERSONAS P " + tipoPersona;
             cmd = new SqlCommand(consulta, con);
 
             dr = cmd.ExecuteReader();
@@ -61,7 +62,7 @@ namespace GestionJardin
             string result;
 
             try
-            { 
+            {
                 con = generarConexion();
                 con.Open();
 
@@ -81,7 +82,7 @@ namespace GestionJardin
                                                 ", PER_FECHA_MOD" +
                                                 ", PER_FECHA_BAJA) " +
                                         "VALUES " +
-                                                "('"+ persona.PER_NOMBRE +"'" +
+                                                "('" + persona.PER_NOMBRE + "'" +
                                                 ", '" + persona.PER_APELLIDO + "'" +
                                                 ", '" + persona.PER_DOCUMENTO + "'" +
                                                 ", '" + persona.PER_GENERO + "'" +
@@ -96,7 +97,7 @@ namespace GestionJardin
                                                 ", NULL" +
                                                 ", NULL);";
 
-                               
+
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -127,7 +128,7 @@ namespace GestionJardin
 
                 string consulta = "SELECT * FROM T_PERSONAS P WHERE P.PER_NOMBRE = '" + nombre + "' AND P.PER_APELLIDO = '" + apellido + "' AND P.PER_DOCUMENTO = '" + documento + "';";
 
-                    
+
                 cmd = new SqlCommand(consulta, con);
                 dta = new SqlDataAdapter(cmd);
                 dt = new DataTable();
@@ -137,7 +138,7 @@ namespace GestionJardin
 
 
                 if (dt != null)
-                {                 
+                {
                     foreach (DataRow dr in dt.Rows)
                     {
                         //result = Convert.ToString(dr["PER_ID"]);
@@ -224,5 +225,75 @@ namespace GestionJardin
             return result;
         }
 
+
+        public string ValidarDni(string pDNI)
+        {
+            con = generarConexion();
+            con.Open();
+
+
+            string consulta = "SELECT PER_DOCUMENTO FROM T_PERSONAS WHERE PER_DOCUMENTO = '" + pDNI + "'";
+
+
+
+            cmd = new SqlCommand(consulta, con);
+
+            dr = cmd.ExecuteReader();
+
+
+            if (dr.Read())
+            {
+                MessageBox.Show("La persona ya se encuentra registrada").ToString();                    
+            }
+
+            return pDNI;
+
+
+        }
+
+        public int EdadDocente(DateTime pfechaNacimiento)
+
+        {
+            DateTime FechaActual = DateTime.Today;
+
+
+            int Edad_D = FechaActual.Year - pfechaNacimiento.Year;
+            if (FechaActual < pfechaNacimiento.AddYears(Edad_D))
+                Edad_D--;
+
+            if (Edad_D < 18)
+            {
+                MessageBox.Show("Este docente tiene menos de 18 años. No puede ser registrado.");
+
+            }
+            return Edad_D;
+
+        }
+
+        public bool ValidarEmail(String pEmail)
+        {
+            String validar;
+            validar = "^([0-9a-zA-Z]([-\\.\\w][0-9a-zA-Z])@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
+            if (Regex.IsMatch(pEmail, validar))
+
+            {
+                if (Regex.Replace(pEmail, validar, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        
     }
 }

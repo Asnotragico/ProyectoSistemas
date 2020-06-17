@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace GestionJardin
 {
@@ -274,7 +275,7 @@ namespace GestionJardin
                         cbTurno.Enabled = false;
 
                     }
-                    else if (EdadAnos == 4 || (EdadAnos == 5 && EdadMeses < 6))
+                    else if (EdadAnos == 4 || (EdadAnos == 5 && EdadMeses > 6))
                     {
                         cbSala.SelectedIndex = cbSala.FindStringExact("VERDE");
                         cbSala.Enabled = false;
@@ -864,6 +865,55 @@ namespace GestionJardin
             soloLetras(sender, e);
         }
 
-        
+        private void dtNacimiento_Leave(object sender, EventArgs e)
+        {
+            if (cbTipoPersona2.SelectedValue.ToString() == "1")
+
+            {
+                metPersonas ObjMetOersonas = new metPersonas();
+                objMetPersonas.EdadDocente(dtNacimiento.Value);
+            }
+
+
+            if (cbTipoPersona2.SelectedValue.ToString() == "2")//el alumno no puede ingresar por ser menor de edad
+
+                if (EdadAnos == 0 || (EdadAnos == 1 && EdadMeses > 6))
+                {
+                    MessageBox.Show("No está permitido el Ingreso de este alumno. Su edad es menor al año. ");
+
+
+                }
+
+            if (cbTipoPersona2.SelectedValue.ToString() == "2")//elalumno no puede ingresar por ser mayor de edad
+                if (EdadAnos >= 6 || (EdadAnos == 5 && EdadMeses < 6))
+
+                {
+                    MessageBox.Show("No está permitido el Ingreso de este alumno. Supera la edad permitida por el establecimiento. ");
+
+                }
+        }
+
+        private void txtDocumento_Leave(object sender, EventArgs e)
+        {
+            metPersonas ObjMetPersonas = new metPersonas();
+            ObjMetPersonas.ValidarDni(txtDocumento.Text);
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            metPersonas ObjMetPersonas = new metPersonas();
+            ObjMetPersonas.ValidarEmail(txtEmail.Text);
+
+
+
+            if (objMetPersonas.ValidarEmail(txtEmail.Text) == false)
+            {
+                MessageBox.Show("Ingrese un Email Válido");
+                txtEmail.Clear();
+                txtEmail.Focus();
+
+            }
+            
+        }
     }
 }
