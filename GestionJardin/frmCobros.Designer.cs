@@ -50,8 +50,8 @@
             this.txtLegajo = new MetroFramework.Controls.MetroTextBox();
             this.txtDocumento = new MetroFramework.Controls.MetroTextBox();
             this.txtNombreyApellido = new MetroFramework.Controls.MetroTextBox();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.panelBusqueda.SuspendLayout();
             this.panlBtnEditar.SuspendLayout();
             this.panelBotones.SuspendLayout();
@@ -67,9 +67,9 @@
             this.lblAyuda.Location = new System.Drawing.Point(13, 22);
             this.lblAyuda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAyuda.Name = "lblAyuda";
-            this.lblAyuda.Size = new System.Drawing.Size(209, 20);
+            this.lblAyuda.Size = new System.Drawing.Size(210, 20);
             this.lblAyuda.TabIndex = 35;
-            this.lblAyuda.Text = "Agregar o buscar un COBRO.";
+            this.lblAyuda.Text = "Buscar o Agregar un COBRO.";
             this.lblAyuda.UseCustomBackColor = true;
             // 
             // panelBusqueda
@@ -169,7 +169,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditar.BorderRadius = 5;
-            this.btnEditar.ButtonText = "Guardar";
+            this.btnEditar.ButtonText = "EDITAR";
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.DisabledColor = System.Drawing.Color.Gray;
             this.btnEditar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,7 +194,7 @@
             this.btnEditar.selected = false;
             this.btnEditar.Size = new System.Drawing.Size(220, 63);
             this.btnEditar.TabIndex = 26;
-            this.btnEditar.Text = "Guardar";
+            this.btnEditar.Text = "EDITAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEditar.Textcolor = System.Drawing.Color.White;
             this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,7 +222,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardar.BorderRadius = 5;
-            this.btnGuardar.ButtonText = "Guardar";
+            this.btnGuardar.ButtonText = "GUARDAR";
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.DisabledColor = System.Drawing.Color.Gray;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -247,7 +247,7 @@
             this.btnGuardar.selected = false;
             this.btnGuardar.Size = new System.Drawing.Size(220, 63);
             this.btnGuardar.TabIndex = 24;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Textcolor = System.Drawing.Color.White;
             this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,7 +258,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpiar.BorderRadius = 5;
-            this.btnLimpiar.ButtonText = "Limpiar";
+            this.btnLimpiar.ButtonText = "CANCELAR";
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.DisabledColor = System.Drawing.Color.Gray;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,7 +283,7 @@
             this.btnLimpiar.selected = false;
             this.btnLimpiar.Size = new System.Drawing.Size(220, 63);
             this.btnLimpiar.TabIndex = 25;
-            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Text = "CANCELAR";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpiar.Textcolor = System.Drawing.Color.White;
             this.btnLimpiar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
@@ -557,39 +557,39 @@
             this.txtNombreyApellido.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombreyApellido.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.AutoSize = true;
+            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btnBuscar.IconSize = 81;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscar.Location = new System.Drawing.Point(33, 78);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Rotation = 0D;
+            this.btnBuscar.Size = new System.Drawing.Size(100, 100);
+            this.btnBuscar.TabIndex = 41;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // iconButton1
             // 
             this.iconButton1.AutoSize = true;
             this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconButton1.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton1.IconColor = System.Drawing.Color.SeaGreen;
             this.iconButton1.IconSize = 81;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.Location = new System.Drawing.Point(176, 78);
+            this.iconButton1.Location = new System.Drawing.Point(167, 78);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(100, 100);
-            this.iconButton1.TabIndex = 41;
+            this.iconButton1.TabIndex = 42;
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAgregar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregar.IconColor = System.Drawing.Color.SeaGreen;
-            this.btnAgregar.IconSize = 81;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(33, 78);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Rotation = 0D;
-            this.btnAgregar.Size = new System.Drawing.Size(100, 100);
-            this.btnAgregar.TabIndex = 42;
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // frmCobros
             // 
@@ -597,8 +597,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1411, 826);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblAyuda);
             this.Controls.Add(this.panelBusqueda);
             this.Controls.Add(this.panlBtnEditar);
@@ -642,7 +642,7 @@
         private MetroFramework.Controls.MetroTextBox txtLegajo;
         private MetroFramework.Controls.MetroTextBox txtDocumento;
         private MetroFramework.Controls.MetroTextBox txtNombreyApellido;
+        private FontAwesome.Sharp.IconButton btnBuscar;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnAgregar;
     }
 }

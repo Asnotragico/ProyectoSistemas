@@ -87,7 +87,7 @@ namespace GestionJardin
             SqlCommand com = new SqlCommand();
             com.Connection = con;
 
-            com.CommandText = "SELECT C.CON_ID ID, C.CON_CONCEPTO CONCEPTO, C.CON_VALOR_ACTUAL VALOR, C.CON_SEMESTRE SEMESTRE " +
+            com.CommandText = "SELECT C.CON_ID ID, C.CON_CONCEPTO CONCEPTO, C.CON_VALOR_ACTUAL VALOR " +
                                 "FROM T_CONCEPTOS C " +
                                 "WHERE C.CON_ACTIVO = 'S' " +
                                 "AND C.CON_PERIODO = " + añoEjercicio + ";";

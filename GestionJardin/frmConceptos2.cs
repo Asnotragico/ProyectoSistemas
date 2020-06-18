@@ -125,83 +125,7 @@ namespace GestionJardin
 
         }
 
-        private void btnGuardarIngresar_Click(object sender, EventArgs e)
-        {
-            //Se cargan los contenidos siempre y cuando esten completos
-
-            if (ValidarCampos())
-            {
-
-                string concepto = cbo_Conceptos.SelectedItem.ToString();
-                decimal monto = Convert.ToDecimal(txtMonto.Text);
-                DateTime fechaAlta = dt_FechaAlta.Value.Date;
-                int anio = Convert.ToInt32(txtAnio.Text);
-                decimal montoAnterior = 0;
-
-                int anioActual = fechaActual.Year;
-
-                int control = 0;
-
-                if (anio < anioActual)
-                {
-
-                    lblErAnio.Visible = true;
-                    lblErAnio.Text = "Ingrese un añor mayor o igual al actual";
-                    control = 1;
-                }
-                else
-                {
-                    objConceptos.CON_PERIODO = anio;
-                    control = 0;
-                }
-
-                // Carga datos de la clase concepto
-                objConceptos.CON_CONCEPTO = concepto;
-                objConceptos.CON_VALOR_ACTUAL = monto;
-                objConceptos.CON_FECHA_INI = fechaAlta;
-                objConceptos.CON_FECHA_FIN = fechaFin;
-                objConceptos.CON_FECHA_ACT = fechaAlta;
-                objConceptos.CON_VALOR_ANTERIOR = montoAnterior;
-                objConceptos.CON_ACTIVO = "S";
-
-
-                if (control == 0)
-                {
-                    if (objConceptos.CON_CONCEPTO != "OTROS")
-                    {
-                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO) == 0)
-                        {
-                            MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
-                            limpiarCampos();
-                        }
-                        else
-                        {
-                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString()
-                                            + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
-                        }
-                    }
-                    else if (objConceptos.CON_CONCEPTO == "OTROS")
-                    {
-                        objConceptos.CON_CONCEPTO = txt_Otros.Text;
-
-                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO) == 0)
-                        {
-                            MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
-                            limpiarCampos();
-                        }
-                        else
-                        {
-                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString()
-                                            + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
-                        }
-
-                    }
-
-                }
-            }
-
-        }
-
+       
         /*************************************************
 
             VALIDACION TIPOS DE DATOS
@@ -225,11 +149,66 @@ namespace GestionJardin
 
         }
 
+        private void UnPunto(KeyPressEventArgs e, string cadena)
+        {
+            int contador = 0;
+            string caracter = "";
+            bool bandera;
+
+            for (int n = 0; n < cadena.Length; n++)
+            {
+                caracter = cadena.Substring(n, 1);
+                if (caracter == ".")
+                {
+                    contador++;
+                }
+            }
+
+            if (contador == 0)
+            {
+                bandera = true;
+                if (e.KeyChar == ',' && bandera)
+                {
+                    bandera = false; // ya no acepta otro punto
+                    e.Handled = false;
+                }
+                else if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                bandera = false;
+                e.Handled = true;
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
 
         // En el campo MONTO se ingresan solo NUMEROS--- consultar con GASTON COMO HACER CON DECIMALES
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            soloNumeros(sender, e);
+            UnPunto(e, txtMonto.Text);
             lblControlMonto.Visible = true;
             txtMonto.Style = MetroFramework.MetroColorStyle.Green;
             epError.Clear();
@@ -391,13 +370,7 @@ namespace GestionJardin
 
         }
 
-        private void btnCancelarIngresar_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-        }
-
-
-
+      
         private void txtBuscarConcepto_ButtonClick(object sender, EventArgs e)
         {
             panelData.Visible = false;
@@ -580,16 +553,7 @@ namespace GestionJardin
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            btnBloqueoInactivar.Visible = true;
-            lblDeshabilitar.Visible = true;
-            lblDeshabilitar.Text = "DESHABILITAR";
-            btnBloqueoEditar.Visible = false;
-            lblEditar.Visible = false;
-        }
-
-        private void btnGuardarEd_Click(object sender, EventArgs e)
+        private void btnGuardarEd_Click_1(object sender, EventArgs e)
         {
             decimal montoE = Convert.ToDecimal(txtMonto.Text);
 
@@ -612,7 +576,7 @@ namespace GestionJardin
                 objConceptos.CON_VALOR_ACTUAL = montoE;
                 objConceptos.CON_VALOR_ANTERIOR = montoAct;
                 objConceptos.CON_FECHA_FIN = fechaFin;
-                
+
                 MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
                 limpiarCampos();
 
@@ -625,7 +589,7 @@ namespace GestionJardin
                     objConceptos.CON_ID = idConceptoBuscar;
                     objConceptos.CON_FECHA_ACT = fechaActual;
                     objConceptos.CON_FECHA_FIN = fechaActual;
-                                       
+
                     MessageBox.Show(objMet_Conceptos.ActualizarEstadoN(objConceptos));
                     limpiarCampos();
 
@@ -635,7 +599,7 @@ namespace GestionJardin
                     objConceptos.CON_ID = idConceptoBuscar;
                     objConceptos.CON_FECHA_ACT = fechaActual;
                     objConceptos.CON_FECHA_FIN = fechaFin;
-                    
+
                     MessageBox.Show(objMet_Conceptos.ActualizarEstadoS(objConceptos));
                     limpiarCampos();
                 }
@@ -655,8 +619,98 @@ namespace GestionJardin
                 MessageBox.Show("NO SE DETECTARON CAMBIOS A REALIZAR");
                 limpiarCampos();
             }
-
         }
+
+        private void btnGuardarIngresar_Click_1(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+
+                string concepto = cbo_Conceptos.SelectedItem.ToString();
+                decimal monto = Convert.ToDecimal(txtMonto.Text);
+                DateTime fechaAlta = dt_FechaAlta.Value.Date;
+                int anio = Convert.ToInt32(txtAnio.Text);
+                decimal montoAnterior = 0;
+                                             
+                int anioActual = fechaActual.Year;
+
+                int control = 0;
+                
+                if (anio < anioActual)
+                {
+
+                    lblErAnio.Visible = true;
+                    lblErAnio.Text = "Ingrese un añor mayor o igual al actual";
+                    control = 1;
+                }
+                else
+                {
+                    objConceptos.CON_PERIODO = anio;
+                    control = 0;
+                }
+
+                // Carga datos de la clase concepto
+                objConceptos.CON_CONCEPTO = concepto;
+                objConceptos.CON_VALOR_ACTUAL = monto;
+                objConceptos.CON_FECHA_INI = fechaAlta;
+                objConceptos.CON_FECHA_FIN = fechaFin;
+                objConceptos.CON_FECHA_ACT = fechaAlta;
+                objConceptos.CON_VALOR_ANTERIOR = montoAnterior;
+                objConceptos.CON_ACTIVO = "S";
+
+
+                if (control == 0)
+                {
+                    if (objConceptos.CON_CONCEPTO != "OTROS")
+                    {
+                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO) == 0)
+                        {
+                            MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
+                            limpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString()
+                                            + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
+                        }
+                    }
+                    else if (objConceptos.CON_CONCEPTO == "OTROS")
+                    {
+                        objConceptos.CON_CONCEPTO = txt_Otros.Text;
+
+                        if (objMet_Conceptos.ValidarConcepto(objConceptos.CON_CONCEPTO, objConceptos.CON_PERIODO) == 0)
+                        {
+                            MessageBox.Show(objMet_Conceptos.InsertarConcepto(objConceptos));
+                            limpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("YA EXISTE el concepto: " + objConceptos.CON_CONCEPTO + " para el año: " + objConceptos.CON_PERIODO.ToString()
+                                            + "\n Por favor verifique el AÑO y SEMESTRE ingresado o verifique el mismo en la opcion BUSCAR(lupa) y modifique lo que crea necesario");
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        private void btnCancelarIngresar_Click_1(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            btnBloqueoInactivar.Visible = true;
+            lblDeshabilitar.Visible = true;
+            lblDeshabilitar.Text = "DESHABILITAR";
+            btnBloqueoEditar.Visible = false;
+            lblEditar.Visible = false;
+        }
+
+
+
     }
 }
 

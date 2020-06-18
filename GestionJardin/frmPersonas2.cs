@@ -287,9 +287,9 @@ namespace GestionJardin
                 }
             }
 
-            salas = "El cupo de la sala " + cbSala.SelectedItem.ToString() + " es de " + Convert.ToString(contadorSala) + " vacantes."; // cupo
-            lblSalasCupo.Text = salas; //cupo
-            lblSalasCupo.Visible = true; // cupo
+         //   salas = "El cupo de la sala " + cbSala.SelectedItem.ToString() + " es de " + Convert.ToString(contadorSala) + " vacantes."; // cupo
+         //   lblSalasCupo.Text = salas; //cupo
+         //   lblSalasCupo.Visible = true; // cupo
 
         }
 
