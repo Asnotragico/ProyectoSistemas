@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace GestionJardin
 {
@@ -273,7 +274,8 @@ namespace GestionJardin
         public bool ValidarEmail(String pEmail)
         {
             String validar;
-            validar = "^([0-9a-zA-Z]([-\\.\\w][0-9a-zA-Z])@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            
+            validar = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
 
             if (Regex.IsMatch(pEmail, validar))
 
@@ -293,7 +295,7 @@ namespace GestionJardin
                 return false;
             }
 
-        }
+        }      
         
     }
 }

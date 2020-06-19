@@ -902,11 +902,13 @@ namespace GestionJardin
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             metPersonas ObjMetPersonas = new metPersonas();
-            ObjMetPersonas.ValidarEmail(txtEmail.Text);
+
+              ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            //objMetPersonas.isValid(txtEmail.Text);
 
 
 
-            if (objMetPersonas.ValidarEmail(txtEmail.Text) == false)
+           if (ObjMetPersonas.ValidarEmail(txtEmail.Text) == false)          
             {
                 MessageBox.Show("Ingrese un Email Válido");
                 txtEmail.Clear();

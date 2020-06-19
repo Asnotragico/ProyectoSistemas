@@ -89,11 +89,19 @@ namespace GestionJardin
             {
                 txt_Otros.Visible = true;
                 lblControlOtros.Visible = true;
+                txtMonto.PromptText = "$";
+            }
+            else if(v_otros == 6)
+            {
+                lblMonto.Text = "PORCENTAJE";
+                txtMonto.PromptText = "";
             }
             else
             {
                 txt_Otros.Visible = false;
+                lblMonto.Text = "IMPORTE";
                 lblControlOtros.Visible = false;
+                txtMonto.PromptText = "$";
             }
 
             //info global se oculta
@@ -345,6 +353,8 @@ namespace GestionJardin
 
         private void limpiarCampos()
         {
+            
+
             txt_Otros.Text = "";
             txt_Otros.Style = MetroFramework.MetroColorStyle.Green;
 
@@ -367,6 +377,8 @@ namespace GestionJardin
 
             txtMonto.Enabled = true;
             txtAnio.Enabled = true;
+
+            
 
         }
 
