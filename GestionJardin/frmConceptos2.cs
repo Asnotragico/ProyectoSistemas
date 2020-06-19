@@ -31,6 +31,9 @@ namespace GestionJardin
 
         private void frmConceptos2_Load(object sender, EventArgs e)
         {
+
+            limpiarCampos();
+
             btnBuscar.Visible = true;
             btnAgregar.Visible = true;
             panelData.Visible = true;
@@ -42,9 +45,15 @@ namespace GestionJardin
 
         }
 
+        /*************************
+        //BUSCAR CONCEPTO BOTON LUPA
+        **************************/
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
+            limpiarCampos();
+
+            //Panel busqueda --> solo muestra los que sirven para buscar un concepto en particular
             panelBusqueda.Visible = true;
             txtBuscarConcepto.Visible = true;
             lblControlOtros.Visible = true;
@@ -67,324 +76,14 @@ namespace GestionJardin
 
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
+        /******************************
+         // BUSCA EL CONCEPTO INGRESADO Y DEVUELVE TODOS LOS DATOS
+        *******************************/
 
-            limpiarCampos();
-            //Panel busqueda --> solo muestra los que sirve para buscar un concepto en particular
-            panelBusqueda.Visible = true;
-            cbo_Conceptos.Visible = true;
-            txt_Otros.Visible = false;
-            txtBuscarConcepto.Visible = false;
-            lblControlOtros.Visible = false;
-
-        }
-
-        private void cbo_Conceptos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            int v_otros = cbo_Conceptos.SelectedIndex;
-
-            if (v_otros == 8) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
-            {
-                txt_Otros.Visible = true;
-                lblControlOtros.Visible = true;
-                txtMonto.PromptText = "$";
-            }
-            else if(v_otros == 6)
-            {
-                lblMonto.Text = "PORCENTAJE";
-                txtMonto.PromptText = "";
-            }
-            else
-            {
-                txt_Otros.Visible = false;
-                lblMonto.Text = "IMPORTE";
-                lblControlOtros.Visible = false;
-                txtMonto.PromptText = "$";
-            }
-
-            //info global se oculta
-            lbl_Titulo.Visible = false;
-            panelData.Visible = false;
-
-
-            //Panel abm
-            panelAcciones.Visible = true;
-            btnGuardarIngresar.Visible = true;
-            btnCancelarIngresar.Visible = true;
-            btnGuardarEd.Visible = false;
-            //btnCancelarEd.Visible = false;
-
-            lblControlMonto.Visible = true;
-            lblControlAnio.Visible = true;
-            lblControlFecha.Visible = true;
-
-            btnBloqueoEditar.Visible = false;
-            lblEditar.Visible = false;
-
-            cbo_Estado.Visible = false;
-            btnBloqueoInactivar.Visible = false;
-            lblDeshabilitar.Visible = false;
-            lblErAnio.Visible = false;
-            btnEliminar.Visible = false;
-            btnEliminar.Visible = false;
-
-
-        }
-
-       
-        /*************************************************
-
-            VALIDACION TIPOS DE DATOS
-
-        **************************************************/
-
-        // VALIDA SOLO EL INGRESO DE LETRAS O CARACTERES
-        private void soloLetras(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-
-        }
-
-        // VALIDA SOLO EL INGRESO DE NUMEROS
-        private void soloNumeros(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-        }
-
-        private void UnPunto(KeyPressEventArgs e, string cadena)
-        {
-            int contador = 0;
-            string caracter = "";
-            bool bandera;
-
-            for (int n = 0; n < cadena.Length; n++)
-            {
-                caracter = cadena.Substring(n, 1);
-                if (caracter == ".")
-                {
-                    contador++;
-                }
-            }
-
-            if (contador == 0)
-            {
-                bandera = true;
-                if (e.KeyChar == ',' && bandera)
-                {
-                    bandera = false; // ya no acepta otro punto
-                    e.Handled = false;
-                }
-                else if (Char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else if (Char.IsControl(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-            else
-            {
-                bandera = false;
-                e.Handled = true;
-                if (Char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else if (Char.IsControl(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-
-        // En el campo MONTO se ingresan solo NUMEROS--- consultar con GASTON COMO HACER CON DECIMALES
-        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            UnPunto(e, txtMonto.Text);
-            lblControlMonto.Visible = true;
-            txtMonto.Style = MetroFramework.MetroColorStyle.Green;
-            epError.Clear();
-        }
-
-        // En el campo AÑO se ingresan solo NUMEROS
-        private void txtAnio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            soloNumeros(sender, e);
-            lblErrorAnio.Visible = false; //no lo puedo encontrar por boba
-            lblErAnio.Visible = false;
-            lblControlAnio.Visible = true;
-            txtAnio.Style = MetroFramework.MetroColorStyle.Green;
-            epError.Clear();
-
-        }
-
-        // En el campo OTROS se ingresan solo LETRAS
-        private void txt_Otros_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            soloLetras(sender, e);
-            lblControlOtros.Visible = true;
-            txt_Otros.Style = MetroFramework.MetroColorStyle.Green;
-            epError.Clear();
-
-        }
-
-
-        /*******************************************
-
-            VALIDACION INGRESO DE DATOS INDIVIDUAL POR CAMPO
-
-        *******************************************/
-
-        //Se valida que la FECHA DE ALTA sea >= a la actual
-
-        private void dt_FechaAlta_ValueChanged(object sender, EventArgs e)
-        {
-
-            epError.Clear();
-            dt_FechaAlta.Style = MetroFramework.MetroColorStyle.Green;
-
-            fechaAlta = dt_FechaAlta.Value.Date;
-
-
-            if (fechaAlta < fechaActual)
-            {
-                lblControlFechaAlta.Text = "Ingrese una fecha mayor o igual a la actual";
-            }
-            else
-            {
-                lblControlFechaAlta.Text = "";
-            }
-
-        }
-
-        //Se valida que se hayan ingresado valores en el MONTO
-
-        private void txtMonto_Validated(object sender, EventArgs e)
-        {
-            if (txtMonto.Text.Trim() == "")
-            {
-                lblControlMonto.Visible = false;
-                epError.SetError(txtMonto, "Introduce el MONTO del concepto, SOLO NUMEROS por ejemplo 2300");
-                txtMonto.Style = MetroFramework.MetroColorStyle.Red;
-                txtMonto.Focus();
-            }
-
-        }
-
-        //Se valida que se hayan ingresado valores en el campo OTROS
-
-        private void txt_Otros_Validated(object sender, EventArgs e)
-        {
-            if (txt_Otros.Text.Trim() == "")
-            {
-                lblControlOtros.Visible = false;
-                epError.SetError(txt_Otros, "Introduce el NOMBRE del concepto, SOLO LETRAS por ejemplo: 'PASEO'");
-                txt_Otros.Style = MetroFramework.MetroColorStyle.Red;
-                txt_Otros.Focus();
-            }
-        }
-
-        //Se valida que se hayan ingresado valores en el campo AÑO
-
-        private void txtAnio_Validated(object sender, EventArgs e)
-        {
-            if (txtAnio.Text.Trim() == "")
-            {
-                lblControlAnio.Visible = false;
-                epError.SetError(txtAnio, "Introduce un AÑO igual o mayor al actual para el periodo del concepto, SOLO NUMEROS.");
-                txtAnio.Style = MetroFramework.MetroColorStyle.Red;
-                txtAnio.Focus();
-            }
-        }
-
-
-
-        /*******************************************
-
-            VALIDACION INGRESO DE DATOS GRUPAL
-
-        *******************************************/
-
-
-        private bool ValidarCampos()
-        {
-            bool ok = true;
-
-            if (txtMonto.Text.Trim() == "")
-            {
-                ok = false;
-                lblControlMonto.Visible = false;
-                epError.SetError(txtMonto, "Introduce el MONTO del concepto, SOLO NUMEROS por ejemplo 2300");
-                txtMonto.Style = MetroFramework.MetroColorStyle.Red;
-                txtMonto.Focus();
-            }
-            if (txtAnio.Text.Trim() == "")
-            {
-                ok = false;
-                lblControlAnio.Visible = false;
-                epError.SetError(txtAnio, "Introduce un AÑO igual o mayor al actual para el periodo del concepto, SOLO NUMEROS.");
-                txtAnio.Style = MetroFramework.MetroColorStyle.Red;
-                txtAnio.Focus();
-            }
-            else
-            {
-                ok = true;
-            }
-
-            return ok;
-        }
-
-
-        private void limpiarCampos()
-        {
-            
-
-            txt_Otros.Text = "";
-            txt_Otros.Style = MetroFramework.MetroColorStyle.Green;
-
-            txtMonto.Text = "";
-            txtMonto.Style = MetroFramework.MetroColorStyle.Green;
-
-            txtAnio.Text = "";
-            txtMonto.Style = MetroFramework.MetroColorStyle.Green;
-
-            dt_FechaAlta.Value = DateTime.Today;
-            cbo_Conceptos.SelectedItem = null;
-            cbo_Estado.Visible = false;
-            cbo_Estado.SelectedItem = null;
-            txtBuscarConcepto.Text = "";
-
-            btnBloqueoInactivar.Visible = false;
-            lblDeshabilitar.Visible = false;
-            btnEliminar.Visible = false;
-
-
-            txtMonto.Enabled = true;
-            txtAnio.Enabled = true;
-
-            
-
-        }
-
-      
         private void txtBuscarConcepto_ButtonClick(object sender, EventArgs e)
         {
+           // limpiarCampos();
+
             panelData.Visible = false;
             panelAcciones.Visible = true;
             cbo_Estado.Visible = true;
@@ -471,9 +170,7 @@ namespace GestionJardin
                     btnEliminar.Visible = true;
                     btnBloqueoInactivar.Visible = false;
                     lblDeshabilitar.Visible = false;
-                    this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;
-                    //lblDeshabilitar.Visible = true;
-                    //lblDeshabilitar.Text = "DESHABILITAR";
+                    this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;                 
                 }
                 else
                 {
@@ -493,146 +190,314 @@ namespace GestionJardin
             txtAnio.Enabled = false;
             dt_FechaAlta.Enabled = false;
             cbo_Estado.Enabled = false;
+
         }
 
 
-        private void onOffCamposInactivar(bool onOff)
+        /******************************
+         // BOTON AGREGAR (+)
+        *******************************/
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            cbo_Estado.Enabled = onOff;
+
+            limpiarCampos();
+            
+            panelBusqueda.Visible = true;
+            cbo_Conceptos.Visible = true;
+            txt_Otros.Visible = false;
+            txtBuscarConcepto.Visible = false;
+            lblControlOtros.Visible = false;
+
         }
 
-        private void onOffCamposEditar(bool onOff)
+
+        /********************************
+         // SEGUN EL CONCEPTO SE ELIJA SON LAS OPCIONES QUE SE HABILITAN 
+        ********************************/
+
+        private void cbo_Conceptos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtMonto.Enabled = onOff;
-            cbo_Estado.Enabled = false;
+
+            int v_otros = cbo_Conceptos.SelectedIndex;
+
+            if (v_otros == 8) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
+            {
+                txt_Otros.Visible = true;
+                lblControlOtros.Visible = true;
+                txtMonto.PromptText = "$";
+            }
+            else if(v_otros == 6)
+            {
+                lblMonto.Text = "PORCENTAJE";
+                txtMonto.PromptText = "";
+            }
+            else
+            {
+                txt_Otros.Visible = false;
+                lblMonto.Text = "IMPORTE";
+                lblControlOtros.Visible = false;
+                txtMonto.PromptText = "$";
+            }
+
+            //info global se oculta
+            lbl_Titulo.Visible = false;
+            panelData.Visible = false;
+
+
+            //Panel abm
+            panelAcciones.Visible = true;
+            btnGuardarIngresar.Visible = true;
+            btnCancelarIngresar.Visible = true;
+            btnGuardarEd.Visible = false;
+            //btnCancelarEd.Visible = false;
+
+            lblControlMonto.Visible = true;
+            lblControlAnio.Visible = true;
+            lblControlFecha.Visible = true;
+
+            btnBloqueoEditar.Visible = false;
+            lblEditar.Visible = false;
+
+            cbo_Estado.Visible = false;
+            btnBloqueoInactivar.Visible = false;
+            lblDeshabilitar.Visible = false;
+            lblErAnio.Visible = false;
             btnEliminar.Visible = false;
+            btnEliminar.Visible = false;
+
+
         }
 
-        private void btnBloqueoInactivar_Click(object sender, EventArgs e)
+       
+        /*************************************************
+
+            VALIDACION TIPOS DE DATOS
+
+        **************************************************/
+
+        // VALIDA SOLO EL INGRESO DE LETRAS O CARACTERES
+        private void soloLetras(object sender, KeyPressEventArgs e)
         {
-            if (this.btnBloqueoInactivar.IconChar == FontAwesome.Sharp.IconChar.Lock)
-            {
-                this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
-                onOffCamposInactivar(true);
-            }
-            else
-            {
-                this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;
-                onOffCamposInactivar(false);
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+
         }
 
-        private void cbo_Estado_SelectedValueChanged(object sender, EventArgs e)
+        // VALIDA SOLO EL INGRESO DE NUMEROS
+        private void soloNumeros(object sender, KeyPressEventArgs e)
         {
-
-            string estado;
-            if (cbo_Estado.SelectedItem == null)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                estado = "";
-            }
-            else
-            {
-                estado = cbo_Estado.SelectedItem.ToString();
+                e.Handled = true;
             }
 
-            if (estado == "ACTIVO")
-            {
-                btnBloqueoEditar.Visible = true;
-                lblEditar.Visible = true;
-                btnEliminar.Visible = false;
-                btnBloqueoInactivar.Visible = false;
-                lblDeshabilitar.Visible = false;
-            }
-            else
-            {
-                btnBloqueoEditar.Visible = false;
-                lblEditar.Visible = false;
-            }
         }
 
-        private void btnBloqueoEditar_Click(object sender, EventArgs e)
+        //VALIDA EL INGRESO DE NUMEROS Y DECIMALES
+        private void UnPunto(KeyPressEventArgs e, string cadena)
         {
-            if (this.btnBloqueoEditar.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            int contador = 0;
+            string caracter = "";
+            bool bandera;
+
+            for (int n = 0; n < cadena.Length; n++)
             {
-                this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
-                onOffCamposEditar(true);
-            }
-            else
-            {
-                this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Lock;
-                onOffCamposEditar(false);
-                btnEliminar.Visible = true;
-            }
-        }
-
-        private void btnGuardarEd_Click_1(object sender, EventArgs e)
-        {
-            decimal montoE = Convert.ToDecimal(txtMonto.Text);
-
-            string estadoE;
-
-            if (cbo_Estado.SelectedItem == null)
-            {
-                estadoE = "";
-            }
-            else
-            {
-                estadoE = cbo_Estado.SelectedItem.ToString();
-            }
-
-
-            if (estadoE != estadoIni && montoE != montoAct)
-            {
-                objConceptos.CON_ID = idConceptoBuscar;
-                objConceptos.CON_FECHA_ACT = fechaActual;
-                objConceptos.CON_VALOR_ACTUAL = montoE;
-                objConceptos.CON_VALOR_ANTERIOR = montoAct;
-                objConceptos.CON_FECHA_FIN = fechaFin;
-
-                MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
-                limpiarCampos();
-
-
-            }
-            else if (estadoE != estadoIni && montoE == montoAct)
-            {
-                if (estadoE == "INACTIVO")
+                caracter = cadena.Substring(n, 1);
+                if (caracter == ".")
                 {
-                    objConceptos.CON_ID = idConceptoBuscar;
-                    objConceptos.CON_FECHA_ACT = fechaActual;
-                    objConceptos.CON_FECHA_FIN = fechaActual;
-
-                    MessageBox.Show(objMet_Conceptos.ActualizarEstadoN(objConceptos));
-                    limpiarCampos();
-
-                }
-                else if (estadoE == "ACTIVO")
-                {
-                    objConceptos.CON_ID = idConceptoBuscar;
-                    objConceptos.CON_FECHA_ACT = fechaActual;
-                    objConceptos.CON_FECHA_FIN = fechaFin;
-
-                    MessageBox.Show(objMet_Conceptos.ActualizarEstadoS(objConceptos));
-                    limpiarCampos();
+                    contador++;
                 }
             }
-            else if (estadoE == estadoIni && montoE != montoAct)
-            {
-                objConceptos.CON_ID = idConceptoBuscar;
-                objConceptos.CON_FECHA_ACT = fechaActual;
-                objConceptos.CON_VALOR_ACTUAL = montoE;
-                objConceptos.CON_VALOR_ANTERIOR = montoAct;
 
-                MessageBox.Show(objMet_Conceptos.ActualizarMonto(objConceptos));
-                limpiarCampos();
+            if (contador == 0)
+            {
+                bandera = true;
+                if (e.KeyChar == ',' && bandera)
+                {
+                    bandera = false; // ya no acepta otro punto
+                    e.Handled = false;
+                }
+                else if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
             }
             else
             {
-                MessageBox.Show("NO SE DETECTARON CAMBIOS A REALIZAR");
-                limpiarCampos();
+                bandera = false;
+                e.Handled = true;
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
             }
         }
 
+
+        // En el campo MONTO se ingresan solo DECIMALES CON "."
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            UnPunto(e, txtMonto.Text);
+            lblControlMonto.Visible = true;
+            txtMonto.Style = MetroFramework.MetroColorStyle.Green;
+            epError.Clear();
+        }
+
+        // En el campo AÑO se ingresan solo NUMEROS
+        private void txtAnio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+            lblErrorAnio.Visible = false; //no lo puedo encontrar por boba
+            lblErAnio.Visible = false;
+            lblControlAnio.Visible = true;
+            txtAnio.Style = MetroFramework.MetroColorStyle.Green;
+            epError.Clear();
+
+        }
+
+        // En el campo OTROS se ingresan solo LETRAS
+        private void txt_Otros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(sender, e);
+            lblControlOtros.Visible = true;
+            txt_Otros.Style = MetroFramework.MetroColorStyle.Green;
+            epError.Clear();
+
+        }
+
+
+        /*******************************************
+
+            VALIDACION INGRESO DE DATOS INDIVIDUAL POR CAMPO
+
+        *******************************************/
+
+        //Se valida que la FECHA DE ALTA sea >= a la actual
+
+        private void dt_FechaAlta_ValueChanged(object sender, EventArgs e)
+        {
+
+            epError.Clear();
+            dt_FechaAlta.Style = MetroFramework.MetroColorStyle.Green;
+
+            fechaAlta = dt_FechaAlta.Value.Date;
+
+
+            if (fechaAlta < fechaActual)
+            {
+                lblControlFechaAlta.Text = "Ingrese una fecha mayor o igual a la actual";
+            }
+            else
+            {
+                lblControlFechaAlta.Text = "";
+            }
+
+        }
+
+        //Se valida que se hayan ingresado valores en el MONTO
+
+        private void txtMonto_Validated(object sender, EventArgs e)
+        {
+            if (txtMonto.Text.Trim() == "")
+            {
+                lblControlMonto.Visible = false;
+                epError.SetError(txtMonto, "Introduce el MONTO del concepto, SOLO NUMEROS por ejemplo 2300");
+                txtMonto.Style = MetroFramework.MetroColorStyle.Red;
+                txtMonto.Focus();
+            }
+            else if(cbo_Conceptos.SelectedIndex == 6 && (Convert.ToDecimal(txtMonto.Text) < 0 || Convert.ToDecimal(txtMonto.Text) > 100))
+            {
+                lblControlMonto.Visible = false;
+                epError.SetError(txtMonto, "Introduce el VALOR del concepto, SOLO NUMEROS por ejemplo 15");
+                txtMonto.Style = MetroFramework.MetroColorStyle.Red;
+                txtMonto.Focus();
+            }
+
+        }
+
+        //Se valida que se hayan ingresado valores en el campo OTROS
+
+        private void txt_Otros_Validated(object sender, EventArgs e)
+        {
+            if (txt_Otros.Text.Trim() == "")
+            {
+                lblControlOtros.Visible = false;
+                epError.SetError(txt_Otros, "Introduce el NOMBRE del concepto, SOLO LETRAS por ejemplo: 'PASEO'");
+                txt_Otros.Style = MetroFramework.MetroColorStyle.Red;
+                txt_Otros.Focus();
+            }
+        }
+
+        //Se valida que se hayan ingresado valores en el campo AÑO
+
+        private void txtAnio_Validated(object sender, EventArgs e)
+        {
+            if (txtAnio.Text.Trim() == "")
+            {
+                lblControlAnio.Visible = false;
+                epError.SetError(txtAnio, "Introduce un AÑO igual o mayor al actual para el periodo del concepto, SOLO NUMEROS.");
+                txtAnio.Style = MetroFramework.MetroColorStyle.Red;
+                txtAnio.Focus();
+            }
+        }
+
+
+
+        /*******************************************
+
+            VALIDACION INGRESO DE DATOS GRUPAL
+
+        *******************************************/
+
+        private bool ValidarCampos()
+        {
+            bool ok = true;
+
+            if (txtMonto.Text.Trim() == "")
+            {
+                ok = false;
+                lblControlMonto.Visible = false;
+                epError.SetError(txtMonto, "Introduce el MONTO del concepto, SOLO NUMEROS por ejemplo 2300");
+                txtMonto.Style = MetroFramework.MetroColorStyle.Red;
+                txtMonto.Focus();
+            }
+            if (txtAnio.Text.Trim() == "")
+            {
+                ok = false;
+                lblControlAnio.Visible = false;
+                epError.SetError(txtAnio, "Introduce un AÑO igual o mayor al actual para el periodo del concepto, SOLO NUMEROS.");
+                txtAnio.Style = MetroFramework.MetroColorStyle.Red;
+                txtAnio.Focus();
+            }
+            else
+            {
+                ok = true;
+            }
+
+            return ok;
+        }
+
+
+        /************************************
+         // FUNCION QUE AGREGA UN NUEVO CONCEPTO
+        *************************************/
+        
         private void btnGuardarIngresar_Click_1(object sender, EventArgs e)
         {
             if (ValidarCampos())
@@ -707,10 +572,158 @@ namespace GestionJardin
             }
         }
 
-        private void btnCancelarIngresar_Click_1(object sender, EventArgs e)
+      
+        //FUNCION QUE HABILITA LOS CAMPOS EDITABLES PARA INACTIVAR UN CONCEPTO
+
+        private void onOffCamposInactivar(bool onOff)
         {
-            limpiarCampos();
+            cbo_Estado.Enabled = onOff;
         }
+
+        //FUNCION QUE HABILITA LOS CAMPOS EDITABLES PARA EDITAR UN CONCEPTO
+
+        private void onOffCamposEditar(bool onOff)
+        {
+            txtMonto.Enabled = onOff;
+            cbo_Estado.Enabled = false;
+            btnEliminar.Visible = false;
+        }
+
+        // INACTIVAR O ACTIVAR UN CONCEPTO
+
+        private void btnBloqueoInactivar_Click(object sender, EventArgs e)
+        {
+            if (this.btnBloqueoInactivar.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            {
+                this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+                onOffCamposInactivar(true);
+            }
+            else
+            {
+                this.btnBloqueoInactivar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                onOffCamposInactivar(false);
+            }
+        }
+
+
+
+        private void cbo_Estado_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            string estado;
+            if (cbo_Estado.SelectedItem == null)
+            {
+                estado = "";
+            }
+            else
+            {
+                estado = cbo_Estado.SelectedItem.ToString();
+            }
+
+            if (estado == "ACTIVO")
+            {
+                btnBloqueoEditar.Visible = true;
+                lblEditar.Visible = true;
+                btnEliminar.Visible = false;
+                btnBloqueoInactivar.Visible = false;
+                lblDeshabilitar.Visible = false;
+            }
+            else
+            {
+                btnBloqueoEditar.Visible = false;
+                lblEditar.Visible = false;
+            }
+        }
+
+        private void btnBloqueoEditar_Click(object sender, EventArgs e)
+        {
+            if (this.btnBloqueoEditar.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            {
+                this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+                onOffCamposEditar(true);
+            }
+            else
+            {
+                this.btnBloqueoEditar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                onOffCamposEditar(false);
+                btnEliminar.Visible = true;
+            }
+        }
+       
+        //FUNCION GUARDA LOS CAMBIOS DE UN CONCEPTO
+
+        private void btnGuardarEd_Click_1(object sender, EventArgs e)
+        {
+            decimal montoE = Convert.ToDecimal(txtMonto.Text);
+
+            string estadoE;
+
+            if (cbo_Estado.SelectedItem == null)
+            {
+                estadoE = "";
+            }
+            else
+            {
+                estadoE = cbo_Estado.SelectedItem.ToString();
+            }
+
+
+            if (estadoE != estadoIni && montoE != montoAct)
+            {
+                objConceptos.CON_ID = idConceptoBuscar;
+                objConceptos.CON_FECHA_ACT = fechaActual;
+                objConceptos.CON_VALOR_ACTUAL = montoE;
+                objConceptos.CON_VALOR_ANTERIOR = montoAct;
+                objConceptos.CON_FECHA_FIN = fechaFin;
+
+                MessageBox.Show(objMet_Conceptos.ActualizarMontoEstado(objConceptos));
+                limpiarCampos();
+
+
+            }
+            else if (estadoE != estadoIni && montoE == montoAct)
+            {
+                if (estadoE == "INACTIVO")
+                {
+                    objConceptos.CON_ID = idConceptoBuscar;
+                    objConceptos.CON_FECHA_ACT = fechaActual;
+                    objConceptos.CON_FECHA_FIN = fechaActual;
+
+                    MessageBox.Show(objMet_Conceptos.ActualizarEstadoN(objConceptos));
+                    limpiarCampos();
+
+                }
+                else if (estadoE == "ACTIVO")
+                {
+                    objConceptos.CON_ID = idConceptoBuscar;
+                    objConceptos.CON_FECHA_ACT = fechaActual;
+                    objConceptos.CON_FECHA_FIN = fechaFin;
+
+                    MessageBox.Show(objMet_Conceptos.ActualizarEstadoS(objConceptos));
+                    limpiarCampos();
+                }
+            }
+            else if (estadoE == estadoIni && montoE != montoAct)
+            {
+                objConceptos.CON_ID = idConceptoBuscar;
+                objConceptos.CON_FECHA_ACT = fechaActual;
+                objConceptos.CON_VALOR_ACTUAL = montoE;
+                objConceptos.CON_VALOR_ANTERIOR = montoAct;
+
+                MessageBox.Show(objMet_Conceptos.ActualizarMonto(objConceptos));
+                limpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("NO SE DETECTARON CAMBIOS A REALIZAR");
+                limpiarCampos();
+            }
+        }
+
+
+        /*
+         FUNCION QUE INACTIVA O ACTIVA UN CONCEPTO
+             */
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
@@ -719,8 +732,47 @@ namespace GestionJardin
             lblDeshabilitar.Text = "DESHABILITAR";
             btnBloqueoEditar.Visible = false;
             lblEditar.Visible = false;
+            btnEliminar.Visible = false;
         }
 
+        private void btnCancelarIngresar_Click_1(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+
+
+        //BOTON CANCELAR PARA TODAS LAS FUNCIONES
+
+        private void limpiarCampos()
+        {
+
+
+            epError.Clear();
+            txt_Otros.Text = "";
+            
+            txt_Otros.Style = MetroFramework.MetroColorStyle.Green;
+
+            txtMonto.Text = "";
+            txtMonto.Style = MetroFramework.MetroColorStyle.Green;
+
+            txtAnio.Text = "";
+            txtMonto.Style = MetroFramework.MetroColorStyle.Green;
+
+            dt_FechaAlta.Value = DateTime.Today;
+            cbo_Conceptos.SelectedItem = null;
+            cbo_Estado.Visible = false;
+            cbo_Estado.SelectedItem = null;
+            txtBuscarConcepto.Text = "";
+
+            btnBloqueoInactivar.Visible = false;
+            lblDeshabilitar.Visible = false;
+            btnEliminar.Visible = false;
+
+
+            txtMonto.Enabled = true;
+            txtAnio.Enabled = true;
+                                   
+        }
 
 
     }
