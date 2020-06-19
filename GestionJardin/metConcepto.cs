@@ -47,7 +47,7 @@ namespace GestionJardin
                                                             " CON_VALOR_ANTERIOR) " +
                                                 "VALUES " +
                                                         "('" + concepto.CON_CONCEPTO + "', " +
-                                                        " " + concepto.CON_VALOR_ACTUAL + "," +
+                                                        " " + concepto.CON_VALOR_ACTUAL.ToString().Replace(",",".") + "," +
                                                         "'" + concepto.CON_FECHA_INI + "', " +
                                                         "'" + concepto.CON_FECHA_FIN + "', " +
                                                         "'" + concepto.CON_FECHA_ACT + "'," +
@@ -272,7 +272,12 @@ namespace GestionJardin
 
                 con.Open();
                 //el SqlCommand se usa para realizar consultas a la base
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '"+ conceptoME.CON_FECHA_ACT+"', CON_ACTIVO = 'S', CON_VALOR_ACTUAL = "+ conceptoME.CON_VALOR_ACTUAL+", CON_VALOR_ANTERIOR = "+ conceptoME.CON_VALOR_ANTERIOR+", CON_FECHA_FIN = '"+ conceptoME.CON_FECHA_FIN +"' WHERE CON_ID = " + conceptoME.CON_ID+"; ", con);
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '"+ conceptoME.CON_FECHA_ACT+"', " +
+                                                            "CON_ACTIVO = 'S', " +
+                                                            "CON_VALOR_ACTUAL = "+ conceptoME.CON_VALOR_ACTUAL.ToString().Replace(",", ".") + "," +
+                                                            " CON_VALOR_ANTERIOR = "+ conceptoME.CON_VALOR_ANTERIOR.ToString().Replace(",", ".") + ", " +
+                                                            "CON_FECHA_FIN = '"+ conceptoME.CON_FECHA_FIN +"' " +
+                                                            "WHERE CON_ID = " + conceptoME.CON_ID+"; ", con);
                 cmd.ExecuteNonQuery();
                 result = "SE ACTUALIZO MONTO Y ESTADO DEL CONCEPTO";
 
@@ -298,7 +303,10 @@ namespace GestionJardin
 
                 con.Open();
                 //el SqlCommand se usa para realizar consultas a la base
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoEN.CON_FECHA_ACT + "', CON_ACTIVO = 'N', CON_FECHA_FIN = '"+ conceptoEN.CON_FECHA_FIN+"' WHERE CON_ID = "+ conceptoEN.CON_ID+";", con);
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoEN.CON_FECHA_ACT + "', " +
+                                                            "CON_ACTIVO = 'N', " +
+                                                            "CON_FECHA_FIN = '"+ conceptoEN.CON_FECHA_FIN+"' " +
+                                                            "WHERE CON_ID = "+ conceptoEN.CON_ID+";", con);
                 cmd.ExecuteNonQuery();
                 result = "SE DESHABILITO EL CONCEPTO";
 
@@ -324,7 +332,10 @@ namespace GestionJardin
 
                 con.Open();
                 //el SqlCommand se usa para realizar consultas a la base
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoES.CON_FECHA_ACT + "', CON_ACTIVO = 'S', CON_FECHA_FIN = '" + conceptoES.CON_FECHA_FIN + "' WHERE CON_ID = " + conceptoES.CON_ID + ";", con);
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoES.CON_FECHA_ACT + "', " +
+                                                            "CON_ACTIVO = 'S', " +
+                                                            "CON_FECHA_FIN = '" + conceptoES.CON_FECHA_FIN + "' " +
+                                                            "WHERE CON_ID = " + conceptoES.CON_ID + ";", con);
                 cmd.ExecuteNonQuery();
                 result = "SE HABILITO EL CONCEPTO";
 
@@ -350,7 +361,10 @@ namespace GestionJardin
 
                 con.Open();
                 //el SqlCommand se usa para realizar consultas a la base
-                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoM.CON_FECHA_ACT+ "', CON_VALOR_ACTUAL = "+ conceptoM.CON_VALOR_ACTUAL+", CON_VALOR_ANTERIOR = "+ conceptoM.CON_VALOR_ANTERIOR+" WHERE CON_ID = "+ conceptoM.CON_ID+"; ", con);
+                cmd = new SqlCommand("UPDATE T_CONCEPTOS SET CON_FECHA_ACT = '" + conceptoM.CON_FECHA_ACT+ "'," +
+                                                             " CON_VALOR_ACTUAL = "+ conceptoM.CON_VALOR_ACTUAL.ToString().Replace(",",".")+", " +
+                                                             "CON_VALOR_ANTERIOR = "+ conceptoM.CON_VALOR_ANTERIOR.ToString().Replace(",", ".") + " " +
+                                                             "WHERE CON_ID = "+ conceptoM.CON_ID+"; ", con);
                 cmd.ExecuteNonQuery();
 
                 result = "SE ACTUALIZO EL MONTO DEL CONCEPTO";
