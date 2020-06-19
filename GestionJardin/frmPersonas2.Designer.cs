@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonas2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.cbTipoPersona = new MetroFramework.Controls.MetroComboBox();
             this.txtBuscarPersona = new MetroFramework.Controls.MetroTextBox();
@@ -72,6 +78,8 @@
             this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panlBtnEditar = new MetroFramework.Controls.MetroPanel();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
+            this.dgvGupoFlia = new MetroFramework.Controls.MetroGrid();
+            this.dgvCupoSalas = new MetroFramework.Controls.MetroGrid();
             this.panelBusqueda.SuspendLayout();
             this.panelDatos.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -82,6 +90,8 @@
             this.panelAgregar.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.panlBtnEditar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGupoFlia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCupoSalas)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBusqueda
@@ -1009,7 +1019,7 @@
             this.panelBotones.HorizontalScrollbarSize = 10;
             this.panelBotones.Location = new System.Drawing.Point(471, 698);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(631, 115);
+            this.panelBotones.Size = new System.Drawing.Size(615, 115);
             this.panelBotones.TabIndex = 26;
             this.panelBotones.UseCustomBackColor = true;
             this.panelBotones.VerticalScrollbarBarColor = true;
@@ -1095,13 +1105,117 @@
             this.btnBloqueo.UseVisualStyleBackColor = true;
             this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
+            // dgvGupoFlia
+            // 
+            this.dgvGupoFlia.AllowUserToAddRows = false;
+            this.dgvGupoFlia.AllowUserToDeleteRows = false;
+            this.dgvGupoFlia.AllowUserToOrderColumns = true;
+            this.dgvGupoFlia.AllowUserToResizeRows = false;
+            this.dgvGupoFlia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvGupoFlia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvGupoFlia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvGupoFlia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGupoFlia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvGupoFlia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGupoFlia.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvGupoFlia.EnableHeadersVisualStyles = false;
+            this.dgvGupoFlia.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvGupoFlia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvGupoFlia.Location = new System.Drawing.Point(1092, 257);
+            this.dgvGupoFlia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvGupoFlia.Name = "dgvGupoFlia";
+            this.dgvGupoFlia.ReadOnly = true;
+            this.dgvGupoFlia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGupoFlia.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvGupoFlia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvGupoFlia.RowTemplate.Height = 24;
+            this.dgvGupoFlia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGupoFlia.Size = new System.Drawing.Size(317, 249);
+            this.dgvGupoFlia.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.dgvGupoFlia.TabIndex = 28;
+            this.dgvGupoFlia.UseStyleColors = true;
+            // 
+            // dgvCupoSalas
+            // 
+            this.dgvCupoSalas.AllowUserToAddRows = false;
+            this.dgvCupoSalas.AllowUserToDeleteRows = false;
+            this.dgvCupoSalas.AllowUserToOrderColumns = true;
+            this.dgvCupoSalas.AllowUserToResizeRows = false;
+            this.dgvCupoSalas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvCupoSalas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCupoSalas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvCupoSalas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCupoSalas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCupoSalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCupoSalas.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvCupoSalas.EnableHeadersVisualStyles = false;
+            this.dgvCupoSalas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvCupoSalas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvCupoSalas.Location = new System.Drawing.Point(1092, 562);
+            this.dgvCupoSalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvCupoSalas.Name = "dgvCupoSalas";
+            this.dgvCupoSalas.ReadOnly = true;
+            this.dgvCupoSalas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCupoSalas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvCupoSalas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCupoSalas.RowTemplate.Height = 24;
+            this.dgvCupoSalas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCupoSalas.Size = new System.Drawing.Size(365, 130);
+            this.dgvCupoSalas.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.dgvCupoSalas.TabIndex = 29;
+            this.dgvCupoSalas.UseStyleColors = true;
+            // 
             // frmPersonas2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1394, 1055);
+            this.ClientSize = new System.Drawing.Size(1421, 1055);
+            this.Controls.Add(this.dgvCupoSalas);
+            this.Controls.Add(this.dgvGupoFlia);
             this.Controls.Add(this.panlBtnEditar);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelAgregar);
@@ -1127,6 +1241,8 @@
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
             this.panlBtnEditar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGupoFlia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCupoSalas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1177,5 +1293,7 @@
         private MetroFramework.Controls.MetroCheckBox checkAutorizacion;
         private FontAwesome.Sharp.IconButton btnBloqueo;
         private MetroFramework.Controls.MetroLabel lblSalasCupo;
+        private MetroFramework.Controls.MetroGrid dgvGupoFlia;
+        private MetroFramework.Controls.MetroGrid dgvCupoSalas;
     }
 }

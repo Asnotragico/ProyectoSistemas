@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace GestionJardin
 {
@@ -38,7 +39,7 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')', ',', CASE PER_ESTADO WHEN 1 THEN 'ACTIVO' WHEN 0 THEN 'INACTIVO' END) FROM T_PERSONAS " + tipoPersona;
+            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') FROM T_PERSONAS " + tipoPersona;
 
             //"SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') FROM T_PERSONAS P " + tipoPersona;
             cmd = new SqlCommand(consulta, con);
@@ -273,7 +274,7 @@ namespace GestionJardin
         public bool ValidarEmail(String pEmail)
         {
             String validar;
-            validar = "^([0-9a-zA-Z]([-\\.\\w][0-9a-zA-Z])@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            validar = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
 
             if (Regex.IsMatch(pEmail, validar))
 
@@ -292,6 +293,7 @@ namespace GestionJardin
             {
                 return false;
             }
+
 
         }
         

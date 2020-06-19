@@ -135,7 +135,7 @@ namespace GestionJardin
             listConceptos.Columns.Add(conceptos.Columns[0].ToString(), 0);
             listConceptos.Columns.Add(conceptos.Columns[1].ToString(), 130);
             listConceptos.Columns.Add(conceptos.Columns[2].ToString(), 110);
-            listConceptos.Columns.Add(conceptos.Columns[3].ToString(), 110);
+            //listConceptos.Columns.Add(conceptos.Columns[3].ToString(), 110);
 
             listConceptos.Show();
 
@@ -147,7 +147,7 @@ namespace GestionJardin
 
                 //ADICIONAR ITEM AL LISTVIEW                   
 
-                for (int ncolumna = 0; ncolumna < 4; ncolumna++)
+                for (int ncolumna = 0; ncolumna < 3; ncolumna++)
                 {
                     arr[ncolumna] = renglon[ncolumna].ToString();
                     itm = new ListViewItem(arr);

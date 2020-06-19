@@ -102,6 +102,12 @@
     <Compile Include="frmPersonas2.Designer.cs">
       <DependentUpon>frmPersonas2.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPopUpFlia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPopUpFlia.Designer.cs">
+      <DependentUpon>frmPopUpFlia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,7 @@
     <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />
     <Compile Include="metDomicilio.cs" />
+    <Compile Include="metGrupoFlia.cs" />
     <Compile Include="metParametricas.cs" />
     <Compile Include="metPersonas.cs" />
     <Compile Include="metSalas.cs" />
@@ -132,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonas2.resx">
       <DependentUpon>frmPersonas2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPopUpFlia.resx">
+      <DependentUpon>frmPopUpFlia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

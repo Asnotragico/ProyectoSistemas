@@ -25,8 +25,7 @@ namespace GestionJardin
         string resultadoValidacion;
         int idPersonaBuscar;
 
-        string salas = ""; //cupo
-        int contadorSala = 10; //cupo
+
 
         public frmPersonas2()
         {
@@ -60,11 +59,13 @@ namespace GestionJardin
             panelSala.Visible = false;
             panelBotones.Visible = false;
             panlBtnEditar.Visible = false;
+            dgvGupoFlia.Visible = false;
+            dgvCupoSalas.Visible = false;
+            dgvCupoSalas.Visible = false;
 
             //Focus en el Label
             this.ActiveControl = null;
 
-            lblSalasCupo.Visible = false;
 
         }
 
@@ -77,12 +78,14 @@ namespace GestionJardin
             panelSala.Visible = false;
             panelBotones.Visible = false;
             panlBtnEditar.Visible = false;
-
+            
 
             panelBusqueda.Visible = false;
             cbTipoPersona2.SelectedItem = null;
             lblAyuda.Text = "Elija el tipo de Persona.";
             panelAgregar.Visible = true;
+            dgvGupoFlia.Visible = false;
+            dgvCupoSalas.Visible = false;
 
             //txtNombre.ShowButton = true;
             onOffCampos(true);
@@ -105,10 +108,11 @@ namespace GestionJardin
             txtBuscarPersona.Text = null;
             lblAyuda.Text = "Ingrese el tipo de Persona y el Nombre.";
             panelBusqueda.Visible = true;
+            dgvGupoFlia.Visible = false;
+            dgvCupoSalas.Visible = false;
 
             onOffCampos(false);
 
-            lblSalasCupo.Visible = false; //cupo
         }
 
         private void cbTipoPersona_SelectedValueChanged(object sender, EventArgs e)
@@ -135,6 +139,8 @@ namespace GestionJardin
                     txtBuscarPersona.Style = MetroFramework.MetroColorStyle.Blue;
                     txtBuscarPersona.Enabled = true;
                     txtBuscarPersona.Text = null;
+
+                    
 
                 }
             }
@@ -168,7 +174,29 @@ namespace GestionJardin
                         cbTurno.SelectedItem = null;
                         cbSala.Enabled = false;
                         cbSala.SelectedItem = null;
-                        txtLegajo.Enabled = false; 
+                        txtLegajo.Enabled = false;
+                        dgvCupoSalas.Visible = true;
+
+                        //cupo sala
+                        dgvCupoSalas.Rows.Clear();
+                        dgvCupoSalas.Refresh();
+
+                        DataTable gruposSalas = new DataTable();
+
+                        gruposSalas = objMetSalas.traerSalasCupo();
+
+                        if (gruposSalas.Rows.Count > 0)
+                        {
+                            dgvCupoSalas.DataSource = gruposSalas;
+                            dgvCupoSalas.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                            //dgvGupoFlia.Columns["PER_ID"].Visible = false;
+                            dgvCupoSalas.ClearSelection();
+
+                        }
+
+                        //-----
+
+
                     } 
                     else
                     {
@@ -177,6 +205,7 @@ namespace GestionJardin
                         cbSala.Enabled = true;
                         cbSala.SelectedItem = null;
                         txtLegajo.Enabled = false;
+                        dgvCupoSalas.Visible = false;
                     }
 
                 }
@@ -287,9 +316,6 @@ namespace GestionJardin
                 }
             }
 
-            salas = "El cupo de la sala " + cbSala.SelectedItem.ToString() + " es de " + Convert.ToString(contadorSala) + " vacantes."; // cupo
-            lblSalasCupo.Text = salas; //cupo
-            lblSalasCupo.Visible = true; // cupo
 
         }
 
@@ -364,9 +390,29 @@ namespace GestionJardin
                 //documento = "25654987";
 
                 if (resultado == "OK") { // entra a insertar el domicilio de la persona solo si inserto la persona correctamente
-                    //string id_persona = metPersona.BuscaPersona(nombre, apellidos, documento); // TRAE EL ID RECIEN INSERTADO
+                    
                     personaInsert = metPersona.BuscaPersona(nombre, apellidos, documento); // TRAE EL ID RECIEN INSERTADO
                     Int32 id_persona = personaInsert.PER_ID;
+
+                    // popUp del familiar
+                    if ((cbTipoPersona2.SelectedValue.ToString() != "1") && (cbTipoPersona2.SelectedValue.ToString() != "2"))
+                    {
+                        frmPopUpFlia frmFlia = new frmPopUpFlia();
+                        frmFlia.ShowDialog();
+
+                        string LegajoAsociado = frmFlia.Legajo; // familiar al que se asocia al ingresado
+
+                        metGrupoFlia objGrpFlia = new metGrupoFlia();
+
+                        string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), LegajoAsociado);
+                    }
+                    else if (cbTipoPersona2.SelectedValue.ToString() == "2")
+                    {
+                        metGrupoFlia objGrpFlia = new metGrupoFlia();
+                        string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), legajo);
+
+                    }
+                    // -----
 
                     //INSERTA DOMICILIO
                     entDomicilio domicilioInsertar = new entDomicilio();
@@ -402,7 +448,7 @@ namespace GestionJardin
                         metSalas metSalas = new metSalas();
                         resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
 
-                        contadorSala -= 1; // cupo
+                        
                     }
 
                     //al terminar de insertar Borra todos los campos
@@ -465,8 +511,10 @@ namespace GestionJardin
         {
             limpiarCampos();
             //validaCampos(); //---> solo testing
-            metParametricas parametrica = new metParametricas();
-            string lolo = parametrica.secuenciadorLegajoAlumnos();
+            //metParametricas parametrica = new metParametricas();
+            //string lolo = parametrica.secuenciadorLegajoAlumnos();
+            
+
         }
 
         private string validaCampos()
@@ -546,11 +594,11 @@ namespace GestionJardin
 
         }
 
-        
 
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(sender, e);
+
         }       
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -627,11 +675,11 @@ namespace GestionJardin
 
                 if (personaBuscar.PER_GENERO.StartsWith("M"))
                 {
-                    cbGenero.SelectedIndex = cbSala.FindStringExact("MASCULINO");
+                    cbGenero.SelectedIndex = cbGenero.FindStringExact("MASCULINO");
                 }
                 else
                 {
-                    cbGenero.SelectedIndex = cbSala.FindStringExact("FEMENINO");
+                    cbGenero.SelectedIndex = cbGenero.FindStringExact("FEMENINO");
                 }
 
 
@@ -685,6 +733,22 @@ namespace GestionJardin
                     panelSala.Visible = true;
                 }
 
+                //rellena el dgv del grupo fliar
+
+                dgvGupoFlia.Rows.Clear();
+                dgvGupoFlia.Refresh();
+                DataTable grupoFlia = new DataTable();
+                metGrupoFlia objGrupoFlia = new metGrupoFlia();
+                grupoFlia = objGrupoFlia.traerPersonasXGrupoFliar(Convert.ToString(personaBuscar.PER_ID));
+
+                if (grupoFlia.Rows.Count > 0) { 
+                    dgvGupoFlia.DataSource = grupoFlia;
+                    dgvGupoFlia.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                    //dgvGupoFlia.Columns["PER_ID"].Visible = false;
+                    dgvGupoFlia.ClearSelection();
+
+                    dgvGupoFlia.Visible = true;
+                }
                 onOffCampos(false);
             }
         }
@@ -902,11 +966,9 @@ namespace GestionJardin
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             metPersonas ObjMetPersonas = new metPersonas();
-            ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
 
-
-
-            if (objMetPersonas.ValidarEmail(txtEmail.Text) == false)
+            if (resultado == false)
             {
                 MessageBox.Show("Ingrese un Email Válido");
                 txtEmail.Clear();

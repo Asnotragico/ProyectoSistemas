@@ -224,5 +224,40 @@ namespace GestionJardin
 
         }
 
+        public DataTable traerSalasCupo()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection con = generarConexion();
+                con.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+
+                com.CommandText = "select s.SAL_NOMBRE SALA, s.SAL_TURNO TURNO, count(gs.GRS_SAL_ID) CANTIDAD, s.SAL_CANT_ALUM MAXIMO " +
+                                        "from T_GRUPO_SALA GS, T_SALA S, T_PERSONAS P " +
+                                        "where p.PER_ID = gs.GRS_PER_ID " +
+                                        "and gs.GRS_SAL_ID = s.SAL_ID " +
+                                        "group by gs.GRS_SAL_ID, s.SAL_NOMBRE, s.SAL_TURNO, s.SAL_CANT_ALUM;";
+
+
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return dt;
+        }
+
     }
 }

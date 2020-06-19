@@ -27,7 +27,6 @@ C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardi
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.dll
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmConceptos.resources
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
@@ -80,3 +79,4 @@ C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\obj\Debug\GestionJar
 C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
