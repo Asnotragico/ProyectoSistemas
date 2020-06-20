@@ -124,13 +124,15 @@ namespace GestionJardin
             */
         public void autocompletarBuscar(MetroTextBox p_buscarCon)
         {
-            con = generarConexion();
-            con.Open();
+            SqlDataReader dr2;
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
+            con = generarConexion();
+            con.Open();     
 
             try
             {
-
+                
                 string consulta = "SELECT CONCAT(CON_CONCEPTO, '_', " +
                                                 "CON_PERIODO, ' (', " +
                                                 "CASE CON_ACTIVO " +
@@ -141,13 +143,18 @@ namespace GestionJardin
 
                 cmd = new SqlCommand(consulta, con);
 
-                dr = cmd.ExecuteReader();
+                dr2 = cmd.ExecuteReader();
 
-                while (dr.Read())
+
+                while (dr2.Read())
                 {
-                    p_buscarCon.AutoCompleteCustomSource.Add(dr.GetString(0));
+                    autoComplete.Add(dr2.GetString(0));
                 }
-                dr.Close();
+                dr2.Close();
+
+                p_buscarCon.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                p_buscarCon.AutoCompleteCustomSource = autoComplete;
+
             }
             catch (Exception ex)
             {

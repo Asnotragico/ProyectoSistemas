@@ -58,6 +58,7 @@ namespace GestionJardin
             txtBuscarConcepto.Visible = true;
             lblControlOtros.Visible = true;
 
+            
             objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
 
             cbo_Conceptos.Visible = false;
@@ -718,6 +719,9 @@ namespace GestionJardin
                 MessageBox.Show("NO SE DETECTARON CAMBIOS A REALIZAR");
                 limpiarCampos();
             }
+
+            objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
+
         }
 
 
