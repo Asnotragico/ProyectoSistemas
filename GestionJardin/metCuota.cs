@@ -49,8 +49,8 @@ namespace GestionJardin
                         entSala ent = new entSala();
                         if (dr["SAL_ID"] != DBNull.Value)
                             ent.SAL_ID = Convert.ToInt32(dr["SAL_ID"]);
-                        if (dr["NOMBRE"] != DBNull.Value)
-                            ent.SAL_NOMBRE = Convert.ToString(dr["NOMBRE"]);
+                        if (dr["SAL_NOMBRE"] != DBNull.Value)
+                            ent.SAL_NOMBRE = Convert.ToString(dr["SAL_NOMBRE"]);
                         if (dr["SAL_EDAD_MIN"] != DBNull.Value)
                             ent.SAL_EDAD_MIN = Convert.ToInt32(dr["SAL_EDAD_MIN"]);
                         if (dr["SAL_EDAD_MAX"] != DBNull.Value)
@@ -58,9 +58,19 @@ namespace GestionJardin
                         if (dr["SAL_CANT_ALUM"] != DBNull.Value)
                             ent.SALA_CANT_ALUM = Convert.ToInt32(dr["SAL_CANT_ALUM"]);
                         if (dr["SAL_TURNO"] != DBNull.Value)
-                            ent.SALA_TURNO = Convert.ToString(dr["SAL_TURNO"]);
+                            if (Convert.ToString(dr["SAL_TURNO"]) == "MANANA    ") {
+
+                                ent.SALA_TURNO = "MAÑANA";
+
+                            } else
+                            {
+                                ent.SALA_TURNO = "TARDE";
+                            }
+                           
                         if (dr["SAL_ACTIVO"] != DBNull.Value)
                             ent.SALA_ACTIVO = Convert.ToString(dr["SAL_ACTIVO"]);
+
+                        ent.SAL_NOMBRE = ent.SAL_NOMBRE + " " + ent.SALA_TURNO;
 
                         SalaCol.Add(ent);
                     }
@@ -109,9 +119,12 @@ namespace GestionJardin
 
             try
             {
-                con = generarConexion();
-                con.Open();
-                string consulta = "INSERT INTO T_CUOTA_FINAL" +
+                DateTime fechaVenc;
+                string consulta;
+
+                if (periodoCuota == 0) {
+
+                    consulta = "INSERT INTO T_CUOTA_FINAL" +
                                         "(CUO_PER_LEGAJO" +
                                         ", CUO_NUMERO" +
                                         ", CUO_ANO_CUOTA" +
@@ -125,6 +138,31 @@ namespace GestionJardin
                                         ", GETDATE()" +
                                         ");";
 
+                } else
+                {
+                    string mes = Convert.ToString(periodoCuota);
+                    mes.PadLeft(2, '0');
+                    fechaVenc = Convert.ToDateTime("10/"+mes+"/2020");
+
+                    consulta = "INSERT INTO T_CUOTA_FINAL" +
+                                        "(CUO_PER_LEGAJO" +
+                                        ", CUO_NUMERO" +
+                                        ", CUO_ANO_CUOTA" +
+                                        ", CUO_ESTADO" +
+                                        ", CUO_FECHA_VENC" +
+                                        ", CUO_FECHA_EMISION)" +
+                                    "VALUES " +
+                                        "('" + legajo + "'" +
+                                        ", '" + periodoCuota + "'" +
+                                        ", '" + anoCuota + "'" +
+                                        ", '" + estadoCuota + "'" +
+                                        ", '" + fechaVenc + "'" +
+                                        ", GETDATE()" +
+                                        ");";
+                }
+
+                con = generarConexion();
+                con.Open();
 
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
@@ -317,7 +355,7 @@ namespace GestionJardin
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
 
-                com.CommandText = "select cf.CUO_ID ID, cf.CUO_PER_LEGAJO LEGAJO, cf.CUO_NUMERO NUMERO, cf.CUO_ANO_CUOTA EJERCICIO, cf.CUO_ESTADO ESTADO, cf.CUO_IMPORTE IMPORTE " +
+                com.CommandText = "select cf.CUO_ID ID, cf.CUO_PER_LEGAJO LEGAJO, cf.CUO_NUMERO NUMERO, cf.CUO_ANO_CUOTA EJERCICIO, cf.CUO_ESTADO ESTADO, cf.CUO_IMPORTE IMPORTE, cf.CUO_FECHA_VENC VENCIMIENTO " +
                                     "from T_CUOTA_FINAL cf " +
                                     "where cf.CUO_PER_LEGAJO = '" + legajo + "' " +
                                     "and cf.CUO_ESTADO <> 'BAJA' " +
