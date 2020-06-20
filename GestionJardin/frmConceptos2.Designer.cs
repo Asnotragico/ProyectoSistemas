@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConceptos2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.txtBuscarConcepto = new MetroFramework.Controls.MetroTextBox();
             this.lblControlOtros = new System.Windows.Forms.Label();
@@ -44,6 +44,10 @@
             this.panelData = new System.Windows.Forms.Panel();
             this.dgv_ConVisualizar = new MetroFramework.Controls.MetroGrid();
             this.panelAcciones = new System.Windows.Forms.Panel();
+            this.btnEliminar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCancelarIngresar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGuardarEd = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGuardarIngresar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblDeshabilitar = new System.Windows.Forms.Label();
             this.btnBloqueoInactivar = new FontAwesome.Sharp.IconButton();
             this.lblControlFechaAlta = new System.Windows.Forms.Label();
@@ -65,10 +69,6 @@
             this.lblFechaAlta = new System.Windows.Forms.Label();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblAyuda = new MetroFramework.Controls.MetroLabel();
-            this.btnGuardarIngresar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnGuardarEd = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCancelarIngresar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnEliminar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelBusqueda.SuspendLayout();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ConVisualizar)).BeginInit();
@@ -262,11 +262,11 @@
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.Font = new System.Drawing.Font("Verdana Pro Cond", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbl_Titulo.Location = new System.Drawing.Point(528, 286);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(247, 52);
+            this.lbl_Titulo.Size = new System.Drawing.Size(303, 51);
             this.lbl_Titulo.TabIndex = 27;
             this.lbl_Titulo.Text = "CONCEPTOS";
             // 
@@ -289,23 +289,23 @@
             this.dgv_ConVisualizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ConVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgv_ConVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ConVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConVisualizar.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ConVisualizar.EnableHeadersVisualStyles = false;
             this.dgv_ConVisualizar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgv_ConVisualizar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -313,14 +313,14 @@
             this.dgv_ConVisualizar.Name = "dgv_ConVisualizar";
             this.dgv_ConVisualizar.ReadOnly = true;
             this.dgv_ConVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ConVisualizar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_ConVisualizar.RowTemplate.Height = 24;
             this.dgv_ConVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -358,14 +358,158 @@
             this.panelAcciones.Size = new System.Drawing.Size(1202, 425);
             this.panelAcciones.TabIndex = 28;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.BorderRadius = 5;
+            this.btnEliminar.ButtonText = "DESHABILITAR";
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Iconimage")));
+            this.btnEliminar.Iconimage_right = null;
+            this.btnEliminar.Iconimage_right_Selected = null;
+            this.btnEliminar.Iconimage_Selected = null;
+            this.btnEliminar.IconMarginLeft = 0;
+            this.btnEliminar.IconMarginRight = 0;
+            this.btnEliminar.IconRightVisible = true;
+            this.btnEliminar.IconRightZoom = 0D;
+            this.btnEliminar.IconVisible = false;
+            this.btnEliminar.IconZoom = 90D;
+            this.btnEliminar.IsTab = false;
+            this.btnEliminar.Location = new System.Drawing.Point(864, 292);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.btnEliminar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnEliminar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnEliminar.selected = false;
+            this.btnEliminar.Size = new System.Drawing.Size(233, 51);
+            this.btnEliminar.TabIndex = 84;
+            this.btnEliminar.Text = "DESHABILITAR";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEliminar.Textcolor = System.Drawing.Color.White;
+            this.btnEliminar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
+            // 
+            // btnCancelarIngresar
+            // 
+            this.btnCancelarIngresar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancelarIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancelarIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelarIngresar.BorderRadius = 5;
+            this.btnCancelarIngresar.ButtonText = "CANCELAR";
+            this.btnCancelarIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarIngresar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancelarIngresar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarIngresar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelarIngresar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelarIngresar.Iconimage")));
+            this.btnCancelarIngresar.Iconimage_right = null;
+            this.btnCancelarIngresar.Iconimage_right_Selected = null;
+            this.btnCancelarIngresar.Iconimage_Selected = null;
+            this.btnCancelarIngresar.IconMarginLeft = 0;
+            this.btnCancelarIngresar.IconMarginRight = 0;
+            this.btnCancelarIngresar.IconRightVisible = true;
+            this.btnCancelarIngresar.IconRightZoom = 0D;
+            this.btnCancelarIngresar.IconVisible = false;
+            this.btnCancelarIngresar.IconZoom = 90D;
+            this.btnCancelarIngresar.IsTab = false;
+            this.btnCancelarIngresar.Location = new System.Drawing.Point(864, 193);
+            this.btnCancelarIngresar.Name = "btnCancelarIngresar";
+            this.btnCancelarIngresar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancelarIngresar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.btnCancelarIngresar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelarIngresar.selected = false;
+            this.btnCancelarIngresar.Size = new System.Drawing.Size(165, 51);
+            this.btnCancelarIngresar.TabIndex = 83;
+            this.btnCancelarIngresar.Text = "CANCELAR";
+            this.btnCancelarIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelarIngresar.Textcolor = System.Drawing.Color.White;
+            this.btnCancelarIngresar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnCancelarIngresar.Click += new System.EventHandler(this.btnCancelarIngresar_Click_1);
+            // 
+            // btnGuardarEd
+            // 
+            this.btnGuardarEd.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGuardarEd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGuardarEd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardarEd.BorderRadius = 5;
+            this.btnGuardarEd.ButtonText = "GUARDAR";
+            this.btnGuardarEd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarEd.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardarEd.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEd.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGuardarEd.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardarEd.Iconimage")));
+            this.btnGuardarEd.Iconimage_right = null;
+            this.btnGuardarEd.Iconimage_right_Selected = null;
+            this.btnGuardarEd.Iconimage_Selected = null;
+            this.btnGuardarEd.IconMarginLeft = 0;
+            this.btnGuardarEd.IconMarginRight = 0;
+            this.btnGuardarEd.IconRightVisible = true;
+            this.btnGuardarEd.IconRightZoom = 0D;
+            this.btnGuardarEd.IconVisible = false;
+            this.btnGuardarEd.IconZoom = 90D;
+            this.btnGuardarEd.IsTab = false;
+            this.btnGuardarEd.Location = new System.Drawing.Point(864, 92);
+            this.btnGuardarEd.Name = "btnGuardarEd";
+            this.btnGuardarEd.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGuardarEd.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnGuardarEd.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardarEd.selected = false;
+            this.btnGuardarEd.Size = new System.Drawing.Size(165, 51);
+            this.btnGuardarEd.TabIndex = 82;
+            this.btnGuardarEd.Text = "GUARDAR";
+            this.btnGuardarEd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardarEd.Textcolor = System.Drawing.Color.White;
+            this.btnGuardarEd.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEd.Click += new System.EventHandler(this.btnGuardarEd_Click_1);
+            // 
+            // btnGuardarIngresar
+            // 
+            this.btnGuardarIngresar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGuardarIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGuardarIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardarIngresar.BorderRadius = 5;
+            this.btnGuardarIngresar.ButtonText = "GUARDAR";
+            this.btnGuardarIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarIngresar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardarIngresar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarIngresar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGuardarIngresar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardarIngresar.Iconimage")));
+            this.btnGuardarIngresar.Iconimage_right = null;
+            this.btnGuardarIngresar.Iconimage_right_Selected = null;
+            this.btnGuardarIngresar.Iconimage_Selected = null;
+            this.btnGuardarIngresar.IconMarginLeft = 0;
+            this.btnGuardarIngresar.IconMarginRight = 0;
+            this.btnGuardarIngresar.IconRightVisible = true;
+            this.btnGuardarIngresar.IconRightZoom = 0D;
+            this.btnGuardarIngresar.IconVisible = false;
+            this.btnGuardarIngresar.IconZoom = 90D;
+            this.btnGuardarIngresar.IsTab = false;
+            this.btnGuardarIngresar.Location = new System.Drawing.Point(864, 92);
+            this.btnGuardarIngresar.Name = "btnGuardarIngresar";
+            this.btnGuardarIngresar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnGuardarIngresar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnGuardarIngresar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardarIngresar.selected = false;
+            this.btnGuardarIngresar.Size = new System.Drawing.Size(165, 51);
+            this.btnGuardarIngresar.TabIndex = 81;
+            this.btnGuardarIngresar.Text = "GUARDAR";
+            this.btnGuardarIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardarIngresar.Textcolor = System.Drawing.Color.White;
+            this.btnGuardarIngresar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarIngresar.Click += new System.EventHandler(this.btnGuardarIngresar_Click_1);
+            // 
             // lblDeshabilitar
             // 
             this.lblDeshabilitar.AutoSize = true;
-            this.lblDeshabilitar.Font = new System.Drawing.Font("Verdana Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeshabilitar.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblDeshabilitar.Location = new System.Drawing.Point(385, 388);
             this.lblDeshabilitar.Name = "lblDeshabilitar";
-            this.lblDeshabilitar.Size = new System.Drawing.Size(136, 18);
+            this.lblDeshabilitar.Size = new System.Drawing.Size(124, 18);
             this.lblDeshabilitar.TabIndex = 78;
             this.lblDeshabilitar.Text = "DESHABILITAR";
             // 
@@ -477,11 +621,11 @@
             // lblEditar
             // 
             this.lblEditar.AutoSize = true;
-            this.lblEditar.Font = new System.Drawing.Font("Verdana Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditar.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblEditar.Location = new System.Drawing.Point(604, 79);
             this.lblEditar.Name = "lblEditar";
-            this.lblEditar.Size = new System.Drawing.Size(81, 20);
+            this.lblEditar.Size = new System.Drawing.Size(76, 20);
             this.lblEditar.TabIndex = 67;
             this.lblEditar.Text = "EDITAR";
             // 
@@ -525,22 +669,22 @@
             // lblAnio
             // 
             this.lblAnio.AutoSize = true;
-            this.lblAnio.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnio.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblAnio.Location = new System.Drawing.Point(168, 152);
             this.lblAnio.Name = "lblAnio";
-            this.lblAnio.Size = new System.Drawing.Size(70, 25);
+            this.lblAnio.Size = new System.Drawing.Size(66, 25);
             this.lblAnio.TabIndex = 61;
             this.lblAnio.Text = "AÑO:";
             // 
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonto.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblMonto.Location = new System.Drawing.Point(101, 75);
             this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(125, 25);
+            this.lblMonto.Size = new System.Drawing.Size(116, 25);
             this.lblMonto.TabIndex = 60;
             this.lblMonto.Text = "IMPORTE:";
             // 
@@ -591,7 +735,7 @@
             this.txtAnio.UseSelectable = true;
             this.txtAnio.UseStyleColors = true;
             this.txtAnio.WaterMarkColor = System.Drawing.Color.DimGray;
-            this.txtAnio.WaterMarkFont = new System.Drawing.Font("Verdana Pro", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnio.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnio_KeyPress);
             this.txtAnio.Validated += new System.EventHandler(this.txtAnio_Validated);
             // 
@@ -630,18 +774,18 @@
             this.txtMonto.UseStyleColors = true;
             this.txtMonto.WaterMark = "$";
             this.txtMonto.WaterMarkColor = System.Drawing.Color.DimGray;
-            this.txtMonto.WaterMarkFont = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonto.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             this.txtMonto.Validated += new System.EventHandler(this.txtMonto_Validated);
             // 
             // lblFechaAlta
             // 
             this.lblFechaAlta.AutoSize = true;
-            this.lblFechaAlta.Font = new System.Drawing.Font("Verdana Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaAlta.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFechaAlta.Location = new System.Drawing.Point(81, 244);
             this.lblFechaAlta.Name = "lblFechaAlta";
-            this.lblFechaAlta.Size = new System.Drawing.Size(157, 25);
+            this.lblFechaAlta.Size = new System.Drawing.Size(154, 25);
             this.lblFechaAlta.TabIndex = 53;
             this.lblFechaAlta.Text = "FECHA ALTA:";
             // 
@@ -659,150 +803,6 @@
             this.lblAyuda.TabIndex = 29;
             this.lblAyuda.Text = "Buscar o Agregar un Concepto";
             this.lblAyuda.UseCustomBackColor = true;
-            // 
-            // btnGuardarIngresar
-            // 
-            this.btnGuardarIngresar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGuardarIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGuardarIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardarIngresar.BorderRadius = 5;
-            this.btnGuardarIngresar.ButtonText = "GUARDAR";
-            this.btnGuardarIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarIngresar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnGuardarIngresar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarIngresar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnGuardarIngresar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardarIngresar.Iconimage")));
-            this.btnGuardarIngresar.Iconimage_right = null;
-            this.btnGuardarIngresar.Iconimage_right_Selected = null;
-            this.btnGuardarIngresar.Iconimage_Selected = null;
-            this.btnGuardarIngresar.IconMarginLeft = 0;
-            this.btnGuardarIngresar.IconMarginRight = 0;
-            this.btnGuardarIngresar.IconRightVisible = true;
-            this.btnGuardarIngresar.IconRightZoom = 0D;
-            this.btnGuardarIngresar.IconVisible = false;
-            this.btnGuardarIngresar.IconZoom = 90D;
-            this.btnGuardarIngresar.IsTab = false;
-            this.btnGuardarIngresar.Location = new System.Drawing.Point(864, 92);
-            this.btnGuardarIngresar.Name = "btnGuardarIngresar";
-            this.btnGuardarIngresar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGuardarIngresar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnGuardarIngresar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnGuardarIngresar.selected = false;
-            this.btnGuardarIngresar.Size = new System.Drawing.Size(165, 51);
-            this.btnGuardarIngresar.TabIndex = 81;
-            this.btnGuardarIngresar.Text = "GUARDAR";
-            this.btnGuardarIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardarIngresar.Textcolor = System.Drawing.Color.White;
-            this.btnGuardarIngresar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarIngresar.Click += new System.EventHandler(this.btnGuardarIngresar_Click_1);
-            // 
-            // btnGuardarEd
-            // 
-            this.btnGuardarEd.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGuardarEd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGuardarEd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardarEd.BorderRadius = 5;
-            this.btnGuardarEd.ButtonText = "GUARDAR";
-            this.btnGuardarEd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarEd.DisabledColor = System.Drawing.Color.Gray;
-            this.btnGuardarEd.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEd.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnGuardarEd.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardarEd.Iconimage")));
-            this.btnGuardarEd.Iconimage_right = null;
-            this.btnGuardarEd.Iconimage_right_Selected = null;
-            this.btnGuardarEd.Iconimage_Selected = null;
-            this.btnGuardarEd.IconMarginLeft = 0;
-            this.btnGuardarEd.IconMarginRight = 0;
-            this.btnGuardarEd.IconRightVisible = true;
-            this.btnGuardarEd.IconRightZoom = 0D;
-            this.btnGuardarEd.IconVisible = false;
-            this.btnGuardarEd.IconZoom = 90D;
-            this.btnGuardarEd.IsTab = false;
-            this.btnGuardarEd.Location = new System.Drawing.Point(864, 92);
-            this.btnGuardarEd.Name = "btnGuardarEd";
-            this.btnGuardarEd.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnGuardarEd.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnGuardarEd.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnGuardarEd.selected = false;
-            this.btnGuardarEd.Size = new System.Drawing.Size(165, 51);
-            this.btnGuardarEd.TabIndex = 82;
-            this.btnGuardarEd.Text = "GUARDAR";
-            this.btnGuardarEd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardarEd.Textcolor = System.Drawing.Color.White;
-            this.btnGuardarEd.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEd.Click += new System.EventHandler(this.btnGuardarEd_Click_1);
-            // 
-            // btnCancelarIngresar
-            // 
-            this.btnCancelarIngresar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCancelarIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCancelarIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelarIngresar.BorderRadius = 5;
-            this.btnCancelarIngresar.ButtonText = "CANCELAR";
-            this.btnCancelarIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarIngresar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCancelarIngresar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarIngresar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCancelarIngresar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelarIngresar.Iconimage")));
-            this.btnCancelarIngresar.Iconimage_right = null;
-            this.btnCancelarIngresar.Iconimage_right_Selected = null;
-            this.btnCancelarIngresar.Iconimage_Selected = null;
-            this.btnCancelarIngresar.IconMarginLeft = 0;
-            this.btnCancelarIngresar.IconMarginRight = 0;
-            this.btnCancelarIngresar.IconRightVisible = true;
-            this.btnCancelarIngresar.IconRightZoom = 0D;
-            this.btnCancelarIngresar.IconVisible = false;
-            this.btnCancelarIngresar.IconZoom = 90D;
-            this.btnCancelarIngresar.IsTab = false;
-            this.btnCancelarIngresar.Location = new System.Drawing.Point(864, 193);
-            this.btnCancelarIngresar.Name = "btnCancelarIngresar";
-            this.btnCancelarIngresar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCancelarIngresar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.btnCancelarIngresar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCancelarIngresar.selected = false;
-            this.btnCancelarIngresar.Size = new System.Drawing.Size(165, 51);
-            this.btnCancelarIngresar.TabIndex = 83;
-            this.btnCancelarIngresar.Text = "CANCELAR";
-            this.btnCancelarIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelarIngresar.Textcolor = System.Drawing.Color.White;
-            this.btnCancelarIngresar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnCancelarIngresar.Click += new System.EventHandler(this.btnCancelarIngresar_Click_1);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.BorderRadius = 5;
-            this.btnEliminar.ButtonText = "DESHABILITAR";
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnEliminar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Iconimage")));
-            this.btnEliminar.Iconimage_right = null;
-            this.btnEliminar.Iconimage_right_Selected = null;
-            this.btnEliminar.Iconimage_Selected = null;
-            this.btnEliminar.IconMarginLeft = 0;
-            this.btnEliminar.IconMarginRight = 0;
-            this.btnEliminar.IconRightVisible = true;
-            this.btnEliminar.IconRightZoom = 0D;
-            this.btnEliminar.IconVisible = false;
-            this.btnEliminar.IconZoom = 90D;
-            this.btnEliminar.IsTab = false;
-            this.btnEliminar.Location = new System.Drawing.Point(864, 292);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.btnEliminar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.btnEliminar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnEliminar.selected = false;
-            this.btnEliminar.Size = new System.Drawing.Size(233, 51);
-            this.btnEliminar.TabIndex = 84;
-            this.btnEliminar.Text = "DESHABILITAR";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEliminar.Textcolor = System.Drawing.Color.White;
-            this.btnEliminar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // frmConceptos2
             // 
