@@ -176,9 +176,10 @@ namespace GestionJardin
                         cbSala.SelectedItem = null;
                         txtLegajo.Enabled = false;
                         dgvCupoSalas.Visible = true;
+                        metroPanel2.Visible = false;
 
                         //cupo sala
-                        dgvCupoSalas.Rows.Clear();
+                  //      dgvCupoSalas.Rows.Clear();
                         dgvCupoSalas.Refresh();
 
                         DataTable gruposSalas = new DataTable();
@@ -206,12 +207,16 @@ namespace GestionJardin
                         cbSala.SelectedItem = null;
                         txtLegajo.Enabled = false;
                         dgvCupoSalas.Visible = false;
+                        metroPanel2.Visible = false;
+                        
                     }
 
                 }
                 else
                 {
                     panelSala.Visible = false;
+                    metroPanel2.Visible = true;
+                    dgvCupoSalas.Visible = false;
                 }
 
 
@@ -735,7 +740,7 @@ namespace GestionJardin
 
                 //rellena el dgv del grupo fliar
 
-                dgvGupoFlia.Rows.Clear();
+              //  dgvGupoFlia.Rows.Clear(); // se comenta por error detectado en testing
                 dgvGupoFlia.Refresh();
                 DataTable grupoFlia = new DataTable();
                 metGrupoFlia objGrupoFlia = new metGrupoFlia();
@@ -840,7 +845,20 @@ namespace GestionJardin
                 string emailE = txtEmail.Text.Trim();
 
                 //cbTurno.SelectedItem; no se agrega en ninguna tabla
-                string id_salaE = cbSala.SelectedValue.ToString(); // debe tomar el id de la sala              
+
+
+                //   string id_salaE = cbSala.SelectedValue.ToString(); // debe tomar el id de la sala    
+                string id_salaE; // debe tomar el id de la sala    
+               
+
+                if (cbSala.SelectedItem == null)
+                {
+                    id_salaE = "";
+                }
+                else
+                {
+                    id_salaE = cbSala.SelectedValue.ToString();
+                }
 
                 entPersona personaEditar = new entPersona();
 
@@ -924,10 +942,10 @@ namespace GestionJardin
             soloLetras(sender, e);
         }
 
-        private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            soloLetras(sender, e);
-        }
+        //private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    soloLetras(sender, e);
+        //}
 
         private void dtNacimiento_Leave(object sender, EventArgs e)
         {
@@ -941,7 +959,7 @@ namespace GestionJardin
 
             if (cbTipoPersona2.SelectedValue.ToString() == "2")//el alumno no puede ingresar por ser menor de edad
 
-                if (EdadAnos == 0 || (EdadAnos == 1 && EdadMeses > 6))
+                if (EdadAnos == 0 || (EdadAnos == 1 && EdadMeses < 6))
                 {
                     MessageBox.Show("No está permitido el Ingreso de este alumno. Su edad es menor al año. ");
 
@@ -949,7 +967,7 @@ namespace GestionJardin
                 }
 
             if (cbTipoPersona2.SelectedValue.ToString() == "2")//elalumno no puede ingresar por ser mayor de edad
-                if (EdadAnos >= 6 || (EdadAnos == 5 && EdadMeses < 6))
+                if (EdadAnos >= 6 || (EdadAnos == 5 && EdadMeses > 6))
 
                 {
                     MessageBox.Show("No está permitido el Ingreso de este alumno. Supera la edad permitida por el establecimiento. ");

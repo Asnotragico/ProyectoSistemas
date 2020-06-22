@@ -49,10 +49,10 @@ namespace GestionJardin
                 result = "OK";
 
             }
-            catch
+            catch (Exception ex)
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador." +  ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -89,9 +89,9 @@ namespace GestionJardin
 
                 
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return dt;

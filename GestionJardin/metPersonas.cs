@@ -174,7 +174,7 @@ namespace GestionJardin
 
 
             }
-            catch
+            catch 
             {
                 //result = "ERROR";
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
