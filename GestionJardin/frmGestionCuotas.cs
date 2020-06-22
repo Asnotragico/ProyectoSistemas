@@ -70,6 +70,8 @@ namespace GestionJardin
             panelGeneracion.Hide();
             panelBusqueda.Show();
             lblAyuda.Text = "Ingrese el nombre del matriculado.";
+            lblBajaCuota.Visible = true;
+
         }
 
         private void btnMasivo_Click(object sender, EventArgs e)
@@ -83,6 +85,8 @@ namespace GestionJardin
             panelGeneracion.Show();
             panelBusqueda.Hide();
             lblAyuda.Text = "Complete los Datos de la Cuota.";
+            lblBajaCuota.Visible = false;
+
         }
 
         private void cbSalas_SelectedValueChanged(object sender, EventArgs e)
@@ -398,6 +402,9 @@ namespace GestionJardin
                 }    
 
             }
+
+            MessageBox.Show("Cuota anulada.", "Baja exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void limpiaCasillas()

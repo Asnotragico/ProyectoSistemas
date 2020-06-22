@@ -140,7 +140,7 @@ namespace GestionJardin
 
                 } else
                 {
-                    string mes = Convert.ToString(periodoCuota);
+                    string mes = Convert.ToString(periodoCuota + 2);
                     mes.PadLeft(2, '0');
                     fechaVenc = Convert.ToDateTime("10/"+mes+"/2020");
 

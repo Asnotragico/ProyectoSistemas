@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionCuotas));
             this.btnMasivo = new MetroFramework.Controls.MetroTile();
             this.btnParticular = new MetroFramework.Controls.MetroTile();
@@ -38,6 +38,7 @@
             this.cbSalas = new MetroFramework.Controls.MetroComboBox();
             this.dgvMatriculados = new MetroFramework.Controls.MetroGrid();
             this.panelGeneracion = new MetroFramework.Controls.MetroPanel();
+            this.btnBajaCuota = new MetroFramework.Controls.MetroButton();
             this.cbPeriodo = new MetroFramework.Controls.MetroComboBox();
             this.cbAnoEjercicio = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -45,7 +46,7 @@
             this.txtMatriculados = new MetroFramework.Controls.MetroTextBox();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
             this.lblAyuda = new MetroFramework.Controls.MetroLabel();
-            this.btnBajaCuota = new MetroFramework.Controls.MetroButton();
+            this.lblBajaCuota = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculados)).BeginInit();
             this.panelGeneracion.SuspendLayout();
             this.panelBusqueda.SuspendLayout();
@@ -123,23 +124,23 @@
             this.dgvMatriculados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMatriculados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMatriculados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMatriculados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMatriculados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMatriculados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMatriculados.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMatriculados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMatriculados.EnableHeadersVisualStyles = false;
             this.dgvMatriculados.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvMatriculados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -148,14 +149,14 @@
             this.dgvMatriculados.Name = "dgvMatriculados";
             this.dgvMatriculados.ReadOnly = true;
             this.dgvMatriculados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMatriculados.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(201)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMatriculados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMatriculados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMatriculados.RowTemplate.Height = 24;
             this.dgvMatriculados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -168,6 +169,7 @@
             // panelGeneracion
             // 
             this.panelGeneracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panelGeneracion.Controls.Add(this.lblBajaCuota);
             this.panelGeneracion.Controls.Add(this.btnBajaCuota);
             this.panelGeneracion.Controls.Add(this.cbPeriodo);
             this.panelGeneracion.Controls.Add(this.cbAnoEjercicio);
@@ -190,6 +192,23 @@
             this.panelGeneracion.VerticalScrollbarBarColor = true;
             this.panelGeneracion.VerticalScrollbarHighlightOnWheel = false;
             this.panelGeneracion.VerticalScrollbarSize = 11;
+            // 
+            // btnBajaCuota
+            // 
+            this.btnBajaCuota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnBajaCuota.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnBajaCuota.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBajaCuota.Location = new System.Drawing.Point(527, 498);
+            this.btnBajaCuota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBajaCuota.Name = "btnBajaCuota";
+            this.btnBajaCuota.Size = new System.Drawing.Size(201, 44);
+            this.btnBajaCuota.Style = MetroFramework.MetroColorStyle.Orange;
+            this.btnBajaCuota.TabIndex = 18;
+            this.btnBajaCuota.Text = "Baja de Cuota";
+            this.btnBajaCuota.UseCustomBackColor = true;
+            this.btnBajaCuota.UseCustomForeColor = true;
+            this.btnBajaCuota.UseSelectable = true;
+            this.btnBajaCuota.Click += new System.EventHandler(this.btnBajaCuota_Click);
             // 
             // cbPeriodo
             // 
@@ -327,22 +346,18 @@
             this.lblAyuda.Text = "Elegir la modalidad de generar la cuota. (Masivo/Particular)";
             this.lblAyuda.UseCustomBackColor = true;
             // 
-            // btnBajaCuota
+            // lblBajaCuota
             // 
-            this.btnBajaCuota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.btnBajaCuota.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnBajaCuota.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBajaCuota.Location = new System.Drawing.Point(527, 498);
-            this.btnBajaCuota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBajaCuota.Name = "btnBajaCuota";
-            this.btnBajaCuota.Size = new System.Drawing.Size(201, 44);
-            this.btnBajaCuota.Style = MetroFramework.MetroColorStyle.Orange;
-            this.btnBajaCuota.TabIndex = 18;
-            this.btnBajaCuota.Text = "Baja de Cuota";
-            this.btnBajaCuota.UseCustomBackColor = true;
-            this.btnBajaCuota.UseCustomForeColor = true;
-            this.btnBajaCuota.UseSelectable = true;
-            this.btnBajaCuota.Click += new System.EventHandler(this.btnBajaCuota_Click);
+            this.lblBajaCuota.AutoSize = true;
+            this.lblBajaCuota.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblBajaCuota.ForeColor = System.Drawing.Color.Maroon;
+            this.lblBajaCuota.Location = new System.Drawing.Point(33, 498);
+            this.lblBajaCuota.Name = "lblBajaCuota";
+            this.lblBajaCuota.Size = new System.Drawing.Size(284, 20);
+            this.lblBajaCuota.TabIndex = 15;
+            this.lblBajaCuota.Text = "* Elija la cuota para poder darla de baja.";
+            this.lblBajaCuota.UseCustomBackColor = true;
+            this.lblBajaCuota.UseCustomForeColor = true;
             // 
             // frmGestionCuotas
             // 
@@ -386,5 +401,6 @@
         private MetroFramework.Controls.MetroComboBox cbPeriodo;
         private MetroFramework.Controls.MetroComboBox cbAnoEjercicio;
         private MetroFramework.Controls.MetroButton btnBajaCuota;
+        private MetroFramework.Controls.MetroLabel lblBajaCuota;
     }
 }
