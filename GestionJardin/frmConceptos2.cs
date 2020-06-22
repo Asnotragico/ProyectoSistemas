@@ -98,7 +98,7 @@ namespace GestionJardin
             btnEliminar.Visible = false;
             lblControlFecha.Visible = false;
             lblControlFechaAlta.Visible = false;
-
+            
 
             lbl_Titulo.Visible = false;
 
@@ -222,13 +222,13 @@ namespace GestionJardin
 
             int v_otros = cbo_Conceptos.SelectedIndex;
 
-            if (v_otros == 8) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
+            if (v_otros == 9) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
             {
                 txt_Otros.Visible = true;
                 lblControlOtros.Visible = true;
                 txtMonto.PromptText = "$";
             }
-            else if(v_otros == 6)
+            else if(v_otros == 8)
             {
                 lblMonto.Text = "PORCENTAJE";
                 txtMonto.PromptText = "";
@@ -422,7 +422,7 @@ namespace GestionJardin
                 txtMonto.Style = MetroFramework.MetroColorStyle.Red;
                 txtMonto.Focus();
             }
-            else if(cbo_Conceptos.SelectedIndex == 6 && (Convert.ToDecimal(txtMonto.Text) < 0 || Convert.ToDecimal(txtMonto.Text) > 100))
+            else if(cbo_Conceptos.SelectedIndex == 8 && (Convert.ToDecimal(txtMonto.Text) < 0 || Convert.ToDecimal(txtMonto.Text) > 100))
             {
                 lblControlMonto.Visible = false;
                 epError.SetError(txtMonto, "Introduce el VALOR del concepto, SOLO NUMEROS por ejemplo 15");
@@ -588,6 +588,7 @@ namespace GestionJardin
             txtMonto.Enabled = onOff;
             cbo_Estado.Enabled = false;
             btnEliminar.Visible = false;
+            lblControlMonto.Visible = false;
         }
 
         // INACTIVAR O ACTIVAR UN CONCEPTO
@@ -628,11 +629,13 @@ namespace GestionJardin
                 btnEliminar.Visible = false;
                 btnBloqueoInactivar.Visible = false;
                 lblDeshabilitar.Visible = false;
+                lblControlMonto.Visible = false;
             }
             else
             {
                 btnBloqueoEditar.Visible = false;
                 lblEditar.Visible = false;
+                lblControlMonto.Visible = false;
             }
         }
 
@@ -656,6 +659,7 @@ namespace GestionJardin
         private void btnGuardarEd_Click_1(object sender, EventArgs e)
         {
             decimal montoE = Convert.ToDecimal(txtMonto.Text);
+            lblControlMonto.Visible = false;
 
             string estadoE;
 
@@ -750,6 +754,7 @@ namespace GestionJardin
         private void limpiarCampos()
         {
 
+            cbo_Conceptos.Focus();
 
             epError.Clear();
             txt_Otros.Text = "";
@@ -772,10 +777,9 @@ namespace GestionJardin
             lblDeshabilitar.Visible = false;
             btnEliminar.Visible = false;
 
-
             txtMonto.Enabled = true;
             txtAnio.Enabled = true;
-                                   
+          
         }
 
 
