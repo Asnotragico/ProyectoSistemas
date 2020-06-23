@@ -88,7 +88,8 @@ namespace GestionJardin
                                     "from T_PERSONAS p, T_CUOTA_FINAL c, T_COBRO co " +
                                     "where p.PER_LEGAJO = c.CUO_PER_LEGAJO " +
                                     "and co.COB_CUO_ID = c.CUO_ID " +
-                                    "and p.PER_DOCUMENTO = '" + dniencontrado + "' and c.CUO_ESTADO = 'PAGADA' ";
+                                    "and p.PER_DOCUMENTO = '" + dniencontrado + "' and c.CUO_ESTADO = 'PAGADA' ;";// +
+                                   // "and co.COB_ESTADO <> 'BAJA';";
 
             cmd = new SqlCommand(consulta, con);
 
