@@ -31,9 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCobros));
             this.lblAyuda = new MetroFramework.Controls.MetroLabel();
             this.panelBusqueda = new MetroFramework.Controls.MetroPanel();
-            this.txtBuscarCobro = new MetroFramework.Controls.MetroTextBox();
-            this.panlBtnEditar = new MetroFramework.Controls.MetroPanel();
-            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
+            this.txtBuscarCobroIngresar = new MetroFramework.Controls.MetroTextBox();
+            this.panlBtnAnular = new MetroFramework.Controls.MetroPanel();
             this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelBotones = new MetroFramework.Controls.MetroPanel();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -50,10 +49,11 @@
             this.txtLegajo = new MetroFramework.Controls.MetroTextBox();
             this.txtDocumento = new MetroFramework.Controls.MetroTextBox();
             this.txtNombreyApellido = new MetroFramework.Controls.MetroTextBox();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.txtBuscarDatos = new MetroFramework.Controls.MetroTextBox();
             this.panelBusqueda.SuspendLayout();
-            this.panlBtnEditar.SuspendLayout();
+            this.panlBtnAnular.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.panelCobro.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -75,7 +75,8 @@
             // panelBusqueda
             // 
             this.panelBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.panelBusqueda.Controls.Add(this.txtBuscarCobro);
+            this.panelBusqueda.Controls.Add(this.txtBuscarDatos);
+            this.panelBusqueda.Controls.Add(this.txtBuscarCobroIngresar);
             this.panelBusqueda.HorizontalScrollbarBarColor = true;
             this.panelBusqueda.HorizontalScrollbarHighlightOnWheel = false;
             this.panelBusqueda.HorizontalScrollbarSize = 12;
@@ -89,87 +90,72 @@
             this.panelBusqueda.VerticalScrollbarHighlightOnWheel = false;
             this.panelBusqueda.VerticalScrollbarSize = 15;
             // 
-            // txtBuscarCobro
+            // txtBuscarCobroIngresar
             // 
-            this.txtBuscarCobro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscarCobroIngresar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtBuscarCobroIngresar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBuscarCobroIngresar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
-            this.txtBuscarCobro.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtBuscarCobro.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.txtBuscarCobro.CustomButton.Location = new System.Drawing.Point(549, 1);
-            this.txtBuscarCobro.CustomButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.txtBuscarCobro.CustomButton.Name = "";
-            this.txtBuscarCobro.CustomButton.Size = new System.Drawing.Size(51, 51);
-            this.txtBuscarCobro.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
-            this.txtBuscarCobro.CustomButton.TabIndex = 1;
-            this.txtBuscarCobro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtBuscarCobro.CustomButton.UseSelectable = true;
-            this.txtBuscarCobro.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtBuscarCobro.Lines = new string[0];
-            this.txtBuscarCobro.Location = new System.Drawing.Point(64, 32);
-            this.txtBuscarCobro.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtBuscarCobro.MaxLength = 32767;
-            this.txtBuscarCobro.Name = "txtBuscarCobro";
-            this.txtBuscarCobro.PasswordChar = '\0';
-            this.txtBuscarCobro.PromptText = "Nombre";
-            this.txtBuscarCobro.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBuscarCobro.SelectedText = "";
-            this.txtBuscarCobro.SelectionLength = 0;
-            this.txtBuscarCobro.SelectionStart = 0;
-            this.txtBuscarCobro.ShortcutsEnabled = true;
-            this.txtBuscarCobro.ShowButton = true;
-            this.txtBuscarCobro.ShowClearButton = true;
-            this.txtBuscarCobro.Size = new System.Drawing.Size(601, 53);
-            this.txtBuscarCobro.TabIndex = 10;
-            this.txtBuscarCobro.UseSelectable = true;
-            this.txtBuscarCobro.UseStyleColors = true;
-            this.txtBuscarCobro.WaterMark = "Nombre";
-            this.txtBuscarCobro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtBuscarCobro.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCobroIngresar.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtBuscarCobroIngresar.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.txtBuscarCobroIngresar.CustomButton.Location = new System.Drawing.Point(549, 1);
+            this.txtBuscarCobroIngresar.CustomButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.txtBuscarCobroIngresar.CustomButton.Name = "";
+            this.txtBuscarCobroIngresar.CustomButton.Size = new System.Drawing.Size(51, 51);
+            this.txtBuscarCobroIngresar.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
+            this.txtBuscarCobroIngresar.CustomButton.TabIndex = 1;
+            this.txtBuscarCobroIngresar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtBuscarCobroIngresar.CustomButton.UseSelectable = true;
+            this.txtBuscarCobroIngresar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtBuscarCobroIngresar.Lines = new string[0];
+            this.txtBuscarCobroIngresar.Location = new System.Drawing.Point(64, 32);
+            this.txtBuscarCobroIngresar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtBuscarCobroIngresar.MaxLength = 32767;
+            this.txtBuscarCobroIngresar.Name = "txtBuscarCobroIngresar";
+            this.txtBuscarCobroIngresar.PasswordChar = '\0';
+            this.txtBuscarCobroIngresar.PromptText = "Nombre";
+            this.txtBuscarCobroIngresar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBuscarCobroIngresar.SelectedText = "";
+            this.txtBuscarCobroIngresar.SelectionLength = 0;
+            this.txtBuscarCobroIngresar.SelectionStart = 0;
+            this.txtBuscarCobroIngresar.ShortcutsEnabled = true;
+            this.txtBuscarCobroIngresar.ShowButton = true;
+            this.txtBuscarCobroIngresar.ShowClearButton = true;
+            this.txtBuscarCobroIngresar.Size = new System.Drawing.Size(601, 53);
+            this.txtBuscarCobroIngresar.TabIndex = 10;
+            this.txtBuscarCobroIngresar.UseSelectable = true;
+            this.txtBuscarCobroIngresar.UseStyleColors = true;
+            this.txtBuscarCobroIngresar.WaterMark = "Nombre";
+            this.txtBuscarCobroIngresar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtBuscarCobroIngresar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCobroIngresar.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtBuscarCobroIngresar_ButtonClick);
+            
             // 
-            // panlBtnEditar
+            // panlBtnAnular
             // 
-            this.panlBtnEditar.Controls.Add(this.btnBloqueo);
-            this.panlBtnEditar.Controls.Add(this.btnEditar);
-            this.panlBtnEditar.HorizontalScrollbarBarColor = true;
-            this.panlBtnEditar.HorizontalScrollbarHighlightOnWheel = false;
-            this.panlBtnEditar.HorizontalScrollbarSize = 12;
-            this.panlBtnEditar.Location = new System.Drawing.Point(13, 647);
-            this.panlBtnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.panlBtnEditar.Name = "panlBtnEditar";
-            this.panlBtnEditar.Size = new System.Drawing.Size(508, 142);
-            this.panlBtnEditar.TabIndex = 39;
-            this.panlBtnEditar.UseCustomBackColor = true;
-            this.panlBtnEditar.VerticalScrollbarBarColor = true;
-            this.panlBtnEditar.VerticalScrollbarHighlightOnWheel = false;
-            this.panlBtnEditar.VerticalScrollbarSize = 13;
-            // 
-            // btnBloqueo
-            // 
-            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnBloqueo.IconColor = System.Drawing.SystemColors.WindowText;
-            this.btnBloqueo.IconSize = 39;
-            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.Location = new System.Drawing.Point(292, 36);
-            this.btnBloqueo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBloqueo.Name = "btnBloqueo";
-            this.btnBloqueo.Rotation = 0D;
-            this.btnBloqueo.Size = new System.Drawing.Size(68, 63);
-            this.btnBloqueo.TabIndex = 28;
-            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnBloqueo.UseVisualStyleBackColor = true;
+            this.panlBtnAnular.Controls.Add(this.btnEditar);
+            this.panlBtnAnular.HorizontalScrollbarBarColor = true;
+            this.panlBtnAnular.HorizontalScrollbarHighlightOnWheel = false;
+            this.panlBtnAnular.HorizontalScrollbarSize = 12;
+            this.panlBtnAnular.Location = new System.Drawing.Point(13, 647);
+            this.panlBtnAnular.Margin = new System.Windows.Forms.Padding(4);
+            this.panlBtnAnular.Name = "panlBtnAnular";
+            this.panlBtnAnular.Size = new System.Drawing.Size(508, 142);
+            this.panlBtnAnular.TabIndex = 39;
+            this.panlBtnAnular.UseCustomBackColor = true;
+            this.panlBtnAnular.VerticalScrollbarBarColor = true;
+            this.panlBtnAnular.VerticalScrollbarHighlightOnWheel = false;
+            this.panlBtnAnular.VerticalScrollbarSize = 13;
             // 
             // btnEditar
             // 
-            this.btnEditar.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditar.BorderRadius = 5;
-            this.btnEditar.ButtonText = "EDITAR";
+            this.btnEditar.ButtonText = "ANULAR";
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.DisabledColor = System.Drawing.Color.Gray;
             this.btnEditar.Font = new System.Drawing.Font("Segoe MDL2 Assets", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,19 +171,20 @@
             this.btnEditar.IconVisible = false;
             this.btnEditar.IconZoom = 90D;
             this.btnEditar.IsTab = false;
-            this.btnEditar.Location = new System.Drawing.Point(20, 36);
+            this.btnEditar.Location = new System.Drawing.Point(68, 36);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Normalcolor = System.Drawing.Color.RoyalBlue;
-            this.btnEditar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(95)))), ((int)(((byte)(115)))));
+            this.btnEditar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.btnEditar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.btnEditar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEditar.selected = false;
-            this.btnEditar.Size = new System.Drawing.Size(220, 63);
+            this.btnEditar.Size = new System.Drawing.Size(165, 51);
             this.btnEditar.TabIndex = 26;
-            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.Text = "ANULAR";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEditar.Textcolor = System.Drawing.Color.White;
             this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // panelBotones
             // 
@@ -245,12 +232,13 @@
             this.btnGuardar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnGuardar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnGuardar.selected = false;
-            this.btnGuardar.Size = new System.Drawing.Size(220, 63);
+            this.btnGuardar.Size = new System.Drawing.Size(165, 51);
             this.btnGuardar.TabIndex = 24;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Textcolor = System.Drawing.Color.White;
             this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // btnLimpiar
             // 
@@ -274,19 +262,20 @@
             this.btnLimpiar.IconVisible = false;
             this.btnLimpiar.IconZoom = 90D;
             this.btnLimpiar.IsTab = false;
-            this.btnLimpiar.Location = new System.Drawing.Point(155, 36);
+            this.btnLimpiar.Location = new System.Drawing.Point(159, 36);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLimpiar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.btnLimpiar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLimpiar.selected = false;
-            this.btnLimpiar.Size = new System.Drawing.Size(220, 63);
+            this.btnLimpiar.Size = new System.Drawing.Size(165, 51);
             this.btnLimpiar.TabIndex = 25;
             this.btnLimpiar.Text = "CANCELAR";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpiar.Textcolor = System.Drawing.Color.White;
             this.btnLimpiar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // panelCobro
             // 
@@ -358,9 +347,9 @@
             // dtCobro
             // 
             this.dtCobro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCobro.Location = new System.Drawing.Point(193, 12);
+            this.dtCobro.Location = new System.Drawing.Point(180, 12);
             this.dtCobro.Margin = new System.Windows.Forms.Padding(4);
-            this.dtCobro.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.dtCobro.MaxDate = new System.DateTime(2100, 6, 22, 0, 0, 0, 0);
             this.dtCobro.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
             this.dtCobro.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtCobro.Name = "dtCobro";
@@ -448,6 +437,7 @@
             this.cboCuotas.Size = new System.Drawing.Size(353, 30);
             this.cboCuotas.TabIndex = 30;
             this.cboCuotas.UseSelectable = true;
+            this.cboCuotas.SelectionChangeCommitted += new System.EventHandler(this.cboCuotas_SelectionChangeCommitted_1);
             // 
             // txtLegajo
             // 
@@ -557,59 +547,103 @@
             this.txtNombreyApellido.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombreyApellido.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.AutoSize = true;
-            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.RoyalBlue;
-            this.btnBuscar.IconSize = 81;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(33, 78);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Rotation = 0D;
-            this.btnBuscar.Size = new System.Drawing.Size(100, 100);
-            this.btnBuscar.TabIndex = 41;
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // iconButton1
             // 
             this.iconButton1.AutoSize = true;
             this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton1.IconColor = System.Drawing.Color.SeaGreen;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButton1.IconColor = System.Drawing.Color.RoyalBlue;
             this.iconButton1.IconSize = 81;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.Location = new System.Drawing.Point(167, 78);
+            this.iconButton1.Location = new System.Drawing.Point(33, 78);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(100, 100);
-            this.iconButton1.TabIndex = 42;
+            this.iconButton1.TabIndex = 41;
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.AutoSize = true;
+            this.btnAgregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregar.IconColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregar.IconSize = 81;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.Location = new System.Drawing.Point(156, 79);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Rotation = 0D;
+            this.btnAgregar.Size = new System.Drawing.Size(100, 100);
+            this.btnAgregar.TabIndex = 42;
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            // 
+            // txtBuscarDatos
+            // 
+            this.txtBuscarDatos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtBuscarDatos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBuscarDatos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.txtBuscarDatos.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtBuscarDatos.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.txtBuscarDatos.CustomButton.Location = new System.Drawing.Point(549, 1);
+            this.txtBuscarDatos.CustomButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.txtBuscarDatos.CustomButton.Name = "";
+            this.txtBuscarDatos.CustomButton.Size = new System.Drawing.Size(51, 51);
+            this.txtBuscarDatos.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
+            this.txtBuscarDatos.CustomButton.TabIndex = 1;
+            this.txtBuscarDatos.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtBuscarDatos.CustomButton.UseSelectable = true;
+            this.txtBuscarDatos.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtBuscarDatos.Lines = new string[0];
+            this.txtBuscarDatos.Location = new System.Drawing.Point(64, 32);
+            this.txtBuscarDatos.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtBuscarDatos.MaxLength = 32767;
+            this.txtBuscarDatos.Name = "txtBuscarDatos";
+            this.txtBuscarDatos.PasswordChar = '\0';
+            this.txtBuscarDatos.PromptText = "Nombre";
+            this.txtBuscarDatos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBuscarDatos.SelectedText = "";
+            this.txtBuscarDatos.SelectionLength = 0;
+            this.txtBuscarDatos.SelectionStart = 0;
+            this.txtBuscarDatos.ShortcutsEnabled = true;
+            this.txtBuscarDatos.ShowButton = true;
+            this.txtBuscarDatos.ShowClearButton = true;
+            this.txtBuscarDatos.Size = new System.Drawing.Size(601, 53);
+            this.txtBuscarDatos.TabIndex = 45;
+            this.txtBuscarDatos.UseSelectable = true;
+            this.txtBuscarDatos.UseStyleColors = true;
+            this.txtBuscarDatos.WaterMark = "Nombre";
+            this.txtBuscarDatos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtBuscarDatos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarDatos.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtBuscarDatos_ButtonClick);
             // 
             // frmCobros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1411, 826);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblAyuda);
             this.Controls.Add(this.panelBusqueda);
-            this.Controls.Add(this.panlBtnEditar);
+            this.Controls.Add(this.panlBtnAnular);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelCobro);
             this.Controls.Add(this.panelDatos);
             this.Name = "frmCobros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "GESTIÓN COBROS";
+            this.Load += new System.EventHandler(this.frmCobros_Load_1);
             this.panelBusqueda.ResumeLayout(false);
-            this.panlBtnEditar.ResumeLayout(false);
+            this.panlBtnAnular.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
             this.panelCobro.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
@@ -623,9 +657,8 @@
 
         private MetroFramework.Controls.MetroLabel lblAyuda;
         private MetroFramework.Controls.MetroPanel panelBusqueda;
-        private MetroFramework.Controls.MetroTextBox txtBuscarCobro;
-        private MetroFramework.Controls.MetroPanel panlBtnEditar;
-        private FontAwesome.Sharp.IconButton btnBloqueo;
+        private MetroFramework.Controls.MetroTextBox txtBuscarCobroIngresar;
+        private MetroFramework.Controls.MetroPanel panlBtnAnular;
         private Bunifu.Framework.UI.BunifuFlatButton btnEditar;
         private MetroFramework.Controls.MetroPanel panelBotones;
         private Bunifu.Framework.UI.BunifuFlatButton btnGuardar;
@@ -642,7 +675,8 @@
         private MetroFramework.Controls.MetroTextBox txtLegajo;
         private MetroFramework.Controls.MetroTextBox txtDocumento;
         private MetroFramework.Controls.MetroTextBox txtNombreyApellido;
-        private FontAwesome.Sharp.IconButton btnBuscar;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnAgregar;
+        private MetroFramework.Controls.MetroTextBox txtBuscarDatos;
     }
 }

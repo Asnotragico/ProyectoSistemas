@@ -984,7 +984,15 @@ namespace GestionJardin
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             metPersonas ObjMetPersonas = new metPersonas();
-            bool resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+
+            if (String.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                
+            } else
+            {
+                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            }
 
             if (resultado == false)
             {
