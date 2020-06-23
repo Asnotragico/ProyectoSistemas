@@ -12,18 +12,13 @@ namespace GestionJardin
 {
     public partial class frmCobros : Form
     {
+        metCobros ObjMetCobro = new metCobros();
         public frmCobros()
         {
             InitializeComponent();
         }
-
-
-        private void txtBuscarCobro_Click_1(object sender, EventArgs e)
-        {
-            metCobros ObjMetCobro = new metCobros();
-            ObjMetCobro.AutocompletarenCobros(txtBuscarCobro);
-        }
-
+        
+    
         private void cboCuotas_SelectionChangeCommitted_1(object sender, EventArgs e)
         {
             if (panlBtnAnular.Visible == false) { 
@@ -80,14 +75,18 @@ namespace GestionJardin
             panelBotones.Visible = true;
             panelCobro.Visible = true;
             panelDatos.Visible = true;
-            btnBuscaDatosForm.Visible = true;
-            btnIngresaDatosForm.Visible = false;
             panelBotones.Visible = false;
-            txtBuscarCobro.Clear();
+            txtBuscarCobroIngresar.Clear();
             txtDocumento.Clear();
             txtLegajo.Clear();
             txtNombreyApellido.Clear();
             panlBtnAnular.Visible = true;
+            txtBuscarCobroIngresar.Visible = false;
+            txtBuscarDatos.Visible = true;
+
+            btnEditar.Visible = false;
+            ObjMetCobro.AutocompletarenCobros(txtBuscarDatos);
+
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
@@ -97,41 +96,23 @@ namespace GestionJardin
             panelBotones.Visible = true;
             panelCobro.Visible = true;
             panelDatos.Visible = true;
-            txtBuscarCobro.Clear();
+            txtBuscarCobroIngresar.Clear();
             txtDocumento.Clear();
             txtLegajo.Clear();
             txtNombreyApellido.Clear();
-            btnBuscaDatosForm.Visible = false;
-            btnIngresaDatosForm.Visible = true;
             panelBotones.Visible = true;
             panlBtnAnular.Visible = false;
+            txtBuscarCobroIngresar.Visible = true;
+            txtBuscarDatos.Visible = false;
+
+            ObjMetCobro.AutocompletarenCobros(txtBuscarCobroIngresar);
 
         }
-
-        private void btnIngresaDatosForm_Click_1(object sender, EventArgs e)
-        {
-            metCobros ObjMetCobros = new metCobros();
-            ObjMetCobros.ExtraerDni(txtBuscarCobro);
-
-
-            ObjMetCobros.InsertarDatosCobrosenformAgregar(txtBuscarCobro, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
-            ObjMetCobros.ExtraerImporte(cboCuotas);
-        }
-
-        private void btnBuscaDatosForm_Click_1(object sender, EventArgs e)
-        {
-            metCobros ObjMetCobros = new metCobros();
-            //if txtBuscarCobro is null no entra
-            ObjMetCobros.ExtraerDni(txtBuscarCobro);
-
-            ObjMetCobros.InsetarDatosCobrosenformBuscar(txtBuscarCobro, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
-            ObjMetCobros.ExtraerImporte(cboCuotas);
-        }
-
+   
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             metCobros ObjMetCobros = new metCobros();
-            ObjMetCobros.ModificarEstadoCuota(cboCuotas, txtLegajo, txtBuscarCobro);
+            ObjMetCobros.ModificarEstadoCuota(cboCuotas, txtLegajo, txtBuscarCobroIngresar);
             string resultado = ObjMetCobros.InsertarenTCobros(cboCuotas, txtLegajo);
 
         }
@@ -143,7 +124,7 @@ namespace GestionJardin
 
         private void limpiar()
         {
-            txtBuscarCobro.Clear();
+            txtBuscarCobroIngresar.Clear();
             txtDocumento.Clear();
             txtLegajo.Clear();
             txtNombreyApellido.Clear();
@@ -165,12 +146,33 @@ namespace GestionJardin
 
                 MessageBox.Show("La Cuota ha sido anulada con éxito.", "Cuota anulada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ObjMetCobros.ExtraerDni(txtBuscarCobro);
+                ObjMetCobros.ExtraerDni(txtBuscarDatos);
 
-                ObjMetCobros.InsetarDatosCobrosenformBuscar(txtBuscarCobro, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
+                ObjMetCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
                 ObjMetCobros.ExtraerImporte(cboCuotas);
 
             }
+        }
+
+        private void txtBuscarCobroIngresar_ButtonClick(object sender, EventArgs e)
+        {
+            metCobros ObjMetCobros = new metCobros();
+            ObjMetCobros.ExtraerDni(txtBuscarCobroIngresar);
+
+
+            ObjMetCobros.InsertarDatosCobrosenformAgregar(txtBuscarCobroIngresar, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
+            ObjMetCobros.ExtraerImporte(cboCuotas);
+        }
+
+        private void txtBuscarDatos_ButtonClick(object sender, EventArgs e)
+        {
+            metCobros ObjMetCobros = new metCobros();
+            //if txtBuscarCobro is null no entra
+            ObjMetCobros.ExtraerDni(txtBuscarDatos);
+
+            ObjMetCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
+            ObjMetCobros.ExtraerImporte(cboCuotas);
+            btnEditar.Visible = true;
         }
     }
 }

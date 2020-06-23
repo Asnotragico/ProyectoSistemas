@@ -113,7 +113,7 @@ namespace GestionJardin
             else
 
             {
-                MessageBox.Show("No existe ese registro ");
+                MessageBox.Show("El alumno ingresado no tiene registros de cuotas abonadas");
             }
 
 
@@ -165,7 +165,15 @@ namespace GestionJardin
 
 
 
-            string consulta = "SELECT DISTINCT (p.PER_NOMBRE + ',' + p.PER_APELLIDO)NOMBRE_APELLIDO, p.PER_DOCUMENTO, p.PER_LEGAJO, c.CUO_FECHA_VENC, CONCAT( CONCAT ('$', c.CUO_IMPORTE) ,  '  ' , c.CUO_FECHA_VENC, '  ', '(' , c.CUO_ESTADO , ')')INFO_CUOTA from T_PERSONAS p , T_CUOTA_FINAL c where p.PER_LEGAJO = c.CUO_PER_LEGAJO and p.PER_DOCUMENTO = '" + dniencontrado + "' and c.CUO_ESTADO = 'ADEUDADA' ";
+            string consulta = "SELECT DISTINCT (p.PER_NOMBRE + ',' + p.PER_APELLIDO)NOMBRE_APELLIDO, " +
+                                                "p.PER_DOCUMENTO, " +
+                                                "p.PER_LEGAJO, " +
+                                                "c.CUO_FECHA_VENC, " +
+                                                "CONCAT( CONCAT ('$', c.CUO_IMPORTE) ,  '  ' , c.CUO_FECHA_VENC, '  ', '(' , c.CUO_ESTADO , ')')INFO_CUOTA " +
+                              "FROM T_PERSONAS p , T_CUOTA_FINAL c " +
+                              "WHERE p.PER_LEGAJO = c.CUO_PER_LEGAJO " +
+                              "AND p.PER_DOCUMENTO = '" + dniencontrado + "' " +
+                              "AND c.CUO_ESTADO = 'ADEUDADA' ";
 
             cmd = new SqlCommand(consulta, con);
 
@@ -189,7 +197,7 @@ namespace GestionJardin
             else
 
             {
-                MessageBox.Show("No existe ese registro ");
+                MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
             }
 
 
@@ -238,7 +246,10 @@ namespace GestionJardin
             Convert.ToDateTime(FechaVencEncontrada).ToString("yyyy-MM-dd");
 
             string nlegajo = plegajo.Text;
-            string consulta = "UPDATE T_CUOTA_FINAL SET CUO_ESTADO = 'PAGADA' WHERE CUO_FECHA_VENC =  '" + FechaVencEncontrada + "' and CUO_PER_LEGAJO = '" + nlegajo + "'";
+            string consulta = "UPDATE T_CUOTA_FINAL " +
+                              "SET CUO_ESTADO = 'PAGADA' " +
+                              "WHERE CUO_FECHA_VENC =  '" + FechaVencEncontrada + "' " +
+                              "AND CUO_PER_LEGAJO = '" + nlegajo + "'";
 
             cmd = new SqlCommand(consulta, con);
             cmd.ExecuteNonQuery();
@@ -253,7 +264,15 @@ namespace GestionJardin
 
             string dniencontrado = ExtraerDni(pbarrabuscao);
 
-            string consulta1 = "SELECT DISTINCT (p.PER_NOMBRE + ',' + p.PER_APELLIDO)NOMBRE_APELLIDO, p.PER_DOCUMENTO, p.PER_LEGAJO, c.CUO_FECHA_VENC, CONCAT( CONCAT ('$', c.CUO_IMPORTE) ,  '  ' , c.CUO_FECHA_VENC, '  ', '(' , c.CUO_ESTADO , ')')INFO_CUOTA from T_PERSONAS p , T_CUOTA_FINAL c where p.PER_LEGAJO = c.CUO_PER_LEGAJO and p.PER_DOCUMENTO = '" + dniencontrado + "' and c.CUO_ESTADO = 'ADEUDADA' ";
+            string consulta1 = "SELECT DISTINCT (p.PER_NOMBRE + ',' + p.PER_APELLIDO)NOMBRE_APELLIDO, " +
+                                                "p.PER_DOCUMENTO, " +
+                                                "p.PER_LEGAJO, " +
+                                                "c.CUO_FECHA_VENC, " +
+                                                "CONCAT( CONCAT ('$', c.CUO_IMPORTE) ,  '  ' , c.CUO_FECHA_VENC, '  ', '(' , c.CUO_ESTADO , ')')INFO_CUOTA " +
+                                                "FROM T_PERSONAS p , T_CUOTA_FINAL c " +
+                                                "WHERE p.PER_LEGAJO = c.CUO_PER_LEGAJO " +
+                                                "AND p.PER_DOCUMENTO = '" + dniencontrado + "' " +
+                                                "AND c.CUO_ESTADO = 'ADEUDADA' ";
             cmd = new SqlCommand(consulta1, con);
             dta = new SqlDataAdapter(cmd);
             dt = new DataTable("INFO_CUOTA");
@@ -264,18 +283,16 @@ namespace GestionJardin
             pcuotas.DisplayMember = "INFO_CUOTA";
             //pcuotas.SelectedIndex = 0;
 
-            if (pcuotas.SelectedIndex < 0)
-            {
-                MessageBox.Show("El alumno NO posee cuotas adeudadas");
-            }
+            //if (pcuotas.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
+            //}
 
-            pcuotas.SelectedIndex = 0;
-
-
-
+           // pcuotas.SelectedIndex = -1;           
+                       
             con.Close();
 
-            return MessageBox.Show("Se Modificó estado cuota").ToString();
+            return MessageBox.Show("Se registro el cobro. La cuota se encuentra PAGADA").ToString();
 
         }
 
@@ -287,7 +304,9 @@ namespace GestionJardin
             {
                 con = generarConexion();
                 con.Open();
-                string consulta = "update T_COBRO set COB_ESTADO = 'BAJA' WHERE COB_ID = " + idCobro + ";";
+                string consulta = "UPDATE T_COBRO " +
+                                  "SET COB_ESTADO = 'BAJA' " +
+                                  "WHERE COB_ID = " + idCobro + ";";
 
 
                 cmd = new SqlCommand(consulta, con);
@@ -326,11 +345,11 @@ namespace GestionJardin
                 con = generarConexion();
                 con.Open();
                 string consulta = "UPDATE T_CUOTA_FINAL " +
-                    "SET CUO_ESTADO = 'ADEUDADA' " +
-                    "WHERE CUO_ID = ( select CF.CUO_ID " +
-                                        "from T_COBRO C, T_CUOTA_FINAL CF " +
-                                        "where C.COB_CUO_ID = CF.CUO_ID " +
-                                        "AND C.COB_ID = " + idCobro + " );";
+                                  "SET CUO_ESTADO = 'ADEUDADA' " +
+                                  "WHERE CUO_ID = ( SELECT CF.CUO_ID " +
+                                                     "FROM T_COBRO C, T_CUOTA_FINAL CF " +
+                                                     "WHERE C.COB_CUO_ID = CF.CUO_ID " +
+                                                     "AND C.COB_ID = " + idCobro + " );";
 
 
                 cmd = new SqlCommand(consulta, con);
@@ -365,7 +384,11 @@ namespace GestionJardin
             string FechaVencEncontrada = ExtraerFechaVenc(pcuotas);
             DateTime fecha = Convert.ToDateTime(FechaVencEncontrada);
 
-            string consulta = "SELECT  c.CUO_ID CUOTA_ID FROM T_CUOTA_FINAL c  where  c.CUO_FECHA_VENC = '" + FechaVencEncontrada + "' AND c.CUO_PER_LEGAJO = '" + nlegajo + "' and c.CUO_ESTADO = 'ADEUDADA' ";
+            string consulta = "SELECT  c.CUO_ID CUOTA_ID " +
+                              "FROM T_CUOTA_FINAL c  " +
+                              "WHERE  c.CUO_FECHA_VENC = '" + FechaVencEncontrada + "' " +
+                              "AND c.CUO_PER_LEGAJO = '" + nlegajo + "' " +
+                              "AND c.CUO_ESTADO = 'ADEUDADA' ";
             cmd = new SqlCommand(consulta, con);
            
 
@@ -406,7 +429,8 @@ namespace GestionJardin
 
                 string cuoId = ExtraercoutaId(pcuotas, plegajo);
 
-                string consulta = "INSERT INTO T_COBRO ( COB_CUO_ID, COB_ESTADO, COB_IMPORTE, COB_FECHA, COB_FORMA_PAGO ) VALUES ( " + cuoId + ", 'TOTAL', (select cf.CUO_IMPORTE from T_CUOTA_FINAL cf where cf.CUO_ID = " + cuoId + "), GETDATE(), 'EFECTIVO');";
+                string consulta = "INSERT INTO T_COBRO ( COB_CUO_ID, COB_ESTADO, COB_IMPORTE, COB_FECHA, COB_FORMA_PAGO ) " +
+                                              "VALUES ( " + cuoId + ", 'TOTAL', (SELECT cf.CUO_IMPORTE FROM T_CUOTA_FINAL cf WHERE cf.CUO_ID = " + cuoId + "), GETDATE(), 'EFECTIVO');";
 
                 cmd = new SqlCommand(consulta, con1);
                 cmd.ExecuteNonQuery();
