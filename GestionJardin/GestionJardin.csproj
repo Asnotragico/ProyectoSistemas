@@ -114,6 +114,7 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="metCobros.cs" />
     <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />
     <Compile Include="metDomicilio.cs" />

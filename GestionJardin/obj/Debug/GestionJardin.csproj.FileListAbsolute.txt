@@ -80,4 +80,3 @@ C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardi
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
 C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
-C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
