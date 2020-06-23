@@ -222,23 +222,15 @@ namespace GestionJardin
 
             int v_otros = cbo_Conceptos.SelectedIndex;
 
-            if (v_otros == 9) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
+            if (v_otros == 7) //solo se puede cargar un item fuera de los comprendidos si selecciona "OTRO"
             {
                 txt_Otros.Visible = true;
-                lblControlOtros.Visible = true;
-                txtMonto.PromptText = "$";
-            }
-            else if(v_otros == 8)
-            {
-                lblMonto.Text = "PORCENTAJE";
-                txtMonto.PromptText = "";
+                lblControlOtros.Visible = true;             
             }
             else
             {
-                txt_Otros.Visible = false;
-                lblMonto.Text = "IMPORTE";
-                lblControlOtros.Visible = false;
-                txtMonto.PromptText = "$";
+                txt_Otros.Visible = false;                
+                lblControlOtros.Visible = false;                
             }
 
             //info global se oculta
@@ -755,6 +747,7 @@ namespace GestionJardin
         {
 
             cbo_Conceptos.Focus();
+            txtBuscarConcepto.Focus();
 
             epError.Clear();
             txt_Otros.Text = "";

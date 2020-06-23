@@ -255,7 +255,8 @@ namespace GestionJardin
                                         "WHEN 'S' THEN 'ACTIVO' " +
                                         "WHEN 'N' THEN 'INACTIVO' " +
                                       "END) ESTADO " +
-                               "FROM T_CONCEPTOS ORDER BY 8, 2 DESC, 1;";
+                               "FROM T_CONCEPTOS " +
+                               "ORDER BY 1,8;";
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
             dt = new DataTable();

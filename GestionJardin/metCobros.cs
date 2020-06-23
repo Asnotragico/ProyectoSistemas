@@ -282,15 +282,13 @@ namespace GestionJardin
             pcuotas.DisplayMember = "INFO_CUOTA";
             //pcuotas.SelectedIndex = 0;
 
-            if (pcuotas.SelectedIndex < 0)
-            {
-                MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
-            }
+            //if (pcuotas.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
+            //}
 
-            pcuotas.SelectedIndex = 0;
-
-
-
+           // pcuotas.SelectedIndex = -1;           
+                       
             con.Close();
 
             return MessageBox.Show("Se registro el cobro. La cuota se encuentra PAGADA").ToString();
