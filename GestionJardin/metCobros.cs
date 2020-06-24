@@ -31,7 +31,9 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') NOMBRE  FROM T_PERSONAS WHERE PER_TPE_ID = '2'";
+            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO, ' (', PER_DOCUMENTO, ')') NOMBRE  " +
+                              "FROM T_PERSONAS " +
+                              "WHERE PER_TPE_ID = '2'";
 
             cmd = new SqlCommand(consulta, con);
 
@@ -85,11 +87,10 @@ namespace GestionJardin
                                     "p.PER_LEGAJO, " +
                                     "c.CUO_FECHA_VENC, " +
                                     "CONCAT(CONCAT('$', c.CUO_IMPORTE), '  ', convert(nvarchar(20), c.CUO_FECHA_VENC, 103), '  ', '(', c.CUO_ESTADO, ')') INFO_CUOTA " +
-                                    "from T_PERSONAS p, T_CUOTA_FINAL c, T_COBRO co " +
-                                    "where p.PER_LEGAJO = c.CUO_PER_LEGAJO " +
-                                    "and co.COB_CUO_ID = c.CUO_ID " +
-                                    "and p.PER_DOCUMENTO = '" + dniencontrado + "' and c.CUO_ESTADO = 'PAGADA' ;";// +
-                                   // "and co.COB_ESTADO <> 'BAJA';";
+                                    "FROM T_PERSONAS p, T_CUOTA_FINAL c, T_COBRO co " +
+                                    "WHERE p.PER_LEGAJO = c.CUO_PER_LEGAJO " +
+                                    "AND co.COB_CUO_ID = c.CUO_ID " +
+                                    "AND p.PER_DOCUMENTO = '" + dniencontrado + "' and c.CUO_ESTADO = 'PAGADA' ";
 
             cmd = new SqlCommand(consulta, con);
 
@@ -281,6 +282,8 @@ namespace GestionJardin
 
             pcuotas.DataSource = dt;
             pcuotas.DisplayMember = "INFO_CUOTA";
+
+            pcuotas.SelectedItem = null;
             //pcuotas.SelectedIndex = 0;
 
             //if (pcuotas.SelectedIndex == -1)
@@ -288,8 +291,8 @@ namespace GestionJardin
             //    MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
             //}
 
-           // pcuotas.SelectedIndex = -1;           
-                       
+            //pcuotas.SelectedIndex = -1;
+
             con.Close();
 
             return MessageBox.Show("Se registro el cobro. La cuota se encuentra PAGADA").ToString();
@@ -319,7 +322,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -362,7 +365,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -442,7 +445,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          //     MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return result;
